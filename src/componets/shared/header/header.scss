@@ -1,0 +1,209 @@
+*, ::after, ::before {
+  box-sizing: unset !important;
+}
+
+* ul, p{
+  margin-top: 0;
+  margin-bottom:0;
+} 
+
+.header {
+  width: 1286px;
+  height: 100px;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content:normal;
+
+
+  &__title {
+    width: 1286px;
+    height: 50px;
+    background-color: red;
+
+    &__top {
+      font-weight: bold;
+      color: whitesmoke;
+      text-align: center;
+    }
+  }
+
+  &__search {
+    width: 1286px;
+    height: 52px;
+    border-top: 1px solid black;
+    display: flex;
+    flex-direction: row;
+    justify-content:normal;
+    background-color: red;
+
+    &__contener-exit {
+      height: 43px;
+      width: 244px;
+
+      &__element {
+        display: flex;
+        flex-direction: row;
+        justify-content:normal;
+
+        &__contener-exit {
+          position: relative;
+          width: 235px;
+
+          .exit {
+            width: 35px;
+            height: 35px;
+            cursor: pointer;
+          }
+
+          .text-exit {
+            position: absolute;
+            left: 56px;
+            top: 10px;
+            font-weight: bold;
+            color: whitesmoke;
+            box-sizing: inherit !important;
+          }
+        }
+      }
+    }
+
+    &__contener-search {
+      height: 39px;
+      width: 900px;
+      background-color: red;
+      // border: 1px solid black;
+
+      &__main.active {
+        border: 3px solid black;
+        margin-top: 2px;
+      }
+
+      &__main {
+        display: flex;
+        flex-direction: row;
+        justify-content:center;
+        border-radius: 40px 40px 40px 40px;
+        background-color: #f6f5f7;
+        width: 391px;
+        margin-top: 2px;
+        margin-left: 253px;
+      }
+    }
+
+    &__contener-sign {
+      display: flex;
+      flex-direction: row;
+      justify-content:normal;
+      height: 43px;
+      width: 380px;
+
+      &__account {
+        position: relative;
+
+        .btn_account {
+         width: 36px;
+         height: 36px;
+         cursor: pointer;
+         position: absolute;
+         right: 54px;
+         top: 5px
+        }
+
+        .menu {
+          position: absolute;
+          display: none;
+          width: 150px;
+          height: 90px;
+          top: 54px;
+          right: -46px;
+          background-color: whitesmoke;
+         }
+
+         li {
+           cursor: pointer;
+         }
+         li:hover { 
+          text-decoration: underline; 
+        }
+      }
+
+      &__sign-up {
+        width: 170px;
+        position: relative;
+        width: 170px;
+
+        .sign-up {
+          cursor: pointer;
+          width: 36px;
+          position: absolute;
+          left: 1px;
+          top: 4px;
+          cursor: pointer;
+        }
+
+        .signup-text {
+          font-weight: bold;
+          color: whitesmoke;
+          position: absolute;
+          left: 48px;
+          top: 14px;
+        }
+      }
+
+
+
+      &__sign {
+        position: relative;
+        height: 43px;
+        width: 167px;
+
+        .sign-in {
+          margin: 8px;
+          width: 36px;
+          height: 36px;
+          cursor: pointer;
+        }
+
+        .text-sign_in {
+          font-weight: bold;
+          color: whitesmoke;
+          position: absolute;
+          left: 50px;
+          top: 12px;
+        }
+      }
+
+      &__basket {
+        position: relative;
+        height: 43px;
+        width: 214px;
+
+        .basket-shop {
+          position: absolute;
+          cursor: pointer;
+          width: 25px;
+          height: 25px;
+          left: 15px;
+          top: 11px;
+        }
+        .display {
+          position: absolute;
+          left: 36px;
+          width: 25px;
+          height: 25px;
+          border-radius: 50px;
+          background-color: whitesmoke;
+
+          &__count {
+            margin-top: 1px;
+            margin-left: 1px;;
+            font-weight: bold;
+            color: black;
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,149 @@
+
+.wrapper-shop {
+	display: flex;
+	flex-direction: column;
+	justify-content:normal;
+	width: 1286px;
+	height: 1700px;
+  font-family: sans-serif;
+  background-color: #303030;
+
+	.header-wrapper {
+		
+	}
+
+	.main-products {
+		background-color: black;
+		// margin: 70px 64px;
+
+		&__list_books {
+			display: grid;
+			grid-template-columns: 1fr 1fr 1fr 1fr;
+			margin-left: 49px;
+
+			.products-container {
+				display: inline-block; 
+				margin: 13px 7px;
+			}
+	
+			.products-element {
+				width: 231px;
+				height: 348px;
+				display: flex;
+				flex-direction: column;
+				justify-content: end;
+				background-color:#303030;
+				margin: 7px 18px;
+					
+				&__rating-stars {
+					width: 231px;
+					height: 23px;
+				}
+	
+				&__product  {
+					width: 231px;
+					height: 40px;
+					padding: 9px;
+					word-wrap: break-word;
+					font-size: 10px;
+			
+					.title {
+						font-weight: bold;
+						margin-top: 15px;
+						margin-bottom: auto;
+						color: white;
+					}
+					}
+	
+					&__photo {
+						width: 123px;
+						height: 113px;
+					
+					}
+	
+					&__author {
+						font-weight: bold;
+						margin-top: 15px;
+						color:white;
+					}
+					&__add.active {
+						background-color: green;
+						margin-bottom: 16px;
+					}
+					
+					&__add, &__more {
+						width: 153px;
+						height: 27px;
+						margin: auto;
+						border-radius: 40px;
+						background-color: red;
+						font-weight: bold;
+						color:white;
+						border: none;
+						cursor: pointer;
+					}
+
+					&__add:hover {
+						box-shadow: inset 0 0 0 2px #3a7999;
+					}
+
+					&__more:hover {
+						box-shadow: inset 0 0 0 2px #3a7999;
+					}
+	
+					&__text, &__cost {
+						font-weight: bold;
+						color:white;
+					}
+	
+				}
+
+		}
+	}
+
+	.btn-container {
+		display: flex;
+  	align-items: center;
+		background-color: black;
+		width: 1286px;
+		height: 143px;
+
+		.btn-page {
+			display: flex;
+			flex-direction: row;
+			justify-content:space-around;
+			width: 290px;
+			height: 45px;
+			margin: auto;
+		
+				
+			.btn-number-page.active {
+				display: block;
+				color: whitesmoke;
+				background-color: gray;
+				height: 45px;
+				width: 35px;
+				border-radius: 3px;
+				height: 40px;
+    		line-height: 40px;
+				border: none;
+				cursor: pointer;
+			}
+
+			.btn-number-page.active:hover {
+				box-shadow: inset 0 0 0 2px #3a7999;
+			}
+
+			.btn-number-page {
+				display: none;
+			}
+		}
+
+	}
+	.footer-after {
+		width: 1268px;
+    height: 15px;
+	}
+}
+
+

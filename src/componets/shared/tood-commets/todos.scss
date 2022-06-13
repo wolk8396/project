@@ -1,0 +1,131 @@
+.todo {
+  display: flex;
+  flex-direction: column;
+  justify-content: normal;
+  margin: 0 auto;
+  width: 900px;
+
+  .comments-todo {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: row;
+    justify-content: normal;
+  
+  
+      &__fullName {
+        width: 205px;
+        display: flex;
+        flex-direction: column;
+        justify-content:normal;
+        background-color: whitesmoke;
+  
+        .user-name {
+          text-align: center;
+        }
+  
+        .user-photo {
+          width: 131px;
+          height: 143px;
+        }
+      }
+  
+      &__description {
+        word-wrap: break-word;
+        width: 843px;
+        display: flex;
+        flex-direction: column;
+        justify-content:normal;
+  
+        .container-comment {
+          position: relative;
+  
+          &__input_text {
+            background-color: #fff;
+            width: 813px;
+            height: 166px;
+            border: none;
+          }
+  
+          &__time {
+            position: absolute;
+            top: 154px;
+          }
+  
+        }
+  
+        .block-btns {
+          display:flex;
+          flex-direction: row;
+          justify-content: space-between;
+  
+          .block {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            width: 344px;
+    
+            &__remove_comment,
+            &__btn_update {
+              width: 167px;
+              height: 37px;
+              color: #fff;
+              border-radius: 0.25rem;
+              border: none;
+              margin: 2px;
+              background-color: #dc3545;
+              border-color: #dc3545;
+            }
+    
+            &__send_update {
+              display: none;
+              width: 167px;
+              height: 37px;
+              color: #fff;
+              border-radius: 0.25rem;
+              background-color: red;
+              border-color: red;
+            }
+            &__time-comment {
+              color: #fff;
+            }
+          }
+    
+          .block-likes {
+            margin: 1px 25px;
+  
+            .btn-danger,
+            .btn-primary {
+              position: relative;
+              width: 139px;
+              height: 28px;
+  
+              &__wrapper-btns {
+                position: absolute;
+                left: 21px;
+                top: -5px;
+              }
+  
+              &__number {
+                position: absolute;
+                top: 3px;
+                left: 2px;
+                color: #fff;
+              }
+            }
+  
+            .bi-hand-thumbs-up {
+              position: absolute;
+              left: 4px;
+              width: 28px;
+              top: 6px;
+            }
+          }
+        }
+      }
+    }
+  
+
+
+
+}
+

@@ -1,0 +1,173 @@
+export class ListBooks {
+  #element;
+  #fn_add_wish;
+  #link;
+  #setLearnMore;
+  #rating;
+  #getItem;
+  #setItem;
+  #fn;
+  #fn_basket;
+  #fn_remove
+
+  constructor (element, fn_add_wish, link, setLearnMore, rating, getItem, setItem,  fn, fn_basket, fn_remove) {
+    this.#element = element,
+    this.#fn_add_wish = fn_add_wish,
+    this.#link = link,
+    this.#setLearnMore = setLearnMore,
+    this.#rating = rating,
+    this.#getItem = getItem,
+    this.#setItem = setItem,
+    this.#fn = fn,
+    this.#fn_basket = fn_basket,
+    this.#fn_remove = fn_remove
+  }
+
+  getList () {
+    const container_product = document.createElement('div');
+    const block_photo = document.createElement('div');
+    const block_inf = document.createElement('div');
+    const product_book = document.createElement('p');
+    const author_book = document.createElement('p');
+    const wrapper_input = document.createElement('div');
+    const cost_book = document.createElement('p');
+    const block_btns = document.createElement('div');
+    const block_rating = document.createElement('div');
+    const add_btn = document.createElement('button');
+    const delete_book = document.createElement('button');
+    const photo_book = document.createElement('img');
+    const input_number = document.createElement('input');
+    const input_label = document.createElement('label');
+    const display = document.querySelector('.display__count');
+    const massage = document.createElement('p');
+    const btn_trash = document.createElement('img');
+    const main_window = document.querySelector('.wrapper-delete');
+
+    container_product.className = 'container_product__book';
+    block_photo.className = 'photo-book';
+    photo_book.className = 'photo-book__frame';
+    block_inf.className = 'block-imformation';
+    product_book.className = 'block-imformation__product';
+    block_rating.className ='block-imformation__rating';
+    author_book.className = 'block-imformation__author';
+    cost_book.className = 'block-imformation__cost';
+    block_btns.className = 'block_btns';
+    wrapper_input.className = 'block-quantity'
+    add_btn.id = this.#element.id;
+    add_btn.className = 'btn btn-primary';
+    btn_trash.className = 'btn-trash'
+    delete_book.className = 'btn btn-danger';
+    input_number.className = 'items-quantity';
+    input_label.className = 'input_label';
+    massage.className = 'massage';
+    input_number.type = 'number';
+    input_number.name = 'quantity';
+
+    photo_book.src = this.#element.photo;
+    author_book.innerText = this.#element.author;
+    product_book.innerText = this.#element.product;
+    cost_book.innerText = this.#element.cost + '$';
+    btn_trash.src = '../../../picture/trash2-fill (1).svg'
+    add_btn.innerText = 'ADD TO CARD';
+    input_label.innerText = 'quantity'
+    delete_book.innerText = 'DELETE';
+    input_number.value = 1;
+
+    container_product.append(block_photo, block_inf, wrapper_input, block_btns);
+    wrapper_input.append(input_number, input_label)
+    block_photo.append(photo_book);
+    block_inf.append(block_rating, product_book, author_book, cost_book);
+    block_btns.append(add_btn, delete_book, btn_trash);
+    block_rating.append(this.#rating(this.#element.rating));
+
+
+    const removeItem = () => {
+      const getBooks =  this.#getItem();
+
+      const productRemove = getBooks.filter((item) => item.id !== this.#element.id);
+
+      this.#setItem(productRemove);
+
+      this.#element.basketExist = false;
+      add_btn.innerText = 'ADD TO CART';
+      display.innerHTML = this.#fn.countItems();
+
+      this.#fn_basket(productRemove)
+
+    }
+
+   
+      if( window.location.pathname === this.#link.account) {
+        delete_book.innerText = 'DELETE';
+      } 
+
+  
+      if (window.location.pathname === this.#link.search) {
+        if (this.#element.exist === true) {
+          massage.innerText = 'was added to ';
+          delete_book.innerText = 'DELETE';
+        } else {
+          delete_book.innerText = 'add to wish';
+          massage.innerText = 'has not been added ';
+        } 
+      }
+
+      const checkStatus = () => {
+        (window.location.pathname === this.#link.account) ? 
+          container_product.remove() : null
+      }
+
+    delete_book.onclick = () => {
+     this.#fn_add_wish(this.#element, massage ,delete_book, checkStatus);
+
+    }
+
+    product_book.onclick = () => {
+      window.location.pathname = this.#link.inf;
+      this.#setLearnMore(this.#element)
+    }
+
+    (this.#element.basketExist === true) ?  
+      add_btn.innerText = 'IN CART':
+      add_btn.innerText = 'ADD TO CART';
+
+    const check_conditions = (get_Fn, getItems) => {
+     
+      if (!this.#element.basketExist) {
+        this.#element.basketExist = true
+        add_btn.innerText = 'IN CART';
+        get_Fn(getItems);
+        
+      } else {
+        window.location.pathname = this.#link.basket
+      }
+    }
+
+
+    add_btn.onclick = () => {
+      const productItems = this.#fn.setValue(this.#element, this.#getItem, this.#setItem);
+
+      check_conditions(this.#fn_basket, productItems);
+
+      display.innerHTML = this.#fn.countItems();
+    }
+
+    btn_trash.onclick = () => {
+      console.log('f');
+      this.#fn_remove(removeItem);
+    } 
+  
+
+    input_number.oninput = () => {
+      const getNumber  = (+input_number.value);
+
+      (getNumber === 1 || getNumber <=0) ?
+        input_number.value = 1 : null
+
+      this.#element.count = input_number.value
+    }
+
+    return container_product;
+  }
+
+}

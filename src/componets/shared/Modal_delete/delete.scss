@@ -1,0 +1,72 @@
+.wrapper-delete{
+  background-color: rgba(0, 0, 0, var(--bg-opacity));
+  --bg-opacity: 0.75;
+  position: fixed;
+  display: none;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  z-index: 100;
+
+  .modal-delete {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 300px;
+    height: 240px;
+    border-radius: 3px;
+    background-color: #303030;
+    border-radius: 5%;
+
+    &__massage {
+
+      width: 297px;
+      height: 143px;
+
+      .test-massage {
+        color: white;
+        font-size: 20px;
+        text-align: center;
+      }
+    }
+
+    &__btns {
+      width: 298px;
+      height: 40px;
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row;
+
+      .btn-accept,
+      .btn-cancel {
+        width: 120px;
+        color: white;
+        background-color: red;
+        border: none;
+        font-weight: bold;
+      }
+
+      .btn-accept:hover {
+        box-shadow: inset 0 0 0 2px #3a7999;
+      }
+
+      .btn-cancel:hover {
+        box-shadow: inset 0 0 0 2px #3a7999;
+      }
+
+    }
+
+
+  }
+}

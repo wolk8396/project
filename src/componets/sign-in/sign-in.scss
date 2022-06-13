@@ -1,0 +1,103 @@
+
+
+.sign-in-page {
+  position: relative;
+  height: 47em;
+  background-color: #e1e1e3;
+  width: 1286px;
+  height: 768px;
+
+  .from {
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+
+    &__container {
+        background-color:#fff;
+        border-radius: 0.3rem;
+        width: 450px;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 60px;
+        margin-top: 6rem;
+
+        .form-group {
+          width: 100%;
+          height: 50px;
+          margin-bottom: 59px;
+          position: relative;
+        }
+
+        h1 {
+          margin-bottom: 28px;
+          color: black;
+      }
+
+        .form-group input {
+          width: 445px;
+          height: 50px;
+          background-color: #333;
+          border: none;
+          border-radius: .3rem;
+          outline: none;
+          color: #fff;
+          padding: 16px 20px 0;
+          font-size: 1rem;
+        }
+
+        .form-group label {
+          position: absolute;
+          top: 50%;
+          left: 20px;
+          transform: translateY(-50%);
+          color: #8c8c8c;
+          pointer-events: none;
+          transition: 200ms ease-in-out transform,
+                      200ms ease-in-out font-size;
+        }
+
+        p {
+          color: #573ba3;
+        }
+
+        a {
+          font-weight: bold;
+          text-decoration: none;
+        }
+
+        a:hover {
+          text-decoration: underline;
+        }
+
+        .form-group input:focus ~ label,
+        .form-group input:valid ~ label {
+          transform: translateY(-1.25rem);
+          font-size: .7rem;
+        }
+
+        .btn_sign-in {
+          width: 473px;
+          height: 50px;
+          font-size: 15px;
+          background-color: #e50914;
+          color: #fff;
+          font-weight: 600;
+          border: none;
+          border-radius: 0.3rem;
+          cursor: pointer;
+          margin: 15px 0 58px;
+        }
+
+          .massage-error {
+            color: red;
+            margin-bottom: 57px;
+
+        }
+      }
+  }
+}

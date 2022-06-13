@@ -1,0 +1,151 @@
+.wrapper-search {
+  width:1286px;
+  display: flex;
+  flex-direction: column;
+  justify-content: normal;
+  background-color: #fff;
+
+  .search-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 1286px;
+    height: 99px;
+    border-bottom: 1px solid #dbdbdb;
+  
+    .input-find {
+      background-color: #e1e1e3;
+      border: 1px solid whitesmoke;
+      display: flex;
+      flex-direction: row;
+      justify-content: normal;
+      height: 49px;
+   
+  
+      &__query {
+        margin: auto;
+        border: 1px solid;
+        display: flex;
+        width: 433px;
+  
+        .search-iput {
+          width: 300px;
+  
+        }
+  
+        .search-btn {
+          width: 114px;
+          background: #e50914;
+          outline: none;
+          border: none;
+          color: white;
+          font-size: 30px;
+        }
+      }
+  
+      
+    }
+    .category {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0 auto;
+      width: 816px;
+      height: 46px;
+      align-items: center;
+  
+      &__point {
+        width: 116px;
+      }
+    }
+  
+  }
+  
+  .list-product {
+    position:relative;
+  }
+  
+  .container_product {
+    display: flex;
+    flex-direction: column;
+    justify-content:normal;
+
+  
+    &__book {
+      display: flex;
+      flex-direction: row;
+      justify-content:space-between;
+      width: 990px;
+      height: 181px;
+      margin: 0 auto;
+      margin-top: 58px;
+      border-bottom: 1px solid #dbdbdb;
+  
+  
+      .photo-book {
+        width: 200px;
+        height: 181px;
+      
+
+        &__frame {
+          width: 150px;
+          height: 150px;
+        }
+      }
+  
+      .block-imformation {
+        width: 412px;
+    
+  
+        &__product {
+          color:#382110; 
+          font-weight: bold;
+          cursor: pointer;
+        }
+  
+        &__product:hover { 
+          text-decoration: underline; 
+         }
+  
+         &__author,
+         &__cost {
+          color:black; 
+          font-weight: bold;
+         }
+      }
+  
+      .block_btns {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 150px;
+        height: 98px;
+
+        .btn-trash {
+          width: 15%;
+          cursor: pointer;
+        }
+      }
+
+      .block-quantity {
+        position: relative;
+        border-radius: 4px;
+        // border: 1px solid black;
+
+        .items-quantity {
+          border-radius: 4px;
+          height: 55px;
+          width: 92px;
+        }
+
+        .input_label {
+          position: absolute;
+          left: 2px;
+        }
+      }
+    }
+  
+  }  
+  
+
+}
+

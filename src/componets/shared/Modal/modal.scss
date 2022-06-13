@@ -1,0 +1,90 @@
+.model {
+  position: absolute;
+  left: 30%;
+  top: 30%;
+
+  .container-model {
+    display: flex;
+    flex-direction: column;
+    justify-content: normal;
+    width: 298px;
+    height: 387px;
+    border-radius: 3px;
+    background-color: white;
+
+    &__information {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      margin: 0 auto;
+      margin-top: 4px;
+      width: 276px;
+      height: 195px;
+
+      .frame {
+        display: block;
+        width: 142px;
+        height: 184px;
+
+        &__item_img {
+          width: 125px;
+        }
+      }
+
+      &__about {
+        height: 183px;
+        width: 120px;
+
+        .title-item {
+          font-size: 15px;
+          color: black;
+          font-weight: bold;
+        }
+      
+      }
+
+    }
+
+    &__additional {
+      width: 133px;
+      height: 70px;
+      margin-left: 153px;
+
+      .prise-item {
+        text-align: start;
+        font-weight: bold;
+      }
+
+      .massage {
+        font-size: 14px;
+        text-align: start;
+      }
+    }
+
+    &__block_btns {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      width: 298px;
+      height: 80px;
+    }
+
+    .btn-outline-danger {
+      width: 245px;
+      height: 20px;
+      font-size: 13px;
+      border-radius: 20px;
+      border-width: 1px ;
+      margin: 0 auto;
+    }
+
+    .btn-danger {
+      font-size: 13px;
+      height: 24px;
+      width: 245px;
+      border-radius: 20px;
+      border-width: 1px ;
+      margin: 0 auto;
+    }
+  }
+}
