@@ -44,7 +44,6 @@ export const searchBooks = async() => {
   const removeItems = () => {
     const container_product = document.querySelectorAll('.container_product__book');
     container_product.forEach(item => item.remove());
-
   }
 
   const get_fn = (fn_remove) => ModalDelete.setDate(fn_remove, TEXT.deleteCart);

@@ -170,11 +170,12 @@ export const information = async () =>  {
 
 
   btn_basket.onclick = async () => {
-    const getBooks = FUNCTION.setValue(convert, getProduct, setBooks);
+  
+    if (getUser1().authId && getToken()) {
+      const getBooks = FUNCTION.setValue(convert, getProduct, setBooks);
+      setToBasket(getBooks);
+    } else  FUNCTION.setValue(convert, getProduct, setBooks);
 
-    (getUser1().authId && getToken()) ? setToBasket(getBooks) :
-      FUNCTION.setValue(convert, getProduct, setBooks)
-   
     COUNTMAP.get('display').innerText = numbers();
   }
 

@@ -24,6 +24,8 @@ export const usersWhishes =  async (fn_item)  => {
 
   booksP.forEach(({id}, i) => getBtns.set(id, id));
 
+  console.log(booksP);
+
   ratingBooks.forEach(item => map_books.set(item.bookId, item.rating))
   
 
@@ -35,11 +37,15 @@ export const usersWhishes =  async (fn_item)  => {
 		}
 	})
 
-  const delete_wish = (element, massage, btn, fn_status) => {
+  console.log(userWishes_date);
+
+  const delete_wish = (element, massage, btn ,fn_status) => {
 
     const combine_fn = async () => {
       await deleteUserWishlist(element.id)
+    
       fn_status()
+      // locationMap.get(window.location.pathname)();
     }
     
     ModalDelete.setDate(combine_fn, TEXT.deleteWish)

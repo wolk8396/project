@@ -1,19 +1,20 @@
 export class ShoppingCart {
   #element;
-  #fn_set;
   #fn_increase;
   #fn_remove;
   #teg_p;
   #fn_fullPrice;
+  #fn_modal_window;
+  #massage
 
-
-  constructor (element, fn_set, fn_increase ,fn_remove, teg_p, fn_fullPrice, ) {
+  constructor (element, fn_increase ,fn_remove, teg_p, fn_fullPrice, fn_modal_window, massage) {
     this.#element = element,
-    this.#fn_set = fn_set,
     this.#fn_increase = fn_increase,
     this.#fn_remove = fn_remove,
     this.#teg_p = teg_p,
-    this.#fn_fullPrice = fn_fullPrice
+    this.#fn_fullPrice = fn_fullPrice,
+    this.#fn_modal_window = fn_modal_window,
+    this.#massage = massage
   }
 
   getCart() {
@@ -32,6 +33,9 @@ export class ShoppingCart {
     const btn_plus = document.createElement('button');
     const td_price = document.createElement('td');
     const price = document.createElement('p');
+
+    (this.#element.count >= 1) ?
+      btn_minus.setAttribute('disabled', true) : null;
 
     td_btnDelete.className = 'btn_delete';
     img.className = 'photo-product';
@@ -56,46 +60,51 @@ export class ShoppingCart {
     but_btnDelete.src = '../../../picture/trash2-fill (1).svg';
     img.src = this.#element.photo;
     h4.innerText = this.#element.product;
-    p_count.innerText = this.#element.count
-    price.innerText = this.#element.cost
-
+    p_count.innerText = this.#element.count;
+    price.innerText = this.#element.cost;
 
     const total = () => {
       let sum = 0;
       sum += this.#element.count * this.#element.cost;
-      price.innerHTML = sum;
-      this.#fn_fullPrice(this.#teg_p)
+      price.innerHTML = sum.toFixed(2) ;
+      this.#fn_fullPrice(this.#teg_p);
     }
 
     const removeBook = () => {
       this.#fn_remove(this.#element.id);
       tr.remove();
-      this.#fn_fullPrice(this.#teg_p)
+      this.#fn_fullPrice(this.#teg_p);
+      total();
+    }
+  
+    but_btnDelete.onclick = () => {
+      this.#fn_modal_window.setDate(removeBook, this.#massage);
     }
 
-    but_btnDelete.onclick = () => removeBook();
-  
     btn_minus.onclick = () => {
-      let decrease = --this.#element.count
+      let decrease = --this.#element.count;
       this.#fn_increase(this.#element.id, decrease, p_count);
 
-      (decrease === 0) ? removeBook() :  decrease;
+      if (this.#element.count === 1) {
+        this.#fn_modal_window.setDate(removeBook, this.#massage);
+        btn_minus.setAttribute('disabled', true);
+      }
 
       total();
      }
 
-    
      btn_plus.onclick = () => {
-     let increase = ++this.#element.count
+      let increase = ++this.#element.count;
 
-     this.#fn_increase(this.#element.id, increase, p_count);
-    
-     total();
+      this.#fn_increase(this.#element.id, increase, p_count);
+
+      (this.#element.count === 2) ?
+        btn_minus.removeAttribute('disabled') : null;
+
+      total();
     }
 
-   
-    total()
-
+    total();
 
     return tr;
   }

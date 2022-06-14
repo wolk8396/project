@@ -74,12 +74,11 @@ export class ListBooks {
     input_number.value = 1;
 
     container_product.append(block_photo, block_inf, wrapper_input, block_btns);
-    wrapper_input.append(input_number, input_label)
+    wrapper_input.append(input_number, input_label);
     block_photo.append(photo_book);
     block_inf.append(block_rating, product_book, author_book, cost_book);
     block_btns.append(add_btn, delete_book, btn_trash);
     block_rating.append(this.#rating(this.#element.rating));
-
 
     const removeItem = () => {
       const getBooks =  this.#getItem();
@@ -92,34 +91,36 @@ export class ListBooks {
       add_btn.innerText = 'ADD TO CART';
       display.innerHTML = this.#fn.countItems();
 
-      this.#fn_basket(productRemove)
+      this.#fn_basket(productRemove);
+    }
 
+    
+
+    const wishMap = new Map([
+      [true, () => {
+        massage.innerText = 'was added to ';
+        delete_book.innerText = 'DELETE';
+      }],
+      [false, () => {
+        delete_book.innerText = 'add to wish';
+        massage.innerText = 'has not been added';
+      }]
+    ])
+
+    const locationMap = new Map([
+      [this.#link.account, () =>  delete_book.innerText = 'DELETE'],
+      [this.#link.search, () =>  wishMap.get(this.#element.exist)()],
+    ])
+
+    const checkStatus = () => {
+      (window.location.pathname === this.#link.account) ? 
+      container_product.remove() : null
     }
 
    
-      if( window.location.pathname === this.#link.account) {
-        delete_book.innerText = 'DELETE';
-      } 
-
-  
-      if (window.location.pathname === this.#link.search) {
-        if (this.#element.exist === true) {
-          massage.innerText = 'was added to ';
-          delete_book.innerText = 'DELETE';
-        } else {
-          delete_book.innerText = 'add to wish';
-          massage.innerText = 'has not been added ';
-        } 
-      }
-
-      const checkStatus = () => {
-        (window.location.pathname === this.#link.account) ? 
-          container_product.remove() : null
-      }
 
     delete_book.onclick = () => {
      this.#fn_add_wish(this.#element, massage ,delete_book, checkStatus);
-
     }
 
     product_book.onclick = () => {
@@ -131,18 +132,16 @@ export class ListBooks {
       add_btn.innerText = 'IN CART':
       add_btn.innerText = 'ADD TO CART';
 
-    const check_conditions = (get_Fn, getItems) => {
-     
+    const check_conditions = (get_Fn, productItems) => {
+      
       if (!this.#element.basketExist) {
         this.#element.basketExist = true
         add_btn.innerText = 'IN CART';
-        get_Fn(getItems);
-        
-      } else {
-        window.location.pathname = this.#link.basket
-      }
-    }
+        get_Fn(productItems);
 
+      } else  window.location.pathname = this.#link.basket
+
+    }
 
     add_btn.onclick = () => {
       const productItems = this.#fn.setValue(this.#element, this.#getItem, this.#setItem);
@@ -152,11 +151,7 @@ export class ListBooks {
       display.innerHTML = this.#fn.countItems();
     }
 
-    btn_trash.onclick = () => {
-      console.log('f');
-      this.#fn_remove(removeItem);
-    } 
-  
+    btn_trash.onclick = () => this.#fn_remove(removeItem);
 
     input_number.oninput = () => {
       const getNumber  = (+input_number.value);
@@ -167,7 +162,33 @@ export class ListBooks {
       this.#element.count = input_number.value
     }
 
+    locationMap.get(window.location.pathname)();
+
     return container_product;
   }
-
 }
+
+
+// const checkStatus = () => {
+//   (window.location.pathname === this.#link.account) ? 
+//     container_product.remove() : null
+// }
+
+
+      // (window.location.pathname === this.#link.search) ? 
+      //   locationMap.get(this.#element.exist)() : null
+
+      // if (window.location.pathname === this.#link.search) {
+      //     wishMap.get(this.#element.exist)();
+      // }
+
+ // if( window.location.pathname === this.#link.account) {
+      //   delete_book.innerText = 'DELETE';
+      // } 
+// if (this.#element.exist === true) {
+        //   massage.innerText = 'was added to ';//
+        //   delete_book.innerText = 'DELETE';//
+        // } else {
+        //   delete_book.innerText = 'add to wish';
+        //   massage.innerText = 'has not been added ';
+        // } 

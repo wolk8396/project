@@ -28,7 +28,7 @@ static getModalDelete () {
     block_massage.append(text);
     block_btns.append(btn_accept, btn_cancel);
 
-    return main_window
+    return main_window;
 
   }
 
@@ -42,9 +42,7 @@ static getModalDelete () {
 
     test_massage.innerText = text;
 
-    console.log( main_window);
     btn_cancel.onclick = () => {
-
       main_window.style.display = 'none';
     }
 

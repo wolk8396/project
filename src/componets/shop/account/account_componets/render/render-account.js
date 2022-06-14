@@ -14,7 +14,6 @@ export const renderInformationUser = async () => {
 
   const avater = document.querySelector('.photo-user__avatar');
   const {birt, date, firstName, lastName, photo, authId, idLink} = userDate;
-  console.log(userDate);
 
   fullName.innerText = `${firstName} ${lastName}`;
   regestration.innerText = `date of regestration : ${date}`;
