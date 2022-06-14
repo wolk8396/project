@@ -35,10 +35,7 @@ export const My_account = async ()  => {
 
   header.append(Header.getHeader());
 
-
   usersWhishes(openFn);
-
-
 
   renderInformationUser();
 

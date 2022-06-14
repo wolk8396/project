@@ -1,7 +1,7 @@
 .wrapper-basket {
 	margin: 0;
 	padding: 0;
-	background-color: black;
+	background-color: white;
 	// line-height: 1.7;
 	width: 1286px;
 	}
@@ -26,6 +26,49 @@
 	overflow-y: scroll;
 	width: 1286px;
 	height: 800px;
+
+	table {
+    border-collapse: collapse;
+    border: 1ps solid  #666;
+
+		.full-total {
+			padding: 0;
+
+			&__text {
+				display: inline-block;
+  			list-style: none;
+				border: 1px solid  blue;
+				width: 124px;
+				padding: 5px;
+				height: 30px;
+			}
+
+			&__prise {
+				display: inline-block;
+  			list-style: none;
+				width: 78px;
+				height: 30px;
+    		text-align: start;
+				border: 1px solid  blue;
+				padding: 5px;
+			}
+
+			.container_btn {
+				display: inline-block;
+				list-style: none;
+				border: 1px solid  blue;
+				width: 40px;
+				height: 30px;
+				
+
+				&__btn-update-cart {
+					width: 25px;
+					height: 25px;
+				}
+			}
+		}
+	}
+
 }
 
 .products-element {

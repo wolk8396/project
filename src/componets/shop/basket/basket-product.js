@@ -102,7 +102,7 @@ export const displayProduct = () => {
         const total = () => {
           let sum = 0;
           sum += item.cost * item.count;
-          cost_product.innerHTML = sum +'$';
+          cost_product.innerHTML = item.cost * item.count;;
           displayTotal.innerHTML = 'TOTAL:'+ count();
         }
         total()
