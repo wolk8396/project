@@ -1,11 +1,9 @@
-import '../../shared/const'
 import { Header, COUNTMAP} from '../../shared/header/header'
 import { getToken, getUser1, numbers, setBooks, getProduct} from '../../shared/services/local-storage-service'
-import {getBasketBooks, basketUser} from '../../get date/dateusers'
-import { ShoppingCart } from '../../shared/shoping-cart/shoping-cart'
-import { updatBasket} from '../../aip/aip-handlers'
-import { Footer } from '../../shared/footer/footer'
-import {ModalDelete} from '../../shared/Modal_delete/modal-delete'
+import {getBasketBooks, basketUser} from '../../get date/dateusers';
+import { ShoppingCart } from '../../shared/shoping-cart/shoping-cart';
+import { Footer } from '../../shared/footer/footer';
+import {ModalDelete} from '../../shared/Modal_delete/modal-delete';
 import {PATH, TEXT } from '../../shared/const';
 import { Confirmation } from '../../shared/confirmation/confirmation window';
 
@@ -26,26 +24,26 @@ export const basketPage =  async () => {
 
 	const setValueLocla = (id, operation, p) => {
 		const getBooks =  getProduct();
-		p.innerText = operation
+		p.innerText = operation;
 
 		const setArray = getBooks.map(el => (el.id === id) ? ({...el, count:operation}) : el);
 
 		(operation >= 1) ? setBooks(setArray) : null;
 
-		setBooks(setArray)
+		setBooks(setArray);
 	}
 
-	const remove = async id => {
+	const remove = id => {
 		const books = getProduct();
 		const product = books.filter((item, index) => item.id !== id);
 
-	(	getUser1().authId && getToken()) ?
-		await	basketUser(product):null
+		(getUser1() && getToken()) ? basketUser(product) : null;
 
-		setBooks(product)
+		setBooks(product);
 	}
 
-	const renderShoppingCart = (product) => {
+	const renderShoppingCart = product => {
+
 		const table = document.createElement('table');
 		const tr = document.createElement('tr');
 		const td_fullPrice = document.createElement('td');
@@ -82,14 +80,14 @@ export const basketPage =  async () => {
 
 		tr.append(td_fullPrice);
 		table.append(tr);
-		wrapper_btn.append(btn_update)
+		wrapper_btn.append(btn_update);
 		containerPrice.append(total_p, full_total, wrapper_btn);
 		td_fullPrice.append(containerPrice);
 
-		btn_update.onclick = async() => {
+		btn_update.onclick = () => {
 			const books =	getProduct();
 			(getUser1().authId && getToken()) ? 
-				await basketUser(books) : Confirmation.showWindow();
+				basketUser(books) : Confirmation.showWindow();
 		}
 
 		countFullPrice(renderProduct, full_total);
@@ -102,15 +100,15 @@ export const basketPage =  async () => {
 					const renderProduct = getProduct();
 					renderShoppingCart(renderProduct);
 			})
+		
 		} else renderShoppingCart(renderProduct);
 
 
-	modal_deleteWindow.append(ModalDelete.getModalDelete())
+	modal_deleteWindow.append(ModalDelete.getModalDelete());
 	
 	modal_confirmation.append(Confirmation.confirmation(PATH, TEXT))
 
 	header.append(Header.getHeader());
 
 	Footer.getFooter(wrapper);
-
 }

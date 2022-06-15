@@ -175,7 +175,7 @@ export const userWishlist = (product, user) => {
       body: JSON.stringify({
           ...product,
           idUser:user,
-          bookID:product.id
+          bookId:product.id
         })
       }
     )

@@ -24,28 +24,30 @@ export const usersWhishes =  async (fn_item)  => {
 
   booksP.forEach(({id}, i) => getBtns.set(id, id));
 
-  console.log(booksP);
+  console.log(booksP, 'local');
+  console.log(getBtns);
 
-  ratingBooks.forEach(item => map_books.set(item.bookId, item.rating))
-  
+  ratingBooks.forEach(item => map_books.set(item.bookId, item.rating));
+
+  console.log(userWishes_date);
+ 
 
   const productList = userWishes_date.map(item => {
 		return {
 			...item,
 			rating:map_books.get(item.bookId),
-      basketExist:item.id === getBtns.get(item.id)
+      basketExist:item.bookId === getBtns.get(item.bookId)
 		}
 	})
 
-  console.log(userWishes_date);
+  console.log(productList, 'product');
 
   const delete_wish = (element, massage, btn ,fn_status) => {
 
     const combine_fn = async () => {
       await deleteUserWishlist(element.id)
     
-      fn_status()
-      // locationMap.get(window.location.pathname)();
+      fn_status();
     }
     
     ModalDelete.setDate(combine_fn, TEXT.deleteWish)
@@ -54,8 +56,8 @@ export const usersWhishes =  async (fn_item)  => {
 
   const get_fn = (fn_remove) =>  ModalDelete.setDate(fn_remove, TEXT.deleteCart);
 
-  const basket = goods => {
-    (getUser1().authId && getToken()) ?  basketUser(goods) : null
+  const basket = async( goods) => {
+    (getUser1().authId && getToken()) ? await basketUser(goods) : null
   }
 
  

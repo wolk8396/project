@@ -4,7 +4,7 @@ import {AUTHOR} from "../../shop/shop-products"
 import {createTodoComments} from './component/create-todos/create-todos';
 import { Header, COUNTMAP} from '../../shared/header/header';
 import { PATH, TEXT } from '../../shared/const';
-import {getUser1, getLearnMore,  setBooks, getProduct, numbers, getToken} from '../../shared/services/local-storage-service'
+import {getUser1, getLearnMore,  setBooks, getProduct, numbers, getToken, setToken} from '../../shared/services/local-storage-service'
 import { Modal } from '../../shared/Modal/modal';
 import { FUNCTION } from '../../shared/services/function';
 import { Confirmation } from '../../shared/confirmation/confirmation window';
@@ -15,7 +15,6 @@ export const information = async () =>  {
   const wrapper = document.querySelector('.wreaper-learn_more')
   const header = document.querySelector('.header-1');
   const modal_window = document.querySelector('.modal-window-log')
-  const todo = document.querySelector('.get-comments');
   const picture = document.querySelector('.picture');
   const title = document.querySelector('.book-title');
   const prise = document.querySelector('.block-btn__cost');
@@ -43,7 +42,6 @@ export const information = async () =>  {
   const productBook2 = new Map();
 
   modal_window.append(Confirmation.confirmation(PATH, TEXT));
-  const modalItem = document.querySelector('.main-window');
 
   const fn_send = number => {
   
@@ -79,7 +77,6 @@ export const information = async () =>  {
 
   arr.forEach(({img}) =>  arrayBook.set('img', img));
 
-
   const bookRender = [book].map(item => ({ ...item, photoAuthor: arrayBook.get('img'), bookId:id}));
 
   const convert = bookRender.reduce((acc, item) => ({...item}), {});
@@ -98,9 +95,8 @@ export const information = async () =>  {
  
   const checkStatus = async() => {
     let getDate = [];
-    await getUsersWish().then(res => {
-      getDate = res
-    });
+
+    await getUsersWish().then(res =>  getDate = res);
 
     const findItem =  getDate.find(({bookId}) => bookId === convert.id);
 
@@ -114,83 +110,79 @@ export const information = async () =>  {
         btn_wish.innerText = 'delete';
       } else {
         status_massage.innerText = TEXT.Nonexistent;
-        btn_wish.innerText = 'ADD TO WISHLIST'
+        btn_wish.innerText = 'ADD TO WISHLIST';
       }
     })
   }
 
   const check_conditions  = async() => {
     const status = await checkStatus();
-    spiners.style.display = 'block';
 
-    if (status) {
-    
-      await deleteUserWishlist(status.id).then(res => {
-        spiners.style.display = 'none'
-      })
-    } else {
-      await userWishlist(convert, authId).then( res => {
-          spiners.style.display = 'none'
-        });
-    }
+    (status) ?
+      await deleteUserWishlist(status.id)
+      .then(res =>  spiners.style.display = 'none'):
+      await userWishlist(convert, authId)
+      .then( res =>  spiners.style.display = 'none');
+
     setStatus();
   }
 
   btn_wish.onclick = () => {
+    spiners.style.display = 'block';
+
    ( authId && getToken()) ? 
     check_conditions() : Confirmation.showWindow();
   }
 
-  const checkConditionsBasket = async () => {
+  const findItem = () => getProduct().find(item =>item.bookId === convert.id);
+ 
+  const checkConditionsBasket = () => {
 
-    await getBasketBooks ().then(res => {
-      const existItem = res.find(item =>item.bookId === convert.id);
-
-      (!existItem) ? btn_basket.innerText = 'ADD TO CART' : 
-        btn_basket.innerText ='IN CART'
-    })
+    (!findItem()) ? btn_basket.innerText = 'ADD TO CART' : 
+      btn_basket.innerText ='IN CART';
   }
 
-  const setToBasket = async(book) => {
-    let existItem = [];
+  const No_registration = () => {
+    const checkUndefined = findItem();
 
-    await getBasketBooks ().then( res => {
-      existItem = res.find(item =>item.bookId === convert.id)
-    })
-
-    if (!existItem) {
-      basketUser(book);
+    if (!checkUndefined) {
       model_items.style.display = 'block';
       btn_basket.innerText ='IN CART';
-    } else {
-      window.location.pathname = PATH.basket
-    } 
+      FUNCTION.setValue(convert, getProduct, setBooks);
+    } else window.location.pathname = PATH.basket;
+  }
+
+  const  exist_registration = () => {
+    const checkUndefined = findItem();
+
+    if (!checkUndefined) {
+      const set = FUNCTION.setValue(convert, getProduct, setBooks);
+      model_items.style.display = 'block';
+      btn_basket.innerText ='IN CART';
+
+      basketUser(set)
+    } else window.location.pathname = PATH.basket;
 
   }
 
-
-  btn_basket.onclick = async () => {
-  
-    if (getUser1().authId && getToken()) {
-      const getBooks = FUNCTION.setValue(convert, getProduct, setBooks);
-      setToBasket(getBooks);
-    } else  FUNCTION.setValue(convert, getProduct, setBooks);
+  btn_basket.onclick = () => {
+    (getUser1().authId && getToken()) ? exist_registration() : No_registration()
 
     COUNTMAP.get('display').innerText = numbers();
   }
 
   more.onclick = () => {
-      if (des.className === 'des-book__book-story') {
-        des.classList.add('active');
-        more.innerHTML = '...Less';
-      } else {
-        des.classList.remove('active');
-        more.innerHTML = '...MORE';
-      }
+    if (des.className === 'des-book__book-story') {
+      des.classList.add('active');
+      more.innerHTML = '...Less';
+    } else {
+      des.classList.remove('active');
+      more.innerHTML = '...MORE';
+    }
   }
 
+  const rating_activate = () => {
 
-  if ( getToken() && authId) {
     wrapper_stars.forEach(item => {
       item.addEventListener('mouseenter', () => {
         rating_active.style.width = `${item.value/0.05}%`;
@@ -201,10 +193,11 @@ export const information = async () =>  {
         rating_active.style.width = `${numberRating * 20}%`;
       })
     })
-    
-  } else  click_rating.style.display = 'none';
+  }
 
-  
+  (getToken() && getToken()) ? rating_activate() :
+    click_rating.style.display = 'block';
+
 
   setStatus();
 

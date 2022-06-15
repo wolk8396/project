@@ -28,18 +28,17 @@ export const searchBooks = async() => {
   const basketMap = new Map();
   const find = document.querySelector('.category');
   const getDate = await getUsersWish();
-  const getBasketItems = await getBasketBooks();
+  const getBasketItems = getProduct();
 
+  getDate.forEach(({bookId})=>  itemId.set(bookId, bookId));
 
-  getDate.forEach(({bookID})=>  itemId.set(bookID, bookID));
+  getBasketItems.forEach(({bookId}) =>  basketMap.set(bookId, bookId));
 
-  if (getBasketItems !== undefined) {
-    getBasketItems.forEach(({id}) =>  basketMap.set(id, id));
-  }
+  ratingBooks.forEach(item => map_books.set(item.bookId, item.rating));
 
-  ratingBooks.forEach(item => map_books.set(item.bookId, item.rating))
+  const changeKey = PRODUCT.map(item => ( {...item, 'bookId':item.id}))
 
-	const productList = PRODUCT.map(item => ({...item, rating:map_books.get(item.id), exist:item.id === itemId.get(item.id), basketExist:item.id === basketMap.get(item.id)}));
+	const productList = changeKey.map(item => ({...item, rating:map_books.get(item.id), exist:item.id === itemId.get(item.id), basketExist:item.bookId === basketMap.get(item.bookId)}));
 
   const removeItems = () => {
     const container_product = document.querySelectorAll('.container_product__book');
@@ -52,7 +51,7 @@ export const searchBooks = async() => {
 
     const basket = goods => {
 
-      (getUser1().authId && getToken()) ?  basketUser(goods) : null
+      (getUser1().authId && getToken()) ? basketUser(goods) : null
     }
 
     const add_wish = async (item, massage, btn) => {
@@ -60,7 +59,7 @@ export const searchBooks = async() => {
       if (getToken() &&  getUser1().authId) {
         const getDate = await getUsersWish();
 
-        const findSome = getDate.find(element => element.bookID === item.id);
+        const findSome = getDate.find(element => element.bookId === item.id);
 
         const deleteWish = async() => {
           btn.innerText = 'add to wish'

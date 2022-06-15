@@ -142,12 +142,12 @@ export  const upDateRating= async(id, number) => {
     await createRating(number, id);
 }
 
-export const getAllBookRating =async() => {
+export const getAllBookRating = async() => {
   const getRatingItem = await getRating ();
+  const getNumber = new Map();
+
   let play = FUNCTION.createDate(getRatingItem);
-
- const getNumber = new Map()
-
+  
   const count =  play.reduce((acc, item, i)  => {
 
     acc[item.bookId] = (acc[item.bookId] || 0) + (+item.rating);
@@ -182,7 +182,7 @@ export const basketUser = async(items) => {
   const checkStatus = productDate.find(item => item.userid === getUser1().authId);
 
   if (!checkStatus) {
-    await createBasket (items);
+   await createBasket (items);
   } else {
     await updatBasket(items, checkStatus.id);
   }

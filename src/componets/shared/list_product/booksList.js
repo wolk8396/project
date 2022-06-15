@@ -53,7 +53,7 @@ export class ListBooks {
     cost_book.className = 'block-imformation__cost';
     block_btns.className = 'block_btns';
     wrapper_input.className = 'block-quantity'
-    add_btn.id = this.#element.id;
+    add_btn.id = this.#element.bookId;
     add_btn.className = 'btn btn-primary';
     btn_trash.className = 'btn-trash'
     delete_book.className = 'btn btn-danger';
@@ -83,7 +83,7 @@ export class ListBooks {
     const removeItem = () => {
       const getBooks =  this.#getItem();
 
-      const productRemove = getBooks.filter((item) => item.id !== this.#element.id);
+      const productRemove = getBooks.filter((item) => item.bookId !== this.#element.bookId);
 
       this.#setItem(productRemove);
 
@@ -122,6 +122,7 @@ export class ListBooks {
     delete_book.onclick = () => {
      this.#fn_add_wish(this.#element, massage ,delete_book, checkStatus);
     }
+   
 
     product_book.onclick = () => {
       window.location.pathname = this.#link.inf;
@@ -132,21 +133,25 @@ export class ListBooks {
       add_btn.innerText = 'IN CART':
       add_btn.innerText = 'ADD TO CART';
 
-    const check_conditions = (get_Fn, productItems) => {
+    const check_conditions = (get_Fn) => {
       
-      if (!this.#element.basketExist) {
+      if (this.#element.basketExist  === false) {
         this.#element.basketExist = true
+        const productItems = this.#fn.setValue(this.#element, this.#getItem, this.#setItem);
+
         add_btn.innerText = 'IN CART';
         get_Fn(productItems);
 
-      } else  window.location.pathname = this.#link.basket
+      }  else {
+        window.location.pathname = this.#link.basket
+      } 
 
     }
 
     add_btn.onclick = () => {
-      const productItems = this.#fn.setValue(this.#element, this.#getItem, this.#setItem);
-
-      check_conditions(this.#fn_basket, productItems);
+ 
+     
+      check_conditions(this.#fn_basket);
 
       display.innerHTML = this.#fn.countItems();
     }

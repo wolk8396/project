@@ -63,12 +63,6 @@ export const createTodoComments = async() => {
     ModalDelete.setDate(confirmOperation, TEXT.deleteComment);
   }
 
-  const block_btn = () => {
-    if (!getUser1 &&  !getToken) {
-      Confirmation.showWindow();
-    }
-  }
-
   const upDateComment = async(massage_text, id) => {
     await updateTodo(massage_text, id, current_time);
   }

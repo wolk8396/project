@@ -16,14 +16,14 @@ export const my = async () => {
 	const window_modal = document.querySelector('.modal-window-log')
 	const block_pages = document.createElement('div');
   const getBtns = block_pages.childNodes;
-	const ratingBooks = await getAllBookRating();
 	const map_books = new Map();
-  block_pages.className = 'btn-page';
-
 	const books =	getProduct();
+	const ratingBooks = await getAllBookRating();
+
 	let number = 0;
 	let getElement;
-
+	
+	block_pages.className = 'btn-page';
 
   (books === null) ? setBooks([]) : null;
 
@@ -31,9 +31,9 @@ export const my = async () => {
 
   const getBlock = element => getElement = element;
 
-	ratingBooks.forEach(item => map_books.set(item.bookId, item.rating))
+	ratingBooks.forEach(item => map_books.set(item.bookId, item.rating));
 
-	const productList = PRODUCT.map(item => ({...item, rating:map_books.get(item.id)}))
+	const productList = PRODUCT.map(item => ({...item, rating:map_books.get(item.id)}));
 
 	window_modal.append(Confirmation.confirmation(PATH, TEXT));
 
@@ -45,12 +45,12 @@ export const my = async () => {
 
 		btn_page.className = 'btn-number-page';
 		btn_page.innerText = i+1;
-		btn_page.id = i+1
+		btn_page.id = i+1;
 
 		btn_page.onclick = () => {
 			number = (+ btn_page.textContent -1);
 
-			getElement.remove()
+			getElement.remove();
 			render();
 			btn_active(number, btn_page);
 		}
@@ -60,8 +60,8 @@ export const my = async () => {
 		let start = 0, pages = 1;
 		let middle = 0, end = 0;
 	
-		start =  number_page * pages
-		end = start + pages
+		start =  number_page * pages;
+		end = start + pages;
 		middle = end - 2;
 
 		getBtns.forEach((btn, i) => {
@@ -75,9 +75,9 @@ export const my = async () => {
 				btn.classList.remove('active');
 				getBtns[getBtns.length-1].classList.add('active');
 			}
+
 		})
 	}
-
 
   const checkLog = () => {
 		(!getUser1().authId) ? 
@@ -114,19 +114,18 @@ export const my = async () => {
 			author.className ='products-element__author';
 			btnAdd.className ='products-element__add';
 			btnMore.id = item.id;
-			btnAdd.id= item.id;
 			btnMore.className ='products-element__more';
 			cost.className ='products-element__cost';
-			cart_check.className ='move'
+			cart_check.className ='move';
 		
-			bookPage.append(block)
+			bookPage.append(block);
 			block.append(container);
 			container.append(productsElement);
-			container_title.append(product)
+			container_title.append(product);
 			productsElement.append(container_rating, container_title, photo, author, cost, btnMore);
 			container_rating.append(RATING.activeRating(item.rating));
 
-			getBlock(block)
+			getBlock(block);
 
 			btnAdd.innerHTML = 'ADD TO CARD';
 			btnMore.innerText = 'Learn More'
@@ -136,12 +135,11 @@ export const my = async () => {
 			cost.innerHTML = item.cost + '$';
   
 			btnMore.onclick = () => {
-				setLearnMore(item)
+				setLearnMore(item);
 				window.location.href = PATH.inf;
 			}
 		});
 	}
-
 
   checkLog();
 
@@ -151,5 +149,5 @@ export const my = async () => {
 
 	render();
 
-	Footer.getFooter(wrapper_shope)
+	Footer.getFooter(wrapper_shope);
 }
