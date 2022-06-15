@@ -4,7 +4,7 @@ import {AUTHOR} from "../../shop/shop-products"
 import {createTodoComments} from './component/create-todos/create-todos';
 import { Header, COUNTMAP} from '../../shared/header/header';
 import { PATH, TEXT } from '../../shared/const';
-import {getUser1, getLearnMore,  setBooks, getProduct, numbers, getToken, setToken} from '../../shared/services/local-storage-service'
+import {getUser1, getLearnMore,  setBooks, getProduct, numbers, getToken} from '../../shared/services/local-storage-service'
 import { Modal } from '../../shared/Modal/modal';
 import { FUNCTION } from '../../shared/services/function';
 import { Confirmation } from '../../shared/confirmation/confirmation window';
@@ -91,7 +91,14 @@ export const information = async () =>  {
   btn_wish.innerText = 'ADD TO WISHLIST';
   btn_basket.innerHTML = 'ADD TO CARD';
 
-  model_items.append(Modal.modlaWindow(model_items, convert, FUNCTION, PATH.basket));
+  model_items.append(
+    Modal.modlaWindow(
+      model_items,
+      convert,
+      FUNCTION,
+      PATH.basket
+    )
+  );
  
   const checkStatus = async() => {
     let getDate = [];
@@ -166,9 +173,14 @@ export const information = async () =>  {
   }
 
   btn_basket.onclick = () => {
-    (getUser1().authId && getToken()) ? exist_registration() : No_registration()
+    const getBtn = document.querySelector('.btn-danger');
 
-    COUNTMAP.get('display').innerText = numbers();
+    (getUser1().authId && getToken()) ? exist_registration() : No_registration();
+
+    let number = FUNCTION.countItems();
+    getBtn.innerText = `check out items(${number})`
+
+    Header.countItems(number);
   }
 
   more.onclick = () => {

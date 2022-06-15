@@ -1,19 +1,20 @@
 import { Header, COUNTMAP} from '../../shared/header/header'
-import { getToken, getUser1, numbers, setBooks, getProduct} from '../../shared/services/local-storage-service'
+import { getToken, getUser1, setBooks, getProduct} from '../../shared/services/local-storage-service'
 import {getBasketBooks, basketUser} from '../../get date/dateusers';
 import { ShoppingCart } from '../../shared/shoping-cart/shoping-cart';
 import { Footer } from '../../shared/footer/footer';
 import {ModalDelete} from '../../shared/Modal_delete/modal-delete';
 import {PATH, TEXT } from '../../shared/const';
 import { Confirmation } from '../../shared/confirmation/confirmation window';
+import { FUNCTION } from '../../shared/services/function';
 
 export const basketPage =  async () => {
 	const header = document.querySelector('.header-basket');
 	const wrapper = document.querySelector('.wrapper-basket');
 	let product_book = document.querySelector('.product');
-	const renderProduct = getProduct();
 	const modal_deleteWindow = document.querySelector('.modal-window');
 	const modal_confirmation = document.querySelector('.modal-confirmation');
+	const renderProduct = getProduct();
 
 	const countFullPrice =(element) => {
 		const books = getProduct();
@@ -36,6 +37,9 @@ export const basketPage =  async () => {
 	const remove = id => {
 		const books = getProduct();
 		const product = books.filter((item, index) => item.id !== id);
+		let number = FUNCTION.countItems();
+
+		Header.countItems(number);
 
 		(getUser1() && getToken()) ? basketUser(product) : null;
 
@@ -43,7 +47,6 @@ export const basketPage =  async () => {
 	}
 
 	const renderShoppingCart = product => {
-
 		const table = document.createElement('table');
 		const tr = document.createElement('tr');
 		const td_fullPrice = document.createElement('td');
@@ -106,7 +109,7 @@ export const basketPage =  async () => {
 
 	modal_deleteWindow.append(ModalDelete.getModalDelete());
 	
-	modal_confirmation.append(Confirmation.confirmation(PATH, TEXT))
+	modal_confirmation.append(Confirmation.confirmation(PATH, TEXT));
 
 	header.append(Header.getHeader());
 

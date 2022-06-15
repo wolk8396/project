@@ -39,8 +39,7 @@ export class Modal {
     prise_item.innerText =  `${elements.cost} $`;
     massage.innerText = 'Is now in your cart';
     keep_shopping.innerText = 'keep shopping';
-    check_out.innerText = `check out items(${FUNCTION.countItems()})`
-
+  
     wrapper_modal.append(container);
     information.append(frame, about_item);
     about_item.append(title_item);
@@ -50,11 +49,9 @@ export class Modal {
     block_btns.append(keep_shopping, check_out);
 
     keep_shopping.onclick =() => element.style.display = 'none';
-    console.log( check_out);
-    
+
     check_out.onclick =() => window.location.pathname = basket;
-    
-  
+
     return wrapper_modal;
   }
 }

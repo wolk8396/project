@@ -10,7 +10,17 @@ export class ListBooks {
   #fn_basket;
   #fn_remove
 
-  constructor (element, fn_add_wish, link, setLearnMore, rating, getItem, setItem,  fn, fn_basket, fn_remove) {
+  constructor (
+    element,
+    fn_add_wish,
+    link,
+    setLearnMore,
+    rating,
+    getItem,
+    setItem,
+    fn, fn_basket,
+    fn_remove
+  ) {
     this.#element = element,
     this.#fn_add_wish = fn_add_wish,
     this.#link = link,
@@ -67,7 +77,7 @@ export class ListBooks {
     author_book.innerText = this.#element.author;
     product_book.innerText = this.#element.product;
     cost_book.innerText = this.#element.cost + '$';
-    btn_trash.src = '../../../picture/trash2-fill (1).svg'
+    btn_trash.src = '../../../picture/trash2-fill (1).svg';
     add_btn.innerText = 'ADD TO CARD';
     input_label.innerText = 'quantity'
     delete_book.innerText = 'DELETE';
@@ -94,8 +104,6 @@ export class ListBooks {
       this.#fn_basket(productRemove);
     }
 
-    
-
     const wishMap = new Map([
       [true, () => {
         massage.innerText = 'was added to ';
@@ -108,49 +116,43 @@ export class ListBooks {
     ])
 
     const locationMap = new Map([
-      [this.#link.account, () =>  delete_book.innerText = 'DELETE'],
+      [this.#link.account, () => delete_book.innerText = 'DELETE'],
       [this.#link.search, () =>  wishMap.get(this.#element.exist)()],
     ])
 
     const checkStatus = () => {
-      (window.location.pathname === this.#link.account) ? 
+      (window.location.pathname === this.#link.account) ?
       container_product.remove() : null
     }
 
-   
-
     delete_book.onclick = () => {
-     this.#fn_add_wish(this.#element, massage ,delete_book, checkStatus);
+     this.#fn_add_wish(this.#element, massage, delete_book, checkStatus);
     }
    
-
     product_book.onclick = () => {
       window.location.pathname = this.#link.inf;
-      this.#setLearnMore(this.#element)
+      this.#setLearnMore(this.#element);
     }
 
-    (this.#element.basketExist === true) ?  
+    (this.#element.basketExist === true) ?
       add_btn.innerText = 'IN CART':
       add_btn.innerText = 'ADD TO CART';
 
     const check_conditions = (get_Fn) => {
       
       if (this.#element.basketExist  === false) {
-        this.#element.basketExist = true
+        this.#element.basketExist = true;
         const productItems = this.#fn.setValue(this.#element, this.#getItem, this.#setItem);
 
         add_btn.innerText = 'IN CART';
         get_Fn(productItems);
 
       }  else {
-        window.location.pathname = this.#link.basket
+        window.location.pathname = this.#link.basket;
       } 
-
     }
 
     add_btn.onclick = () => {
- 
-     
       check_conditions(this.#fn_basket);
 
       display.innerHTML = this.#fn.countItems();
@@ -164,7 +166,7 @@ export class ListBooks {
       (getNumber === 1 || getNumber <=0) ?
         input_number.value = 1 : null
 
-      this.#element.count = input_number.value
+      this.#element.count = input_number.value;
     }
 
     locationMap.get(window.location.pathname)();
@@ -172,28 +174,3 @@ export class ListBooks {
     return container_product;
   }
 }
-
-
-// const checkStatus = () => {
-//   (window.location.pathname === this.#link.account) ? 
-//     container_product.remove() : null
-// }
-
-
-      // (window.location.pathname === this.#link.search) ? 
-      //   locationMap.get(this.#element.exist)() : null
-
-      // if (window.location.pathname === this.#link.search) {
-      //     wishMap.get(this.#element.exist)();
-      // }
-
- // if( window.location.pathname === this.#link.account) {
-      //   delete_book.innerText = 'DELETE';
-      // } 
-// if (this.#element.exist === true) {
-        //   massage.innerText = 'was added to ';//
-        //   delete_book.innerText = 'DELETE';//
-        // } else {
-        //   delete_book.innerText = 'add to wish';
-        //   massage.innerText = 'has not been added ';
-        // } 

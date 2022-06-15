@@ -7,7 +7,15 @@ export class ShoppingCart {
   #fn_modal_window;
   #massage
 
-  constructor (element, fn_increase ,fn_remove, teg_p, fn_fullPrice, fn_modal_window, massage) {
+  constructor (
+    element,
+    fn_increase,
+    fn_remove,
+    teg_p,
+    fn_fullPrice,
+    fn_modal_window,
+    massage
+  ) {
     this.#element = element,
     this.#fn_increase = fn_increase,
     this.#fn_remove = fn_remove,
@@ -41,6 +49,7 @@ export class ShoppingCart {
     img.className = 'photo-product';
     h4.className = 'title';
     price.className = 'price';
+    but_btnDelete.className = 'trash_can';
 
     td_btnDelete.append(but_btnDelete);
     tr.append(td_btnDelete);
@@ -62,11 +71,17 @@ export class ShoppingCart {
     h4.innerText = this.#element.product;
     p_count.innerText = this.#element.count;
     price.innerText = this.#element.cost;
+    btn_minus.innerText = '-';
+    btn_plus.innerText = '+';
 
     const total = () => {
       let sum = 0;
       sum += this.#element.count * this.#element.cost;
-      price.innerHTML = sum.toFixed(2) ;
+      price.innerHTML = sum.toFixed(2);
+
+      (this.#element.count >= 2) ?
+      btn_minus.removeAttribute('disabled') : null;
+
       this.#fn_fullPrice(this.#teg_p);
     }
 
@@ -97,10 +112,7 @@ export class ShoppingCart {
       let increase = ++this.#element.count;
 
       this.#fn_increase(this.#element.id, increase, p_count);
-
-      (this.#element.count === 2) ?
-        btn_minus.removeAttribute('disabled') : null;
-
+  
       total();
     }
 

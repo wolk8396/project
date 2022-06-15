@@ -62,7 +62,6 @@ export class CommentUsers {
     displayLikes.className = 'btn btn btn-danger__number';
     avater.className ='user-photo';
 
-
     time_comment.innerText = this.#element.time;
     fullName.innerText = `${this.#element.firstName} ${this.#element.lastName}`;
     textarea.innerText = this.#element.description;
@@ -75,7 +74,6 @@ export class CommentUsers {
     btn_update.innerText ='RENEW COMMENT';
     btn_sendUpdate.innerText = 'SEND COMMENT';
     btn_likes.innerText = 'LIKE';
-
 
     wrapperFullName.append(avater, fullName, time_comment);
     block_likes.append(btn_likes);
@@ -91,7 +89,6 @@ export class CommentUsers {
     (this.#element.photo === 'none') ?
       avater.src = '../../../../../picture/avater.png' : 
       avater.src = this.#element.photo;
-
 
     if (this.#element.idUsers === this.#getUser().authId) {
       btns_container.append(btn_remove_comment, btn_update, btn_sendUpdate)
@@ -116,25 +113,22 @@ export class CommentUsers {
       this.#fn_likes(this.#element.id, btn_likes,  displayLikes);
     }
 
+    btn_sendUpdate.onclick = () => {
+      this.#fn_update(textarea.value, this.#element.id);
+    
+      time_comment.innerText = this.#time;
+      textarea.setAttribute('disabled', true);
+      btn_update.style.display = 'block';
+      btn_sendUpdate.style.display = 'none';
+      time_local.style.display = 'none';
+    }
 
-      btn_sendUpdate.onclick = () => {
-       this.#fn_update(textarea.value, this.#element.id);
-      
-        time_comment.innerText = this.#time;
-        textarea.setAttribute('disabled', true);
-        btn_update.style.display = 'block';
-        btn_sendUpdate.style.display = 'none';
-        time_local.style.display = 'none';
-      }
-
-
-      btn_update.onclick = () => {
-        textarea.removeAttribute('disabled');
-        btn_update.style.display = 'none';
-        btn_sendUpdate.style.display = 'block';
-        time_local.style.display = 'block';
-      }
-
+    btn_update.onclick = () => {
+      textarea.removeAttribute('disabled');
+      btn_update.style.display = 'none';
+      btn_sendUpdate.style.display = 'block';
+      time_local.style.display = 'block';
+    }
 
     return block_comment
   }

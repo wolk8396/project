@@ -149,4 +149,9 @@ export class Header {
     
   }
 
+ static countItems(number) {
+    const getCount = document.querySelector('.display__count');
+    getCount.innerText = number
+  }
+
 }
