@@ -146,3 +146,81 @@
 }
 
 
+@media(max-width:768px) {
+	.wrapper-shop {
+		width: 768px;
+		height: 1344px;
+
+		.main-products {
+		
+			&__list_books {
+				width: 768px;
+				margin-left: 0;
+
+				.products-container {
+
+					.products-element{
+						width: 141px;
+						height: 226px;
+
+						&__product {
+							font-size: 6px;
+							height: 17px;
+						}
+
+						&__photo {
+							width: 95px;
+							height: 83px;
+						}
+
+						&__author,
+						&__cost {
+							font-size: 9px;
+						}
+
+						&__more {
+							width: 100px;
+						}
+					}
+				}
+			
+	
+			}
+		}
+
+		.btn-container,
+		.footer-after {
+			width: 768px;
+		}
+
+	}
+
+}
+
+@media(max-width:400px) {
+	.wrapper-shop {
+		width: 400px;
+		height: 2005px;
+
+		.header-wrapper {
+			position: sticky;
+    	top: 4px;
+			z-index: 1000;
+		}
+
+		.main-products {
+			// margin-top: 112px;
+			height: 1600px;
+
+			&__list_books {
+				grid-template-columns: 1fr 3fr;
+			}
+		}
+
+		.btn-container,
+		.footer-after {
+			width: 400px;
+		}
+	}
+
+}

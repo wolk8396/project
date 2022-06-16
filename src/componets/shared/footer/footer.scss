@@ -32,7 +32,7 @@
       color: whitesmoke;
       font-weight: bold;
       display: inline-block;
-      width: 286px;
+      width: 286px;///
       margin-bottom: 17px;
       text-decoration: none;
     }
@@ -42,4 +42,33 @@
     }
   }
   
+}
+
+@media(max-width:768px)  {
+  .footer {
+    width: 759px;
+
+    .top,
+    .links {
+      width: 634px;
+    }
+  }
+}
+
+@media(max-width:400px)  {
+  .footer {
+    width: 393px;
+
+    .top,.links {
+      width: 534px;
+
+      .link-footer {
+        padding: 6px;
+        width: 194px;
+        margin-bottom: 35px;
+        font-size: 12px;
+      }
+
+    }
+  }
 }

@@ -10,21 +10,24 @@
 .header {
   width: 1286px;
   height: 100px;
-  border: 1px solid black;
   display: flex;
   flex-direction: column;
   justify-content:normal;
+  background-color: #303030;
 
 
   &__title {
     width: 1286px;
     height: 50px;
     background-color: red;
+  
+   
 
     &__top {
       font-weight: bold;
       color: whitesmoke;
       text-align: center;
+      margin-top: 11px;
     }
   }
 
@@ -34,82 +37,68 @@
     border-top: 1px solid black;
     display: flex;
     flex-direction: row;
-    justify-content:normal;
-    background-color: red;
+    justify-content:space-between;
 
-    &__contener-exit {
-      height: 43px;
-      width: 244px;
+    .home-link {
+      display: flex;
+      justify-content: normal;
+      flex-direction: row;
+      width: 282px;
+      border: 40px;
 
-      &__element {
-        display: flex;
-        flex-direction: row;
-        justify-content:normal;
+      &__home-page {
+        cursor: pointer;
+      }
 
-        &__contener-exit {
-          position: relative;
-          width: 235px;
-
-          .exit {
-            width: 35px;
-            height: 35px;
-            cursor: pointer;
-          }
-
-          .text-exit {
-            position: absolute;
-            left: 56px;
-            top: 10px;
-            font-weight: bold;
-            color: whitesmoke;
-            box-sizing: inherit !important;
-          }
-        }
+      &__text {
+        margin-top: 13px;
+        font-weight: bold;
+        color: white;
       }
     }
 
-    &__contener-search {
-      height: 39px;
-      width: 900px;
-      background-color: red;
-      // border: 1px solid black;
-
-      &__main.active {
-        border: 3px solid black;
-        margin-top: 2px;
-      }
-
-      &__main {
-        display: flex;
-        flex-direction: row;
-        justify-content:center;
-        border-radius: 40px 40px 40px 40px;
-        background-color: #f6f5f7;
-        width: 391px;
-        margin-top: 2px;
-        margin-left: 253px;
-      }
-    }
-
-    &__contener-sign {
+    .navigation {
       display: flex;
       flex-direction: row;
-      justify-content:normal;
+      justify-content: normal;
       height: 43px;
-      width: 380px;
+      width: 524px;
+
+     &__search-books {
+      position: relative;
+      width: 52px;
+
+      .search_btn {
+        cursor: pointer;
+        position: absolute;
+        left: 24px;
+        top: 15px;
+      }
+     }
 
       &__account {
         position: relative;
+        width: 157px;
 
         .btn_account {
-         width: 36px;
-         height: 36px;
-         cursor: pointer;
-         position: absolute;
-         right: 54px;
-         top: 5px
+          width: 36px;
+          height: 36px;
+          cursor: pointer;
+          position: absolute;
+          right: 110px;
+          top: 5px;
         }
 
+        .account {
+          width: 36px;
+          height: 36px;
+          cursor: pointer;
+          position: absolute;
+          right: 66px;
+          top: 14px;
+          color: whitesmoke;
+        }
+       
         .menu {
           position: absolute;
           display: none;
@@ -129,12 +118,11 @@
       }
 
       &__sign-up {
-        width: 170px;
+        width: 119px;
         position: relative;
-        width: 170px;
+        width: 119px;
 
         .sign-up {
-          cursor: pointer;
           width: 36px;
           position: absolute;
           left: 1px;
@@ -151,12 +139,10 @@
         }
       }
 
-
-
-      &__sign {
+      &__sign-in {
         position: relative;
         height: 43px;
-        width: 167px;
+        width: 120px;
 
         .sign-in {
           margin: 8px;
@@ -177,7 +163,7 @@
       &__basket {
         position: relative;
         height: 43px;
-        width: 214px;
+        width: 81px;
 
         .basket-shop {
           position: absolute;
@@ -204,6 +190,141 @@
           }
         }
       }
+
+    }
+
+  }
+}
+
+@media(max-width:768px)  {
+  .header {
+    width: 768px;
+
+    &__title,
+    &__search {
+      justify-content: space-around;
+      width: 768px;
+
+      .home-link {
+        width: 141px;
+      }
     }
   }
 }
+
+@media(max-width: 400px)  {
+  .header {
+    justify-content: space-around;
+    height: 109px;
+    width: 400px;
+
+    &__title {
+      width: 400px;
+      font-size: 10px;
+    }
+
+    &__search {
+      width: 400px;
+      height: 100px;
+      flex-direction: column;
+      justify-content: space-between;
+
+      .home-link {
+        width: 396px;
+        justify-content: center;
+
+        &__text {
+          margin-top: 0;
+        }
+      }
+
+      .navigation {
+        width: 400px;
+        flex-direction: row;
+        justify-content: space-between;
+   
+
+        &__search-books {
+          height: 41px;
+          // border: 1px solid;
+
+          .search_btn {
+            left: 26px;
+            top: 12px;
+          }
+        }
+
+
+        &__account {
+          height: 35px;
+          // border: 1px solid;
+
+          .btn_account {
+            right: 80px;
+            top: 1px;
+            width: 19px;
+          }
+
+          .account {
+            font-size: 13px;
+            top: 15px;
+            right: 33px;
+            font-weight: bold;
+          }
+        }
+
+        &__sign-up {
+          height: 35px;
+          // border: 1px solid;
+          width: 122px;
+
+          .sign-up {
+            width: 25px;
+            left: 2px;
+            top: 6px;
+          }
+
+          .signup-text {
+            font-size: 13px;
+            left: 27px;
+          }
+
+        }
+
+        &__sign-in {
+          height: 32px;
+          width: 112px;
+          // border: 1px solid;
+
+          .sign-in {
+            width: 19px;
+            margin-left: 0;
+            margin: 0;
+          }
+
+          .text-sign_in {
+            font-size: 13px;
+            left: 21px;
+            top: 14px;
+          }
+        }
+
+        &__basket {
+          
+          .basket-shop {
+            width: 19px;
+            height: 17px;
+          }
+
+          .display {
+            width: 16px;
+            height: 16px;
+
+          }
+        }
+      }
+    }  
+  }
+}
+
+///width: 97px;

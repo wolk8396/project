@@ -101,3 +101,27 @@
       }
   }
 }
+
+@media(max-width:768px) {
+  .sign-in-page {
+    width: 768px
+  }
+}
+
+
+@media(max-width:400px) {
+  .sign-in-page {
+    width: 400px;
+
+    .from {
+
+      &__container {
+        width: 200px;
+
+        &__form-group {
+          
+        }
+      }
+    }
+  }
+}
