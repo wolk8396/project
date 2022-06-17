@@ -112,14 +112,44 @@
 @media(max-width:400px) {
   .sign-in-page {
     width: 400px;
+    height: 708px;
 
     .from {
+      top: 15%;
 
       &__container {
-        width: 200px;
+        width: 168px;
+        padding: 33px;
+        
+        h1 {
+          font-size: 15px;
+        }
 
-        &__form-group {
-          
+        .form-group {
+          margin-bottom: 18px;
+        }
+
+        .form-group input {
+          width: 132px;
+          height: 30px;
+          font-size:10px;
+        }
+
+        .form-group label {
+          font-size: 9px;
+        }
+
+        .btn_sign-in {
+          width: 158px;
+          height: 27px;
+        }
+
+        .massage-error {
+          margin-bottom: 1px;
+        }
+
+        p {
+          font-size: 10px;
         }
       }
     }

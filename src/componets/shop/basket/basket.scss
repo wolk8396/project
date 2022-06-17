@@ -59,8 +59,27 @@
 		}
 	
 	}
-
 }
 
+@media(max-width:768px) {
+	.wrapper-basket {
+		width: 768px;
+
+		.product {
+			width: 600px;
+		}
+	}
+}
+
+
+@media(max-width:400px) {
+	.wrapper-basket {
+		width: 400px;
+
+		.product {
+			width: 200px;
+		}
+	}
+}
 
 

@@ -81,3 +81,75 @@
   }
 
 }
+
+@media(max-width:768px)  {
+  .contener-sign-up {
+    width: 768px;
+    height: 729px;
+
+    .form-wrapper {
+
+      .form {
+        transform: translateX(-50%);
+        width: 296px;
+      }
+
+      .form-group {
+        margin-bottom: 11px;
+      }
+
+      .form-group input {
+        width: 263px;
+        height: 25px;
+        font-size: 12px;
+      }
+
+      .btn-sign-up {
+        width: 289px;
+        height: 34px;
+      }
+
+      p {
+        font-size: 10px;
+      }
+
+    }
+  }
+}
+
+
+@media(max-width: 400px) {
+  .contener-sign-up {
+    width: 400px;
+
+    .form-wrapper {
+
+      .form {
+        width: 150px;
+        padding: 26px;
+
+      }
+
+      .form-group input {
+        width: 116px;
+        height: 19px;
+        font-size: 9px;
+      }
+
+      .form-group label {
+        font-size: 7px;
+      }
+  
+      .btn-sign-up {
+        width: 140px;
+        height: 34px;
+        margin: -9px 0 14px;
+        font-size: 10px;
+      }
+
+      h1 {
+        font-size: 15px;
+      }
+    }
+  }
+}

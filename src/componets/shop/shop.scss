@@ -9,7 +9,9 @@
   background-color: #303030;
 
 	.header-wrapper {
-		
+		position: sticky;
+		top: 4px;
+		z-index: 1000;
 	}
 
 	.main-products {
@@ -202,11 +204,7 @@
 		width: 400px;
 		height: 2005px;
 
-		.header-wrapper {
-			position: sticky;
-    	top: 4px;
-			z-index: 1000;
-		}
+	
 
 		.main-products {
 			// margin-top: 112px;
