@@ -130,9 +130,12 @@ export class ListBooks {
     }
    
     product_book.onclick = () => {
-      window.location.pathname = this.#link.inf;
+      // window.location.pathname = this.#link.inf;
+      console.log(this.#element);
       this.#setLearnMore(this.#element);
     }
+
+    console.log(this.#element);
 
     (this.#element.basketExist === true) ?
       add_btn.innerText = 'IN CART':

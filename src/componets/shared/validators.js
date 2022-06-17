@@ -13,10 +13,8 @@ const massage_advance = {
   lowercase: 'your password must contain at least one letter in lowercase',
   numbers: 'your password must contain at least one number',
   characters: 'your password must contain at least 8 symbols',
-  completed: 'Password verification completed successfully'
+  completed: 'Password verification hsa been completed successfully'
 }
-
-///your password must comtain at least one letter in Uppercase
 
 const showErrorTag = (id, message) => {
   const error_tag = document.getElementById(id);
@@ -64,7 +62,6 @@ export const hideErrorMessage = (error_type, id) => {
   errorTagsHandlers.get(error_type)(id);
 }
 
-
 export const lowerCase = (password,element ) => {
   const result = REGEX.lower_case.test(password);
 
@@ -74,7 +71,6 @@ export const lowerCase = (password,element ) => {
 
 }
 
-
 const upperCase = (password, element ) => {
   const result = REGEX.upper_case.test(password);
 
@@ -82,7 +78,6 @@ const upperCase = (password, element ) => {
 
   return result;
 }
-
 
 const number = (password, element ) => {
   const result = REGEX.numbers.test(password);
@@ -108,9 +103,8 @@ export const password_verification = (password, element, input, fn_setColor, fn_
     number(password, element) +
     eightCharactersCheck(password, element);
 
-  
     if (passwordStrengthNum === 4) {
-      element.innerText = massage_advance.completed
+      element.innerText = massage_advance.completed;
       fn_setColor(input);
     } else fn_remove(input);
   
@@ -125,8 +119,7 @@ export const password_verification = (password, element, input, fn_setColor, fn_
       [0, item => item.style.color = '#ced4da']
     ])
 
-    SET_MASSAGE.get(passwordStrengthNum)(element)
+    SET_MASSAGE.get(passwordStrengthNum)(element);
 
-  return  passwordStrengthNum === 4
+  return  passwordStrengthNum === 4;
 } 
-

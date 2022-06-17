@@ -164,19 +164,36 @@ export const sign_up = () => {
 
       let authId = '';
       let userId = '';
+      let requestCount = 0;
+
       Spinner.showSpinner();
 
       await createUserAuthRequest(userData)
-          .then(response => authId = response.user.uid).then(res => console.log(res));
+          .then(response => {
+            authId = response.user.uid
+            requestCount++;
+          })
       await createUserDataRequest({...userData, authId, date:time, photo:'none'})
-          .then(res => userId = res.name);
+          .then(res => {
+            userId = res.name;
+            requestCount++;
+          });
       await signInRequest({email, password})
-          .then(({ user: { accessToken } }) => setToken(accessToken))
+          .then(({ user: { accessToken } }) => {
+            setToken(accessToken);
+            requestCount++;
+          })
           .catch(err => console.log('Invalid credentials'));
       await getUser(userId).then(res => {
           setUser(res);
-          window.location.href = PATH.account;
-      });
+          requestCount++;
+          Spinner.hideSpinner();
+        });
+
+      
+      if (requestCount === 4) {
+        window.location.href = ROUTES.main;
+      }
   }
 
   const checkFormValid = () => {

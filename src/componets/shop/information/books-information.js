@@ -41,6 +41,7 @@ export const information = async () =>  {
   const arrayBook = new Map();
   const productBook2 = new Map();
 
+  console.log(book);
   modal_window.append(Confirmation.confirmation(PATH, TEXT));
 
   const fn_send = number => {
@@ -144,6 +145,8 @@ export const information = async () =>  {
   const findItem = () => getProduct().find(item =>item.bookId === convert.id);
  
   const checkConditionsBasket = () => {
+
+    console.log(convert);
 
     (!findItem()) ? btn_basket.innerText = 'ADD TO CART' : 
       btn_basket.innerText ='IN CART';

@@ -27,5 +27,4 @@ window.onload = () => {
 	const pathname = window.location.pathname;
 
 	routs.get(pathname)();
-
 }
