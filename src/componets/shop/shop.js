@@ -20,6 +20,8 @@ export const my = async () => {
 	const books =	getProduct();
 	const ratingBooks = await getAllBookRating();
 
+
+
 	let number = 0;
 	let getElement;
 	
@@ -33,7 +35,7 @@ export const my = async () => {
 
 	ratingBooks.forEach(item => map_books.set(item.bookId, item.rating));
 
-	const productList = PRODUCT.map(item => ({...item, rating:map_books.get(item.id)}));
+	const productList = PRODUCT.map(item => ({...item, rating:map_books.get(item.bookId)}));
 
 	window_modal.append(Confirmation.confirmation(PATH, TEXT));
 
@@ -79,10 +81,10 @@ export const my = async () => {
 		})
 	}
 
-  const checkLog = () => {
-		(!getUser1().authId) ? 
-			setTimeout(() => { Confirmation.showWindow()}, 2000): null;
-  }
+  // const checkLog = () => {
+	// 	(getUser1() && getToken()) ? 
+	// 	null	: setTimeout(() => { Confirmation.showWindow()}, 2000);
+  // }
 
   btn_page.append(block_pages);
 
@@ -141,7 +143,7 @@ export const my = async () => {
 		});
 	}
 
-  checkLog();
+  // checkLog();
 
 	btn_active();
 

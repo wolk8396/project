@@ -36,9 +36,8 @@ export const searchBooks = async() => {
 
   ratingBooks.forEach(item => map_books.set(item.bookId, item.rating));
 
-  const changeKey = PRODUCT.map(item => ( {...item, 'bookId':item.id}))
 
-	const productList = changeKey.map(item => ({...item, rating:map_books.get(item.id), exist:item.id === itemId.get(item.id), basketExist:item.bookId === basketMap.get(item.bookId)}));
+	const productList = PRODUCT.map(item => ({...item, rating:map_books.get(item.bookId), exist:item.bookId === itemId.get(item.bookId), basketExist:item.bookId === basketMap.get(item.bookId)}));
 
   const removeItems = () => {
     const container_product = document.querySelectorAll('.container_product__book');
@@ -59,7 +58,7 @@ export const searchBooks = async() => {
       if (getToken() &&  getUser1().authId) {
         const getDate = await getUsersWish();
 
-        const findSome = getDate.find(element => element.bookId === item.id);
+        const findSome = getDate.find(element => element.bookId === item.bookId);
 
         const deleteWish = async() => {
           btn.innerText = 'add to wish'
@@ -69,9 +68,9 @@ export const searchBooks = async() => {
         }
 
         const addWish = async() => {
-          btn.innerText = 'delete'
-          massage.innerText = 'was added to'
-          item.exist = true
+          btn.innerText = 'delete';
+          massage.innerText = 'was added to';
+          item.exist = true;
           await userWishlist (item, authId);
         }
 

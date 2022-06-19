@@ -36,7 +36,7 @@ export const information = async () =>  {
   const status_massage = document.querySelector('.status-query__response');
 
   const book = getLearnMore();
-  const {id} =  getLearnMore();
+  const {bookId} =  getLearnMore();
   const {authId} = getUser1();
   const arrayBook = new Map();
   const productBook2 = new Map();
@@ -48,8 +48,8 @@ export const information = async () =>  {
   
     click_rating.onclick  = async() => {
      
-      await upDateRating(id, number);
-      await  upDateDisplay(id, click_rating).then(res => {
+      await upDateRating(bookId, number);
+      await  upDateDisplay(bookId, click_rating).then(res => {
         if (isNaN(res)) {
           rating_active.style.width = `${0}%`
           number_x.innerHTML = 0;
@@ -61,7 +61,7 @@ export const information = async () =>  {
     }
   }
 
-  const upDateDisplay = async () =>  await dateRating (id, click_rating);
+  const upDateDisplay = async () =>  await dateRating (bookId, click_rating);
 
   const numberRating  = await upDateDisplay ();
 
@@ -78,10 +78,12 @@ export const information = async () =>  {
 
   arr.forEach(({img}) =>  arrayBook.set('img', img));
 
-  const bookRender = [book].map(item => ({ ...item, photoAuthor: arrayBook.get('img'), bookId:id}));
+  const bookRender = [book].map(item => ({ ...item, photoAuthor: arrayBook.get('img')}));
 
   const convert = bookRender.reduce((acc, item) => ({...item}), {});
   
+console.log(book, 'book');
+
   picture.src = convert.photo;
   prise.innerHTML = convert.cost +'$';
   title.innerHTML = convert.product;
@@ -106,7 +108,7 @@ export const information = async () =>  {
 
     await getUsersWish().then(res =>  getDate = res);
 
-    const findItem =  getDate.find(({bookId}) => bookId === convert.id);
+    const findItem =  getDate.find(({bookId}) => bookId === convert.bookId);
 
     return findItem;
   }
@@ -142,7 +144,7 @@ export const information = async () =>  {
     check_conditions() : Confirmation.showWindow();
   }
 
-  const findItem = () => getProduct().find(item =>item.bookId === convert.id);
+  const findItem = () => getProduct().find(item =>item.bookId === convert.bookId);
  
   const checkConditionsBasket = () => {
 

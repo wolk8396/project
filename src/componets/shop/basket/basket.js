@@ -1,4 +1,4 @@
-import { Header, COUNTMAP} from '../../shared/header/header'
+import { Header} from '../../shared/header/header'
 import { getToken, getUser1, setBooks, getProduct} from '../../shared/services/local-storage-service'
 import {getBasketBooks, basketUser} from '../../get date/dateusers';
 import { ShoppingCart } from '../../shared/shoping-cart/shoping-cart';
@@ -64,6 +64,7 @@ export const basketPage =  async () => {
 		full_total.className = 'full-total__prise';
 		btn_update.className = 'container_btn__btn-update-cart';
 		wrapper_btn.className = 'container_btn';
+		btn_update.innerText = 'UPDATE'
 
 		product_book.append(table);
 

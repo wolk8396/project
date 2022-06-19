@@ -14,32 +14,30 @@
     border-bottom: 1px solid #dbdbdb;
   
     .input-find {
-      background-color: #e1e1e3;
-      border: 1px solid whitesmoke;
       display: flex;
       flex-direction: row;
       justify-content: normal;
       height: 49px;
+      background-color: white;
+      border-bottom: 1px solid #dbdbdb;
    
   
       &__query {
         margin: auto;
-        border: 1px solid;
         display: flex;
-        width: 433px;
+        width: 393px;
   
         .search-iput {
           width: 300px;
-  
         }
   
         .search-btn {
-          width: 114px;
+          width: 70px;
           background: #e50914;
           outline: none;
           border: none;
           color: white;
-          font-size: 30px;
+          font-size: 15px;
         }
       }
   
@@ -47,15 +45,47 @@
     }
     .category {
       display: flex;
-      flex-wrap: wrap;
+      justify-content:normal;
+      flex-direction: row;
       margin: 0 auto;
-      width: 816px;
-      height: 46px;
-      align-items: center;
+      width: 552px;
+      height: 32px;
+      // align-items: center;
   
-      &__point {
-        width: 116px;
+      &__all-books{
+        width:87px;
       }
+
+      &__potter {
+        width:106px;
+      }
+
+      &__science {
+        width:127px;
+      }
+
+      &__novels {
+        width: 67px;
+      }
+
+      &__crime,
+      &__fantasy {
+        width: 68px;
+      }
+
+      &__js {
+        width: 32px;
+      }
+    }
+    .category p {
+      font-weight: bold;
+      color:#382110; 
+      cursor: pointer;
+    }
+
+    p:hover {
+      text-decoration: underline;
+      color:#382110; 
     }
   
   }
@@ -69,7 +99,6 @@
     flex-direction: column;
     justify-content:normal;
 
-  
     &__book {
       display: flex;
       flex-direction: row;
@@ -94,8 +123,7 @@
   
       .block-imformation {
         width: 412px;
-    
-  
+
         &__product {
           color:#382110; 
           font-weight: bold;
@@ -118,18 +146,25 @@
         flex-direction: column;
         justify-content: space-between;
         width: 150px;
-        height: 98px;
+        height: 168px;
+
+        .btns {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          height: 98px;
+        }
 
         .btn-trash {
           width: 15%;
           cursor: pointer;
+          margin-left: auto;
         }
       }
 
       .block-quantity {
         position: relative;
         border-radius: 4px;
-        // border: 1px solid black;
 
         .items-quantity {
           border-radius: 4px;
@@ -145,7 +180,293 @@
     }
   
   }  
-  
 
 }
 
+@media(max-width:1152px) {
+  .wrapper-search  {
+    width: 1150px; 
+
+    .search-block {
+      width: 1150px;
+    }
+
+    .container_product {
+    
+      &__book {
+        width:762px;
+
+        .block-imformation {
+          width: 260px;
+        }
+      }
+    }
+  }
+
+}
+
+@media(max-width:1020px) {
+  .wrapper-search  {
+    width: 1020px; 
+
+    .search-block {
+      width: 1020px;
+    }
+
+  }
+}
+
+@media(max-width:912px) {
+  .wrapper-search  {
+    width: 912px; 
+
+    .search-block {
+      width: 912px;
+    }
+
+  }
+}
+
+
+@media(max-width:850px) {
+  .wrapper-search  {
+    width: 850px; 
+
+    .search-block {
+      width: 850px;
+    }
+  }
+}
+
+
+@media(max-width: 768px) {
+
+  .wrapper-search {
+    width: 768px;
+
+    .search-block {
+      width: 768px;
+  
+      .input-find {
+        border-bottom: 1px solid whitesmoke;
+  
+        &__query {
+          width: 302px;
+  
+          .input-query {
+            width: 250px;
+          }
+  
+          .btn-query {
+            width: 50px;
+            font-size: 10px;
+          }
+        }
+      }
+
+      .category {
+        width: 334px;
+        
+        p {
+          font-size: 10px;
+        }
+      }
+    }
+
+    .container_product {
+
+      &__book {
+        width: 464px;
+        height: 140px;
+
+        .photo-book {
+          width: 100px;
+          height: 138px;
+
+          &__frame {
+            width:76px;
+            height:90px;
+          }
+        }
+        .block-imformation {
+          width: 193px;
+
+          &__rating {
+
+            .rating {
+              font-size: 13px;
+            }
+          }
+
+          p {
+            font-size: 10px;
+          }
+        }
+
+        .block-quantity {
+
+          .items-quantity {
+            height: 32px;
+            width: 37px;
+          }
+
+          .input_label {
+            font-size: 10px;
+          }
+        }
+
+        .block_btns {
+          width: 103px;
+          height: 137px;
+
+          .btns {
+            height: 71px;
+
+            button {
+              font-size: 11px;
+            }
+
+          }
+        }
+      }
+    }
+
+  }
+}
+
+@media(max-width:670px) {
+  .wrapper-search  {
+    width: 670px; 
+
+    .search-block {
+      width: 670px;
+    }
+  }
+}
+
+
+@media(max-width:520px) {
+  .wrapper-search  {
+    width: 520px; 
+
+    .search-block {
+      width: 520px;
+    }
+  }
+}
+
+@media(max-width:480px) {
+  .wrapper-search  {
+    width: 480px; 
+
+    .search-block {
+      width: 480px;
+    }
+  }
+}
+
+@media(max-width: 448px) {
+  .wrapper-search  {
+    width: 448px; 
+
+    .search-block {
+      width: 448px;
+
+      .input-find {
+        &__query {
+          width:240px;
+  
+          .input-query {
+            width: 190px;
+          }
+  
+          .btn-query {
+            width: 50px;
+          }
+        }
+      }
+
+      .category {
+        width: 353px;
+      }
+    }
+
+    .container_product {
+
+      &__book {
+        width: 286px;
+        height: 100px;
+
+        .photo-book {
+          height: 100px;
+          width: 47px;
+
+          &__frame {
+            width: 45px;
+            height: 59px;
+          }
+        }
+
+        .block-imformation {
+          width: 100px;
+
+          p {
+            font-size: 9px;
+          }
+        }
+
+        .block-quantity {
+
+          .items-quantity {
+            height: 26px;
+            width: 35px;
+            font-size: 9px;
+          }
+        }
+
+        .block_btns {
+          width: 79px;
+          height: 99px;
+
+          .btns {
+            .btn {
+              font-size: 8px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media(max-width:414px) {
+  .wrapper-search  {
+    width: 414px; 
+
+    .search-block {
+      width: 414px;
+    }
+  }
+}
+
+
+@media(max-width:399px) {
+  .wrapper-search  {
+    width: 399px; 
+
+    .search-block {
+      width: 399px;
+    }
+  }
+}
+
+
+@media(max-width:379px) {
+  .wrapper-search  {
+    width: 376px; 
+
+    .search-block {
+      width: 379px;
+    }
+  }
+}

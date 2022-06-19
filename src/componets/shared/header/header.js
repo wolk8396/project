@@ -10,6 +10,7 @@ export class Header {
     const title_top = document.createElement('p');
     const account_p = document.createElement('p');
     const search = document.createElement('div');
+    const wrapper_account = document.createElement('div');
     const link = document.createElement('div');
     const exit = document.createElement('img');
     const text_exit = document.createElement('p');
@@ -23,12 +24,10 @@ export class Header {
     const text_signIp = document.createElement('p'); 
     const container_sign_up = document.createElement('div'); 
     const container_search = document.createElement('div');
-    const signUp_img = document.createElement('img');
     const query = document.createElement('div');
     const search_svg = document.createElement('img');
-    const signUp_text = document.createElement('spam'); 
+    const signUp_text = document.createElement('p'); 
     const container_userAccount = document.createElement('div');
-    const userAccount = document.createElement('img');
     const ul_menu = document.createElement('ul');
     const li_1 = document.createElement('li');
     const li_2 = document.createElement('li');
@@ -44,9 +43,9 @@ export class Header {
     link.className ='home-link';
     exit.className = 'home-link__home-page';
     text_exit.className = 'home-link__text';
-    contener_sign.className = 'navigation';//++
-    sign_in.className = 'navigation__sign-in';//++
-    basket.className = 'navigation__basket';//++
+    contener_sign.className = 'navigation';
+    sign_in.className = 'navigation__sign-in';
+    basket.className = 'navigation__basket';
     basket_shop.className = 'basket-shop';
     account_p.className = 'account'
     display.className ='display';
@@ -55,12 +54,12 @@ export class Header {
     text_signIp.className = 'text-sign_in';
     sign_img.className = 'sign-in';
     search_svg.className = 'search_btn';
-    container_sign_up.className = 'navigation__sign-up'///+
+    container_sign_up.className = 'navigation__sign-up';
     signUp_text.className = 'signup-text';
-    signUp_img.className = 'sign-up';
-    container_userAccount.className = 'navigation__account';//++
+    container_userAccount.className = 'navigation__account';
     container_search.className = 'header__search__contener-si';
-    userAccount.className = 'btn_account';
+    wrapper_account.className = 'block-menu';
+  
     ul_menu.className = 'menu';
 
     display_count.innerText = numbers();
@@ -71,23 +70,22 @@ export class Header {
     title.append(title_top);
     search.append(link, contener_sign);
     link.append(exit, text_exit);
-    query.append(search_svg)
+    query.append(search_svg);
+
     contener_sign.append(query, container_userAccount, container_sign_up, sign_in, basket);
-    container_userAccount.append(userAccount, account_p, ul_menu);
+    container_userAccount.append(wrapper_account)
+    wrapper_account.append(account_p, ul_menu);
     ul_menu.append(li_1, li_2, li_3);
-    container_sign_up.append(signUp_img, signUp_text);
-    sign_in.append(sign_img, text_signIp);
+    container_sign_up.append(signUp_text);
+    sign_in.append(text_signIp);
     basket.append(basket_shop, display);
     display.append(display_count);
-    ////contener_search
 
     title_top.innerText = ' A Better Way to Buy Books Online. Every Purchase Supports Local Bookstores!';
     exit.src = '../../../picture/main.svg';
     text_exit.innerText = 'GET BACK TO MAIN';
     sign_img.src ='../../../picture/sign-in.svg';
     basket_shop.src = '../../../picture/basket3-fill.svg';
-    signUp_img.src = '../../../picture/sign-up.svg';
-    userAccount.src ='../../../picture/person-circle.svg';
     search_svg.src = '../../../picture/search (1).svg'
     signUp_text.innerText = 'SIGN-UP';
     text_signIp.innerText = 'SIGN-IN';
@@ -107,7 +105,7 @@ export class Header {
       }
     }
 
-    (window.location.pathname === PATH.shop) ? text_exit.innerText = 'welcome' : null;
+    (window.location.pathname === PATH.shop) ? text_exit.innerText = 'WELCOME' : null;
 
     (pathname === PATH.sign_in || pathname === PATH.sign_up) ?
       contener_sign.style.display = 'none' : null
@@ -118,12 +116,12 @@ export class Header {
         Confirmation.showWindow() : openMenuAccount();
     }
 
-    userAccount.onclick = () => check_Registration();
+    account_p.onclick = () => check_Registration();
    
 
-    signUp_img.onclick = () => window.location.pathname = PATH.sign_up;
+    signUp_text.onclick = () => window.location.pathname = PATH.sign_up;
 
-    sign_img.onclick = () => window.location.pathname = PATH.sign_in;
+    text_signIp.onclick = () => window.location.pathname = PATH.sign_in;
 
     basket_shop.onclick = () => window.location.pathname = PATH.basket;
 

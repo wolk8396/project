@@ -21,8 +21,6 @@
     width: 1286px;
     height: 50px;
     background-color: red;
-  
-   
 
     &__top {
       font-weight: bold;
@@ -42,19 +40,22 @@
 
     .home-link {
       display: flex;
-      justify-content: normal;
-      flex-direction: row;
-      width: 282px;
-      border: 40px;
+      justify-content: space-between;
+      width: 198px;
+      height: 43px;
 
       &__home-page {
         cursor: pointer;
+        height: 28px;
+        margin-top: auto;
+
       }
 
       &__text {
-        margin-top: 13px;
         font-weight: bold;
         color: white;
+        margin-left: 9px;
+        margin-top: auto;
       }
     }
 
@@ -63,102 +64,54 @@
       flex-direction: row;
       justify-content: normal;
       height: 43px;
-      width: 524px;
+      width: 358px;
 
      &__search-books {
-      position: relative;
-      width: 52px;
-
+      width: 31px;
+      display: flex;
+      height: 37px;
+    
       .search_btn {
         cursor: pointer;
-        position: absolute;
-        left: 24px;
-        top: 15px;
+        width: 15px;
+        margin-top: auto;
       }
      }
 
       &__account {
-        position: relative;
-        width: 157px;
+        display: flex;
+        width: 100px;
 
-        .btn_account {
-          width: 36px;
-          height: 36px;
-          cursor: pointer;
-          position: absolute;
-          right: 110px;
-          top: 5px;
-        }
+        .block-menu {
+         position: relative;
+         margin-top: auto;
 
-        .account {
-          width: 36px;
-          height: 36px;
-          cursor: pointer;
-          position: absolute;
-          right: 66px;
-          top: 14px;
-          color: whitesmoke;
-        }
-       
-        .menu {
-          position: absolute;
-          display: none;
-          width: 150px;
-          height: 90px;
-          top: 54px;
-          right: -46px;
-          background-color: whitesmoke;
-         }
-
-         li {
-           cursor: pointer;
-         }
-         li:hover { 
-          text-decoration: underline; 
+          .menu {
+            position: absolute;
+            display: none;
+            width: 150px;
+            height: 90px;
+            top: 31px;
+            right:-102px;
+            background-color: whitesmoke;
+           }
+  
+           li {
+             cursor: pointer;
+           }
+           li:hover { 
+            text-decoration: underline; 
+          }
         }
       }
 
       &__sign-up {
-        width: 119px;
-        position: relative;
-        width: 119px;
-
-        .sign-up {
-          width: 36px;
-          position: absolute;
-          left: 1px;
-          top: 4px;
-          cursor: pointer;
-        }
-
-        .signup-text {
-          font-weight: bold;
-          color: whitesmoke;
-          position: absolute;
-          left: 48px;
-          top: 14px;
-        }
+        display: flex;
+        width: 81px;
       }
 
       &__sign-in {
-        position: relative;
-        height: 43px;
-        width: 120px;
-
-        .sign-in {
-          margin: 8px;
-          width: 36px;
-          height: 36px;
-          cursor: pointer;
-        }
-
-        .text-sign_in {
-          font-weight: bold;
-          color: whitesmoke;
-          position: absolute;
-          left: 50px;
-          top: 12px;
-        }
+        display: flex;
       }
 
       &__basket {
@@ -172,19 +125,17 @@
           width: 25px;
           height: 25px;
           left: 15px;
-          top: 11px;
+          top: 12px;
         }
         .display {
           position: absolute;
           left: 36px;
-          width: 25px;
-          height: 25px;
+          width: 20px;
+          height: 20px;
           border-radius: 50px;
           background-color: whitesmoke;
 
           &__count {
-            margin-top: 1px;
-            margin-left: 1px;;
             font-weight: bold;
             color: black;
             text-align: center;
@@ -192,8 +143,73 @@
         }
       }
 
+      p {
+        color: whitesmoke;
+        font-weight: bold;
+        margin-top: auto;
+        cursor: pointer;
+      }
+
+      p:hover {
+        text-decoration: underline;
+        color:red; 
+      }
+
     }
 
+  }
+}
+
+@media(max-width:1152px) {
+
+  .header {
+    width: 1150px;
+
+    &__title,
+    &__search {
+      width: 1150px;
+    }
+  } 
+
+}
+
+
+
+@media(max-width:1024px) {
+
+  .header {
+    width: 1022px;
+
+    &__title,
+    &__search {
+      width: 1022px;
+    }
+  } 
+    
+
+}
+
+@media(max-width:912px) {
+  
+  .header {
+    width: 912px;
+
+    &__title,
+    &__search {
+      width: 912px;
+    }
+  }
+}
+
+@media(max-width:850px) {
+  
+  .header {
+    width:850px;
+
+    &__title,
+    &__search {
+      width:850px;
+    }
   }
 }
 
@@ -201,126 +217,178 @@
   .header {
     width: 768px;
 
-    &__title,
+    &__title  {
+      width: 768px;
+
+      &__top {
+        font-size: 14px;
+      }
+    }
+
     &__search {
-      justify-content: space-around;
       width: 768px;
 
       .home-link {
-        width: 141px;
+        width: 159px;
+        font-size: 12px;
+
+        &__home-page {
+          width: 32px;
+        }
+      }
+
+      .navigation {
+        width:292px;
+
+        &__account {
+          width:71px;
+        }
+
+        &__sign-up {
+          width:62px;
+        }
+
+        &__basket {
+
+          .basket-shop {
+            width: 28px;
+            height:18px;
+            left:9px;
+            top:24px;
+          }
+
+          .display {
+            width:17px;
+            height:17px;
+            top:9px;
+          }
+        }
+
+        p {
+          font-size: 12px;
+        }
       }
     }
   }
 }
 
-@media(max-width: 400px)  {
+@media(max-width:670px) {
+
+  .header {
+    width:670px;
+
+    &__title,
+    &__search {
+      width:670px;
+    }
+  }
+}
+
+
+@media(max-width:520px) {
+
+  .header {
+    width:520px;
+
+    &__title,
+    &__search {
+      width:520px;
+    }
+  }
+
+}
+
+@media(max-width:480px) {
+
+  .header {
+    width:480px;
+
+    &__title,
+    &__search {
+      width:480px;
+    }
+  }
+
+}
+
+@media(max-width: 448px)  {
   .header {
     justify-content: space-around;
     height: 109px;
-    width: 400px;
+    width: 448px;
 
     &__title {
-      width: 400px;
-      font-size: 10px;
+      width: 448px;
+
+      &__top {
+        font-size: 10px;
+      }
     }
 
     &__search {
-      width: 400px;
-      height: 100px;
       flex-direction: column;
       justify-content: space-between;
+      width: 448px;
+      height: 65px;
 
       .home-link {
-        width: 396px;
-        justify-content: center;
+        display: flex;
+        margin: auto;
+        justify-content: normal;
+        width: 124px;
+
+        &__home-page {
+          width: 18px;
+        }
 
         &__text {
-          margin-top: 0;
+          font-size: 9px;
         }
       }
 
       .navigation {
-        width: 400px;
-        flex-direction: row;
-        justify-content: space-between;
-   
+        justify-content: space-around;
+        width: 442px;
+      
+        div {
+          margin: auto;
+        }
 
         &__search-books {
-          height: 41px;
-          // border: 1px solid;
+          width: 27px;
 
           .search_btn {
-            left: 26px;
-            top: 12px;
+            margin: auto;
           }
         }
 
-
         &__account {
-          height: 35px;
-          // border: 1px solid;
-
-          .btn_account {
-            right: 80px;
-            top: 1px;
-            width: 19px;
-          }
-
-          .account {
-            font-size: 13px;
-            top: 15px;
-            right: 33px;
-            font-weight: bold;
-          }
+          width: 74px;
         }
 
         &__sign-up {
-          height: 35px;
-          // border: 1px solid;
-          width: 122px;
-
-          .sign-up {
-            width: 25px;
-            left: 2px;
-            top: 6px;
-          }
-
-          .signup-text {
-            font-size: 13px;
-            left: 27px;
-          }
-
+          width: 78px;
         }
 
         &__sign-in {
-          height: 32px;
-          width: 112px;
-          // border: 1px solid;
-
-          .sign-in {
-            width: 19px;
-            margin-left: 0;
-            margin: 0;
-          }
-
-          .text-sign_in {
-            font-size: 13px;
-            left: 21px;
-            top: 14px;
-          }
+          width: 66px;
         }
 
         &__basket {
-          
+          height: 30px;
+
           .basket-shop {
-            width: 19px;
-            height: 17px;
+            top: 6px;
+            left: 2px;
+            width: 16px;
+            height: 16px;
           }
 
           .display {
-            width: 16px;
-            height: 16px;
-
+            width: 17px;
+            height: 17px;
+            top: 0px;
+            left: 15px;
           }
         }
       }
@@ -328,4 +396,45 @@
   }
 }
 
-///width: 97px;
+@media(max-width:414px) {
+
+  .header {
+    width:414px;
+
+    &__title,
+    &__search {
+      width:414px;
+    }
+  }
+}
+
+@media(max-width:399px) {
+
+  .header {
+    width:399px;
+
+    &__title,
+    &__search {
+      width:399px;
+    }
+  }
+
+}
+
+@media(max-width:379px) {
+
+  .header {
+    width:379px;
+
+    &__title,
+    &__search {
+      width:379px;
+
+      .navigation {
+        width: 366px;
+      }
+    }
+  }
+
+}
+

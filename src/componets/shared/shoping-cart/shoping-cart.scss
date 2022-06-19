@@ -34,3 +34,62 @@ tr {
 
   }
 }
+
+
+
+
+@media(max-width:448px) {
+  tr {
+
+    td {
+      padding: 5px 4px;
+
+      .photo-product {
+        width: 20px;
+      }
+
+      .title {
+        font-size: 13px;
+      }
+
+      button {
+        width: 20px;
+        height: 20px;
+        font-size: 10px;
+      }
+
+      .p {
+        font-size: 10px;
+      }
+
+    }
+  }
+}
+
+
+@media(max-width:379px) {
+  tr {
+
+    td {
+      padding: 5px 4px;
+
+      // .photo-product {
+      //   width: 20px;
+      // }
+
+      .title {
+        font-size: 10px;
+      }
+
+      button {
+        width: 15px;
+        height: 16px;
+      }
+
+      .p {
+        font-size: 9px;
+      }
+
+    }
+  }
+}

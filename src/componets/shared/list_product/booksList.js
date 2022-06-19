@@ -36,6 +36,7 @@ export class ListBooks {
   getList () {
     const container_product = document.createElement('div');
     const block_photo = document.createElement('div');
+    const btn_wrapper = document.createElement('div');
     const block_inf = document.createElement('div');
     const product_book = document.createElement('p');
     const author_book = document.createElement('p');
@@ -51,8 +52,7 @@ export class ListBooks {
     const display = document.querySelector('.display__count');
     const massage = document.createElement('p');
     const btn_trash = document.createElement('img');
-    const main_window = document.querySelector('.wrapper-delete');
-
+  
     container_product.className = 'container_product__book';
     block_photo.className = 'photo-book';
     photo_book.className = 'photo-book__frame';
@@ -72,6 +72,7 @@ export class ListBooks {
     massage.className = 'massage';
     input_number.type = 'number';
     input_number.name = 'quantity';
+    btn_wrapper.className = 'btns';
 
     photo_book.src = this.#element.photo;
     author_book.innerText = this.#element.author;
@@ -87,7 +88,8 @@ export class ListBooks {
     wrapper_input.append(input_number, input_label);
     block_photo.append(photo_book);
     block_inf.append(block_rating, product_book, author_book, cost_book);
-    block_btns.append(add_btn, delete_book, btn_trash);
+    btn_wrapper.append(add_btn, delete_book)
+    block_btns.append(btn_wrapper, btn_trash);
     block_rating.append(this.#rating(this.#element.rating));
 
     const removeItem = () => {
@@ -122,7 +124,7 @@ export class ListBooks {
 
     const checkStatus = () => {
       (window.location.pathname === this.#link.account) ?
-      container_product.remove() : null
+      container_product.remove() : null;
     }
 
     delete_book.onclick = () => {
@@ -130,12 +132,9 @@ export class ListBooks {
     }
    
     product_book.onclick = () => {
-      // window.location.pathname = this.#link.inf;
-      console.log(this.#element);
+      window.location.pathname = this.#link.inf;
       this.#setLearnMore(this.#element);
     }
-
-    console.log(this.#element);
 
     (this.#element.basketExist === true) ?
       add_btn.innerText = 'IN CART':

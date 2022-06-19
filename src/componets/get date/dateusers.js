@@ -26,7 +26,7 @@ export const getDateUsers = async () => {
   let todos = FUNCTION.createDate(result);
   let getDatelikes = FUNCTION.createDate(likesDate);
 
-  const {id} = getLearnMore();
+  const {bookId} = getLearnMore();
   const userMap = new Map();
   const likeUser = new Map();
   const userLikes  =new Map();
@@ -43,7 +43,7 @@ export const getDateUsers = async () => {
     return acc
   }, {});
  
-  const findComment = todos.filter(item => item.idBook === id);
+  const findComment = todos.filter(item => item.idBook === bookId);
 
   users.forEach(({authId, firstName, lastName, photo, idLink}, i) => {
     userMap.set(authId, {firstName, lastName, authId, photo, idLink });

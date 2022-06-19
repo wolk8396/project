@@ -4,7 +4,6 @@ import {
     createUserWithEmailAndPassword, 
     signInWithEmailAndPassword 
 } from 'firebase/auth';
-// import { getStorage, ref ,getDownloadURL} from "firebase/storage";
 
 import { getStorage, ref, uploadBytes,  getDownloadURL,  getMetadata, deleteObject} from "firebase/storage";
 
@@ -124,7 +123,7 @@ export const uploadPhoto = async (event, imgName, userDate, getUrl) => {
   await  getDownloadURL(storageRef).then(res => {
     url = res
   });
- console.log(userDate.id);
+
   await fetch(
     `${DB_URL}/users/${userDate.id}.json`,
     {
@@ -175,7 +174,7 @@ export const userWishlist = (product, user) => {
       body: JSON.stringify({
           ...product,
           idUser:user,
-          bookId:product.id
+          bookId:product.bookId
         })
       }
     )
@@ -264,6 +263,5 @@ export const getRating = () => fetch(`${DB_URL}/rating.json`).then(res => res.js
 
 export const getBasket = () => fetch(`${DB_URL}/basket/.json`).then(res => res.json());
 
-export const getBooksMy = () => fetch(`https://github.com/wolk8396/books/blob/main/product.json`).then(res => console.log(res))
 
 

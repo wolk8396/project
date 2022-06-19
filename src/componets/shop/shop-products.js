@@ -1,6 +1,6 @@
  export const PRODUCT = [
   {
-		id:'book1',
+		bookId:'book1',
 		photo:'https://raw.githubusercontent.com/wolk8396/test/main/homework17/pandora.jpg',
 		product:'Pandora',
 		description:'A pure pleasure of a novel set in Georgian London, where the discovery of a mysterious ancient Greek vase sets in motion conspiracies, revelations and romance.',
@@ -12,7 +12,7 @@
 		count:1
 	},
 	{
-		id:'book2',
+		bookId:'book2',
 		photo:'https://raw.githubusercontent.com/wolk8396/test/main/homework17/Free%20Love.jpg',
 		product:'Free Love',
 		description:"Tessa Hadley recruits admirers with each book. She writes with authority, and with delicacy: she explores nuance, but speaks plainly; she is one of those writers a reader trusts.",
@@ -24,7 +24,7 @@
 		count:1
 	},
 	{
-		id:'book3',
+		bookId:'book3',
 		photo:'https://raw.githubusercontent.com/wolk8396/test/main/homework17/The%20Ticket%20Collector%20from%20Belarus.jpg',
 		product:'The Ticket Collector from Belarus',
 		description:"'Brilliantly gripping' Sunday Times; 'Compelling' Daily Mail; 'Heart-rending' Sunday Telegraph; 'Excellent' The Times; 'Engrossing' Independent",
@@ -36,7 +36,7 @@
 		count:1
 	},
 	{
-		id:"book4",
+		bookId:"book4",
 		photo:'https://raw.githubusercontent.com/wolk8396/test/main/homework17/Gallant.jpg',
 		product:'Gallant',
 		description:"Everything casts a shadow. Even the world we live in. And as with every shadow, there is a place where it must touch. A seam, where the shadow meets its source",
@@ -48,7 +48,7 @@
 		count:1
 	},
 	{
-		id:"book5",
+		bookId:"book5",
 		photo:'https://raw.githubusercontent.com/wolk8396/test/main/homework17/Bacon%20in%20Moscow.jpg',
 		product:'Bacon in Moscow',
 		description:"A rollicking cultural adventure... fascinating and true' Grayson Perry",
@@ -60,7 +60,7 @@
 		count:1
 	},
 	{
-		id:"book6",
+		bookId:"book6",
 		photo:'https://raw.githubusercontent.com/wolk8396/test/main/homework17/9780241519332.jpg',
 		product:'The Lyrics',
 		description:"An incredibly moving experience ... Hicks's summation of life gains greater spirituality as he goes on.' Scarlett Thomas, Independent on Sunday",
@@ -72,7 +72,7 @@
 		count:1
 	},
 	{ 
-		id:"book7",
+		bookId:"book7",
 		photo:'https://raw.githubusercontent.com/wolk8396/test/main/homework17/1.jpg',
 		product:'Harry Potter and the Philosophers Stone',
 		description:"Harry Potter thinks he is an ordinary boy - until he is rescued by an owl, taken to Hogwarts School of Witchcraft and Wizardry, learns to play Quidditch and does battle in a deadly duel. The Reason ... HARRY POTTER IS A WIZARD!",
@@ -84,7 +84,7 @@
 		count:1
 	},
 	{ 
-		id:"book8",
+		bookId:"book8",
 		photo:'https://raw.githubusercontent.com/wolk8396/test/main/homework17/2.jpg',
 		product:'Harry Potter and the Chamber of Secrets',
 		description:"Ever since Harry Potter had come home for the summer, the Dursleys had been so mean and hideous that all Harry wanted was to get back to the Hogwarts School for Witchcraft and Wizardry. But just as he’s packing his bags, Harry receives a warning from a strange impish creature who says that if Harry returns to Hogwarts, disaster will strike.",
@@ -96,7 +96,7 @@
 		count:1
 	},
 	{ 
-		id:"book9",
+		bookId:"book9",
 		photo:'https://raw.githubusercontent.com/wolk8396/test/main/homework17/3.jpg',
 		product:'Harry Potter and the Prisoner of Azkaban',
 		description:"This spectacular souvenir folio comes loaded with full-color and black and white photos from the blockbuster Harry Potter film. Titles: Aunt Marge's Waltz",
@@ -108,7 +108,7 @@
 		count:0
 	},
 	{	
-		id:"book11",
+		bookId:"book11",
 		photo:'https://raw.githubusercontent.com/wolk8396/test/main/homework17/4.jpg',
 		product:'Harry Potter and the Goblet of Fire',
 		description:"",
@@ -120,7 +120,7 @@
 		count:1
 	},
 	{	
-		id:"book12",
+		bookId:"book12",
 		photo:'https://raw.githubusercontent.com/wolk8396/test/main/homework17/5.jpg',
 		product:'Harry Potter and the Order of the Phoenix',
 		description:"There is a door at the end of a silent corridor. And it’s haunting Harry Pottter’s dreams. Why else would he be waking in the middle of the night, screaming in terror?",
@@ -132,7 +132,7 @@
 		count:1
 	},
 	{	
-		id:"book13",
+		bookId:"book13",
 		photo:'https://raw.githubusercontent.com/wolk8396/test/main/homework17/6.jpg',
 		product:'Harry Potter and the Half-Blood Prince',
 		description:"The war against Voldemort is not going well; even Muggle governments are noticing. Ron scans the obituary pages of the Daily Prophet, looking for familiar names. Dumbledore is absent from Hogwarts for long stretches of time, and the Order of the Phoenix has already suffered losses.",
@@ -144,7 +144,7 @@
 		count:1
 	},
 	{	
-		id:"book14",
+		bookId:"book14",
 		photo:'https://raw.githubusercontent.com/wolk8396/test/main/homework17/7.jpg',
 		product:'Harry Potter and the Deathly Hallows',
 		description:"",
@@ -156,7 +156,7 @@
 		count:1
 	},
 	{	
-		id:"book15",
+		bookId:"book15",
 		photo:'https://raw.githubusercontent.com/wolk8396/test/main/homework17/9780751565362.jpg',
 		product:'Harry Potter and the Cursed Child ',
 		description:"",
@@ -168,7 +168,7 @@
 		count:1
 	},
 	{	
-		id:"book16",
+		bookId:"book16",
 		photo:'https://raw.githubusercontent.com/wolk8396/test/main/homework17/js.jpg',
 		product:'Node.js Design Patterns',
 		description:"Get the best out of Node.js by mastering a series of patterns and techniques to create modular, scalable, and efficient applications",
@@ -180,7 +180,7 @@
 		count:1
 	},
 	{	
-		id:"book17",
+		bookId:"book17",
 		photo:'https://raw.githubusercontent.com/wolk8396/test/main/homework17/js%2019.jpg',
 		product:'You Don t Know JS Yet',
 		description:"",
@@ -191,7 +191,7 @@
 		count:1
 	},
 	{
-		id:"book18",
+		bookId:"book18",
 		photo:'https://raw.githubusercontent.com/wolk8396/test/main/homework17/Aditya%20Bhargava.jpg',
 		product:'Grokking Algorithms',
 		description:"An algorithm is nothing more than a step-by-step procedure for solving a problem. The algorithms you'll use most often as a programmer have already been discovered, tested, and proven. If you want to take a hard pass on Knuth's brilliant but impenetrable theories and the dense multi-page proofs you'll find in most textbooks, this is the book for you. This fully-illustrated and engaging guide makes it easy for you to learn how to use algorithms effectively in your own programs.",
@@ -203,7 +203,7 @@
 		count:1
 	},
 	{	
-		id:"book19",
+		bookId:"book19",
 		photo:'https://raw.githubusercontent.com/wolk8396/test/main/homework17/9781118531648.jpg',
 		product:'JavaScript and JQuery',
 		description:"This full-color book adopts a visual approach to teaching JavaScript & jQuery, showing you how to make web pages more interactive and interfaces more intuitive through the use of inspiring code examples, infographics, and photography. The content assumes no previous programming experience, other than knowing how to create a basic web page in HTML & CSS.",
@@ -215,7 +215,7 @@
 		count:1
 	},
 	{
-		id:"book20",
+		bookId:"book20",
 		photo:'https://raw.githubusercontent.com/wolk8396/test/main/homework17/Thich%20Nhat%20Hanh.jpg',
 		product:'Silence: The Power of Quiet in a World Full of Noise',
 		description:"We can spend a lot of time looking for happiness when the world right around us is full of wonder. But our hearts and minds are so full of noise that we can’t always hear the call of life and love. To hear that call and respond to it, we need silence",
@@ -227,7 +227,7 @@
 		count:1
 	},
 	{
-		id:"book21",
+		bookId:"book21",
 		photo:'https://firebasestorage.googleapis.com/v0/b/bookstore-67dde.appspot.com/o/booksPhoto%2FSea%20of%20Tranquility.jpg?alt=media&token=f6617d12-2770-41bb-bbc2-7e680b4217e9',
 		product:'Sea of Tranquility',
 		description:"NEW YORK TIMES BEST SELLER - The award-winning, best-selling author of Station Eleven and The Glass Hotel returns with a novel of art, time, love, and plague that takes the reader from Vancouver Island in 1912 to a dark colony on the moon five hundred years later, unfurling a story of humanity across centuries and space.One of Mandel's finest novels and one of her most satisfying forays into the arena of speculative fiction yet.",
@@ -239,7 +239,7 @@
 		count:1
 	},
 	{
-		id:"book22",
+		bookId:"book22",
 		photo:"https://firebasestorage.googleapis.com/v0/b/bookstore-67dde.appspot.com/o/booksPhoto%2FLast%20Night%20in%20Montreal.jpg?alt=media&token=1d144482-2186-4cf9-8fb4-2499db8b5200",
 		product:'Last Night in Montreal',
 		description:"Lilia Albert has been leaving people behind for her entire life. She spends her childhood and adolescence traveling constantly and changing identities. In adulthood, she finds it impossible to stop. Haunted by an inability to remember her early childhood, she moves restlessly from city to city, abandoning lovers along with way, possibly still followed by a private detective who has pursued her for years. Then her latest lover follows her from New York to Montreal, determined to learn her secrets and make sure she s safe.",
@@ -251,7 +251,7 @@
 		count:1
 	},
 	{
-		id:"book23",
+		bookId:"book23",
 		photo:"https://firebasestorage.googleapis.com/v0/b/bookstore-67dde.appspot.com/o/booksPhoto%2FThe%20Singer's%20Gun.jpg?alt=media&token=193b0d28-bd48-4e1c-a67d-b7b75b47bd82",
 		product:"The Singer's Gun",
 		description:"",
@@ -263,7 +263,7 @@
 		count:1
 	},
 	{
-		id:"book24",
+		bookId:"book24",
 		photo:'https://firebasestorage.googleapis.com/v0/b/bookstore-67dde.appspot.com/o/booksPhoto%2FDaisy%20Jones%20%26%20the%20Six.jpg?alt=media&token=23b6a858-faab-4c50-bf83-4e0f1e617b43',
 		product:"Daisy Jones & The Six",
 		description:"A gripping novel about the whirlwind rise of an iconic 1970s rock group and their beautiful lead singer, revealing the mystery behind their infamous break up.",
@@ -275,7 +275,7 @@
 		count:1
 	},
 	{
-		id:"book25",
+		bookId:"book25",
 		photo:"https://firebasestorage.googleapis.com/v0/b/bookstore-67dde.appspot.com/o/booksPhoto%2FOne%20True%20Loves.jpg?alt=media&token=08feda07-a3d7-47f8-aeb5-5efeb23c3752",
 		product:"One True Loves",
 		description:"In her twenties, Emma Blair marries her high school sweetheart, Jesse. They build a life for themselves, far away from the expectations of their parents and the people of their hometown in Massachusetts. They travel the world together, living life to the fullest and seizing every opportunity for adventure.",
@@ -287,7 +287,7 @@
 		count:1
 	},
 	{
-		id:"book26",
+		bookId:"book26",
 		photo:"https://firebasestorage.googleapis.com/v0/b/bookstore-67dde.appspot.com/o/booksPhoto%2FEvidence%20of%20the%20Affair.jpg?alt=media&token=b1e2b54e-3f69-441b-9824-86b50c84d358",
 		product:"Evidence of the Affair",
 		description:"A desperate young woman in Southern California sits down to write a letter to a man she’s never met—a choice that will forever change both their lives.",
@@ -299,7 +299,7 @@
 		count:1
 	},
 	{
-		id:"book27",
+		bookId:"book27",
 		photo:"https://firebasestorage.googleapis.com/v0/b/bookstore-67dde.appspot.com/o/booksPhoto%2FThe%20Shining.jpg?alt=media&token=01b555a8-8945-4d6b-abfb-123ff34491b2",
 		product:"The Shining",
 		description:"Jack Torrance's new job at the Overlook Hotel is the perfect chance for a fresh start. As the off-season caretaker at the atmospheric old hotel, he'll have plenty of time to spend reconnecting with his family and working on his writing. But as the harsh winter weather sets in, the idyllic location feels ever more remote...and more sinister. And the only one to notice the strange and terrible forces gathering around the Overlook is Danny Torrance, a uniquely gifted five-year-old",
@@ -311,7 +311,7 @@
 		count:1
 	},
 	{
-		id:"book28",
+		bookId:"book28",
 		photo:"https://firebasestorage.googleapis.com/v0/b/bookstore-67dde.appspot.com/o/booksPhoto%2FThe%20Gunslinger.jpg?alt=media&token=e8e6db65-f388-4764-a4c9-6692605a9ac5",
 		product:"The Gunslinger",
 		description:"In the first book of this brilliant series, Stephen King introduces readers to one of his most enigmatic heroes, Roland of Gilead, The Last Gunslinger. He is a haunting figure, a loner on a spellbinding journey into good and evil. In his desolate world, which frighteningly mirrors our own, Roland pursues The Man in Black, encounters an alluring woman named Alice, and begins a friendship with the Kid from Earth called Jake. Both grippingly realistic and eerily dreamlike, The Gunslinger leaves readers eagerly awaiting the next chapter.",
@@ -323,7 +323,7 @@
 		count:1
 	},
 	{
-		id:"book29",
+		bookId:"book29",
 		photo:"https://firebasestorage.googleapis.com/v0/b/bookstore-67dde.appspot.com/o/booksPhoto%2FWizard%20and%20Glass.jpg?alt=media&token=38c325c6-89f9-4db0-ab92-2bdb660b1dee",
 		product:"Wizard and Glass",
 		description:"Roland, Eddie, Susannah, Jake, and Jake’s pet bumbler survive Blaine the Mono’s final crash, only to find themselves stranded in an alternate version of Topeka, Kansas, one that has been ravaged by the superflu virus. While following the deserted I-70 toward a distant glass palace, they hear the atonal squalling of a thinny, a place where the fabric of existence has almost entirely worn away. While camping near the edge of the thinny, Roland tells his ka-tet a story about another thinny, one that he encountered when he was little more than a boy. Over the course of one long magical night, Roland transports us to the Mid-World of long-ago and a seaside town called Hambry, where Roland fell in love with a girl named Susan Delgado, and where he and his old tet-mates Alain and Cuthbert battled the forces of John Farson, the harrier who—with a little help from a seeing sphere called Maerlyn’s Grapefruit—ignited Mid-World’s final war",
@@ -335,7 +335,7 @@
 		count:1
 	},
 	{
-		id:"book30",
+		bookId:"book30",
 		photo:"https://firebasestorage.googleapis.com/v0/b/bookstore-67dde.appspot.com/o/booksPhoto%2FWolves%20of%20the%20Calla.jpg?alt=media&token=92492970-b71f-41b4-a005-fee1197652c7",
 		product:"Wolves of the Calla",
 		description:"Jack Torrance's new job at the Overlook Hotel is the perfect chance for a fresh start. As the off-season caretaker at the atmospheric old hotel, he'll have plenty of time to spend reconnecting with his family and working on his writing. But as the harsh winter weather sets in, the idyllic location feels ever more remote...and more sinister. And the only one to notice the strange and terrible forces gathering around the Overlook is Danny Torrance, a uniquely gifted five-year-old",
@@ -347,7 +347,7 @@
 		count:1
 	},
 	{
-		id:"book31",
+		bookId:"book31",
 		photo:"https://firebasestorage.googleapis.com/v0/b/bookstore-67dde.appspot.com/o/booksPhoto%2FThe%20Stand.jpg?alt=media&token=f8c1c2a8-f5d3-46f4-9af4-01d62c2b6048",
 		product:"The Stand",
 		description:"When a man escapes from a biological testing facility, he sets in motion a deadly domino effect, spreading a mutated strain of the flu that will wipe out 99 percent of humanity within a few weeks. The survivors who remain are scared, bewildered, and in need of a leader. Two emerge–Mother Abagail, the benevolent 108-year-old woman who urges them to build a peaceful community in Boulder, Colorado; and Randall Flagg, the nefarious “Dark Man,” who delights in chaos and violence. As the dark man and the peaceful woman gather power, the survivors will have to choose between them–and ultimately decide the fate of all humanity",
@@ -359,7 +359,7 @@
 		count:1
 	},
 	{
-		id:"book32",
+		bookId:"book32",
 		photo:"https://firebasestorage.googleapis.com/v0/b/bookstore-67dde.appspot.com/o/booksPhoto%2FMisery.jpg?alt=media&token=3a05a247-ced3-4d43-bccd-9a8fd75d71ef",
 		product:"Misery",
 		description:"Paul Sheldon. He's a bestselling novelist who has finally met his biggest fan. Her name is Annie Wilkes and she is more than a rabid reader - she is Paul's nurse, tending his shattered body after an automobile accident. But she is also his captor, keeping him prisoner in her isolated house",
@@ -371,7 +371,7 @@
 		count:1
 	},
 	{
-		id:"book33",
+		bookId:"book33",
 		photo:"https://firebasestorage.googleapis.com/v0/b/bookstore-67dde.appspot.com/o/booksPhoto%2Fcarrie.jpg?alt=media&token=44d2be80-1326-47ae-8e87-6e5a122133fe",
 		product:"Carrie",
 		description:"A modern classic, Carrie introduced a distinctive new voice in American fiction -- Stephen King. The story of misunderstood high school girl Carrie White, her extraordinary telekinetic powers, and her violent rampage of revenge, remains one of the most barrier-breaking and shocking novels of all time.",
@@ -383,7 +383,7 @@
 		count:1
 	},
 	{
-		id:"book34",
+		bookId:"book34",
 		photo:"https://firebasestorage.googleapis.com/v0/b/bookstore-67dde.appspot.com/o/booksPhoto%2FThe%20Waste%20Lands.jpg?alt=media&token=8707fa56-f31f-4619-b3ae-403aba903ae9",
 		product:"The Waste Lands",
 		description:"Several months have passed, and Roland’s two new tet-mates have become proficient gunslingers. Eddie Dean has given up heroin, and Odetta’s two selves have joined, becoming the stronger and more balanced personality of Susannah Dean. But while battling The Pusher in 1977 New York, Roland altered ka by saving the life of Jake Chambers, a boy who—in Roland’s where and when—has already died. Now Roland and Jake exist in different worlds, but they are joined by the same madness: the paradox of double memories. Roland, Susannah, and Eddie must draw Jake into Mid-World then follow the Path of the Beam all the way to the Dark Tower. But nothing is easy in Mid-World. Along the way our tet stumbles into the ruined city of Lud, and are caught between the warring gangs of the Pubes and the Grays. The only way out of Lud is to wake Blaine the Mono, an insane train that has a passion for riddling, and for suicidal journeys",
@@ -395,7 +395,7 @@
 		count:1
 	},
 	{
-		id:"book35",
+		bookId:"book35",
 		photo:"https://firebasestorage.googleapis.com/v0/b/bookstore-67dde.appspot.com/o/booksPhoto%2Fcell.jpg?alt=media&token=2dd47584-18bf-4d35-9eeb-eb787ccf06bf",
 		product:"Cell",
 		description:"Graphic artist Clay Riddell was in the heart of Boston on that brilliant autumn afternoon when hell was unleashed before his eyes. Without warning, carnage and chaos reigned. Ordinary people fell victim to the basest, most animalistic destruction.",
@@ -407,7 +407,7 @@
 		count:1
 	},
 	{
-		id:"book36",
+		bookId:"book36",
 		photo:"https://firebasestorage.googleapis.com/v0/b/bookstore-67dde.appspot.com/o/booksPhoto%2FHidden%20Pictures.jpg?alt=media&token=6a20623a-c1f6-4b64-a5f1-6d89734d5cf1",
 		product:"Hidden Pictures",
 		description:"Fresh out of rehab, Mallory Quinn takes a job in the affluent suburb of Spring Brook, New Jersey as a babysitter for Ted and Caroline Maxwell. She is to look after their five-year-old son, Teddy Mallory immediately loves this new job. She lives in the Maxwell’s pool house, goes out for nightly runs, and has the stability she craves. And she sincerely bonds with Teddy, a sweet, shy boy who is never without his sketchbook and pencil. His drawings are the usual fare: trees, rabbits, balloons. But one day, he draws something different: a man in a forest, dragging a woman’s lifeless body.",
@@ -419,7 +419,7 @@
 		count:1
 	},
 	{
-		id:"book37",
+		bookId:"book37",
 		photo:"https://firebasestorage.googleapis.com/v0/b/bookstore-67dde.appspot.com/o/booksPhoto%2FThe%20X-Files.jpg?alt=media&token=35f93b4c-330e-42a1-8245-392bc03b5e25",
 		product:"The X-Files: Earth Children are Weird",
 		description:"One the most beloved TV shows of all time is now a sweet, silly, sci-fi bedtime story! In The X Files: Earth Children Are Weird, best pals Dana (Scully) and Fox (Mulder) have pitched a tent in the backyard for a sleepover. But the night is full of strange sounds, lights, and shadows. Surely there’s a rational, scientific explanation for everything . . . or is there? With beautiful illustrations of pint-sized Dana and Fox, this humorous and not-scary-at-all story will introduce the cult TV show to an entire new generation of fans.",
@@ -431,7 +431,7 @@
 		count:1
 	},
 	{
-		id:"book38",
+		bookId:"book38",
 		photo:"https://firebasestorage.googleapis.com/v0/b/bookstore-67dde.appspot.com/o/booksPhoto%2FBuffy%20contre%20les%20vampires.jpg?alt=media&token=0c30a92c-6f83-47ea-a85b-58b384a6708d",
 		product:"Buffy contre les vampires",
 		description:"Cet album plonge le lecteur dans l'enfance de Buffy et ses amis, en lutte contre les vampires.",
@@ -443,7 +443,7 @@
 		count:1
 	},
 	{
-		id:"book39",
+		bookId:"book39",
 		photo:"https://firebasestorage.googleapis.com/v0/b/bookstore-67dde.appspot.com/o/booksPhoto%2FBack%20to%20the%20Future.jpg?alt=media&token=c3078b44-faaa-4c52-a435-c151caba3599",
 		product:"Back to the Future",
 		description:"One the most beloved TV shows of all time is now a sweet, silly, sci-fi bedtime story! In The X Files: Earth Children Are Weird, best pals Dana (Scully) and Fox (Mulder) have pitched a tent in the backyard for a sleepover. But the night is full of strange sounds, lights, and shadows. Surely there’s a rational, scientific explanation for everything . . . or is there? With beautiful illustrations of pint-sized Dana and Fox, this humorous and not-scary-at-all story will introduce the cult TV show to an entire new generation of fans.",
@@ -455,7 +455,7 @@
 		count:1
 	},
 	{
-		id:"book40",
+		bookId:"book40",
 		photo:"https://firebasestorage.googleapis.com/v0/b/bookstore-67dde.appspot.com/o/booksPhoto%2FHome%20Alone.jpg?alt=media&token=58df5d73-e634-4afe-a371-786ce58efa11",
 		product:"Home Alone: The Classic Illustrated Storybook",
 		description:"Home Alone arrived in theaters 25 years ago, and it remains the #1 highest-grossing live-action comedy film of all time. Now, illustrator Kim Smith has reimagined the story as a classic Christmas fable—complete with bumbling burglars, brilliant booby-traps, and a little boy named Kevin who’s forced to fend for himself. Through a series of comic adventures, Kevin learns lessons about responsibility and the importance of family. With an amusing read-aloud story and enchanting, immersive illustrations, this charming adaptation can be enjoyed year after year alongside The Polar Express, How the Grinch Stole Christmas, and other Christmas storybook classics",
@@ -467,7 +467,7 @@
 		count:1
 	},
 	{
-		id:"book41",
+		bookId:"book41",
 		photo:"https://firebasestorage.googleapis.com/v0/b/bookstore-67dde.appspot.com/o/booksPhoto%2Fblock.jpg?alt=media&token=7cd5d268-7775-40ac-a5ca-d7bcfb94f73b",
 		product:"The Writer's Block: 786 Ideas To Jump-start Your Imagination",
 		description:"Anxious to write that Great American Novel but don't know where to begin? Help is on the way with our Writer's Block! This guide to beating writer's block comes packaged in the shape of an actual block: 3' x 3'x 3', with 672 pages and more than 200 photographs throughout. Next time you're stuck, just flip open The Writer's Block to any page to find an idea or exercise that will jump-start your imagination. Many of these assignments come straight from the creative writing classes of celebrated novelists like Ethan Canin, Richard Price, Toni Morrison, and Kurt Vonnegut: Joyce Carol Oates explains how she uses running to destroy writer's block. Elmore Leonard describes how he often finds ideas just by reading the newspaper",
@@ -479,7 +479,7 @@
 		count:1
 	},
 	{
-		id:"book42",
+		bookId:"book42",
 		photo:"https://firebasestorage.googleapis.com/v0/b/bookstore-67dde.appspot.com/o/booksPhoto%2FLet's%20Paint%20the%20'90s.jpg?alt=media&token=5a7046f3-78e4-41ea-b1c4-c1a5f593df23",
 		product:"Let's Paint the '90s",
 		description:"The glory of grunge! The beauty of Baywatch! The awesome Arsenio Hall! Now all of your favorite ’90s moments and personalities have been assembled in a single book—and you can bring them to life with the enclosed paint set and brush. Let’s paint Bill Clinton! Let’s paint Vanilla Ice! Let’s paint the ’90s!",
@@ -491,7 +491,7 @@
 		count:1
 	},
 	{
-		id:"book43",
+		bookId:"book43",
 		photo:"https://firebasestorage.googleapis.com/v0/b/bookstore-67dde.appspot.com/o/booksPhoto%2FClever%20Girl.jpg?alt=media&token=ecc926db-40d4-427f-866e-0771d66c6c2a",
 		product:"Clever Girl",
 		description:"Clever Girl is an indelible story of one woman’s life, unfolded in a series of beautifully sculpted episodes that illuminate an era, moving from the 1960s to today, from one of Britain’s leading literary lights—Tessa Hadley—the author of the New York Times Notable Books Married Love and The London Train.",
@@ -502,7 +502,7 @@
 		count:1
 	},
 	{
-		id:"book44",
+		bookId:"book44",
 		photo:"https://firebasestorage.googleapis.com/v0/b/bookstore-67dde.appspot.com/o/booksPhoto%2FThe%20London%20Train.jpg?alt=media&token=0beffe80-4b22-4e19-8573-c3bd8f19ecaa",
 		product:"The London Train",
 		description:"Two lives, stretched between two cities, converge in a chance meeting with immediate and far-reaching consequences in this compelling, sophisticated tale from acclaimed New Yorker writer Tessa Hadley, author of Accidents in the Home and The Master Bedroom. As father struggles to reestablish a relationship with his estranged daughter in London, surrendering himself to an underground life of illegal squats and counterculture friendships, a wife decides she must flee her suffocating marriage to return to Wales, where in Cardiff she may rediscover the passions that once fueled her life. Embracing change and facing loss, in a story evocative of Alice Munro’s Runaway and Julia Glass’ I See You Everywhere, Hadley’s powerful characters illuminate the furthest reaches of love, hope, and determination.",
@@ -513,7 +513,7 @@
 		count:1
 	},
 	{
-		id:"book45",
+		bookId:"book45",
 		photo:"https://firebasestorage.googleapis.com/v0/b/bookstore-67dde.appspot.com/o/booksPhoto%2FLate%20in%20the%20Day.jpg?alt=media&token=ae5de674-af19-4ce4-bf6d-3382965ae6fd",
 		product:"Late in the Day",
 		description:"Alexandr and Christine and Zachary and Lydia have been friends since they first met in their twenties. Thirty years later, Alex and Christine are spending a leisurely summer’s evening at home when they receive a call from a distraught Lydia: she is at the hospital. Zach is dead.",
@@ -524,7 +524,7 @@
 		count:1
 	},
 	{
-		id:"book46",
+		bookId:"book46",
 		photo:"https://firebasestorage.googleapis.com/v0/b/bookstore-67dde.appspot.com/o/booksPhoto%2FThe%20Past.jpg?alt=media&token=aced5442-ed51-4f02-b7a5-eec36ec9176d",
 		product:"The Past",
 		description:"A mesmerizing novel about family and the modern world encroaching upon the old, from one of Britain's finest contemporary novelists.",
@@ -535,7 +535,7 @@
 		count:1
 	},
 	{
-		id:"book47",
+		bookId:"book47",
 		photo:"https://firebasestorage.googleapis.com/v0/b/bookstore-67dde.appspot.com/o/booksPhoto%2FV.E.%20Schwab's%20ExtraOrdinary.jpg?alt=media&token=83c3cb90-5663-40e8-bf6c-6944ad228c0f",
 		product:"V.E. Schwab's ExtraOrdinary",
 		description:"Set in the years between Vicious and Vengeful, ExtraOrdinary follows a teenage girl named Charlotte Tills who survives a bus crash and becomes EO – ExtraOrdinary – gaining the ability to see people’s deaths in reflective surfaces.",
