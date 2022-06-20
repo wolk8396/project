@@ -103,33 +103,29 @@ export const my = async () => {
 			const cart_check = document.createElement('img');
 			const photo = document.createElement('img');
 			const author = document.createElement('p');
-			const btnAdd = document.createElement('button');
 			const btnMore = document.createElement('button');
 			const cost = document.createElement('span');
 
 			container.className = 'products-container';
 			productsElement.className = 'products-element';
-			container_title.className = 'products-element__product'
+			container_title.className = 'products-container__product'
 			product.className = 'title';
-			container_rating.className = 'products-element__rating-stars';
-			photo.className = 'products-element__photo';
-			author.className ='products-element__author';
-			btnAdd.className ='products-element__add';
+			container_rating.className = 'products-container__rating-stars';
+			photo.className = 'products-container__photo';
+			author.className ='products-container__author';
 			btnMore.id = item.id;
-			btnMore.className ='products-element__more';
-			cost.className ='products-element__cost';
-			cart_check.className ='move';
+			btnMore.className ='products-container__more';
+			cost.className ='products-container__cost';
+			// cart_check.className ='move';
 		
 			bookPage.append(block);
 			block.append(container);
-			container.append(productsElement);
 			container_title.append(product);
-			productsElement.append(container_rating, container_title, photo, author, cost, btnMore);
+			container.append(container_rating, container_title, photo, author, cost, btnMore);
 			container_rating.append(RATING.activeRating(item.rating));
 
 			getBlock(block);
 
-			btnAdd.innerHTML = 'ADD TO CARD';
 			btnMore.innerText = 'Learn More'
 			product.innerHTML = item.product;
 			photo.src = item.photo;

@@ -86,7 +86,7 @@ export class ShoppingCart {
     }
 
     const removeBook = () => {
-      this.#fn_remove(this.#element.id);
+      this.#fn_remove(this.#element.bookId);
       tr.remove();
       this.#fn_fullPrice(this.#teg_p);
       total();
@@ -95,10 +95,11 @@ export class ShoppingCart {
     but_btnDelete.onclick = () => {
       this.#fn_modal_window.setDate(removeBook, this.#massage);
     }
-
+  
     btn_minus.onclick = () => {
       let decrease = --this.#element.count;
-      this.#fn_increase(this.#element.id, decrease, p_count);
+      this.#fn_increase(this.#element.bookId, decrease, p_count);
+    
 
       if (this.#element.count === 1) {
         this.#fn_modal_window.setDate(removeBook, this.#massage);
@@ -111,7 +112,7 @@ export class ShoppingCart {
      btn_plus.onclick = () => {
       let increase = ++this.#element.count;
 
-      this.#fn_increase(this.#element.id, increase, p_count);
+      this.#fn_increase(this.#element.bookId, increase, p_count);
   
       total();
     }

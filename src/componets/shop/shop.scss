@@ -6,7 +6,7 @@
 	width: 1286px;
 	height: 1700px;
   font-family: sans-serif;
-  background-color: #303030;
+  background-color: black;
 
 	.header-wrapper {
 		position: sticky;
@@ -15,20 +15,16 @@
 	}
 
 	.main-products {
-		background-color: black;
-		// margin: 70px 64px;
+		width: 1244px;
 
 		&__list_books {
 			display: grid;
 			grid-template-columns: 1fr 1fr 1fr 1fr;
-			margin-left: 49px;
+			width:1126px;
+			margin: auto;
+			background-color: black;
 
 			.products-container {
-				display: inline-block; 
-				margin: 13px 7px;
-			}
-	
-			.products-element {
 				width: 231px;
 				height: 348px;
 				display: flex;
@@ -36,69 +32,66 @@
 				justify-content: end;
 				background-color:#303030;
 				margin: 7px 18px;
-					
+	
 				&__rating-stars {
-					width: 231px;
+					width: 100px;
 					height: 23px;
+	
+					.rating {
+						margin-left: 15px;
+					}
 				}
 	
 				&__product  {
-					width: 231px;
-					height: 40px;
+					width: 197px;
+					height: 51px;
 					padding: 9px;
 					word-wrap: break-word;
-					font-size: 10px;
-			
+					font-size: 14px;
+					margin-left: 10px;
+
 					.title {
 						font-weight: bold;
 						margin-top: 15px;
 						margin-bottom: auto;
 						color: white;
 					}
-					}
-	
-					&__photo {
-						width: 123px;
-						height: 113px;
-					}
-	
-					&__author {
-						font-weight: bold;
-						margin-top: 15px;
-						color:white;
-					}
-					&__add.active {
-						background-color: green;
-						margin-bottom: 16px;
-					}
-					
-					&__add, &__more {
-						width: 153px;
-						height: 27px;
-						margin: auto;
-						border-radius: 40px;
-						background-color: red;
-						font-weight: bold;
-						color:white;
-						border: none;
-						cursor: pointer;
-					}
-
-					&__add:hover {
-						box-shadow: inset 0 0 0 2px #3a7999;
-					}
-
-					&__more:hover {
-						box-shadow: inset 0 0 0 2px #3a7999;
-					}
-	
-					&__text, &__cost {
-						font-weight: bold;
-						color:white;
-					}
-	
 				}
-
+	
+				&__photo {
+					width: 123px;
+					height: 113px;
+					margin: auto;
+				}
+	
+				&__author {
+					font-weight: bold;
+					margin-top: 15px;
+					margin-left: 16px;
+					font-size: 12px;
+					color:white;
+				}
+	
+				&__cost {
+					font-weight: bold;
+					color:white;
+					margin-left: 16px;
+					margin-top: 8px;
+					font-size: 12px;
+				}
+	
+				&__more {
+					width: 153px;
+					height: 27px;
+					margin: auto;
+					border-radius: 40px;
+					background-color: red;
+					font-weight: bold;
+					color:white;
+					border: none;
+					cursor: pointer;
+				}
+			}
 		}
 	}
 
@@ -142,52 +135,112 @@
 
 	}
 	.footer-after {
-		width: 1268px;
+		width: 1286px;
     height: 15px;
+		background-color: #303030;
 	}
+}
+
+
+@media(max-width:1152px) {
+	.wrapper-shop {
+		width:1152px;
+
+		.main-products {
+			width: 1130px;
+		}
+
+		.btn-container,
+		.footer-after {
+			width:1152px;
+		}
+	}
+}
+
+@media(max-width:1020px) {
+	.wrapper-shop {
+		width:1020px;
+
+		.main-products {
+			width: 1020px;
+
+			&__list_books {
+				width: 900px;
+
+				.products-container {
+					width: 180px;
+
+					&__product {
+						width: 140px;
+					}
+				}
+			}
+		}
+
+		.btn-container,
+		.footer-after {
+			width:1020px;
+		}
+	}
+}
+
+@media(max-width:912px) {
+	.wrapper-shop  {
+		width: 912px;
+		height: 1995px;
+
+		.main-products {
+			width: 912px;
+
+			&__list_books {
+				width: 839px;
+				margin-top: 23px;
+				grid-template-columns: 1fr 1fr 1fr;
+			}
+		}
+
+		.btn-container,
+		.footer-after {
+			width:912px;
+		}
+	}
+}
+
+@media(max-width:850px) {
+
+	.wrapper-shop {
+		width:850px;
+
+		.main-products {
+			width: 851px;
+			
+			&__list_books {
+				width: 700px;
+			}
+			
+		}
+
+		.btn-container,
+		.footer-after {
+			width:850px;
+		}
+	}
+
 }
 
 
 @media(max-width:768px) {
 	.wrapper-shop {
 		width: 768px;
-		height: 1344px;
+		
 
 		.main-products {
-		
+			width: 764px;
+
 			&__list_books {
-				width: 768px;
-				margin-left: 0;
-
-				.products-container {
-
-					.products-element{
-						width: 141px;
-						height: 226px;
-
-						&__product {
-							font-size: 6px;
-							height: 17px;
-						}
-
-						&__photo {
-							width: 95px;
-							height: 83px;
-						}
-
-						&__author,
-						&__cost {
-							font-size: 9px;
-						}
-
-						&__more {
-							width: 100px;
-						}
-					}
-				}
-			
-	
+				width: 654px;
 			}
+
 		}
 
 		.btn-container,
@@ -198,26 +251,142 @@
 	}
 
 }
+//height: 2697px;
 
-@media(max-width:400px) {
+@media(max-width:670px) {
+
 	.wrapper-shop {
-		width: 400px;
-		height: 2005px;
-
-	
+		width: 670px;
+		height: 2697px;
 
 		.main-products {
-			// margin-top: 112px;
-			height: 1600px;
+			width: 670px;
 
 			&__list_books {
-				grid-template-columns: 1fr 3fr;
+				width: 430px;
+				grid-template-columns: 1fr 2fr;
 			}
 		}
 
 		.btn-container,
 		.footer-after {
-			width: 400px;
+			width: 670px;
+		}
+	}
+}
+
+@media(max-width:520px) {
+	.wrapper-shop {
+		width: 520px;
+
+
+		.main-products {
+			width: 520px;
+		}
+	
+		.btn-container,
+		.footer-after {
+			width: 520px;
+		}
+	}
+}
+
+
+@media(max-width:480px) {
+	.wrapper-shop {
+		width: 480px; 
+
+		.main-products {
+			width: 469px;
+
+			&__list_books {
+				width: 420px;
+			}
+		}
+
+		.btn-container,
+		.footer-after {
+			width: 480px;
+		}
+	}
+}
+
+
+@media(max-width:448px) {
+	.wrapper-shop {
+		width: 448px; 
+
+		.main-products {
+			width: 444px;
+
+			&__list_books {
+				width: 315px;
+
+				.products-container {
+					width: 129px;
+
+					&__product {
+						width: 95px;
+
+						.title {
+							font-size: 12px;
+						}
+					}
+
+					&__photo {
+						width: 111px;
+						height: 99px;
+					}
+
+					&__more {
+						width: 100px;
+					}
+				}
+			}
+		}
+
+		.btn-container,
+		.footer-after {
+			width: 448px;
+		}
+	}
+}
+
+
+@media(max-width:414px) {
+	.wrapper-shop {
+		width: 414px;
+
+		.main-products,
+		.btn-container,
+		.footer-after {
+			width: 414px;
+		}
+	}
+
+}
+
+@media(max-width:399px) {
+	.wrapper-shop {
+		width:399px;
+
+		.main-products,
+		.btn-container,
+		.footer-after {
+			width: 399px;
+		}
+	}
+
+}
+
+@media(max-width:379px) {
+	.wrapper-shop {
+		width:379px;
+
+		.main-products,
+		.btn-container,
+		.footer-after {
+			width:379px;
 		}
 	}
 

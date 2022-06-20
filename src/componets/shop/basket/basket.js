@@ -36,7 +36,7 @@ export const basketPage =  async () => {
 
 	const remove = id => {
 		const books = getProduct();
-		const product = books.filter((item, index) => item.id !== id);
+		const product = books.filter((item, index) => item.bookId !== id);
 		let number = FUNCTION.countItems();
 
 		Header.countItems(number);
@@ -114,5 +114,4 @@ export const basketPage =  async () => {
 
 	header.append(Header.getHeader());
 
-	Footer.getFooter(wrapper);
 }

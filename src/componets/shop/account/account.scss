@@ -1,9 +1,9 @@
-.wreaper {
+.wrapper {
   display: flex;
 	flex-direction: column;
 	justify-content:normal;
   width: 1286px;
-  height: 1130px;
+  height: 1340px;
   // border: 1px solid black;
   background-color: white;
 
@@ -16,7 +16,6 @@
     display: flex;
     flex-direction: row;
     justify-content:normal;
-    // border: 1px solid black;
     width: 1015px;
     height: 314px;
     margin: 0 auto;
@@ -26,7 +25,6 @@
       display: flex;
       flex-direction: column;
       justify-content:normal;
-      // border: 1px solid black;
       width:224px;
 
       .photo-user {
@@ -120,6 +118,12 @@
           position: absolute;
           top: 23px;
         }
+
+        .change-date {
+          position: absolute;
+          left: 362px;
+          top: 33px;
+        }
       }
 
       .additional {
@@ -130,6 +134,49 @@
         &__birth {
           color: #382110;
           font-weight: bold;
+        }
+      }
+
+      .Change-profile {
+        display: none;
+        width: 250px;
+        height: 132px;
+        position: relative;
+
+
+        .profile-fullName {
+          background-color: #333;
+          border: none;
+          border-radius: 0.3rem;
+          outline: none;
+          color: #fff;
+          padding: 16px 20px 0;
+          font-size: 1rem;
+          margin: 3px;
+        }
+
+        label {
+          position: absolute;
+          color: #8c8c8c;
+          pointer-events: none;
+          left: 21px;
+        }
+
+        .block-btns {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          width: 175px;
+          margin-top: 2px;
+          margin-left: 5px;
+         
+
+          .btn-profile {
+            width: 64px;
+            height: 24px;
+            background-color: red;
+            border-radius: 5px;
+          }
         }
       }
     }
@@ -178,13 +225,14 @@
         top: 11px;
         left: 83px;
         overflow-y: scroll;
+        width: 907px;
         height: 500px;
   
         &__book {
           display: flex;
           flex-direction: row;
-          justify-content:normal;
-          width: 791px;
+          justify-content: space-between;
+          width: 789px;
           height: 181px;
           margin: 0 auto;
   
@@ -200,7 +248,7 @@
           }
 
           .block-imformation {
-            width: 412px;
+            width: 288px;
 
             &__product {
               color:#382110; 
@@ -219,15 +267,38 @@
              }
           }
 
+          .block-quantity {
+            position: relative;
+
+            .items-quantity {
+              border-radius: 4px;
+              height: 55px;
+              width: 92px;
+            }
+
+            .input_label {
+              position: absolute;
+              left: 2px;
+            }
+          }
+
           .block_btns {
             display: flex;
             flex-direction: column;
             justify-content: space-around;
-            width: 150px;
-            height: 100px;
+            width: 90px;
+            height: 132px;
+
+            .btns {
+              display: flex;
+              flex-direction: column;
+              justify-content: space-between;
+              height: 98px;
+            }
 
             .btn-trash {
-              width:10%;
+              width: 18%;
+              margin-left: auto;
             }
           }
 
@@ -241,4 +312,92 @@
   width: 1286px;
   height: 35;
   border: 1px solid black;
+}
+
+
+@media(max-width:1152px) {
+	.wrapper {
+		width: 1152px;
+	}
+
+}
+
+@media(max-width:1020px) {
+	.wrapper {
+		width: 1020px;
+
+    .main-account {
+      width: 843px;
+    }
+
+    .user-wishlist {
+      width: 842px;
+      border: 1px solid;
+
+      &__title {
+        width: 842px;
+      }
+
+      &__product {
+
+        .container_product {
+          left: 5px;
+          width: 834px;
+        }
+      }
+    }
+	}
+  
+}
+
+
+@media(max-width:912px) {
+  .wrapper {
+		width: 912px; 
+
+    .user-wishlist {
+      // width: 842px;
+      border: 1px solid;
+
+      &__title {
+        width: 700px;
+      }
+
+      &__product {
+
+        .container_product {
+
+          &__book {
+            justify-content: normal;
+            
+            .photo-book {
+              width: 91px;
+              height: 127px;
+              border: 1px solid;
+
+              &__frame {
+                width: 89px;
+                height: 101px;
+              }
+            }
+
+            .block-imformation {
+              border: 1px solid;
+            }
+
+            .block-quantity {
+              border: 1px solid;
+            }
+
+            .block_btns {
+              border: 1px solid;
+            }
+          }
+          // left: 5px;
+          // width: 834px;
+        }
+      }
+    }
+
+  }
 }

@@ -9,6 +9,7 @@ import { getStorage, ref, uploadBytes,  getDownloadURL,  getMetadata, deleteObje
 
 import { getUser1, getLearnMore} from '../shared/services/local-storage-service';
 import { FIREBASE_CONFIG, AUTH_URL, DB_URL } from './aip-config';
+import { v4 as uuidv4 } from 'uuid';
 
 
 const app = initializeApp(FIREBASE_CONFIG);
@@ -38,7 +39,7 @@ export const createTodo = (addDescription, time) => {
       {
         method: 'POST',
         body: JSON.stringify({
-          idBook: getLearnMore().id,
+          idBook: getLearnMore().bookId,
           idUsers:getUser1().authId,
           description:addDescription,
           count:0,
@@ -116,7 +117,9 @@ export const deleteTodolike = idUpdate => {
 
 export const uploadPhoto = async (event, imgName, userDate, getUrl) => {
   const storage = getStorage();
-  const storageRef = ref(storage, `/${imgName}`);
+  const storageRef = ref(storage, `/${uuidv4()}_${imgName}`);
+  console.log(storageRef);
+
   let url =''
  
   await uploadBytes(storageRef, event.target.files[0]).then(res => console.log(res))
@@ -126,7 +129,7 @@ export const uploadPhoto = async (event, imgName, userDate, getUrl) => {
 
   await fetch(
     `${DB_URL}/users/${userDate.id}.json`,
-    {
+      {
       method: 'PUT',
       body: JSON.stringify({
         ...userDate,
@@ -138,7 +141,6 @@ export const uploadPhoto = async (event, imgName, userDate, getUrl) => {
     
   getUrl(url)
 
- console.log(url);
 }
 
 export const deletePhoto = async (photo, userDate) => {
@@ -153,7 +155,7 @@ export const deletePhoto = async (photo, userDate) => {
   });
 
   await fetch(
-    `${DB_URL}/users/${userDate.idLink}.json`,
+    `${DB_URL}/users/${userDate.id}.json`,
     {
       method: 'PUT',
       body: JSON.stringify({
@@ -162,8 +164,7 @@ export const deletePhoto = async (photo, userDate) => {
         })
       }
     )
-    .then(response => response.json())
-
+    .then(response => response.json());
 }
 
 export const userWishlist = (product, user) => {
@@ -231,7 +232,6 @@ export const updatBasket= (product, id) => {
          body: JSON.stringify({
           goods:product,
            userid:getUser1().authId,
-           // time:moment().format()
            })
        }
      );
@@ -243,6 +243,21 @@ export const clearRating = id => {
     `${DB_URL}/rating/${id}.json`,
       {
         method: 'DELETE'
+      }
+    );
+}
+
+export const updateNmeUser = userDate => {
+  console.log(userDate.id);
+  return fetch(
+    `${DB_URL}/users/${userDate.id}.json`,
+      {
+        method: 'PUT',
+        body: JSON.stringify({
+          ...userDate,
+          firstName:userDate.firstName,
+          lastName:userDate.lastName
+          })
       }
     );
 }

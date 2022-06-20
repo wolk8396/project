@@ -4,7 +4,14 @@
 	flex-direction: column;
 	justify-content: space-between;
 	width: 1286px;
-	border: 1px solid black;
+	
+
+	.header-basket {
+		position: sticky;
+    top: 0;
+    z-index: 1000;
+
+	}
 
 	.product {
 		display: flex;
@@ -107,7 +114,6 @@
 	}
 }
 
-
 @media(max-width:670px) {
 	.wrapper-basket {
 		width: 670px;
@@ -160,7 +166,6 @@
 
 		.product {
 			width: 385px;
-		
 		}
 	}
 }
@@ -182,21 +187,21 @@
 		width: 379px;
 
 		.product {
-			width: 351px;
+			width:278px;
 
 			table {
 				 tr {
 					td {
 						.full-total {
 							p {
-								font-size: 12px;
-								width: 117px;
+								font-size: 10px;
+								width: 73px;
 							}
 
 							.container_btn {
 
 								&__btn-update-cart {
-									width: 47px;
+									width: 54px;
     							height: 34px;
 								}
 							}
