@@ -4,13 +4,11 @@
 	flex-direction: column;
 	justify-content: space-between;
 	width: 1286px;
-	
 
 	.header-basket {
 		position: sticky;
     top: 0;
     z-index: 1000;
-
 	}
 
 	.product {
@@ -50,11 +48,9 @@
 				.container_btn {
 					display: inline-block;
 					list-style: none;
-				
 					width: 106px;
     			height: 40px;
-					
-	
+
 					&__btn-update-cart {
 						width: 98px;
     				height: 40px;
@@ -62,17 +58,16 @@
 				}
 			}
 		}
-	
 	}
 }
 
-@media(max-width:1152px) {
+@media(max-width: 1152px) {
 	.wrapper-basket {
 		width: 1152px;
 	}
 }
 
-@media(max-width:1020px) {
+@media(max-width: 1020px) {
 	.wrapper-basket {
 		width: 1020px;
 
@@ -81,7 +76,6 @@
 		}
 	}
 }
-
 
 @media(max-width:912px) {
 	.wrapper-basket {
@@ -93,8 +87,7 @@
 	}
 }
 
-
-@media(max-width:850px) {
+@media(max-width: 850px) {
 	.wrapper-basket {
 		width: 850px;
 
@@ -104,7 +97,7 @@
 	}
 }
 
-@media(max-width:768px) {
+@media(max-width: 768px) {
 	.wrapper-basket {
 		width: 768px;
 
@@ -114,7 +107,7 @@
 	}
 }
 
-@media(max-width:670px) {
+@media(max-width: 670px) {
 	.wrapper-basket {
 		width: 670px;
 
@@ -124,10 +117,19 @@
 	}
 }
 
-
-@media(max-width:520px) {
+@media(max-width: 580px) {
 	.wrapper-basket {
-		width:520px;
+		width: 580px;
+
+		.product {
+			width: 580px;
+		}
+	}
+}
+
+@media(max-width: 520px) {
+	.wrapper-basket {
+		width: 520px;
 
 		.product {
 			width: 490px;
@@ -135,32 +137,27 @@
 	}
 }
 
-
-
-@media(max-width:480px) {
+@media(max-width: 480px) {
 	.wrapper-basket {
-	
 
 		.product {
-			width: 599px;;
+			width: 405px;
 		}
 	}
 }
 
-
-@media(max-width:448px) {
+@media(max-width: 448px) {
 	.wrapper-basket {
 		width: 448px;
 
 		.product {
 			width: 400px;
-		
 		}
 	}
 }
 
 
-@media(max-width:414px) {
+@media(max-width: 414px) {
 	.wrapper-basket {
 		width: 414px;
 
@@ -171,7 +168,7 @@
 }
 
 
-@media(max-width:399px) {
+@media(max-width: 399px) {
 	.wrapper-basket {
 		width: 399px;
 
@@ -182,16 +179,19 @@
 }
 
 
-@media(max-width:379px) {
+@media(max-width: 379px) {
 	.wrapper-basket {
 		width: 379px;
 
 		.product {
-			width:278px;
+			width: 278px;
 
 			table {
+
 				 tr {
+
 					td {
+
 						.full-total {
 							p {
 								font-size: 10px;

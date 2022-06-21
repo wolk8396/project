@@ -109,8 +109,7 @@
 			width: 290px;
 			height: 45px;
 			margin: auto;
-		
-				
+
 			.btn-number-page.active {
 				display: block;
 				color: whitesmoke;
@@ -132,8 +131,8 @@
 				display: none;
 			}
 		}
-
 	}
+
 	.footer-after {
 		width: 1286px;
     height: 15px;
@@ -141,10 +140,9 @@
 	}
 }
 
-
-@media(max-width:1152px) {
+@media(max-width: 1152px) {
 	.wrapper-shop {
-		width:1152px;
+		width: 1152px;
 
 		.main-products {
 			width: 1130px;
@@ -152,14 +150,14 @@
 
 		.btn-container,
 		.footer-after {
-			width:1152px;
+			width: 1152px;
 		}
 	}
 }
 
-@media(max-width:1020px) {
+@media(max-width: 1020px) {
 	.wrapper-shop {
-		width:1020px;
+		width: 1020px;
 
 		.main-products {
 			width: 1020px;
@@ -179,12 +177,12 @@
 
 		.btn-container,
 		.footer-after {
-			width:1020px;
+			width: 1020px;
 		}
 	}
 }
 
-@media(max-width:912px) {
+@media(max-width: 912px) {
 	.wrapper-shop  {
 		width: 912px;
 		height: 1995px;
@@ -201,38 +199,33 @@
 
 		.btn-container,
 		.footer-after {
-			width:912px;
+			width: 912px;
 		}
 	}
 }
 
-@media(max-width:850px) {
-
+@media(max-width: 850px) {
 	.wrapper-shop {
-		width:850px;
+		width: 850px;
 
 		.main-products {
 			width: 851px;
-			
+
 			&__list_books {
 				width: 700px;
 			}
-			
 		}
 
 		.btn-container,
 		.footer-after {
-			width:850px;
+			width: 850px;
 		}
 	}
-
 }
-
 
 @media(max-width:768px) {
 	.wrapper-shop {
 		width: 768px;
-		
 
 		.main-products {
 			width: 764px;
@@ -240,21 +233,16 @@
 			&__list_books {
 				width: 654px;
 			}
-
 		}
 
 		.btn-container,
 		.footer-after {
 			width: 768px;
 		}
-
 	}
-
 }
-//height: 2697px;
 
-@media(max-width:670px) {
-
+@media(max-width: 670px) {
 	.wrapper-shop {
 		width: 670px;
 		height: 2697px;
@@ -291,7 +279,6 @@
 	}
 }
 
-
 @media(max-width:480px) {
 	.wrapper-shop {
 		width: 480px; 
@@ -311,8 +298,7 @@
 	}
 }
 
-
-@media(max-width:448px) {
+@media(max-width: 448px) {
 	.wrapper-shop {
 		width: 448px; 
 
@@ -352,8 +338,7 @@
 	}
 }
 
-
-@media(max-width:414px) {
+@media(max-width: 414px) {
 	.wrapper-shop {
 		width: 414px;
 
@@ -363,12 +348,11 @@
 			width: 414px;
 		}
 	}
-
 }
 
-@media(max-width:399px) {
+@media(max-width: 399px) {
 	.wrapper-shop {
-		width:399px;
+		width: 399px;
 
 		.main-products,
 		.btn-container,
@@ -376,18 +360,16 @@
 			width: 399px;
 		}
 	}
-
 }
 
-@media(max-width:379px) {
+@media(max-width: 379px) {
 	.wrapper-shop {
-		width:379px;
+		width: 379px;
 
 		.main-products,
 		.btn-container,
 		.footer-after {
-			width:379px;
+			width: 379px;
 		}
 	}
-
 }

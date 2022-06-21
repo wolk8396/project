@@ -1,5 +1,5 @@
 .wrapper-search {
-  width:1286px;
+  width: 1286px;
   display: flex;
   flex-direction: column;
   justify-content: normal;
@@ -20,8 +20,7 @@
       height: 49px;
       background-color: white;
       border-bottom: 1px solid #dbdbdb;
-   
-  
+
       &__query {
         margin: auto;
         display: flex;
@@ -40,9 +39,8 @@
           font-size: 15px;
         }
       }
-  
-      
     }
+
     .category {
       display: flex;
       justify-content:normal;
@@ -50,8 +48,7 @@
       margin: 0 auto;
       width: 552px;
       height: 32px;
-      // align-items: center;
-  
+
       &__all-books{
         width:87px;
       }
@@ -77,6 +74,7 @@
         width: 32px;
       }
     }
+
     .category p {
       font-weight: bold;
       color:#382110; 
@@ -85,35 +83,32 @@
 
     p:hover {
       text-decoration: underline;
-      color:#382110; 
+      color: #382110; 
     }
-  
   }
-  
+
   .list-product {
     position:relative;
   }
-  
+
   .container_product {
     display: flex;
     flex-direction: column;
-    justify-content:normal;
+    justify-content: normal;
 
     &__book {
       display: flex;
       flex-direction: row;
-      justify-content:space-between;
+      justify-content: space-between;
       width: 990px;
       height: 181px;
       margin: 0 auto;
       margin-top: 58px;
       border-bottom: 1px solid #dbdbdb;
-  
-  
+
       .photo-book {
         width: 200px;
         height: 181px;
-      
 
         &__frame {
           width: 150px;
@@ -125,7 +120,7 @@
         width: 412px;
 
         &__product {
-          color:#382110; 
+          color: #382110; 
           font-weight: bold;
           cursor: pointer;
         }
@@ -178,12 +173,10 @@
         }
       }
     }
-  
-  }  
-
+  }
 }
 
-@media(max-width:1152px) {
+@media(max-width: 1152px) {
   .wrapper-search  {
     width: 1150px; 
 
@@ -192,9 +185,9 @@
     }
 
     .container_product {
-    
+
       &__book {
-        width:762px;
+        width: 762px;
 
         .block-imformation {
           width: 260px;
@@ -202,33 +195,29 @@
       }
     }
   }
-
 }
 
-@media(max-width:1020px) {
+@media(max-width: 1020px) {
   .wrapper-search  {
     width: 1020px; 
 
     .search-block {
       width: 1020px;
     }
-
   }
 }
 
-@media(max-width:912px) {
+@media(max-width: 912px) {
   .wrapper-search  {
     width: 912px; 
 
     .search-block {
       width: 912px;
     }
-
   }
 }
 
-
-@media(max-width:850px) {
+@media(max-width: 850px) {
   .wrapper-search  {
     width: 850px; 
 
@@ -238,25 +227,23 @@
   }
 }
 
-
 @media(max-width: 768px) {
-
   .wrapper-search {
     width: 768px;
 
     .search-block {
       width: 768px;
-  
+
       .input-find {
         border-bottom: 1px solid whitesmoke;
-  
+
         &__query {
           width: 302px;
-  
+
           .input-query {
             width: 250px;
           }
-  
+
           .btn-query {
             width: 50px;
             font-size: 10px;
@@ -266,7 +253,7 @@
 
       .category {
         width: 334px;
-        
+
         p {
           font-size: 10px;
         }
@@ -288,6 +275,7 @@
             height:90px;
           }
         }
+
         .block-imformation {
           width: 193px;
 
@@ -325,7 +313,6 @@
             button {
               font-size: 11px;
             }
-
           }
         }
       }
@@ -334,7 +321,7 @@
   }
 }
 
-@media(max-width:670px) {
+@media(max-width: 670px) {
   .wrapper-search  {
     width: 670px; 
 
@@ -344,8 +331,7 @@
   }
 }
 
-
-@media(max-width:520px) {
+@media(max-width: 520px) {
   .wrapper-search  {
     width: 520px; 
 
@@ -355,7 +341,7 @@
   }
 }
 
-@media(max-width:480px) {
+@media(max-width: 480px) {
   .wrapper-search  {
     width: 480px; 
 
@@ -374,7 +360,7 @@
 
       .input-find {
         &__query {
-          width:240px;
+          width: 240px;
   
           .input-query {
             width: 190px;
@@ -439,7 +425,7 @@
   }
 }
 
-@media(max-width:414px) {
+@media(max-width: 414px) {
   .wrapper-search  {
     width: 414px; 
 
@@ -449,8 +435,7 @@
   }
 }
 
-
-@media(max-width:399px) {
+@media(max-width: 399px) {
   .wrapper-search  {
     width: 399px; 
 
@@ -460,8 +445,7 @@
   }
 }
 
-
-@media(max-width:379px) {
+@media(max-width: 379px) {
   .wrapper-search  {
     width: 376px; 
 

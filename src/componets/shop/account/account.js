@@ -7,7 +7,6 @@ import {findDateuser} from '../../get date/dateusers';
 import {Footer } from "../../shared/footer/footer";
 import * as moment from 'moment';
 
-
 export const My_account = async ()  => {
   const header = document.querySelector('.header-account');
   const wrapper = document.querySelector('.wrapper');
@@ -25,7 +24,6 @@ export const My_account = async ()  => {
   const btn_change = document.querySelector('.change-date');
   const btn = document.getElementById('btn');
   const btn_cancel = document.getElementById('btn-cancel')
-
   const block_input = document.querySelectorAll('.profile-fullName');
 
   const name_Map = new Map ([
@@ -81,7 +79,6 @@ export const My_account = async ()  => {
   regestration.innerText = `date of regestration : ${date}`;
   birth.innerText = `birth: ${moment(birt).format('YYYY-MM-DD')}`;
 
- 
   const check_fullName = () => {
     if (fullNameUser.firstName === '') {
       fullNameUser.firstName = firstName
@@ -97,14 +94,14 @@ export const My_account = async ()  => {
 
     const changeValue =
         {
-          ...userDate , 
-          firstName:firstName, 
+          ...userDate ,
+          firstName:firstName,
           lastName:lastName
         }
 
     await updateNmeUser(changeValue).then(res => setUser(changeValue))
   }
-  
+
   const run_inputs = () => {
 
     block_input.forEach(input => {

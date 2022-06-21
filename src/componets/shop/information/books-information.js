@@ -41,7 +41,6 @@ export const information = async () =>  {
   const arrayBook = new Map();
   const productBook2 = new Map();
 
-  console.log(book);
   modal_window.append(Confirmation.confirmation(PATH, TEXT));
 
   const fn_send = number => {
@@ -73,7 +72,6 @@ export const information = async () =>  {
 
   [book].forEach(({author}) => productBook2.set('author', author));
  
-
   const arr = AUTHOR.filter(({author}) => author === productBook2.get('author'));
 
   arr.forEach(({img}) =>  arrayBook.set('img', img));
@@ -81,8 +79,6 @@ export const information = async () =>  {
   const bookRender = [book].map(item => ({ ...item, photoAuthor: arrayBook.get('img')}));
 
   const convert = bookRender.reduce((acc, item) => ({...item}), {});
-  
-console.log(book, 'book');
 
   picture.src = convert.photo;
   prise.innerHTML = convert.cost +'$';
@@ -102,7 +98,7 @@ console.log(book, 'book');
       PATH.basket
     )
   );
- 
+
   const checkStatus = async() => {
     let getDate = [];
 
@@ -212,9 +208,10 @@ console.log(book, 'book');
     })
   }
 
+  
+
   (getToken() && getToken()) ? rating_activate() :
     click_rating.style.display = 'block';
-
 
   setStatus();
 

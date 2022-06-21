@@ -36,7 +36,6 @@ export const searchBooks = async() => {
 
   ratingBooks.forEach(item => map_books.set(item.bookId, item.rating));
 
-
 	const productList = PRODUCT.map(item => ({...item, rating:map_books.get(item.bookId), exist:item.bookId === itemId.get(item.bookId), basketExist:item.bookId === basketMap.get(item.bookId)}));
 
   const removeItems = () => {
@@ -128,7 +127,7 @@ export const searchBooks = async() => {
       removeItems();
       render(productList);
     }
-  
+
      productList.forEach(item => {
 
       if (item.category === str) {
@@ -138,10 +137,9 @@ export const searchBooks = async() => {
     })
   }
 
-
   find.onclick = event => {
    let text = event.target.textContent;
-   
+
    categoryBooks(text)
   }
 
@@ -154,5 +152,4 @@ export const searchBooks = async() => {
   modal_delete.append(ModalDelete.getModalDelete())
 
   render(productList);
-
 }
