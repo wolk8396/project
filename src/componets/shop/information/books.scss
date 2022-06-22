@@ -116,7 +116,6 @@
             }
           }
 
-  
           .picture {
             margin: 0 auto;
             width: 192px;
@@ -126,12 +125,12 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            position: relative;
             margin: 0 auto;
             height: 103px;
-  
+
             &__btn-add,
-            &__btn-wish {
-              position: relative;
+            .btn-wish {
               margin: 5px;
               width: 174px;
               height: 28px;
@@ -143,14 +142,31 @@
               border-radius: 5px;
               font-size: 10px
             }
-            .float-end {
+
+            .test {
+              width: 174px;
+              height: 28px;
+            }
+
+            .spinner-border-sm {
               position: absolute;
-              left: 189px;
-              top: 457px;
+              left: 162px;
+              top: 77px;
               width: 7px;
               height: 7px;
               display: none;
             }
+
+            #cart {
+              position: absolute;
+              left: 162px;
+              top: 36px;
+              width: 7px;
+              height: 7px;
+              display: none;
+            }
+            
+           
           }
           .status-query {
             margin: 0 auto;

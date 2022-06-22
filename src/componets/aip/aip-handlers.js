@@ -189,7 +189,7 @@ export const deleteUserWishlist = id => {
       {
         method: 'DELETE'
       }
-    );
+    )
 }
 
 

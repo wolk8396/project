@@ -95,6 +95,8 @@ export const createTodoComments = async() => {
           colorBtn
         ).getTodo())
     });
+
+    Spinner.hideSpinner()
   }
 
   commentsBtn.onclick = async () => {

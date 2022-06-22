@@ -1,6 +1,6 @@
 import { getUsers, signInRequest } from '../../componets/aip/aip-handlers';
 import { PATH } from '../shared/const';
-import { setToken, setUser } from '../../componets/shared/services/local-storage-service';
+import { setToken, setUser, setBooks} from '../../componets/shared/services/local-storage-service';
 import { 
     emailValidator, 
     showErrorMessage, 
@@ -9,6 +9,7 @@ import {
 } from '../shared/validators';
 import { Footer } from '../shared/footer/footer';
 import { Header } from '../shared/header/header';
+import { getBasketBooks} from '../get date/dateusers'
 
 export const signInHandler = () => {
   const body = document.getElementsByTagName('body')[0];
@@ -92,6 +93,9 @@ export const signInHandler = () => {
 				});
 
 				if (requestCounter === 2) {
+         await getBasketBooks().then(res => {
+          (res === 0 || res === undefined) ? setBooks([]) : setBooks(res);
+         })
 					window.location.href = PATH.shop; 
 				}
   }

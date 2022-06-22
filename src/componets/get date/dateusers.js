@@ -36,12 +36,11 @@ export const getDateUsers = async () => {
 
   const  countId = getDatelikes.map(item => item.idComment);
 
-
-
   const count =  countId.reduce((acc, idComment, i)  => {
     acc[idComment] = (acc[idComment] || 0) + 1;
     return acc
   }, {});
+  console.log(count);
  
   const findComment = todos.filter(item => item.idBook === bookId);
 
@@ -67,8 +66,6 @@ export const getDateUsers = async () => {
 
     return joinArr
 }
-
-
 
 export const gteUserLikes = async (id, btn, display) => {
   const likesDate = await getLike();
@@ -174,7 +171,7 @@ export const getAllBookRating = async() => {
 }
 
 
-export const basketUser = async(items) => {
+export const basketUser = async(items, spinner,  model_items) => {
   const getBasketUser = await getBasket();
 
   let productDate = FUNCTION.createDate(getBasketUser);
@@ -182,9 +179,17 @@ export const basketUser = async(items) => {
   const checkStatus = productDate.find(item => item.userid === getUser1().authId);
 
   if (!checkStatus) {
-   await createBasket (items);
+   await createBasket (items)
+    .then(res => {
+      model_items.style.display = 'block'
+      spinner.style.display = 'none'
+    })
   } else {
-    await updatBasket(items, checkStatus.id);
+    await updatBasket(items, checkStatus.id)
+    .then(res => {
+      model_items.style.display = 'block'
+      spinner.style.display = 'none'
+    })
   }
 }
 

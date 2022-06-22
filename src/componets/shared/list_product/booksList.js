@@ -19,7 +19,7 @@ export class ListBooks {
     getItem,
     setItem,
     fn, fn_basket,
-    fn_remove
+    fn_remove,
   ) {
     this.#element = element,
     this.#fn_add_wish = fn_add_wish,
@@ -52,6 +52,7 @@ export class ListBooks {
     const display = document.querySelector('.display__count');
     const massage = document.createElement('p');
     const btn_trash = document.createElement('img');
+    const test = document.createElement('samp')
   
     container_product.className = 'container_product__book';
     block_photo.className = 'photo-book';
@@ -88,7 +89,7 @@ export class ListBooks {
     wrapper_input.append(input_number, input_label);
     block_photo.append(photo_book);
     block_inf.append(block_rating, product_book, author_book, cost_book);
-    btn_wrapper.append(add_btn, delete_book)
+    btn_wrapper.append(add_btn, delete_book);
     block_btns.append(btn_wrapper, btn_trash);
     block_rating.append(this.#rating(this.#element.rating));
 

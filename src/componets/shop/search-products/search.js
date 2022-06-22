@@ -10,6 +10,7 @@ import { FUNCTION } from '../../shared/services/function';
 import { Confirmation } from '../../shared/confirmation/confirmation window'; 
 import { Footer } from '../../shared/footer/footer';
 import { ModalDelete } from '../../shared/Modal_delete/modal-delete';
+import { Loader } from '../../shared/loader/loader';
 
 export const searchBooks = async() => {
   const header_search = document.querySelector('.header-search');
@@ -91,7 +92,7 @@ export const searchBooks = async() => {
           setBooks, 
           FUNCTION,
           basket,
-          get_fn
+          get_fn,
         ).getList())
     })
   }
