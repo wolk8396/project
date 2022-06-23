@@ -27,7 +27,6 @@ export const information = async () =>  {
   const btn_basket = document.querySelector('.block-btn__btn-add');
   const des = document.querySelector('.des-book__book-story');
   const rating_active = document.querySelector('.rating-active');
-  const more = document.querySelector('.des-book__more-less');
   const click_rating = document.querySelector('.click-stars');
   const number_rating =document.querySelector('.number-rating');
   const wrapper_stars = document.querySelectorAll('.wrapper-active__item');
@@ -37,12 +36,18 @@ export const information = async () =>  {
   const spinner = document.getElementById('cart');
   const modal_delete = document.querySelector('.modal-delete')
   const status_massage = document.querySelector('.status-query__response');
- 
+  const btn_reviews = document.getElementById('btn-reviews');
+  const wrapper_reviews = document.querySelector('.wrapper-reviews');
+  const btn_more = document.querySelector('.more');
+  const des_book = document.querySelector('.des-book__book-story');
+  const teg_p = document.querySelector('.book-story__about-book')
+
   const book = getLearnMore();
   const {bookId} =  getLearnMore();
   const {authId} = getUser1();
-  const arrayBook = new Map();
-  const productBook2 = new Map();
+
+  let isReviews = false;
+  let isMore = false
 
   const numberRating  = await dateRating (bookId, click_rating);
 
@@ -73,13 +78,27 @@ export const information = async () =>  {
     fn(element);
   }
 
-  const openMore = () => {
-    if (des.className === 'des-book__book-story') {
-      des.classList.add('active');
-      more.innerHTML = '...Less';
+  const reviewsFlag = () => {
+    if (!isReviews) {
+      isReviews = true;
+      wrapper_reviews.style.display = 'block';
+      btn_reviews.innerText = "HIDE REVIEWS"
     } else {
-      des.classList.remove('active');
-      more.innerHTML = '...MORE';
+      isReviews = false;
+      wrapper_reviews.style.display = 'none';
+      btn_reviews.innerText = "SHOW REVIEWS"
+    }
+  }
+
+  const isMoreBtn = () => {
+    if (!isMore) {
+      isMore = true
+      des_book.style.display = 'block';
+      btn_more.innerText= '...LESS'
+    } else {
+      isMore = false
+      des_book.style.display = 'none';
+      btn_more.innerText= '...MORE'
     }
   }
 
@@ -88,7 +107,7 @@ export const information = async () =>  {
 
     await getUsersWish().then(res =>  getDate = res);
 
-    const findItem =  getDate.find(({bookId}) => bookId === convert.bookId);
+    const findItem =  getDate.find(({bookId}) => bookId === book.bookId);
 
     return findItem;
   }
@@ -110,33 +129,24 @@ export const information = async () =>  {
 
   rating_active.style.width = `${numberRating * 20}%`;
 
-  [book].forEach(({author}) => productBook2.set('author', author));
- 
-  const arr = AUTHOR.filter(({author}) => author === productBook2.get('author'));
+  picture.src = book.photo;
+  prise.innerHTML = book.cost +'$';
+  title.innerHTML = book.product;
+  author.innerHTML = book.author;
+  recomendation.innerHTML = book.recommendations;
+  description.innerHTML = book.description;
+  story.innerHTML = book.story;
 
-  arr.forEach(({img}) =>  arrayBook.set('img', img));
-
-  const bookRender = [book].map(item => ({ ...item, photoAuthor: arrayBook.get('img')}));
-
-  const convert = bookRender.reduce((acc, item) => ({...item}), {});
-
-  
-    picture.src = convert.photo;
-    prise.innerHTML = convert.cost +'$';
-    title.innerHTML = convert.product;
-    author.innerHTML = convert.author;
-    recomendation.innerHTML = convert.recommendations;
-    description.innerHTML = convert.description;
-    story.innerHTML = convert.story;
-  
-  
+ ( book.story === '') ? 
+    btn_more.style.display = 'none':
+    btn_more.style.display = 'block';
 
   const statusBtn = res => (res) ? btnMap.get(true)() : btnMap.get(false)();
 
   model_items.append(
     Modal.modlaWindow(
       model_items,
-      convert,
+      book,
       FUNCTION,
       PATH.basket
     )
@@ -153,7 +163,7 @@ export const information = async () =>  {
       await deleteUserWishlist(status.id)
         .then(res => btnMap.get(false)());
     } else {
-      await userWishlist(convert, authId)
+      await userWishlist(book, authId)
         .then( res =>  btnMap.get(true)());
     }
   }
@@ -164,7 +174,7 @@ export const information = async () =>  {
     check_conditions() : Confirmation.showWindow();
   }
 
-  const findItem = () => getProduct().find(item =>item.bookId === convert.bookId);
+  const findItem = () => getProduct().find(item =>item.bookId === book.bookId);
  
   const checkConditionsBasket = () => {
     (!findItem()) ? btn_basket.innerText = 'ADD TO CART' : 
@@ -177,7 +187,7 @@ export const information = async () =>  {
     if (!checkUndefined) {
       model_items.style.display = 'block';
       btn_basket.innerText ='IN CART';
-      FUNCTION.setValue(convert, getProduct, setBooks);
+      FUNCTION.setValue(book, getProduct, setBooks);
     } else window.location.pathname = PATH.basket;
   }
 
@@ -186,7 +196,7 @@ export const information = async () =>  {
       spinner.style.display = 'block'
 
     if (!checkUndefined) {
-      const set = FUNCTION.setValue(convert, getProduct, setBooks);
+      const set = FUNCTION.setValue(book, getProduct, setBooks);
       btn_basket.innerText ='IN CART';
 
       basketUser(set, spinner, model_items)
@@ -224,22 +234,20 @@ export const information = async () =>  {
     fn_send();
   }
 
+
+  btn_reviews.onclick = () => reviewsFlag();
+
+  btn_more.onclick = () => isMoreBtn();
+
   (getToken() && getToken()) ? rating_activate() :
     click_rating.style.display = 'block';
-
-  more.onclick = () => openMore();
-
-
-
 
   checkConditionsBasket();
 
   modal_delete.append(ModalDelete.getModalDelete())
 
-
   createTodoComments();
 
- 
   header.append(Header.getHeader());
 
   modal_window.append(Confirmation.confirmation(PATH, TEXT));

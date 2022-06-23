@@ -9,6 +9,7 @@ import { CommentUsers } from "../../../../shared/tood-commets/toods";
 import { ModalDelete } from "../../../../shared/Modal_delete/modal-delete";
 import { TEXT } from "../../../../shared/const";
 import { FUNCTION } from "../../../../shared/services/function";
+import * as moment from 'moment';
 
 export const createTodoComments = async() => {
   const block_comments = document.querySelector('.get-comments');

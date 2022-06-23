@@ -40,8 +40,7 @@ export const getDateUsers = async () => {
     acc[idComment] = (acc[idComment] || 0) + 1;
     return acc
   }, {});
-  console.log(count);
- 
+
   const findComment = todos.filter(item => item.idBook === bookId);
 
   users.forEach(({authId, firstName, lastName, photo, idLink}, i) => {
@@ -62,7 +61,6 @@ export const getDateUsers = async () => {
         existLike:likeUser.get(item.id) === item.id
       }
     });
-    console.log(joinArr);
 
     return joinArr
 }

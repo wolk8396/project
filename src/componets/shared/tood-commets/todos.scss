@@ -27,6 +27,12 @@
           width: 131px;
           height: 143px;
         }
+
+        .time-comment {
+          font-size: 9px;
+          font-weight: bold;
+          margin: auto;
+        }
       }
   
       &__description {
@@ -44,6 +50,7 @@
             width: 813px;
             height: 166px;
             border: none;
+            padding: 13px;
           }
   
           &__time {
@@ -57,6 +64,7 @@
           display:flex;
           flex-direction: row;
           justify-content: space-between;
+          background-color: black;
   
           .block {
             display: flex;
@@ -89,9 +97,15 @@
               color: #fff;
             }
           }
+
+          .time {
+            display: none;
+            color: white;
+            font-weight: bold;
+            margin-top: 11px;
+          }
     
           .block-likes {
-            margin: 1px 25px;
   
             .btn-danger,
             .btn-primary {
@@ -123,9 +137,5 @@
         }
       }
     }
-  
-
-
-
 }
 

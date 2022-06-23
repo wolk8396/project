@@ -48,9 +48,10 @@ export class CommentUsers {
     btn_remove_comment.className = 'block__remove_comment';
     block_comment.className = 'comments-todo';
     container_textarea.className = 'container-comment';
-    time_local.className = 'container-comment__time';
+    time_local.className = 'time';
     textarea.className = 'container-comment__input_text';
     fullName.className ='user-name';
+    time_comment.className = 'time-comment';
     block_btn_likes.className = 'block-btns';
     description.className ='description';
     btn_sendUpdate.className = 'block__send_update';
@@ -80,8 +81,8 @@ export class CommentUsers {
     btn_likes.append(sign_like, container_display);
     container_display.append(displayLikes);
     wrapper_description.append(container_textarea, block_btn_likes);
-    container_textarea.append(time_local, textarea);
-    block_btn_likes.append( btns_container, block_likes);
+    container_textarea.append(textarea);
+    block_btn_likes.append( btns_container, time_local, block_likes);
     block_comment.append(wrapperFullName, wrapper_description);
 
     textarea.setAttribute('disabled', true);

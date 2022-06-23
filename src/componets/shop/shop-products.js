@@ -422,8 +422,8 @@
 		bookId:"book37",
 		photo:"https://firebasestorage.googleapis.com/v0/b/bookstore-67dde.appspot.com/o/booksPhoto%2FThe%20X-Files.jpg?alt=media&token=35f93b4c-330e-42a1-8245-392bc03b5e25",
 		product:"The X-Files: Earth Children are Weird",
-		description:"One the most beloved TV shows of all time is now a sweet, silly, sci-fi bedtime story! In The X Files: Earth Children Are Weird, best pals Dana (Scully) and Fox (Mulder) have pitched a tent in the backyard for a sleepover. But the night is full of strange sounds, lights, and shadows. Surely there’s a rational, scientific explanation for everything . . . or is there? With beautiful illustrations of pint-sized Dana and Fox, this humorous and not-scary-at-all story will introduce the cult TV show to an entire new generation of fans.",
-		recommendations: "",
+		description:"",
+		recommendations: "One the most beloved TV shows of all time is now a sweet, silly, sci-fi bedtime story! In The X Files: Earth Children Are Weird, best pals Dana (Scully) and Fox (Mulder) have pitched a tent in the backyard for a sleepover. But the night is full of strange sounds, lights, and shadows. Surely there’s a rational, scientific explanation for everything . . . or is there? With beautiful illustrations of pint-sized Dana and Fox, this humorous and not-scary-at-all story will introduce the cult TV show to an entire new generation of fans.",
 		story:"",
 		author:"Jason Rekulak",
 		category:"Crime",
@@ -496,6 +496,7 @@
 		product:"Clever Girl",
 		description:"Clever Girl is an indelible story of one woman’s life, unfolded in a series of beautifully sculpted episodes that illuminate an era, moving from the 1960s to today, from one of Britain’s leading literary lights—Tessa Hadley—the author of the New York Times Notable Books Married Love and The London Train.",
 		recommendations:"",
+		story:"",
 		author:"Tessa Hadley",
 		category:"Historical",
 		cost:14.99,
@@ -507,6 +508,7 @@
 		product:"The London Train",
 		description:"Two lives, stretched between two cities, converge in a chance meeting with immediate and far-reaching consequences in this compelling, sophisticated tale from acclaimed New Yorker writer Tessa Hadley, author of Accidents in the Home and The Master Bedroom. As father struggles to reestablish a relationship with his estranged daughter in London, surrendering himself to an underground life of illegal squats and counterculture friendships, a wife decides she must flee her suffocating marriage to return to Wales, where in Cardiff she may rediscover the passions that once fueled her life. Embracing change and facing loss, in a story evocative of Alice Munro’s Runaway and Julia Glass’ I See You Everywhere, Hadley’s powerful characters illuminate the furthest reaches of love, hope, and determination.",
 		recommendations:"",
+		story:"",
 		author:"Tessa Hadley",
 		category:"Historical",
 		cost:10.99,
@@ -518,6 +520,7 @@
 		product:"Late in the Day",
 		description:"Alexandr and Christine and Zachary and Lydia have been friends since they first met in their twenties. Thirty years later, Alex and Christine are spending a leisurely summer’s evening at home when they receive a call from a distraught Lydia: she is at the hospital. Zach is dead.",
 		recommendations:"",
+		story:"",
 		author:"Tessa Hadley",
 		category:"Historical",
 		cost:17.99,
@@ -529,6 +532,7 @@
 		product:"The Past",
 		description:"A mesmerizing novel about family and the modern world encroaching upon the old, from one of Britain's finest contemporary novelists.",
 		recommendations:"",
+		story:"",
 		author:"Tessa Hadley",
 		category:"Novels",
 		cost:11.99,
@@ -538,8 +542,9 @@
 		bookId:"book47",
 		photo:"https://firebasestorage.googleapis.com/v0/b/bookstore-67dde.appspot.com/o/booksPhoto%2FV.E.%20Schwab's%20ExtraOrdinary.jpg?alt=media&token=83c3cb90-5663-40e8-bf6c-6944ad228c0f",
 		product:"V.E. Schwab's ExtraOrdinary",
-		description:"Set in the years between Vicious and Vengeful, ExtraOrdinary follows a teenage girl named Charlotte Tills who survives a bus crash and becomes EO – ExtraOrdinary – gaining the ability to see people’s deaths in reflective surfaces.",
+		description:"",
 		recommendations:"",
+		story:"Set in the years between Vicious and Vengeful, ExtraOrdinary follows a teenage girl named Charlotte Tills who survives a bus crash and becomes EO – ExtraOrdinary – gaining the ability to see people’s deaths in reflective surfaces.",
 		author:"V.E. Schwab",
 		category:"Novels",
 		cost:10.99,
@@ -552,7 +557,7 @@
 export const AUTHOR = [
 	{
 		author:"Thich Nhat Hanh",
-		img:"",
+		img:"https://firebasestorage.googleapis.com/v0/b/bookstore-67dde.appspot.com/o/author%2FThich%20Nhat%20Hanh.jpg?alt=media&token=adec4df2-275a-4450-9308-6468954c083d",
 		Born:"in Thừa Thiên Huế , Viet NamOctober 11, 1926",
 		Died:"January 22, 2022",
 		Twitter:"thichnhathanh",
@@ -564,7 +569,7 @@ export const AUTHOR = [
 	},
 	{
 		author:"Jon Duckett",
-		img:"",
+		img:"https://firebasestorage.googleapis.com/v0/b/bookstore-67dde.appspot.com/o/author%2FJon%20Duckett.jpg?alt=media&token=068062ea-f544-41b3-a4dd-da2a98529c61",
 		Born:"",
 		Died:"",
 		Since:"",
@@ -576,7 +581,7 @@ export const AUTHOR = [
 	},
 	{
 		author:"Aditya Bhargava",
-		img:"",
+		img:"https://firebasestorage.googleapis.com/v0/b/bookstore-67dde.appspot.com/o/author%2FAditya%20Y.%20Bhargava.jpg?alt=media&token=648b6eee-1dd9-428d-93b4-ac62ac210a39",
 		Born:"",
 		Died:"",
 		Since:"",
@@ -588,7 +593,7 @@ export const AUTHOR = [
 	},
 	{
 		author:"Mario Casciaro",
-		img:"",
+		img:"https://firebasestorage.googleapis.com/v0/b/bookstore-67dde.appspot.com/o/author%2Fmarrio.png?alt=media&token=8fa2c9a2-3416-49af-8ce6-672ee9859ab2",
 		Born:"",
 		Died:"",
 		Since:"Member Since -January 2016",
@@ -599,8 +604,8 @@ export const AUTHOR = [
 		about:""
 	},
 	{
-		author:"J. K. Rowling",
-		img:"",
+		author:"J.K.Rowling",
+		img:"https://firebasestorage.googleapis.com/v0/b/bookstore-67dde.appspot.com/o/author%2FJ.%20K.%20Rowling.jpg?alt=media&token=a791b581-703c-45f7-8c35-e644260af765",
 		Born:"in Yate, South Gloucestershire, England, The United KingdomJuly 31, 1965",
 		Died:"",
 		Since:"",
@@ -612,7 +617,7 @@ export const AUTHOR = [
 	},
 	{
 		author:"Ian Rankin",
-		img:"",
+		img:"https://firebasestorage.googleapis.com/v0/b/bookstore-67dde.appspot.com/o/author%2Frankin.jpg?alt=media&token=c844d065-0415-42a6-a6c9-5354b85f184e",
 		Born:"Born in the Kingdom of Fife in 1960",
 		Died:"",
 		Since:"",
@@ -624,7 +629,7 @@ export const AUTHOR = [
 	},
 	{
 		author:"James Birch",
-		img:"",
+		img:"https://firebasestorage.googleapis.com/v0/b/bookstore-67dde.appspot.com/o/author%2Fmw272154.jpg?alt=media&token=139ab01b-348c-4fcd-9314-3476932c9fd5",
 		Born:"London 1950",
 		Died:"",
 		Since:"",
@@ -635,8 +640,8 @@ export const AUTHOR = [
 		about:"James Birch is an English art dealer, curator and gallery owner. He is best known for his innovative championing of British art, in particular for exhibiting Francis Bacon in Moscow, in the then USSR, in 1988, and Gilbert & George in Moscow in 1990, and in Beijing and Shanghai in 1993."
 	},
 	{
-		author:"V.E. Schwab",
-		img:"",
+		author:"V.E.Schwab",
+		img:"https://firebasestorage.googleapis.com/v0/b/bookstore-67dde.appspot.com/o/author%2FV.E.%20Schwab.jpg?alt=media&token=fa577edd-c276-49e5-9964-787e1d9566ba",
 		Born:"in The United StatesJuly 07, 1987",
 		Died:"",
 		Since:"",
@@ -648,7 +653,7 @@ export const AUTHOR = [
 	},
 	{
 		author:"Jack Parker",
-		img:"",
+		img:"https://firebasestorage.googleapis.com/v0/b/bookstore-67dde.appspot.com/o/author%2Fmarrio.png?alt=media&token=8fa2c9a2-3416-49af-8ce6-672ee9859ab2",
 		Born:"",
 		Died:"",
 		Since:"",
@@ -660,7 +665,7 @@ export const AUTHOR = [
 	},
 	{
 		author:"Tessa Hadley",
-		img:"",
+		img:"https://firebasestorage.googleapis.com/v0/b/bookstore-67dde.appspot.com/o/author%2Fmarrio.png?alt=media&token=8fa2c9a2-3416-49af-8ce6-672ee9859ab2",
 		Born:"in Bristol, The United KingdomFebruary 28, 1956",
 		Died:"",
 		Since:"",
@@ -672,7 +677,7 @@ export const AUTHOR = [
 	},
 	{
 		author:"Susan Stokes-Chapman",
-		img:"",
+		img:"https://firebasestorage.googleapis.com/v0/b/bookstore-67dde.appspot.com/o/author%2FSusan%20Stokes-Chapman.jpg?alt=media&token=95f12f3d-77ee-425e-8d95-91be8803dc5f",
 		Born:"The United Kingdom",
 		Died:"",
 		Since:"",
@@ -683,8 +688,8 @@ export const AUTHOR = [
 		about:"Susan Stokes-Chapman was born in 1985 and grew up in the historic Georgian city of Lichfield, Staffordshire. She studied for four years at Aberystwyth University, graduating with a BA in Education & English Literature and an MA in Creative Writing. Her debut novel, PANDORA, was shortlisted for the Lucy Cavendish Fiction prize 2020 as well as longlisted for the Bath Novel Award that same year. You can find Susan on Instagram and Twitter under the handle @SStokesChapman. Her website is",
 	},
 	{
-		author:"Emily St. John Mandel",
-		img:"",
+		author:"Emily St.John Mandel",
+		img:"https://firebasestorage.googleapis.com/v0/b/bookstore-67dde.appspot.com/o/author%2FEmily%20St.%20John%20Mandel.jpg?alt=media&token=613c363c-326a-44af-8d20-7d9ba377cf77",
 		Born:"British Columbia, Canada",
 		Died:"",
 		Since:"",
@@ -696,7 +701,7 @@ export const AUTHOR = [
 	},
 	{
 		author:"Taylor Jenkins Reid",
-		img:"",
+		img:"https://firebasestorage.googleapis.com/v0/b/bookstore-67dde.appspot.com/o/author%2FTaylor%20Jenkins%20Reid.jpg?alt=media&token=70a0c677-8f65-465b-a4fe-fb0e6c008e92",
 		Born:"British Columbia, Canada",
 		Died:"",
 		Since:"",
@@ -708,7 +713,7 @@ export const AUTHOR = [
 	},
 	{
 		author:"Stephen King",
-		img:"",
+		img:"https://console.firebase.google.com/project/bookstore-67dde/storage/bookstore-67dde.appspot.com/files/~2Fauthor",
 		Born:"in Portland, Maine, The United States",
 		Died:"",
 		Since:"",
@@ -720,7 +725,7 @@ export const AUTHOR = [
 	},
 	{
 		author:"Jason Rekulak",
-		img:"",
+		img:"https://firebasestorage.googleapis.com/v0/b/bookstore-67dde.appspot.com/o/author%2FJason%20Rekulak.jpg?alt=media&token=cbcd1e2c-da92-4421-a2ec-c00e5a86b518",
 		Born:"The United States",
 		Died:"",
 		Since:"",

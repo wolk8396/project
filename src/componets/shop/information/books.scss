@@ -2,39 +2,42 @@
   display: flex;
   flex-direction: column;
   justify-content:normal;
-  background-color: #333;
+  background-color: whitesmoke;
   width: 1286px;
 
   .main {
-    height: 528px;
-    width: 1286px;
+    display: flex;
+    height: 100%;
+    width: 1115px;
+    flex-wrap: nowrap;
+    margin: 0 auto;
 
-  .model-items {
-    background-color: rgba(0, 0, 0, var(--bg-opacity));
-    --bg-opacity: 0.75;
-    position: fixed;
-    display: none;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    align-items: center;
-    justify-content: center;
-    user-select: none;
-    z-index: 100;
-  }
-    
-    &__container {
-  
+    .model-items {
+      background-color: rgba(0, 0, 0, var(--bg-opacity));
+      --bg-opacity: 0.75;
+      position: fixed;
+      display: none;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      align-items: center;
+      justify-content: center;
+      user-select: none;
+      z-index: 100;
+    }
+
       &__block {
-        height: 528px;
-        width: 1286px;
+        display: flex;
+        flex-wrap: nowrap;
+        height: 100%;
+        width: 1115px;
         display: flex;
         flex-direction: row;
         justify-content:normal;
         background-color: whitesmoke;
   
-        &__left {
+       .block-left {
           display: flex;
           flex-direction: column;
           justify-content:normal;
@@ -47,16 +50,31 @@
             margin: 0 auto;
             width: 234px;
 
-            .click-stars {
-              color: green;
-              cursor: pointer;
-              text-align: center;
-            }
-  
-            .click-stars:hover { 
-              text-decoration: underline; 
-             }
+            .wrapper-chose {
+              display: flex;
+              justify-content: space-around;
+              flex-direction: row;
+              width: 116px;
+              margin: 0 auto;
 
+              .number-rating {
+                width: 50%;
+                height: 100%;
+                color: green;
+                position: relative;
+              }
+
+              .click-stars {
+                color: green;
+                cursor: pointer;
+                text-align: center;
+              }
+    
+              .click-stars:hover { 
+                text-decoration: underline; 
+               }
+            }
+          
              .rating {
                 display: flex;
                 justify-content: center;
@@ -121,6 +139,7 @@
             width: 192px;
             height: 200px;
           }
+
           .block-btn {
             display: flex;
             flex-direction: column;
@@ -128,6 +147,7 @@
             position: relative;
             margin: 0 auto;
             height: 103px;
+
 
             &__btn-add,
             .btn-wish {
@@ -165,9 +185,8 @@
               height: 7px;
               display: none;
             }
-            
-           
           }
+
           .status-query {
             margin: 0 auto;
             height: 100px;
@@ -182,99 +201,366 @@
           }
         }
         
-        &__description {
-  
+        .block-description {
+
           .des-book {
-  
+            border: 1px solid;
+            width: 882px;
+
             &__description {
-              width: 600px;
+              border: 1px solid;
+              
+              .description {
+                font-size: 18px;
+              }
             }
             
             &__recommendations {
-              width:600px;
+              border: 1px solid;
+              font-size: 18px;
+
+              .recommendations {
+                font-size: 18px;
+              }
             }
-  
-            &__book-story.active{
-              height: 100%;
-            }
-  
+
             &__book-story {
-              width: 600px;
-              height:72px;
-              overflow: hidden;
+              display: none;
+              flex-wrap: nowrap;
+              height: 100%;
+              border: 1px solid;
+
+              &__about-book {
+                font-size: 18px;
+              }
             }
-  
-            &__more-less {
-              color: green;
-              text-decoration:underline;
-              cursor: pointer;
+
+            .read-more {
+              width: 150px;
+              height: 20px;
+              border: 1px solid;
+
+              .more {
+                cursor: pointer;
+                color: green;
+              }
+
+              .more:hover {
+                text-decoration: underline;
+              }
+            }
+
+            .author {
+              display: flex;
+
+              .book-author {
+                margin-top: 28px;
+                margin-bottom: 13px;
+              }
             }
           }
         } 
   
       }
+  }
+
+  .panel-reviews {
+    display: flex;
+    width: 1283px;
+    border: 1px solid;
+    height: 45px;
+    background-color:black;
+    align-items: center;
+    margin-top: 12px;
+
+    &__swich {
+      margin: 0 auto;
+      cursor: pointer;
+      font-weight: bold;
+      color: white;
+    }
+
+    &__swich:hover {
+      text-decoration: underline;
+      color:red; 
     }
   }
-  
-  .comments {
-    margin-top: 27px;
-  
-    display: flex;
-    flex-direction: column;
-    justify-content:normal;
-  
-    &__leave {
-      display: flex;
-      flex-direction: row;
-      justify-content:normal;
-      margin: 33px 64px;
-      width: 900px;
-      margin: 0 auto;
-  
-      &__users {
-        background: white;
-        width: 196px;
-        height: 250px;
-  
-        .photo {
-          width: 194px;
-          height: 193px;
-        }
-  
-        .fullName {
-          color: black;
-          text-align: center;
-        }
-      }
-  
-      &__block {
-        width: 881px;
-        height: 250px;
 
+  .wrapper-reviews {
+    display: none;
+
+    .comments {
+      margin-top: 17px;
     
-        .form-control{
-          width: 734px;
-          height: 180px;
-          border: none;
+      display: flex;
+      flex-direction: column;
+      justify-content:normal;
+    
+      &__leave {
+        display: flex;
+        flex-direction: row;
+        justify-content:normal;
+        margin: 33px 64px;
+        width: 900px;
+        margin: 0 auto;
+    
+        &__users {
+          background: white;
+          width: 196px;
+          height: 250px;
+    
+          .photo {
+            width: 194px;
+            height: 193px;
+          }
+    
+          .fullName {
+            color: black;
+            text-align: center;
+          }
         }
-  
-        &__add_comment {
-          display: flex;
-          flex-direction: row;
-          justify-content:start;
-  
-          .time {
-            color: white;
-            margin-left: 11px;
+    
+        &__block {
+          width: 881px;
+          height: 250px;
+
+          .form-control{
+            width: 734px;
+            height: 180px;
+            border: none;
+          }
+    
+          &__add_comment {
+            display: flex;
+            flex-direction: row;
+            justify-content:start;
+    
+            .time {
+              color: white;
+              margin-left: 11px;
+            }
           }
         }
       }
     }
-  
   }
-  
-
-
-
 }
 
+@media(max-width: 1156px) {
+  .wreaper-learn_more {
+    width: 1156px;
+
+    .main {
+      width: 1156px;
+
+      &__block {
+        width: 1156px;
+      }
+    }
+
+    .panel-reviews {
+      width: 1149px;
+    }
+  }
+}
+
+@media(max-width: 1022px) {
+  .wreaper-learn_more {
+    width: 1022px;
+
+    .main {
+      width: 1022px;
+
+      &__block {
+        width: 1022px;
+
+        .block-description {
+          
+          .des-book {
+            width: 693px;
+          }
+         
+        }
+      }
+    }
+
+    .panel-reviews {
+      width: 1016px;
+    }
+  }
+}
+
+@media(max-width: 912px) {
+  .wreaper-learn_more {
+    width: 912px;
+
+    .main {
+      width: 912px;
+
+      &__block {
+        width: 912px;
+
+        .block-description {
+
+          .des-book {
+            width: 620px;
+          }
+        }
+      }
+    }
+
+    .panel-reviews {
+      width: 908px;
+    }
+  }
+}
+
+@media(max-width: 850px) {
+  .wreaper-learn_more {
+    width: 850px;
+
+    .main {
+      width: 850px;
+
+      &__block {
+        width: 850px;
+
+        .block-left {
+          border: 1px solid;
+          width: 164px;
+
+          .wrapper-rating {
+            width: 131px;
+            border: 1px solid;
+
+            .rating {
+              font-size: 20px;
+
+              &__value {
+                font-size: 15px;
+              }
+            }
+          }
+
+          .picture {
+            width: 126px;
+            height: 138px;
+          }
+
+          .block-btn {
+            border: 1px solid;
+
+            &__btn-add {
+              width: 110px;
+            }
+
+            #cart,
+            .spinner-border {
+              left: 102px;
+            }
+
+            .btn-wish {
+              width: 110px;
+            }
+          }
+
+          .status-query {
+            border: 1px solid;
+            width: 131px;
+          }
+        }
+
+        .block-description {
+          border: 1px solid;
+
+          .des-book {
+            width: 486px;
+          }
+        }
+      }
+    }
+
+    .panel-reviews {
+      width: 848px;
+    }
+  }
+}
+
+@media(max-width: 768px) {
+  .wreaper-learn_more {
+    width: 768px;
+
+    .main {
+
+      &__block {
+        width: 768px;
+      }
+    }
+
+    .panel-reviews {
+      width: 767px;
+    }
+  }  
+}
+
+@media(max-width: 670px) {
+  .wreaper-learn_more {
+    width: 670px;
+
+    .main {
+
+      &__block {
+        width: 670px;
+      }
+    }
+
+    .panel-reviews {
+      width: 669px;
+    }
+  } 
+}
+
+
+@media(max-width: 570px) {
+  .wreaper-learn_more {
+
+    .main {
+
+      &__block {
+
+        .block-description {
+
+          .des-book {
+            width: 369px;
+          }
+        }
+      }
+    }
+  } 
+}
+
+@media(max-width: 520px) {
+  .wreaper-learn_more {
+    width: 520px;
+
+    .main {
+      width: 520px;
+
+      &__block {
+        width: 520px;
+
+        .block-description {
+
+          .des-book {
+            width: 340px;
+          }
+        }
+      }
+    }
+
+    .panel-reviews {
+      width: 519px;
+    }
+
+  } 
+}
