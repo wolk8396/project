@@ -60,7 +60,7 @@ export class CommentUsers {
     btn_likes.id = this.#element.id
     container_display.className = 'btn btn btn-danger__wrapper-btns';
     sign_like.className = "bi-hand-thumbs-up";
-    displayLikes.className = 'btn btn btn-danger__number';
+    displayLikes.className = 'number';
     avater.className ='user-photo';
 
     time_comment.innerText = this.#element.time;
@@ -74,12 +74,11 @@ export class CommentUsers {
     btn_remove_comment.innerText = 'DELETE COMMENT';
     btn_update.innerText ='RENEW COMMENT';
     btn_sendUpdate.innerText = 'SEND COMMENT';
-    btn_likes.innerText = 'LIKE';
 
     wrapperFullName.append(avater, fullName, time_comment);
     block_likes.append(btn_likes);
-    btn_likes.append(sign_like, container_display);
-    container_display.append(displayLikes);
+    btn_likes.append(sign_like, displayLikes);
+    // container_display.append(displayLikes);
     wrapper_description.append(container_textarea, block_btn_likes);
     container_textarea.append(textarea);
     block_btn_likes.append( btns_container, time_local, block_likes);

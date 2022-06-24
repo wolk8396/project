@@ -113,7 +113,6 @@ export const my = async () => {
 			container_rating.className = 'products-container__rating-stars';
 			photo.className = 'products-container__photo';
 			author.className ='products-container__author';
-			btnMore.id = item.id;
 			btnMore.className ='products-container__more';
 			cost.className ='products-container__cost';
 			// cart_check.className ='move';

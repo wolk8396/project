@@ -204,19 +204,16 @@
         .block-description {
 
           .des-book {
-            border: 1px solid;
             width: 882px;
 
             &__description {
-              border: 1px solid;
-              
+
               .description {
                 font-size: 18px;
               }
             }
             
             &__recommendations {
-              border: 1px solid;
               font-size: 18px;
 
               .recommendations {
@@ -228,7 +225,6 @@
               display: none;
               flex-wrap: nowrap;
               height: 100%;
-              border: 1px solid;
 
               &__about-book {
                 font-size: 18px;
@@ -238,7 +234,6 @@
             .read-more {
               width: 150px;
               height: 20px;
-              border: 1px solid;
 
               .more {
                 cursor: pointer;
@@ -325,7 +320,6 @@
           height: 250px;
 
           .form-control{
-            width: 734px;
             height: 180px;
             border: none;
           }
@@ -379,13 +373,22 @@
           .des-book {
             width: 693px;
           }
-         
         }
       }
     }
 
     .panel-reviews {
       width: 1016px;
+    }
+
+    .wrapper-reviews {
+
+      .comments {
+        
+        &__leave {
+          width: 806px;
+        }
+      }
     }
   }
 }
@@ -412,6 +415,16 @@
     .panel-reviews {
       width: 908px;
     }
+
+    .wrapper-reviews {
+
+      .comments {
+        
+        &__leave {
+          width: 637px;
+        }
+      }
+    }
   }
 }
 
@@ -426,12 +439,10 @@
         width: 850px;
 
         .block-left {
-          border: 1px solid;
           width: 164px;
 
           .wrapper-rating {
             width: 131px;
-            border: 1px solid;
 
             .rating {
               font-size: 20px;
@@ -448,7 +459,6 @@
           }
 
           .block-btn {
-            border: 1px solid;
 
             &__btn-add {
               width: 110px;
@@ -465,13 +475,11 @@
           }
 
           .status-query {
-            border: 1px solid;
             width: 131px;
           }
         }
 
         .block-description {
-          border: 1px solid;
 
           .des-book {
             width: 486px;
@@ -520,7 +528,6 @@
   } 
 }
 
-
 @media(max-width: 570px) {
   .wreaper-learn_more {
 
@@ -563,4 +570,163 @@
     }
 
   } 
+}
+
+@media(max-width: 480px) {
+  .wreaper-learn_more {
+    width: 480px;
+
+    .main {
+      width:480px;
+
+      &__block {
+        width: 520px;
+
+        .block-description {
+
+          .des-book {
+            width: 298px;
+          }
+        }
+      }
+    }
+
+    .panel-reviews {
+      width: 519px;
+    }
+  } 
+}
+
+@media(max-width: 480px) {
+  .wreaper-learn_more {
+    width: 480px;
+
+    .main {
+      width:480px;
+
+      &__block {
+        width: 520px;
+
+        .block-description {
+
+          .des-book {
+            width: 298px;
+          }
+        }
+      }
+    }
+
+    .panel-reviews {
+      width: 519px;
+    }
+  } 
+}
+
+@media(max-width: 448px) {
+  .wreaper-learn_more {
+    width: 448px;
+
+    .main {
+      width:480px;
+
+      &__block {
+        width: 448px;
+        flex-direction: column;
+
+        .block-left {
+          width: 304px;
+          margin: 0 auto;
+
+          .wrapper-rating {
+            margin-top: 10px;
+            width: 301px;
+
+            .rating {
+              font-size: 30px;
+            }
+          }
+
+          .picture {
+            width: 262px;
+            height: 312px;
+          }
+
+          .block-btn {
+
+            &__btn-add,
+            .btn-wish {
+              width: 277px;
+            }
+          }
+
+          .status-query {
+            width: 298px;
+          }
+          
+        }
+
+        .block-description {
+          margin: 0 auto;
+        }
+      }
+    }
+
+    .panel-reviews {
+      width: 441px
+    }
+  } 
+}
+
+@media(max-width: 414px) {
+  .wreaper-learn_more {
+    width: 414px;
+
+    .main {
+      width: 414px;
+
+      &__block {
+        width: 414px;
+      }
+    }
+
+    .panel-reviews {
+      width: 413px;
+    }
+  }
+}
+
+@media(max-width: 399px) {
+  .wreaper-learn_more {
+    width: 399px;
+
+    .main {
+      width: 399px;
+
+      &__block {
+        width: 399px;
+      }
+    }
+
+    .panel-reviews {
+      width: 399px;
+    }
+  }
+}
+
+@media(max-width: 379px) {
+  .wreaper-learn_more {
+    width: 379px;
+
+    .main {
+      width: 379px;
+
+      &__block {
+        width: 379px;
+      }
+    }
+
+    .panel-reviews {
+      width: 379px;
+    }
+  }
 }

@@ -65,7 +65,7 @@ export const updateTodo = (description, id, time) => {
       {
         method: 'PUT',
         body: JSON.stringify({
-          idBook: getLearnMore().id,
+          idBook: getLearnMore().bookId,
           idUsers:getUser1().authId,
           description: description,
           time:time

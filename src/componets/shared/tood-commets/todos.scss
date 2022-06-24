@@ -65,6 +65,8 @@
           flex-direction: row;
           justify-content: space-between;
           background-color: black;
+          height: 54px;
+          align-items: center;
   
           .block {
             display: flex;
@@ -106,23 +108,18 @@
           }
     
           .block-likes {
-  
+            margin-right: 6px;
+
             .btn-danger,
             .btn-primary {
               position: relative;
-              width: 139px;
-              height: 28px;
-  
-              &__wrapper-btns {
+              width: 41px;
+              height: 24px;
+
+              .number {
                 position: absolute;
-                left: 21px;
-                top: -5px;
-              }
-  
-              &__number {
-                position: absolute;
-                top: 3px;
-                left: 2px;
+                top: 8px;
+                left: 41px;
                 color: #fff;
               }
             }
@@ -130,7 +127,7 @@
             .bi-hand-thumbs-up {
               position: absolute;
               left: 4px;
-              width: 28px;
+              width: 24px;
               top: 6px;
             }
           }
@@ -138,4 +135,97 @@
       }
     }
 }
+
+
+@media(max-width: 1150px) {
+  .todo {
+
+    .comments-todo {
+
+      &__description {
+
+        .container-comment{
+
+          &__input_text {
+            width: 770px;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+@media(max-width: 1020px) {
+  .todo {
+    width: 798px;
+
+    .comments-todo {
+
+      &__description {
+
+        .container-comment{
+
+          &__input_text {
+            width: 674px;
+          }
+        }
+
+        .block-btns {
+
+          .block {
+            width: 237px;
+    
+            button {
+              font-size: 12px;
+            }
+          }
+        }
+      }
+    }
+
+  }
+}
+
+
+@media(max-width: 850px) {
+  .todo {
+    width: 647px;
+
+    .comments-todo {
+
+      &__description {
+
+        .container-comment{
+
+          &__input_text {
+            width: 510px;
+          }
+        }
+
+        .block-btns {
+
+          .block {
+            width: 237px;
+    
+            button {
+              font-size: 12px;
+            }
+          }
+
+          .time {
+            font-size: 12px;
+          }
+        }
+      }
+    }
+
+  }
+}
+
+// @media(max-width: 768px) {
+//   .todo {
+//     width: ;
+//   }
+// }
 

@@ -157,7 +157,7 @@ export const sign_up = () => {
 			hideErrorMessage('passwords_hide', errorTagsIds.get('pass_2'));
 		}
 	}
-
+  
 
   signUpBtn.onclick = async () => {  
       const { email, password_1: password } = userData;
@@ -192,7 +192,7 @@ export const sign_up = () => {
 
       
       if (requestCount === 4) {
-        window.location.href = ROUTES.main;
+        window.location.href =  PATH.shop;
       }
   }
 
@@ -208,5 +208,4 @@ export const sign_up = () => {
 
   Footer.getFooter(body);
   header_signUp.append(Header.getHeader());
-  
 }
