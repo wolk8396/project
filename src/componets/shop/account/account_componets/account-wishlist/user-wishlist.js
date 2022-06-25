@@ -48,8 +48,18 @@ console.log(productList);
 
   const get_fn = (fn_remove) =>  ModalDelete.setDate(fn_remove, TEXT.deleteCart);
 
-  const basket = async( goods) => {
-    (getUser1().authId && getToken()) ? await basketUser(goods) : null;
+  const basket = async( goods, spinner, btn, massage) => {
+    if (getUser1().authId && getToken()) {
+      await basketUser(goods)
+        .then(() => {
+          btn.innerText = massage;
+          spinner.style.display = 'none';
+        })
+
+    } else  {
+      btn.innerText = massage;
+      spinner.style.display = 'none';
+    }
   }
 
     productList.forEach(element => {

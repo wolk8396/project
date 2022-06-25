@@ -191,7 +191,7 @@ export const information = async () =>  {
     } else window.location.pathname = PATH.basket;
   }
 
-  const  exist_registration = () => {
+  const  exist_registration = async () => {
     const checkUndefined = findItem();
       spinner.style.display = 'block'
 
@@ -199,7 +199,12 @@ export const information = async () =>  {
       const set = FUNCTION.setValue(book, getProduct, setBooks);
       btn_basket.innerText ='IN CART';
 
-      basketUser(set, spinner, model_items)
+     await basketUser(set)
+      .then(() => {
+        spinner.style.display = 'none';
+        model_items.style.display = 'block';
+      })
+
     } else window.location.pathname = PATH.basket;
 
   }

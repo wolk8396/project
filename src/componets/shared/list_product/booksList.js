@@ -53,6 +53,13 @@ export class ListBooks {
     const massage = document.createElement('p');
     const btn_trash = document.createElement('img');
     const test = document.createElement('samp')
+    const spinner_cart = document.createElement('span');
+    const spinner_wish = document.createElement('span');
+
+    const btn_massages = {
+      in:"IN CART",
+      add:"ADD TO CART"
+    }
   
     container_product.className = 'container_product__book';
     block_photo.className = 'photo-book';
@@ -74,6 +81,9 @@ export class ListBooks {
     input_number.type = 'number';
     input_number.name = 'quantity';
     btn_wrapper.className = 'btns';
+    spinner_cart.className = 'spinner-border';
+    spinner_wish.className = 'spinner-border';
+    spinner_wish.id = 'spinner-wish'
 
     photo_book.src = this.#element.photo;
     author_book.innerText = this.#element.author;
@@ -89,7 +99,7 @@ export class ListBooks {
     wrapper_input.append(input_number, input_label);
     block_photo.append(photo_book);
     block_inf.append(block_rating, product_book, author_book, cost_book);
-    btn_wrapper.append(add_btn, delete_book);
+    btn_wrapper.append(add_btn, spinner_cart,  delete_book, spinner_wish);
     block_btns.append(btn_wrapper, btn_trash);
     block_rating.append(this.#rating(this.#element.rating));
 
@@ -101,10 +111,11 @@ export class ListBooks {
       this.#setItem(productRemove);
 
       this.#element.basketExist = false;
-      add_btn.innerText = 'ADD TO CART';
       display.innerHTML = this.#fn.countItems();
 
-      this.#fn_basket(productRemove);
+      spinner_cart.style.display = 'block';
+
+      this.#fn_basket(productRemove, spinner_cart, add_btn, btn_massages.add);
     }
 
     const wishMap = new Map([
@@ -129,7 +140,7 @@ export class ListBooks {
     }
 
     delete_book.onclick = () => {
-     this.#fn_add_wish(this.#element, massage, delete_book, checkStatus);
+     this.#fn_add_wish(this.#element, spinner_wish, delete_book, checkStatus);
     }
    
     product_book.onclick = () => {
@@ -147,10 +158,10 @@ export class ListBooks {
         this.#element.basketExist = true;
         const productItems = this.#fn.setValue(this.#element, this.#getItem, this.#setItem);
 
-        add_btn.innerText = 'IN CART';
-        get_Fn(productItems);
+        spinner_cart.style.display = 'block';
+        get_Fn(productItems, spinner_cart, add_btn, btn_massages.in);
 
-      }  else {
+      } else {
         window.location.pathname = this.#link.basket;
       } 
     }
@@ -161,7 +172,10 @@ export class ListBooks {
       display.innerHTML = this.#fn.countItems();
     }
 
-    btn_trash.onclick = () => this.#fn_remove(removeItem);
+    btn_trash.onclick = () => {
+      spinner_cart.display = 'block'
+      this.#fn_remove(removeItem);
+    } 
 
     input_number.oninput = () => {
       const getNumber  = (+input_number.value);

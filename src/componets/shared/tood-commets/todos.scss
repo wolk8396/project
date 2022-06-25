@@ -223,9 +223,183 @@
   }
 }
 
-// @media(max-width: 768px) {
-//   .todo {
-//     width: ;
-//   }
-// }
+@media(max-width: 670px) {
+  .todo {
+    width: 585px;
+
+    .comments-todo {
+      flex-direction: column;
+      justify-content: normal;
+
+      &__fullName {
+        display: grid;
+        grid-template-columns: 1fr 5fr 1fr;
+        background-color: white;
+        width: 535px;
+
+        .user-photo {
+          width: 47px;
+          height: 49px;
+          border-radius: 50%;
+        }
+
+        .user-name {
+          font-size: 12px;
+          margin-top: 22px;
+          width: 125px;
+        }
+
+        .time-comment {
+          margin-top: 22px;
+          width: 170px;
+          font-size: 12px;
+        }
+      }
+
+      &__description {
+
+        .block-btns {
+          width: 536px;
+
+          .block {
+            width: 159px;
+
+            button {
+              width: 67px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+@media(max-width: 592px) {
+  .todo {
+    width: 562px;
+
+    .comments-todo {
+
+      &__fullName {
+        width: 450px;
+
+        .time-comment {
+       
+        }
+      }
+
+      &__description {
+
+        .container-comment {
+
+          textarea {
+            width: 425px;
+          }
+        }
+
+        .block-btns {
+          width: 450px;
+
+        }
+      }
+    }
+  }
+}
+
+
+@media(max-width: 580px) {
+  .todo {
+    width: 577px;
+  }
+}
+
+
+@media(max-width: 520px) {
+ 
+  .todo {
+    width: 424px;
+
+    .comments-todo {
+     
+
+      &__fullName {
+        width: 367px;
+
+        .time-comment {
+       
+        }
+      }
+
+      &__description {
+
+        .container-comment {
+
+          textarea {
+            width: 344px;
+          }
+        }
+
+        .block-btns {
+          width: 373px;
+
+        }
+      }
+    }
+  }
+}
+
+@media(max-width: 448px) {
+  .todo {
+    width: 349px;
+  }
+}
+
+@media(max-width: 414px) {
+  .todo {
+    width: 359px;
+  }
+}
+
+@media(max-width: 414px) {
+
+  .todo {
+    width: 319px;
+
+    .comments-todo {
+
+      &__fullName {
+        width: 316px;
+
+        .user-name {
+          margin-top: 0;
+          width: 68px;
+        }
+
+        .time-comment {
+       
+        }
+      }
+
+      &__description {
+
+        .container-comment {
+
+          textarea {
+            width: 292px;
+          }
+        }
+
+        .block-btns {
+          width: 322px;
+
+          .time {
+            font-size: 9px;
+          }
+        }
+      }
+    }
+  }
+}
 

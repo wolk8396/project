@@ -169,24 +169,26 @@ export const getAllBookRating = async() => {
 }
 
 
-export const basketUser = async(items, spinner,  model_items) => {
+export const basketUser = async(items) => {
   const getBasketUser = await getBasket();
 
   let productDate = FUNCTION.createDate(getBasketUser);
 
   const checkStatus = productDate.find(item => item.userid === getUser1().authId);
 
+
+
   if (!checkStatus) {
    await createBasket (items)
     .then(res => {
-      model_items.style.display = 'block'
-      spinner.style.display = 'none'
+      // model_items.style.display = 'block'
+      // spinner.style.display = 'none'
     })
   } else {
     await updatBasket(items, checkStatus.id)
     .then(res => {
-      model_items.style.display = 'block'
-      spinner.style.display = 'none'
+      // model_items.style.display = 'block'
+      // spinner.style.display = 'none'
     })
   }
 }

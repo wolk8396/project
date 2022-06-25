@@ -6,6 +6,7 @@ export class ShoppingCart {
   #fn_fullPrice;
   #fn_modal_window;
   #massage
+  #countItems
 
   constructor (
     element,
@@ -14,7 +15,8 @@ export class ShoppingCart {
     teg_p,
     fn_fullPrice,
     fn_modal_window,
-    massage
+    massage,
+    countItems
   ) {
     this.#element = element,
     this.#fn_increase = fn_increase,
@@ -22,7 +24,8 @@ export class ShoppingCart {
     this.#teg_p = teg_p,
     this.#fn_fullPrice = fn_fullPrice,
     this.#fn_modal_window = fn_modal_window,
-    this.#massage = massage
+    this.#massage = massage,
+    this.#countItems = countItems
   }
 
   getCart() {
@@ -83,6 +86,8 @@ export class ShoppingCart {
       btn_minus.removeAttribute('disabled') : null;
 
       this.#fn_fullPrice(this.#teg_p);
+
+      this.#countItems();
     }
 
     const removeBook = () => {
@@ -99,7 +104,6 @@ export class ShoppingCart {
     btn_minus.onclick = () => {
       let decrease = --this.#element.count;
       this.#fn_increase(this.#element.bookId, decrease, p_count);
-    
 
       if (this.#element.count === 1) {
         this.#fn_modal_window.setDate(removeBook, this.#massage);

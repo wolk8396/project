@@ -284,6 +284,18 @@
               flex-direction: column;
               justify-content: space-between;
               height: 98px;
+              position: relative;
+
+
+              .spinner-border {
+                display: none;
+                position: absolute;
+                top: 14px;
+                left: 5px;
+                width: 5px;
+                height: 5px;
+              }
+
             }
 
             .btn-trash {
@@ -376,7 +388,7 @@
               .btns {
 
                 button {
-                  font-size: 9px;
+                  font-size: 11px;
                   }
               }
             }

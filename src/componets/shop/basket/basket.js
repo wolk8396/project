@@ -2,7 +2,6 @@ import { Header} from '../../shared/header/header'
 import { getToken, getUser1, setBooks, getProduct} from '../../shared/services/local-storage-service'
 import {getBasketBooks, basketUser} from '../../get date/dateusers';
 import { ShoppingCart } from '../../shared/shoping-cart/shoping-cart';
-import { Footer } from '../../shared/footer/footer';
 import {ModalDelete} from '../../shared/Modal_delete/modal-delete';
 import {PATH, TEXT } from '../../shared/const';
 import { Confirmation } from '../../shared/confirmation/confirmation window';
@@ -27,19 +26,22 @@ export const basketPage =  async () => {
 		const getBooks =  getProduct();
 		p.innerText = operation;
 
-		const setArray = getBooks.map(el => (el.id === id) ? ({...el, count:operation}) : el);
+		const setArray = getBooks.map(el => (el.bookId === id) ? ({...el, count:operation}) : el);
 
 		(operation >= 1) ? setBooks(setArray) : null;
 
 		setBooks(setArray);
 	}
 
-	const remove = id => {
-		const books = getProduct();
-		const product = books.filter((item, index) => item.bookId !== id);
+	const countItems  = () => {
 		let number = FUNCTION.countItems();
 
 		Header.countItems(number);
+	}
+
+	const remove = id => {
+		const books = getProduct();
+		const product = books.filter((item, index) => item.bookId !== id);
 
 		(getUser1() && getToken()) ? basketUser(product) : null;
 
@@ -68,6 +70,8 @@ export const basketPage =  async () => {
 
 		product_book.append(table);
 
+		header.append(Header.getHeader());
+
 		product.forEach((item, i) => {
 		
 			table.append( 
@@ -78,7 +82,8 @@ export const basketPage =  async () => {
 					full_total,
 					countFullPrice,
 					ModalDelete,
-					TEXT.deleteCart
+					TEXT.deleteCart,
+					countItems
 				).getCart())
 		});
 
@@ -112,6 +117,6 @@ export const basketPage =  async () => {
 	
 	modal_confirmation.append(Confirmation.confirmation(PATH, TEXT));
 
-	header.append(Header.getHeader());
+	// header.append(Header.getHeader());
 
 }

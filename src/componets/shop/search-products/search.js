@@ -1,16 +1,15 @@
 import {Header} from '../../shared/header/header';
 import { PRODUCT } from '../shop-products';
 import { ListBooks } from '../../shared/list_product/booksList';
-import {getUser, userWishlist, deleteUserWishlist} from '../../aip/aip-handlers'
+import {userWishlist, deleteUserWishlist} from '../../aip/aip-handlers'
 import { getUser1, setLearnMore, setBooks , getProduct, getToken} from '../../shared/services/local-storage-service';
 import { PATH, TEXT } from '../../shared/const';
-import {getAllBookRating, getUsersWish, basketUser , getBasketBooks} from '../../get date/dateusers';
+import {getAllBookRating, getUsersWish, basketUser} from '../../get date/dateusers';
 import { RATING } from '../../shared/rating/rating';
 import { FUNCTION } from '../../shared/services/function';
 import { Confirmation } from '../../shared/confirmation/confirmation window'; 
 import { Footer } from '../../shared/footer/footer';
 import { ModalDelete } from '../../shared/Modal_delete/modal-delete';
-import { Loader } from '../../shared/loader/loader';
 
 export const searchBooks = async() => {
   const header_search = document.querySelector('.header-search');
@@ -23,7 +22,6 @@ export const searchBooks = async() => {
  
   const ratingBooks = await getAllBookRating();
   const {authId} = getUser1();
-  const getBtns = new Map ();
   const map_books = new Map();
   const itemId = new Map();
   const basketMap = new Map();
@@ -48,12 +46,22 @@ export const searchBooks = async() => {
 
   const render = books => {
 
-    const basket = goods => {
+    const basket = async (goods, spinner, btn, massage) => {
 
-      (getUser1().authId && getToken()) ? basketUser(goods) : null
+      if (getUser1().authId && getToken()) {
+        await basketUser(goods)
+          .then(() => {
+            btn.innerText = massage;
+            spinner.style.display = 'none';
+          })
+
+      } else  {
+        btn.innerText = massage;
+        spinner.style.display = 'none';
+      }
     }
 
-    const add_wish = async (item, massage, btn) => {
+    const add_wish = async (item, spinner, btn) => {
 
       if (getToken() &&  getUser1().authId) {
         const getDate = await getUsersWish();
@@ -62,16 +70,20 @@ export const searchBooks = async() => {
 
         const deleteWish = async() => {
           btn.innerText = 'add to wish'
+          spinner.style.display = 'none'
           item.exist = false
-          massage.innerText = 'was not added to'
           await deleteUserWishlist(findSome.id);
         }
 
         const addWish = async() => {
-          btn.innerText = 'delete';
-          massage.innerText = 'was added to';
+          spinner.style.display = 'block'
           item.exist = true;
-          await userWishlist (item, authId);
+
+          await userWishlist (item, authId)
+            .then(()=> {
+              btn.innerText = 'delete';
+              spinner.style.display = 'none'
+            } );
         }
 
         (!findSome) ? addWish() : ModalDelete.setDate(deleteWish, TEXT.deleteWish)
@@ -83,13 +95,13 @@ export const searchBooks = async() => {
 
       books_list.append(
         new ListBooks(
-          element, 
-          add_wish, 
-          PATH, 
-          setLearnMore, 
-          RATING.activeRating, 
-          getProduct, 
-          setBooks, 
+          element,
+          add_wish,
+          PATH,
+          setLearnMore,
+          RATING.activeRating,
+          getProduct,
+          setBooks,
           FUNCTION,
           basket,
           get_fn,

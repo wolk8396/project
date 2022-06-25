@@ -142,12 +142,31 @@
         justify-content: space-between;
         width: 150px;
         height: 168px;
+      
 
         .btns {
           display: flex;
           flex-direction: column;
           justify-content: space-between;
           height: 98px;
+          position: relative;
+
+          .spinner-border {
+            display: none;
+            position: absolute;
+            top: 14px;
+            left: 5px;
+            width: 5px;
+            height: 5px;
+          }
+
+          #spinner-wish {
+            display: none;
+            position: absolute;
+            top: 75px;
+            width: 5px;
+            height: 5px;
+          }
         }
 
         .btn-trash {
@@ -311,7 +330,17 @@
             height: 71px;
 
             button {
-              font-size: 11px;
+              font-size: 9px;
+            }
+
+            .spinner-border {
+              top: 8px;
+              width: 3px;
+              height: 3px;
+            }
+
+            #spinner-wish {
+              top: 51px;
             }
           }
         }
@@ -413,12 +442,6 @@
         .block_btns {
           width: 79px;
           height: 99px;
-
-          .btns {
-            .btn {
-              font-size: 8px;
-            }
-          }
         }
       }
     }
