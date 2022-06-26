@@ -19,6 +19,7 @@ export const TEXT = {
     deleteCart:'Are You are sure ? Do you want to remove this item from your shopping cart',
     deleteWish: 'Are You are sure ? Do you want to remove this item from your wishList',
     deleteComment: 'Are You are sure ? Do you want to remove your comment',
+    upDateCart:'your cart has been update successfully'
 }
 
 

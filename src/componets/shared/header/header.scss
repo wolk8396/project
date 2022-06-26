@@ -418,7 +418,6 @@
       width:399px;
     }
   }
-
 }
 
 @media(max-width:379px) {
@@ -435,6 +434,36 @@
       }
     }
   }
-
 }
+
+@media(max-width:360px) {
+  .header {
+    width:360px;
+
+    &__title,
+    &__search {
+      width:360px;
+
+      .navigation {
+        width: 360px;
+      }
+    }
+  }
+}
+
+@media(max-width:320px) {
+  .header {
+    width:320px;
+
+    &__title,
+    &__search {
+      width:320px;
+
+      .navigation {
+        width: 320px;
+      }
+    }
+  }
+}
+
 

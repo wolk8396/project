@@ -282,3 +282,20 @@
     }
   }
 }
+
+@media(max-width:320px)  {
+  .wrapper-sign-in {
+    width: 320px;
+
+    .sign-in-page {
+      width: 320px;
+
+      .from {
+
+        &__container {
+          padding: 63px;
+        }
+      }
+    }
+  }
+}

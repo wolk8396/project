@@ -37,7 +37,7 @@
   
       &__description {
         word-wrap: break-word;
-        width: 843px;
+        // width: 843px;
         display: flex;
         flex-direction: column;
         justify-content:normal;
@@ -400,6 +400,87 @@
         }
       }
     }
+  }
+}
+
+
+@media(max-width: 360px) {
+
+  .todo {
+    width: 335px;
+
+    .comments-todo {
+
+      &__fullName {
+        width: 296px;
+
+        .user-name {
+          margin-top: 0;
+          width: 68px;
+        }
+
+        .time-comment {
+       
+        }
+      }
+
+      &__description {
+
+        .container-comment {
+
+          textarea {
+            width: 270px;
+          }
+        }
+
+        .block-btns {
+          width: 295px;
+
+          .block {
+            width: 124px;
+
+            button {
+              width: 47px;
+              font-size: 9px;
+            }
+          }
+
+          .block-likes {
+            margin-right: 2px;
+
+            .btn {
+              width: 26px;
+              height: 25px;
+
+              img {
+                position: absolute;
+                left: 4px;
+                width: 17px;
+                top: 6px;
+              }
+
+              p {
+                top: 9px;
+                left: 29px !important;
+                color: #fff;
+                font-size: 10px;
+              }
+            }
+          }
+
+
+          .time {
+            font-size: 8px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media(max-width: 320px) {
+  .todo {
+    width: 305px;
   }
 }
 

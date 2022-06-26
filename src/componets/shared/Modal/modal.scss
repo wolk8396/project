@@ -40,9 +40,7 @@
           color: black;
           font-weight: bold;
         }
-      
       }
-
     }
 
     &__additional {
@@ -85,6 +83,123 @@
       border-radius: 20px;
       border-width: 1px ;
       margin: 0 auto;
+    }
+  }
+}
+
+@media(max-width: 768px) {
+  .model {
+
+    .container-model {
+      width: 206px;
+      height: 287px;
+
+      &__information {
+        width: 207px;
+
+        .frame {
+          width: 79px;
+          height: 124px;
+
+          &__item_img {
+            width: 76px;
+          }
+        }
+
+        &__about {
+          height: 161px;
+          width: 115px;
+        }
+      }
+
+      &__additional {
+        width: 104px;
+        height: 57px;
+        margin-left: 86px;
+
+        .prise-item {
+          font-size: 12px;
+        }
+
+        .massage {
+          font-size: 12px;
+        }
+      }
+
+      &__block_btns {
+        width: 205px;
+      }
+
+      .btn-outline-danger {
+        width: 171px;
+      }
+
+      .btn-danger {
+        width: 169px;
+      }
+    }
+  }
+}
+
+@media(max-width: 448px) {
+  .model {
+
+    .container-model {
+      width: 160px;
+      height: 231px;
+
+      &__information {
+        width: 149px;
+        height: 130px;
+
+        .frame {
+          width: 86px;
+          height: 104px;
+
+          &__item_img {
+            width: 61px;
+          }
+        }
+
+        &__about {
+          height: 161px;
+          width: 115px;
+
+          .title-item {
+            font-size: 12px;
+          }
+        }
+      }
+
+      &__additional {
+        width: 104px;
+        height: 57px;
+        margin-left: 50px;
+
+        .prise-item {
+          font-size: 12px;
+        }
+
+        .massage {
+          font-size: 12px;
+        }
+      }
+
+      &__block_btns {
+        width: 160px;
+      }
+
+      .btn-outline-danger {
+        width: 131px;
+        height: 16px;
+        font-size: 10px;
+      }
+
+      .btn-danger {
+        width: 134px;
+        height: 19px;
+        font-size: 10px;
+      }
     }
   }
 }

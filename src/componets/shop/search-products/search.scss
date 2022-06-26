@@ -477,3 +477,17 @@
     }
   }
 }
+
+@media(max-width: 320px) {
+  .wrapper-search  {
+    width: 320px; 
+
+    .search-block {
+      width: 320px;
+
+      .category {
+        width: 314px;
+      }
+    }
+  }
+}

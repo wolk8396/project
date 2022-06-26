@@ -6,6 +6,7 @@ import {ModalDelete} from '../../shared/Modal_delete/modal-delete';
 import {PATH, TEXT } from '../../shared/const';
 import { Confirmation } from '../../shared/confirmation/confirmation window';
 import { FUNCTION } from '../../shared/services/function';
+import { Massage } from '../../shared/masseges/masseges';
 
 export const basketPage =  async () => {
 	const header = document.querySelector('.header-basket');
@@ -72,6 +73,8 @@ export const basketPage =  async () => {
 
 		header.append(Header.getHeader());
 
+		Massage.setMassage(wrapper, TEXT.upDateCart);
+
 		product.forEach((item, i) => {
 		
 			table.append( 
@@ -96,7 +99,8 @@ export const basketPage =  async () => {
 		btn_update.onclick = () => {
 			const books =	getProduct();
 			(getUser1().authId && getToken()) ? 
-				basketUser(books) : Confirmation.showWindow();
+				basketUser(books).then(() => Massage.getElement()) : 
+				Confirmation.showWindow();
 		}
 
 		countFullPrice(renderProduct, full_total);
@@ -110,13 +114,11 @@ export const basketPage =  async () => {
 					renderShoppingCart(renderProduct);
 			})
 		
-		} else renderShoppingCart(renderProduct);
+		} else  renderShoppingCart(renderProduct);
 
 
 	modal_deleteWindow.append(ModalDelete.getModalDelete());
 	
 	modal_confirmation.append(Confirmation.confirmation(PATH, TEXT));
-
-	// header.append(Header.getHeader());
 
 }

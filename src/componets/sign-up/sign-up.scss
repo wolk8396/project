@@ -264,3 +264,14 @@
     }
   }
 }
+
+
+@media(max-width:320px) {
+  .wrapper-sign-up {
+    width: 320px;
+
+    .contener-sign-up {
+      width:320px;
+    }
+  }
+}

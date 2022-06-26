@@ -47,7 +47,7 @@ export const information = async () =>  {
   const {authId} = getUser1();
 
   let isReviews = false;
-  let isMore = false
+  let isMore = false;
 
   const numberRating  = await dateRating (bookId, click_rating);
 
@@ -92,7 +92,7 @@ export const information = async () =>  {
 
   const isMoreBtn = () => {
     if (!isMore) {
-      isMore = true
+      isMore = true;
       des_book.style.display = 'block';
       btn_more.innerText= '...LESS'
     } else {
@@ -137,7 +137,7 @@ export const information = async () =>  {
   description.innerHTML = book.description;
   story.innerHTML = book.story;
 
- ( book.story === '') ? 
+ ( book.story === '') ?
     btn_more.style.display = 'none':
     btn_more.style.display = 'block';
 
@@ -170,14 +170,14 @@ export const information = async () =>  {
 
   btn_wish.onclick = () => {
 
-   ( authId && getToken()) ? 
+   ( authId && getToken()) ?
     check_conditions() : Confirmation.showWindow();
   }
 
   const findItem = () => getProduct().find(item =>item.bookId === book.bookId);
- 
+
   const checkConditionsBasket = () => {
-    (!findItem()) ? btn_basket.innerText = 'ADD TO CART' : 
+    (!findItem()) ? btn_basket.innerText = 'ADD TO CART' :
       btn_basket.innerText ='IN CART';
   }
 
@@ -206,7 +206,6 @@ export const information = async () =>  {
       })
 
     } else window.location.pathname = PATH.basket;
-
   }
 
   btn_basket.onclick = () => {
@@ -239,7 +238,6 @@ export const information = async () =>  {
     fn_send();
   }
 
-
   btn_reviews.onclick = () => reviewsFlag();
 
   btn_more.onclick = () => isMoreBtn();
@@ -260,6 +258,4 @@ export const information = async () =>  {
   Footer.getFooter( wrapper);
 
   Spinner.showSpinner();
-
 }
-

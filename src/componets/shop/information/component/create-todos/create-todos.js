@@ -32,8 +32,8 @@ export const createTodoComments = async() => {
     photoUser.src = user.photo;
     user_name.innerText = `${user.firstName} ${user.lastName}`;
 
-    (user.photo === 'none') ? 
-      photoUser.src = '../../../../../picture/avater.png' : 
+    (user.photo === 'none') ?
+      photoUser.src = '../../../../../picture/avater.png' :
       photoUser.src = user.photo;
   }
 
@@ -60,7 +60,7 @@ export const createTodoComments = async() => {
         element.remove();
       })
     }
-   
+
     ModalDelete.setDate(confirmOperation, TEXT.deleteComment);
   }
 
@@ -87,17 +87,17 @@ export const createTodoComments = async() => {
     usersComments.forEach(item => {
       todo_container.append(
         new CommentUsers(
-          item, 
+          item,
           getUser1,
-          deleteComment, 
-          upDateComment, 
-          current_time, 
-          getLikes, 
+          deleteComment,
+          upDateComment,
+          current_time,
+          getLikes,
           colorBtn
         ).getTodo())
     });
 
-    Spinner.hideSpinner()
+    Spinner.hideSpinner();
   }
 
   commentsBtn.onclick = async () => {

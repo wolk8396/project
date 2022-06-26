@@ -646,3 +646,145 @@
     width: 379px;
   }
 }
+
+@media(max-width: 360px) {
+  .wrapper {
+    width: 360px;
+    height: 578px;
+
+    .main-account {
+      width: 300px;
+     border: 1px solid;
+
+      &__photo-block {
+        border: 1px solid;
+
+        .photo-user {
+          border: 1px solid;
+          height: 83px;
+          width: 63px;
+
+          &__avatar {
+            width: 59px;
+            height: 76px;
+          }
+
+          &__delete {
+            bottom: 82px;
+            right: 64px;
+          }
+        }
+
+        .btn-block {
+          height: 58px;
+          width: 62px;
+          border: 1px solid;
+
+          &__form-group {
+
+            .label {
+              width: 58px;
+              height: 40px;
+              font-size: 12px;
+            }
+          }
+        }
+      }
+
+      &__inf-block {
+
+        .fullNeme {
+          width: 231px;
+
+          h1 {
+            font-size: 13px;
+          }
+
+          .change-date {
+            left: 207px;
+          }
+        }
+
+        .additional {
+
+          p {
+            font-size: 9px;
+          }
+        }
+
+        .Change-profile {
+
+          input {
+            padding: 10px 6px 0;
+          }
+
+          label {
+            font-size: 9px;
+            left: 7px;
+          }
+
+          .block-btns {
+            width: 126px;
+
+            button {
+              width: 44px;
+              height: 20px;
+              font-size: 9px;
+            }
+          }
+        }
+      }
+    }
+
+    .user-wishlist {
+      width: 300px;
+
+      &__title {
+        width: 300px;
+      }
+
+      &__product {
+
+        .container_product {
+          width: 293px;
+
+          &__book {
+            width: 271px;
+
+            .block-imformation {
+              width: 105px;
+
+              p {
+                font-size: 10px;
+              }
+            }
+
+            .block-quantity {
+
+              .items-quantity {
+                height: 28px;
+                width: 32px;
+                font-size: 9px;
+              }
+
+              label {
+                font-size: 9px;
+              }
+            }
+
+            .block_btns {
+              width: 88px;
+
+              .btns {
+
+                .spinner-border {
+                  top: 9px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

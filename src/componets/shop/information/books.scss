@@ -553,10 +553,8 @@
           }
         }
       }
-      
     }
- 
-  } 
+  }
 }
 
 @media(max-width: 592px) {
@@ -594,13 +592,9 @@
           }
         }
       }
-      
     }
   }
-  
 }
-
-
 
 @media(max-width: 570px) {
   .wreaper-learn_more {
@@ -752,7 +746,7 @@
     .panel-reviews {
       width: 519px;
     }
-  } 
+  }
 }
 
 @media(max-width: 448px) {
@@ -812,7 +806,7 @@
     .panel-reviews {
       width: 441px
     }
-  } 
+  }
 }
 
 @media(max-width: 414px) {
@@ -835,7 +829,6 @@
 
       .comments {
 
-
         &__leave {
           width: 400px;
 
@@ -848,7 +841,7 @@
 
           }
         }
-     
+
       }
     }
   }
@@ -886,6 +879,60 @@
 
     .panel-reviews {
       width: 379px;
+    }
+  }
+}
+
+@media(max-width: 360px) {
+  .wreaper-learn_more {
+    width: 360px;
+
+    .main {
+      width: 312px;
+
+      &__block {
+        width: 298px;
+      }
+    }
+
+    .panel-reviews {
+      width: 360px;
+    }
+
+    .wrapper-reviews {
+
+      .comments {
+        width: 323px;
+
+        &__leave {
+          width: 310px;
+        }
+      }
+    }
+  }
+}
+
+@media(max-width: 320px) {
+  .wreaper-learn_more {
+    width: 320px;
+
+    .main {
+      width: 320px;
+
+      &__block {
+        width: 320px;
+      }
+    }
+
+    .wrapper-reviews {
+
+      .comments {
+        width: 323px;
+      }
+    }
+
+    .panel-reviews {
+      width: 320px;
     }
   }
 }
