@@ -48,11 +48,12 @@ export class ListBooks {
     const delete_book = document.createElement('button');
     const photo_book = document.createElement('img');
     const input_number = document.createElement('input');
+    const btn_plus = document.createElement('button');
+    const btn_minus = document.createElement('button');
     const input_label = document.createElement('label');
     const display = document.querySelector('.display__count');
     const massage = document.createElement('p');
     const btn_trash = document.createElement('img');
-    const test = document.createElement('samp')
     const spinner_cart = document.createElement('span');
     const spinner_wish = document.createElement('span');
 
@@ -78,12 +79,14 @@ export class ListBooks {
     input_number.className = 'items-quantity';
     input_label.className = 'input_label';
     massage.className = 'massage';
-    input_number.type = 'number';
     input_number.name = 'quantity';
+    input_number.type = 'number';
     btn_wrapper.className = 'btns';
     spinner_cart.className = 'spinner-border';
     spinner_wish.className = 'spinner-border';
     spinner_wish.id = 'spinner-wish'
+    btn_plus.className = 'plus';
+    btn_minus.className = 'minus';
 
     photo_book.src = this.#element.photo;
     author_book.innerText = this.#element.author;
@@ -93,10 +96,12 @@ export class ListBooks {
     add_btn.innerText = 'ADD TO CARD';
     input_label.innerText = 'quantity'
     delete_book.innerText = 'DELETE';
+    btn_plus.innerText = '+';
+    btn_minus.innerText = '-';
     input_number.value = 1;
 
     container_product.append(block_photo, block_inf, wrapper_input, block_btns);
-    wrapper_input.append(input_number, input_label);
+    wrapper_input.append(btn_plus, input_number, btn_minus,  input_label);
     block_photo.append(photo_book);
     block_inf.append(block_rating, product_book, author_book, cost_book);
     btn_wrapper.append(add_btn, spinner_cart,  delete_book, spinner_wish);
@@ -128,6 +133,11 @@ export class ListBooks {
         massage.innerText = 'has not been added';
       }]
     ])
+
+    const checkInput = (value, date) => {
+      (value <= 0 ) ?
+        input_number.value = date : null;
+    }
 
     const locationMap = new Map([
       [this.#link.account, () => delete_book.innerText = 'DELETE'],
@@ -177,13 +187,26 @@ export class ListBooks {
       this.#fn_remove(removeItem);
     } 
 
+    btn_plus.onclick = () => {
+      this.#element.count = ++input_number.value
+    }
+
+    btn_minus.onclick = () => {
+      let number = --input_number.value;
+      this.#element.count = number;
+
+      checkInput(number, 1);
+    }
+
+
     input_number.oninput = () => {
-      const getNumber  = (+input_number.value);
+      let getNumber  = (+input_number.value);
 
-      (getNumber === 1 || getNumber <=0) ?
-        input_number.value = 1 : null
+      (input_number.value === '') ?
+        this.#element.count = 0 :
+        this.#element.count = getNumber;
 
-      this.#element.count = input_number.value;
+      checkInput(getNumber, '');
     }
 
     locationMap.get(window.location.pathname)();

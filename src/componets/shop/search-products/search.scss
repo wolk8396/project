@@ -177,18 +177,28 @@
       }
 
       .block-quantity {
-        position: relative;
-        border-radius: 4px;
+        width: 142px;
+        display: flex;
+        flex-direction: row;
+        justify-content: normal;
+
+        .minus,
+        .plus {
+          height: 28px;
+          width: 4px;
+          background-color:gray;
+          color: white;
+          font-size: 15px;
+          font-weight: bold;
+        }
 
         .items-quantity {
-          border-radius: 4px;
-          height: 55px;
-          width: 92px;
+          height: 28px;
+          width: 56px;
         }
 
         .input_label {
-          position: absolute;
-          left: 2px;
+          display: none;
         }
       }
     }
@@ -209,7 +219,7 @@
         width: 762px;
 
         .block-imformation {
-          width: 260px;
+          width: 230px;
         }
       }
     }
@@ -296,7 +306,7 @@
         }
 
         .block-imformation {
-          width: 193px;
+          width: 150px;
 
           &__rating {
 
@@ -311,14 +321,23 @@
         }
 
         .block-quantity {
+          // width: 69px;
 
           .items-quantity {
-            height: 32px;
-            width: 37px;
+            height: 16px;
+            width: 36px;
+            font-size: 10px;
+          }
+
+          .minus,
+          .plus {
+            height: 16px;
+            width: 4px;
+            font-size: 9px;
           }
 
           .input_label {
-            font-size: 10px;
+           display: none;
           }
         }
 
@@ -403,6 +422,10 @@
 
       .category {
         width: 353px;
+
+        p {
+          font-size: 9px;
+        }
       }
     }
 
@@ -414,16 +437,23 @@
 
         .photo-book {
           height: 100px;
-          width: 47px;
+          width: 37px;
 
           &__frame {
-            width: 45px;
-            height: 59px;
+            width: 32px;
+            height: 47px;
           }
         }
 
         .block-imformation {
           width: 100px;
+
+          &__rating {
+
+            .rating {
+              font-size: 10px;
+            }
+          }
 
           p {
             font-size: 9px;
@@ -431,10 +461,16 @@
         }
 
         .block-quantity {
+          width: 86px;
+
+          .plus,
+          .minus {
+            width: 2px;
+            font-size: 7px;
+          }
 
           .items-quantity {
-            height: 26px;
-            width: 35px;
+            width: 29px;
             font-size: 9px;
           }
         }
@@ -486,7 +522,7 @@
       width: 320px;
 
       .category {
-        width: 314px;
+        width: 300px;
       }
     }
   }
