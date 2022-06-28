@@ -10,19 +10,18 @@
     display: flex;
     flex-direction: row;
     justify-content: normal;
-  
-  
+
       &__fullName {
         width: 205px;
         display: flex;
         flex-direction: column;
         justify-content:normal;
         background-color: whitesmoke;
-  
+
         .user-name {
           text-align: center;
         }
-  
+
         .user-photo {
           width: 131px;
           height: 143px;
@@ -37,7 +36,6 @@
   
       &__description {
         word-wrap: break-word;
-        // width: 843px;
         display: flex;
         flex-direction: column;
         justify-content:normal;
@@ -52,14 +50,14 @@
             border: none;
             padding: 13px;
           }
-  
+
           &__time {
             position: absolute;
             top: 154px;
           }
-  
+
         }
-  
+
         .block-btns {
           display:flex;
           flex-direction: row;
@@ -73,7 +71,7 @@
             flex-direction: row;
             justify-content: space-between;
             width: 344px;
-    
+
             &__remove_comment,
             &__btn_update {
               width: 167px;
@@ -85,7 +83,7 @@
               background-color: #dc3545;
               border-color: #dc3545;
             }
-    
+
             &__send_update {
               display: none;
               width: 167px;
@@ -106,7 +104,7 @@
             font-weight: bold;
             margin-top: 11px;
           }
-    
+
           .block-likes {
             margin-right: 6px;
 
@@ -123,7 +121,7 @@
                 color: #fff;
               }
             }
-  
+
             .bi-hand-thumbs-up {
               position: absolute;
               left: 4px;
@@ -155,7 +153,6 @@
   }
 }
 
-
 @media(max-width: 1020px) {
   .todo {
     width: 798px;
@@ -175,7 +172,7 @@
 
           .block {
             width: 237px;
-    
+
             button {
               font-size: 12px;
             }
@@ -183,12 +180,10 @@
         }
       }
     }
-
   }
 }
 
-
-@media(max-width: 850px) {
+@media(max-width: 873px) {
   .todo {
     width: 647px;
 
@@ -207,7 +202,7 @@
 
           .block {
             width: 237px;
-    
+
             button {
               font-size: 12px;
             }
@@ -223,7 +218,7 @@
   }
 }
 
-@media(max-width: 670px) {
+@media(max-width: 740px) {
   .todo {
     width: 585px;
 
@@ -274,8 +269,6 @@
   }
 }
 
-
-
 @media(max-width: 592px) {
   .todo {
     width: 562px;
@@ -284,10 +277,6 @@
 
       &__fullName {
         width: 450px;
-
-        .time-comment {
-       
-        }
       }
 
       &__description {
@@ -317,19 +306,13 @@
 
 
 @media(max-width: 520px) {
- 
   .todo {
     width: 424px;
 
     .comments-todo {
-     
 
       &__fullName {
         width: 367px;
-
-        .time-comment {
-       
-        }
       }
 
       &__description {
@@ -376,10 +359,6 @@
           margin-top: 0;
           width: 68px;
         }
-
-        .time-comment {
-       
-        }
       }
 
       &__description {
@@ -405,7 +384,6 @@
 
 
 @media(max-width: 360px) {
-
   .todo {
     width: 335px;
 
@@ -417,10 +395,6 @@
         .user-name {
           margin-top: 0;
           width: 68px;
-        }
-
-        .time-comment {
-       
         }
       }
 
@@ -468,7 +442,6 @@
             }
           }
 
-
           .time {
             font-size: 8px;
           }
@@ -483,4 +456,3 @@
     width: 305px;
   }
 }
-

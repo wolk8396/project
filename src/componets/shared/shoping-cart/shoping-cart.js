@@ -5,8 +5,8 @@ export class ShoppingCart {
   #teg_p;
   #fn_fullPrice;
   #fn_modal_window;
-  #massage
-  #countItems
+  #massage;
+  #countItems;
 
   constructor (
     element,
@@ -60,11 +60,11 @@ export class ShoppingCart {
     tr.append(td_photo);
     td_title.append(h4);
     tr.append(td_title);
-    td_btn_minus.append(btn_minus)
+    td_btn_minus.append(btn_minus);
     tr.append(td_btn_minus);
     td_count.append(p_count);
     tr.append(td_count);
-    td_btn_plus.append(btn_plus)
+    td_btn_plus.append(btn_plus);
     tr.append(td_btn_plus);
     td_price.append(price);
     tr.append(td_price);
@@ -96,11 +96,11 @@ export class ShoppingCart {
       this.#fn_fullPrice(this.#teg_p);
       total();
     }
-  
+
     but_btnDelete.onclick = () => {
       this.#fn_modal_window.setDate(removeBook, this.#massage);
     }
-  
+
     btn_minus.onclick = () => {
       let decrease = --this.#element.count;
       this.#fn_increase(this.#element.bookId, decrease, p_count);
@@ -117,7 +117,7 @@ export class ShoppingCart {
       let increase = ++this.#element.count;
 
       this.#fn_increase(this.#element.bookId, increase, p_count);
-  
+
       total();
     }
 

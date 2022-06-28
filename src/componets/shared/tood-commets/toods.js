@@ -5,7 +5,7 @@ export class CommentUsers {
   #fn_update;
   #time;
   #fn_likes;
-  #colorBtn
+  #colorBtn;
 
   constructor(element, getUser, fn_delete, fn_update, time, fn_likes, colorBtn) {
     this.#element = element,
@@ -19,14 +19,14 @@ export class CommentUsers {
 
   getTodo() {
     const block_comment = document.createElement('div');
-    const wrapperFullName = document.createElement('div'); 
+    const wrapperFullName = document.createElement('div');
     const btns_container = document.createElement('div');
     const current_time = document.createElement('p');
-    const textarea = document.createElement('textarea'); 
-    const wrapper_description = document.createElement('div'); 
+    const textarea = document.createElement('textarea');
+    const wrapper_description = document.createElement('div');
     const fullName = document.createElement('p');
     const description = document.createElement('p');
-    const container_textarea = document.createElement('div'); 
+    const container_textarea = document.createElement('div');
     const block_btn_likes = document.createElement('div');
     const btn_remove_comment = document.createElement('button');
     const btn_update = document.createElement('button');
@@ -39,10 +39,10 @@ export class CommentUsers {
     const avater = document.createElement('img');
     const time_comment = document.createElement('p');
     const time_local= document.createElement('p');
-  
+
     wrapperFullName.className = 'comments-todo__fullName';
     wrapper_description.className = 'comments-todo__description';
-    btns_container.className = 'block'
+    btns_container.className = 'block';
     btn_update.className = 'block__btn_update';
     current_time.className = 'block__time-comment';
     btn_remove_comment.className = 'block__remove_comment';
@@ -57,7 +57,7 @@ export class CommentUsers {
     btn_sendUpdate.className = 'block__send_update';
     block_likes.className = 'block-likes';
     btn_likes.className = "btn btn btn-danger";
-    btn_likes.id = this.#element.id
+    btn_likes.id = this.#element.id;
     container_display.className = 'btn btn btn-danger__wrapper-btns';
     sign_like.className = "bi-hand-thumbs-up";
     displayLikes.className = 'number';
@@ -78,7 +78,6 @@ export class CommentUsers {
     wrapperFullName.append(avater, fullName, time_comment);
     block_likes.append(btn_likes);
     btn_likes.append(sign_like, displayLikes);
-    // container_display.append(displayLikes);
     wrapper_description.append(container_textarea, block_btn_likes);
     container_textarea.append(textarea);
     block_btn_likes.append( btns_container, time_local, block_likes);
@@ -87,11 +86,11 @@ export class CommentUsers {
     textarea.setAttribute('disabled', true);
 
     (this.#element.photo === 'none') ?
-      avater.src = '../../../../../picture/avater.png' : 
+      avater.src = '../../../../../picture/avater.png' :
       avater.src = this.#element.photo;
 
     if (this.#element.idUsers === this.#getUser().authId) {
-      btns_container.append(btn_remove_comment, btn_update, btn_sendUpdate)
+      btns_container.append(btn_remove_comment, btn_update, btn_sendUpdate);
     }
 
     (this.#element.likesCount === undefined) ?
@@ -115,7 +114,7 @@ export class CommentUsers {
 
     btn_sendUpdate.onclick = () => {
       this.#fn_update(textarea.value, this.#element.id);
-    
+
       time_comment.innerText = this.#time;
       textarea.setAttribute('disabled', true);
       btn_update.style.display = 'block';

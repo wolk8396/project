@@ -8,7 +8,7 @@ export class ListBooks {
   #setItem;
   #fn;
   #fn_basket;
-  #fn_remove
+  #fn_remove;
 
   constructor (
     element,
@@ -61,7 +61,7 @@ export class ListBooks {
       in:"IN CART",
       add:"ADD TO CART"
     }
-  
+
     container_product.className = 'container_product__book';
     block_photo.className = 'photo-book';
     photo_book.className = 'photo-book__frame';
@@ -71,7 +71,7 @@ export class ListBooks {
     author_book.className = 'block-imformation__author';
     cost_book.className = 'block-imformation__cost';
     block_btns.className = 'block_btns';
-    wrapper_input.className = 'block-quantity'
+    wrapper_input.className = 'block-quantity';
     add_btn.id = this.#element.bookId;
     add_btn.className = 'btn btn-primary';
     btn_trash.className = 'btn-trash'
@@ -84,7 +84,7 @@ export class ListBooks {
     btn_wrapper.className = 'btns';
     spinner_cart.className = 'spinner-border';
     spinner_wish.className = 'spinner-border';
-    spinner_wish.id = 'spinner-wish'
+    spinner_wish.id = 'spinner-wish';
     btn_plus.className = 'plus';
     btn_minus.className = 'minus';
 
@@ -163,7 +163,7 @@ export class ListBooks {
       add_btn.innerText = 'ADD TO CART';
 
     const check_conditions = (get_Fn) => {
-      
+
       if (this.#element.basketExist  === false) {
         this.#element.basketExist = true;
         const productItems = this.#fn.setValue(this.#element, this.#getItem, this.#setItem);
@@ -173,7 +173,7 @@ export class ListBooks {
 
       } else {
         window.location.pathname = this.#link.basket;
-      } 
+      }
     }
 
     add_btn.onclick = () => {
@@ -185,10 +185,10 @@ export class ListBooks {
     btn_trash.onclick = () => {
       spinner_cart.display = 'block'
       this.#fn_remove(removeItem);
-    } 
+    }
 
     btn_plus.onclick = () => {
-      this.#element.count = ++input_number.value
+      this.#element.count = ++input_number.value;
     }
 
     btn_minus.onclick = () => {
@@ -197,7 +197,6 @@ export class ListBooks {
 
       checkInput(number, 1);
     }
-
 
     input_number.oninput = () => {
       let getNumber  = (+input_number.value);

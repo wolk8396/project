@@ -18,71 +18,68 @@ export const sign_up = () => {
   const signUpBtn = document.getElementById('signUpBtn');
   const header_signUp = document.querySelector('.sign-up-header');
   const display_massages =document.querySelector('.display-massages');
-  const block_spinner = document.querySelector('.sign-up-spinner')
+
+  const userData = {
+    firstName: '',
+    lastName: '',
+    birt: '',
+    email: '',
+    password_1: '',
+    password_2: ''
+  };
 
   let time = moment().format();
 
-    const userData = {
-      firstName: '',
-      lastName: '',
-      birt: '',
-      email: '',
-      password_1: '',
-      password_2: ''
-  };
-
   const removeColor = input => {
-    input.style.backgroundColor = '#333'
-    input.style.color = '#fff'
+    input.style.backgroundColor = '#333';
+    input.style.color = '#fff';
   }
 
   const setColor = input => {
-    input.style.backgroundColor = '#e8f0fe'
-    input.style.color = '#333'
+    input.style.backgroundColor = '#e8f0fe';
+    input.style.color = '#333';
   }
 
-
   firstNameInput.oninput = () => {
-      userData.firstName = firstNameInput.value;
-      checkFormValid();
-      hideErrorMessage('required_hide', errorTagsIds.get('first_name'));
+    userData.firstName = firstNameInput.value;
+    checkFormValid();
+    hideErrorMessage('required_hide', errorTagsIds.get('first_name'));
   }
 
 	firstNameInput.onblur = () => {
     if (!firstNameInput.value) {
-      removeColor(firstNameInput)
+      removeColor(firstNameInput);
       firstNameInput.classList.add('invalid-input');
       showErrorMessage('first-name_show', errorTagsIds.get('first_name'));
     } else {
-      setColor(firstNameInput)
+      setColor(firstNameInput);
       firstNameInput.classList.remove('invalid-input');
       hideErrorMessage('first-name_hide', errorTagsIds.get('first_name'));
     }
 	}
 
   lastNameInput.oninput = () => {
-      userData.lastName = lastNameInput.value;
-      checkFormValid();
-      hideErrorMessage('required_hide', errorTagsIds.get('first_name'));
+    userData.lastName = lastNameInput.value;
+    checkFormValid();
+    hideErrorMessage('required_hide', errorTagsIds.get('first_name'));
   }
 
   lastNameInput.onblur = () => {
     if (!lastNameInput.value) {
       lastNameInput.classList.add('invalid-input');
-      removeColor(lastNameInput)
+      removeColor(lastNameInput);
       showErrorMessage('lastName_show', errorTagsIds.get('last_name'));
     } else {
       lastNameInput.classList.remove('invalid-input');
-      setColor(lastNameInput)
+      setColor(lastNameInput);
       hideErrorMessage('lastName_hide', errorTagsIds.get('last_name'));
     }
 	}
 
-
   birthInput.oninput = () => {
-      userData.birt = birthInput.value;
-      checkFormValid();
-			hideErrorMessage('required_hide', errorTagsIds.get('birth'));
+    userData.birt = birthInput.value;
+    checkFormValid();
+    hideErrorMessage('required_hide', errorTagsIds.get('birth'));
   }
 
 	birthInput.onblur = () => {
@@ -91,7 +88,7 @@ export const sign_up = () => {
       removeColor(birthInput);
       showErrorMessage('required_show', errorTagsIds.get('birth'));
 		} else {
-      birthInput.style.backgroundColor = '#e8f0fe'
+      birthInput.style.backgroundColor = '#e8f0fe';
       setColor(birthInput);
 			hideErrorMessage('required_hide', errorTagsIds.get('birth'));
 		}
@@ -103,7 +100,6 @@ export const sign_up = () => {
 		hideErrorMessage('email_hide', errorTagsIds.get('email'));
     hideErrorMessage('required_hide', errorTagsIds.get('required_email'));
   }
-
 
 	emailInput.onblur = () => {
 		if (!emailInput.value) {
@@ -125,25 +121,25 @@ export const sign_up = () => {
 	}
 
   passwordInput1.oninput = () => {
-      userData.password_1 = passwordInput1.value;
-      checkFormValid();
-			hideErrorMessage('required_hide', errorTagsIds.get('pass_1'));
+    userData.password_1 = passwordInput1.value;
+    checkFormValid();
+    hideErrorMessage('required_hide', errorTagsIds.get('pass_1'));
   }
 
 	passwordInput1.onblur = () => {
 		if (!passwordInput1.value) {
 			passwordInput1.classList.add('invalid-input');
-				showErrorMessage('required_show', errorTagsIds.get('pass_1'));
+			showErrorMessage('required_show', errorTagsIds.get('pass_1'));
 		} else {
 			passwordInput1.classList.remove('invalid-input');
-				hideErrorMessage('required_hide', errorTagsIds.get('pass_1'));
+			hideErrorMessage('required_hide', errorTagsIds.get('pass_1'));
 		}
 	}
 
   passwordInput2.oninput = () => {
-      userData.password_2 = passwordInput2.value;
-      checkFormValid();
-			hideErrorMessage('passwords_hide', errorTagsIds.get('pass_2'));
+    userData.password_2 = passwordInput2.value;
+    checkFormValid();
+    hideErrorMessage('passwords_hide', errorTagsIds.get('pass_2'));
   }
 
 	passwordInput2.onblur = () => {
@@ -157,54 +153,52 @@ export const sign_up = () => {
 			hideErrorMessage('passwords_hide', errorTagsIds.get('pass_2'));
 		}
 	}
-  
 
-  signUpBtn.onclick = async () => {  
-      const { email, password_1: password } = userData;
+  signUpBtn.onclick = async () => {
+    const { email, password_1: password } = userData;
 
-      let authId = '';
-      let userId = '';
-      let requestCount = 0;
+    let authId = '';
+    let userId = '';
+    let requestCount = 0;
 
-      Spinner.showSpinner();
+    Spinner.showSpinner();
 
-      await createUserAuthRequest(userData)
-          .then(response => {
-            authId = response.user.uid
-            requestCount++;
-          })
-      await createUserDataRequest({...userData, authId, date:time, photo:'none'})
-          .then(res => {
-            userId = res.name;
-            requestCount++;
-          });
-      await signInRequest({email, password})
-          .then(({ user: { accessToken } }) => {
-            setToken(accessToken);
-            requestCount++;
-          })
-          .catch(err => console.log('Invalid credentials'));
-      await getUser(userId).then(res => {
-          setUser(res);
+    await createUserAuthRequest(userData)
+        .then(response => {
+          authId = response.user.uid
           requestCount++;
-          Spinner.hideSpinner();
+        })
+    await createUserDataRequest({...userData, authId, date:time, photo:'none'})
+        .then(res => {
+          userId = res.name;
+          requestCount++;
         });
+    await signInRequest({email, password})
+        .then(({ user: { accessToken } }) => {
+          setToken(accessToken);
+          requestCount++;
+        })
+        .catch(err => console.log('Invalid credentials'));
+    await getUser(userId).then(res => {
+        setUser(res);
+        requestCount++;
+        Spinner.hideSpinner();
+      });
 
-      
-      if (requestCount === 4) {
-        window.location.href =  PATH.shop;
-      }
+    if (requestCount === 4) {
+      window.location.href =  PATH.shop;
+    }
   }
 
   const checkFormValid = () => {
-      const isFormValid = Object.values(userData).every(value => !!value);
-      const isPasswordsEqual = userData.password_1 === userData.password_2;
-			const check = password_verification(userData.password_1, display_massages, passwordInput1, setColor,  removeColor);
+    const isFormValid = Object.values(userData).every(value => !!value);
+    const isPasswordsEqual = userData.password_1 === userData.password_2;
+    const check = password_verification(userData.password_1, display_massages, passwordInput1, setColor,  removeColor);
 
-      isFormValid && isPasswordsEqual && check ?
-          signUpBtn.removeAttribute('disabled') :
-          signUpBtn.setAttribute('disabled', true);
-  	}
+    isFormValid && isPasswordsEqual && check ?
+      signUpBtn.removeAttribute('disabled') :
+      signUpBtn.setAttribute('disabled', true);
+  }
 
   Footer.getFooter(body);
   header_signUp.append(Header.getHeader());

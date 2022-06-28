@@ -35,6 +35,7 @@
 					height: 31px;
 					margin-top: 12px;
 					font-size: 18px;
+					font-weight: bold;
 				}
 	
 				&__prise {
@@ -43,6 +44,7 @@
 					text-align: start;
 					margin-top: 13px;
 					font-size: 18px;
+					font-weight: bold;
 				}
 	
 				.container_btn {
@@ -67,12 +69,58 @@
 	}
 }
 
+@media(max-width:1090px) {
+	.wrapper-basket {
+		width: 1090px;
+
+		.product {
+			width: 1000px;;
+		}
+	}
+}
+
+@media(max-width:1030px) {
+	.wrapper-basket {
+		width: 1030px;
+
+		.product {
+			width: 940px;;
+		}
+	}
+}
+
+@media(max-width:1024px) {
+	.wrapper-basket {
+		width: 1024px;
+	}
+}
+
 @media(max-width: 1020px) {
 	.wrapper-basket {
 		width: 1020px;
 
 		.product {
 			width: 912px;;
+		}
+	}
+}
+
+@media(max-width:973px) {
+	.wrapper-basket {
+		width: 973px;
+
+		.product {
+			width: 840px;;
+		}
+	}
+}
+
+@media(max-width:928px) {
+	.wrapper-basket {
+		width: 928px;
+
+		.product {
+			width: 830px;;
 		}
 	}
 }
@@ -87,13 +135,35 @@
 	}
 }
 
+@media(max-width:873px) {
+	.wrapper-basket {
+		width: 873px;
+
+		.product {
+			width: 800px;;
+		}
+	}
+}
+
 @media(max-width: 850px) {
 	.wrapper-basket {
 		width: 850px;
 
 		.product {
-			width: 700px;;
+			width: 730px;;
 		}
+	}
+}
+
+@media(max-width:820px) {
+	.wrapper-basket {
+		width: 820px;
+	}
+}
+
+@media(max-width:800px) {
+	.wrapper-basket {
+		width: 800px;
 	}
 }
 
@@ -103,6 +173,26 @@
 
 		.product {
 			width: 722px;;
+		}
+	}
+}
+
+@media(max-width:740px) {
+	.wrapper-basket {
+		width: 740px;
+
+		.product {
+			width: 700px;;
+		}
+	}
+}
+
+@media(max-width:710px) {
+	.wrapper-basket {
+		width: 710px;
+
+		.product {
+			width: 650px;;
 		}
 	}
 }
@@ -117,9 +207,25 @@
 	}
 }
 
-@media(max-width: 580px) {
+@media(max-width:645px) {
 	.wrapper-basket {
-		width: 580px;
+		width: 645px;
+	}
+}
+
+@media(max-width:620px) {
+	.wrapper-basket {
+		width: 620px;
+
+		.product {
+			width: 590px;
+		}
+	}
+}
+
+@media(max-width:600px) {
+	.wrapper-basket {
+		width: 600px;
 
 		.product {
 			width: 580px;
@@ -127,64 +233,12 @@
 	}
 }
 
-@media(max-width: 520px) {
+@media(max-width: 580px) {
 	.wrapper-basket {
-		width: 520px;
+		width: 580px;
 
 		.product {
-			width: 490px;
-		}
-	}
-}
-
-@media(max-width: 480px) {
-	.wrapper-basket {
-
-		.product {
-			width: 405px;
-		}
-	}
-}
-
-@media(max-width: 448px) {
-	.wrapper-basket {
-		width: 448px;
-
-		.product {
-			width: 400px;
-		}
-	}
-}
-
-
-@media(max-width: 414px) {
-	.wrapper-basket {
-		width: 414px;
-
-		.product {
-			width: 385px;
-		}
-	}
-}
-
-
-@media(max-width: 399px) {
-	.wrapper-basket {
-		width: 399px;
-
-		.product {
-			width: 371px;
-		}
-	}
-}
-
-
-@media(max-width: 379px) {
-	.wrapper-basket {
-		width: 379px;
-
-		.product {
-			width: 278px;
+			width: 525px;
 
 			table {
 
@@ -192,10 +246,15 @@
 
 					td {
 
+						h4 {
+							font-size: 12px;
+						}
+
 						.full-total {
 							p {
 								font-size: 10px;
 								width: 73px;
+								margin-top: 10px;
 							}
 
 							.container_btn {
@@ -203,6 +262,7 @@
 								&__btn-update-cart {
 									width: 54px;
     							height: 34px;
+									font-size: 14px;
 								}
 							}
 						}
@@ -213,8 +273,93 @@
 	}
 }
 
+@media(max-width:560px) {
+	.wrapper-basket {
+		width: 560px;
+
+		.product {
+			width: 490px;
+		}
+	}
+}
+
+@media(max-width: 520px) {
+	.wrapper-basket {
+		width: 520px;
+
+		.product {
+			width: 470px;
+		}
+	}
+}
+
+@media(max-width: 480px) {
+	.wrapper-basket {
+
+		.product {
+			margin-right: 90px;
+			width: 405px;
+		}
+	}
+}
+
+@media(max-width: 448px) {
+	.wrapper-basket {
+		width: 448px;
+
+		.product {
+			margin-right: 35px;
+			width: 380px;
+		}
+	}
+}
+
+
+@media(max-width: 414px) {
+	.wrapper-basket {
+		width: 414px;
+
+		.product {
+			width: 340px;
+		}
+	}
+}
+
+
+@media(max-width: 399px) {
+	.wrapper-basket {
+		width: 399px;
+
+		.product {
+			margin-right: 49px;
+		}
+	}
+}
+
+
+@media(max-width: 379px) {
+	.wrapper-basket {
+		width: 379px;
+
+		.product {
+			margin-right: 25px;
+			width: 300px;
+		}
+	}
+}
+
+@media(max-width: 360px) {
+	.wrapper-basket {
+		width: 360px;
+	}
+}
+
 @media(max-width: 320px) {
 	.wrapper-basket {
 		width: 320px;
+
+		.product {
+			width: 280px;
+		}
 	}
 }

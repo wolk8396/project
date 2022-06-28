@@ -22,9 +22,6 @@ export const usersWhishes =  async fn_item  => {
   product.append(block);
 
   booksP.forEach(({bookId}) => getBtns.set(bookId, bookId));
-  console.log(booksP, 'ppp');
-
-  console.log(userWishes_date, 'wishs');
 
   ratingBooks.forEach(item => map_books.set(item.bookId, item.rating));
 
@@ -35,14 +32,14 @@ export const usersWhishes =  async fn_item  => {
       basketExist:item.bookId === getBtns.get(item.bookId)
 		}
 	})
-console.log(productList);
+
   const delete_wish = (element, massage, btn ,fn_status) => {
 
     const combine_fn = async () => {
       await deleteUserWishlist(element.id);
         fn_status();
     }
-    
+
     ModalDelete.setDate(combine_fn, TEXT.deleteWish);
   }
 
@@ -54,8 +51,7 @@ console.log(productList);
         .then(() => {
           btn.innerText = massage;
           spinner.style.display = 'none';
-        })
-
+        });
     } else  {
       btn.innerText = massage;
       spinner.style.display = 'none';

@@ -1,7 +1,5 @@
-import { FUNCTION } from "../services/function";
-
 export class Modal {
-  
+
   static modlaWindow(element, elements, fn_count, basket) {
 
     const wrapper_modal = document.createElement('div');
@@ -23,13 +21,12 @@ export class Modal {
     container.className ='container-model';
     information.className = 'container-model__information';
     frame.className ='frame';
-    item_photo.className = 'frame__item_img'
-   
+    item_photo.className = 'frame__item_img';
     title_item.className ='title-item';
     prise_item.className = 'prise-item';
     massage.className = 'massage';
     about_item.className ='container-model__information__about';
-    footer_model.className = 'container-model__additional'
+    footer_model.className = 'container-model__additional';
     block_btns.className = 'container-model__block_btns';
     check_out.className = 'btn-danger';
     keep_shopping.className = 'btn-outline-danger';
@@ -39,7 +36,7 @@ export class Modal {
     prise_item.innerText =  `${elements.cost} $`;
     massage.innerText = 'Is now in your cart';
     keep_shopping.innerText = 'keep shopping';
-  
+
     wrapper_modal.append(container);
     information.append(frame, about_item);
     about_item.append(title_item);

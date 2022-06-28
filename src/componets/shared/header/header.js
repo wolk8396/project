@@ -1,5 +1,5 @@
 import {PATH} from '../../../componets/shared/const'
-import {numbers, getUser1, clearUser, clearToken, setUser, getToken, } from '../services/local-storage-service';
+import {numbers, getUser1, clearToken, setUser, getToken, setBooks} from '../services/local-storage-service';
 export const COUNTMAP =  new Map ();
 import { Confirmation } from '../confirmation/confirmation window';
 
@@ -21,12 +21,12 @@ export class Header {
     const basket_shop = document.createElement('img');
     const display = document.createElement('div');
     const display_count = document.createElement('p');
-    const text_signIp = document.createElement('p'); 
-    const container_sign_up = document.createElement('div'); 
+    const text_signIp = document.createElement('p');
+    const container_sign_up = document.createElement('div');
     const container_search = document.createElement('div');
     const query = document.createElement('div');
     const search_svg = document.createElement('img');
-    const signUp_text = document.createElement('p'); 
+    const signUp_text = document.createElement('p');
     const container_userAccount = document.createElement('div');
     const ul_menu = document.createElement('ul');
     const li_1 = document.createElement('li');
@@ -39,7 +39,7 @@ export class Header {
     contener_title.className = 'header';
     title.className = 'header__title';
     title_top.className = 'header__title__top';
-    search.className ='header__search'
+    search.className ='header__search';
     link.className ='home-link';
     exit.className = 'home-link__home-page';
     text_exit.className = 'home-link__text';
@@ -47,10 +47,10 @@ export class Header {
     sign_in.className = 'navigation__sign-in';
     basket.className = 'navigation__basket';
     basket_shop.className = 'basket-shop';
-    account_p.className = 'account'
+    account_p.className = 'account';
     display.className ='display';
     display_count.className = 'display__count';
-    query.className = 'navigation__search-books'
+    query.className = 'navigation__search-books';
     text_signIp.className = 'text-sign_in';
     sign_img.className = 'sign-in';
     search_svg.className = 'search_btn';
@@ -64,7 +64,7 @@ export class Header {
 
     display_count.innerText = numbers();
 
-    COUNTMAP.set('display',  display_count)
+    COUNTMAP.set('display',  display_count);
 
     contener_title.append(title, search);
     title.append(title_top);
@@ -73,7 +73,7 @@ export class Header {
     query.append(search_svg);
 
     contener_sign.append(query, container_userAccount, container_sign_up, sign_in, basket);
-    container_userAccount.append(wrapper_account)
+    container_userAccount.append(wrapper_account);
     wrapper_account.append(account_p, ul_menu);
     ul_menu.append(li_1, li_2, li_3);
     container_sign_up.append(signUp_text);
@@ -94,11 +94,10 @@ export class Header {
     li_3.innerText = 'Log out';
     account_p.innerText = 'ACCOUNT';
 
-
     const openMenuAccount = () => {
       if (!flag) {
         flag = true
-        ul_menu.style.display = 'block'
+        ul_menu.style.display = 'block';
       } else {
         flag = false;
         ul_menu.style.display = 'none';
@@ -108,16 +107,14 @@ export class Header {
     (window.location.pathname === PATH.shop) ? text_exit.innerText = 'WELCOME' : null;
 
     (pathname === PATH.sign_in || pathname === PATH.sign_up) ?
-      contener_sign.style.display = 'none' : null
-
+      contener_sign.style.display = 'none' : null;
 
     const check_Registration = () => {
-      (getUser1().authId === undefined && !getToken()) ? 
+      (getUser1().authId === undefined && !getToken()) ?
         Confirmation.showWindow() : openMenuAccount();
     }
 
     account_p.onclick = () => check_Registration();
-   
 
     signUp_text.onclick = () => window.location.pathname = PATH.sign_up;
 
@@ -136,22 +133,20 @@ export class Header {
 
       setUser([]);
       clearToken();
+      setBooks([])
     }
-  
-    return contener_title;
 
+    return contener_title;
   }
 
   static getDisplay() {
     const display = document.querySelector('.display__count');
 
     display.innerText = numbers();
-    
   }
 
  static countItems(number) {
     const getCount = document.querySelector('.display__count');
-    getCount.innerText = number
+    getCount.innerText = number;
   }
-
 }

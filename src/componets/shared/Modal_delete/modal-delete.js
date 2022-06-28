@@ -22,21 +22,20 @@ static getModalDelete () {
     btn_accept.innerText = 'OK';
     btn_cancel.innerText ='CANCEL';
 
-    main_window.append( wrapper_window)
-    wrapper_window.append(container)
+    main_window.append( wrapper_window);
+    wrapper_window.append(container);
     container.append(block_massage, block_btns);
     block_massage.append(text);
     block_btns.append(btn_accept, btn_cancel);
 
     return main_window;
-
   }
 
   static setDate(removeItem, text) {
     const btn_cancel = document.querySelector('.btn-cancel');
     const btn_accept = document.querySelector('.btn-accept');
     const main_window = document.querySelector('.wrapper-delete');
-    const test_massage = document.querySelector('.test-massage')
+    const test_massage = document.querySelector('.test-massage');
 
     main_window.style.display = 'block';
 
@@ -48,8 +47,7 @@ static getModalDelete () {
 
     btn_accept.onclick = () => {
       main_window.style.display = 'none';
-      removeItem()
+      removeItem();
     }
-
   }
 }

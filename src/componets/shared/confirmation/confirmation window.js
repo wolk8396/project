@@ -7,7 +7,6 @@ export class Confirmation {
     const block = document.createElement('div');
     const container_text = document.createElement('div');
     const container_btns = document.createElement('div');
-    const btn_close = document.createElement('button');
     const text_massage = document.createElement('p');
     const link_sign_in = document.createElement('button');
     const link_sign_up = document.createElement('button');
@@ -32,9 +31,9 @@ export class Confirmation {
     main_window.append(wrapper_confirmation);
 
     wrapper_confirmation.append(block);
-    block.append(container_text, container_btns)
-    container_text.append(text_massage)
-    container_btns.append(link_sign_in, link_sign_up, cancel)
+    block.append(container_text, container_btns);
+    container_text.append(text_massage);
+    container_btns.append(link_sign_in, link_sign_up, cancel);
 
     link_sign_up.onclick = () => window.location.pathname = pash.sign_up;
 
@@ -42,14 +41,12 @@ export class Confirmation {
 
     cancel.onclick = () => main_window.style.display = 'none';
 
-
-
     return main_window
   }
 
   static showWindow () {
     const main_window = document.querySelector('.main-window');
 
-    main_window.style.display = 'block'
+    main_window.style.display = 'block';
   }
 }

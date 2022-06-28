@@ -51,10 +51,9 @@ export class RATING {
 
     rating_container.append(rating_active, rating_items);
     rating_items.append(item1, item2, item3, item4, item5);
-    
+
     rating_active.style.width = `${idRating*20}%`
-  
+
     return  rating
   }
-
 }

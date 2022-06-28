@@ -1,5 +1,5 @@
 tr {
-  
+
   td {
     border: 1px solid #666;
     padding: 5px 10px;
@@ -35,10 +35,7 @@ tr {
   }
 }
 
-
-
-
-@media(max-width:480px) {
+@media(max-width: 480px) {
   tr {
 
     td {
@@ -66,16 +63,11 @@ tr {
   }
 }
 
-
-@media(max-width:379px) {
+@media(max-width: 379px) {
   tr {
 
     td {
       padding: 5px 4px;
-
-      // .photo-product {
-      //   width: 20px;
-      // }
 
       .title {
         font-size: 10px;
@@ -89,7 +81,6 @@ tr {
       .p {
         font-size: 9px;
       }
-
     }
   }
 }

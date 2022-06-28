@@ -12,7 +12,7 @@
     width: 1286px;
     height: 99px;
     border-bottom: 1px solid #dbdbdb;
-  
+
     .input-find {
       display: flex;
       flex-direction: row;
@@ -25,11 +25,11 @@
         margin: auto;
         display: flex;
         width: 393px;
-  
+
         .search-iput {
           width: 300px;
         }
-  
+
         .search-btn {
           width: 70px;
           background: #e50914;
@@ -77,13 +77,13 @@
 
     .category p {
       font-weight: bold;
-      color:#382110; 
+      color:#382110;
       cursor: pointer;
     }
 
     p:hover {
       text-decoration: underline;
-      color: #382110; 
+      color: #382110;
     }
   }
 
@@ -115,34 +115,33 @@
           height: 150px;
         }
       }
-  
+
       .block-imformation {
         width: 412px;
 
         &__product {
-          color: #382110; 
+          color: #382110;
           font-weight: bold;
           cursor: pointer;
         }
-  
-        &__product:hover { 
-          text-decoration: underline; 
+
+        &__product:hover {
+          text-decoration: underline;
          }
-  
+
          &__author,
          &__cost {
           color:black; 
           font-weight: bold;
          }
       }
-  
+
       .block_btns {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         width: 150px;
         height: 168px;
-      
 
         .btns {
           display: flex;
@@ -184,12 +183,12 @@
 
         .minus,
         .plus {
-          height: 28px;
+          height: 32px;
           width: 4px;
-          background-color:gray;
-          color: white;
+          color:black;
           font-size: 15px;
           font-weight: bold;
+          border: none;
         }
 
         .items-quantity {
@@ -207,7 +206,7 @@
 
 @media(max-width: 1152px) {
   .wrapper-search  {
-    width: 1150px; 
+    width: 1150px;
 
     .search-block {
       width: 1150px;
@@ -226,9 +225,29 @@
   }
 }
 
+@media(max-width: 1090px) {
+  .wrapper-search  {
+    width: 1090px;
+
+    .search-block {
+      width: 1090px;
+    }
+  }
+}
+
+@media(max-width: 1030px) {
+  .wrapper-search  {
+    width: 1030px;
+
+    .search-block {
+      width: 1030px;
+    }
+  }
+}
+
 @media(max-width: 1020px) {
   .wrapper-search  {
-    width: 1020px; 
+    width: 1020px;
 
     .search-block {
       width: 1020px;
@@ -236,9 +255,29 @@
   }
 }
 
+@media(max-width:973px) {
+  .wrapper-search  {
+    width: 973px;
+
+    .search-block {
+      width: 973px;
+    }
+  }
+}
+
+@media(max-width:928px) {
+  .wrapper-search  {
+    width: 928px;
+
+    .search-block {
+      width: 928px;
+    }
+  }
+}
+
 @media(max-width: 912px) {
   .wrapper-search  {
-    width: 912px; 
+    width: 912px;
 
     .search-block {
       width: 912px;
@@ -246,12 +285,42 @@
   }
 }
 
+@media(max-width:873px) {
+  .wrapper-search  {
+    width: 873px;
+
+    .search-block {
+      width: 873px;
+    }
+  }
+}
+
 @media(max-width: 850px) {
   .wrapper-search  {
-    width: 850px; 
+    width: 850px;
 
     .search-block {
       width: 850px;
+    }
+  }
+}
+
+@media(max-width: 820px) {
+  .wrapper-search  {
+    width: 820px;
+
+    .search-block {
+      width: 820px;
+    }
+  }
+}
+
+@media(max-width:800px) {
+  .wrapper-search  {
+    width: 800px;
+
+    .search-block {
+      width: 800px;
     }
   }
 }
@@ -321,10 +390,9 @@
         }
 
         .block-quantity {
-          // width: 69px;
 
           .items-quantity {
-            height: 16px;
+            height: 11px;
             width: 36px;
             font-size: 10px;
           }
@@ -369,9 +437,29 @@
   }
 }
 
+@media(max-width: 740px) {
+  .wrapper-search  {
+    width: 740px;
+
+    .search-block {
+      width: 740px;
+    }
+  }
+}
+
+@media(max-width: 710px) {
+  .wrapper-search  {
+    width: 710px;
+
+    .search-block {
+      width: 710px;
+    }
+  }
+}
+
 @media(max-width: 670px) {
   .wrapper-search  {
-    width: 670px; 
+    width: 670px;
 
     .search-block {
       width: 670px;
@@ -379,9 +467,49 @@
   }
 }
 
+@media(max-width: 645px) {
+  .wrapper-search  {
+    width: 645px;
+
+    .search-block {
+      width: 645px;
+    }
+  }
+}
+
+@media(max-width: 620px) {
+  .wrapper-search  {
+    width: 620px;
+
+    .search-block {
+      width: 620px;
+    }
+  }
+}
+
+@media(max-width: 600px) {
+  .wrapper-search  {
+    width: 600px;
+
+    .search-block {
+      width: 600px;
+    }
+  }
+}
+
+@media(max-width: 560px) {
+  .wrapper-search  {
+    width: 560px;
+
+    .search-block {
+      width: 560px;
+    }
+  }
+}
+
 @media(max-width: 520px) {
   .wrapper-search  {
-    width: 520px; 
+    width: 520px;
 
     .search-block {
       width: 520px;
@@ -391,7 +519,7 @@
 
 @media(max-width: 480px) {
   .wrapper-search  {
-    width: 480px; 
+    width: 480px;
 
     .search-block {
       width: 480px;
@@ -401,7 +529,7 @@
 
 @media(max-width: 448px) {
   .wrapper-search  {
-    width: 448px; 
+    width: 448px;
 
     .search-block {
       width: 448px;
@@ -409,11 +537,11 @@
       .input-find {
         &__query {
           width: 240px;
-  
+
           .input-query {
             width: 190px;
           }
-  
+
           .btn-query {
             width: 50px;
           }
@@ -486,7 +614,7 @@
 
 @media(max-width: 414px) {
   .wrapper-search  {
-    width: 414px; 
+    width: 414px;
 
     .search-block {
       width: 414px;
@@ -496,7 +624,7 @@
 
 @media(max-width: 399px) {
   .wrapper-search  {
-    width: 399px; 
+    width: 399px;
 
     .search-block {
       width: 399px;
@@ -506,7 +634,7 @@
 
 @media(max-width: 379px) {
   .wrapper-search  {
-    width: 376px; 
+    width: 376px;
 
     .search-block {
       width: 379px;
@@ -514,9 +642,19 @@
   }
 }
 
+@media(max-width: 360px) {
+  .wrapper-search  {
+    width: 360px;
+
+    .search-block {
+      width: 360px;
+    }
+  }
+}
+
 @media(max-width: 320px) {
   .wrapper-search  {
-    width: 320px; 
+    width: 320px;
 
     .search-block {
       width: 320px;

@@ -1,11 +1,11 @@
 import { getUsers, signInRequest } from '../../componets/aip/aip-handlers';
 import { PATH } from '../shared/const';
 import { setToken, setUser, setBooks} from '../../componets/shared/services/local-storage-service';
-import { 
-    emailValidator, 
-    showErrorMessage, 
+import {
+    emailValidator,
+    showErrorMessage,
     hideErrorMessage,
-    errorTagsIds 
+    errorTagsIds
 } from '../shared/validators';
 import { Footer } from '../shared/footer/footer';
 import { Header } from '../shared/header/header';
@@ -13,12 +13,12 @@ import { getBasketBooks} from '../get date/dateusers'
 
 export const signInHandler = () => {
   const body = document.getElementsByTagName('body')[0];
+  const wrapper = document.querySelector('.wrapper-sign-in');
   const signInBtn = document.getElementById('signInBtn');
   const passwordInput = document.getElementById('passwordInput');
   const emailInput = document.getElementById('emailInput');
   const header_signIn = document.querySelector('.header-sign-in');
   let massage_error =document.querySelector('.massage-error');
-
 
   const userData = {
       email: '',
@@ -39,7 +39,7 @@ export const signInHandler = () => {
         passwordInput.classList.remove('invalid-input');
         hideErrorMessage('required_hide', errorTagsIds.get('pass_1'));
     }
-}
+  }
 
   emailInput.oninput = () => {
       userData.email = emailInput.value;
@@ -47,7 +47,6 @@ export const signInHandler = () => {
       hideErrorMessage('required_hide', errorTagsIds.get('required_email'));
       checkFormValid();
   }
-
 
   emailInput.onblur = () => {
     if (!emailInput.value) {
@@ -63,22 +62,22 @@ export const signInHandler = () => {
 			hideErrorMessage('email_hide', errorTagsIds.get('email'));
 			hideErrorMessage('required_hide', errorTagsIds.get('required_email'));
     }
-}
+  }
 
   signInBtn.onclick = async () => {
-      let userId = '';
-      const { email, password } = userData;
-			let requestCounter = 0;
+    let userId = '';
+    const { email, password } = userData;
+    let requestCounter = 0;
 
-      await signInRequest({email, password})
-				.then(({ user: { accessToken, uid} }) => {
-						setToken(accessToken);
-						userId = uid; 
-						requestCounter++; 
-				})
-				.catch(err => {
-          massage_error.innerText = 'email or password is incorrect'
-        });
+    await signInRequest({email, password})
+      .then(({ user: { accessToken, uid} }) => {
+        setToken(accessToken);
+        userId = uid; 
+        requestCounter++; 
+      })
+      .catch(err => {
+        massage_error.innerText = 'email or password is incorrect'
+      });
   
       await getUsers()
 				.then(response => {
@@ -88,18 +87,15 @@ export const signInHandler = () => {
 					const user = users.find(user => user.authId === userId);
           requestCounter++; 
           (user) ? setUser(user) : null;
-				
-         
 				});
 
-				if (requestCounter === 2) {
-         await getBasketBooks().then(res => {
-          (res === 0 || res === undefined) ? setBooks([]) : setBooks(res);
-         })
-					window.location.href = PATH.shop; 
-				}
+    if (requestCounter === 2) {
+      await getBasketBooks().then(res => {
+      (res === 0 || res === undefined) ? setBooks([]) : setBooks(res);
+      })
+      window.location.href = PATH.shop; 
+    }
   }
-
 
   const checkFormValid = () => {
       const isFormValid = Object.values(userData).every(value => !!value);
@@ -110,6 +106,6 @@ export const signInHandler = () => {
 				signInBtn.setAttribute('disabled', true);
   }
 
-  Footer.getFooter(body);
+  Footer.getFooter(wrapper);
   header_signIn.append(Header.getHeader());
 }

@@ -13,8 +13,8 @@ export class Spinner {
   }
 
   static hideSpinner() {
-      const spinner = document.getElementById('spinner');
+    const spinner = document.getElementById('spinner');
 
-      spinner ? spinner.remove() : null;
+    spinner ? spinner.remove() : null;
   }
 }

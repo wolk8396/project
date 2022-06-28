@@ -69,7 +69,7 @@ export const My_account = async ()  => {
         svg_el.src="../../../picture/dash-square-fill.svg";
       } else {
         flag = false;
-        element.style.display = 'none'
+        element.style.display = 'none';
         svg_el.src="../../../picture/plus-square-fill.svg";
       }
     }
@@ -81,9 +81,9 @@ export const My_account = async ()  => {
 
   const check_fullName = () => {
     if (fullNameUser.firstName === '') {
-      fullNameUser.firstName = firstName
+      fullNameUser.firstName = firstName;
     } else if (fullNameUser.lastName === '') {
-      fullNameUser.lastName = lastName
+      fullNameUser.lastName = lastName;
     }
   }
 
@@ -93,13 +93,13 @@ export const My_account = async ()  => {
     fullName.innerText = `${firstName} ${lastName}`;
 
     const changeValue =
-        {
-          ...userDate ,
-          firstName:firstName,
-          lastName:lastName
-        }
+      {
+        ...userDate ,
+        firstName:firstName,
+        lastName:lastName
+      }
 
-    await updateNmeUser(changeValue).then(res => setUser(changeValue))
+    await updateNmeUser(changeValue).then(res => setUser(changeValue));
   }
 
   const run_inputs = () => {
@@ -126,7 +126,7 @@ export const My_account = async ()  => {
       block_inputFile.style.display ='block';
       remove.style.display = 'none';
     } else {
-      avater.src = photo
+      avater.src = photo;
       block_inputFile.style.display = "none";
       remove.style.display = 'block';
     }
@@ -136,7 +136,6 @@ export const My_account = async ()  => {
 
   input_file.oninput = async (event) => {
     const imgName = input_file.value;
-   
 
     getUrl();
     await uploadPhoto(event, imgName, userDate, getUrl);
@@ -163,7 +162,7 @@ export const My_account = async ()  => {
 
   usersWhishes(openFn);
 
-  Footer.getFooter(wrapper)
+  Footer.getFooter(wrapper);
 
   modal_window.append( ModalDelete.getModalDelete());
 }

@@ -35,7 +35,14 @@ export const searchBooks = async() => {
 
   ratingBooks.forEach(item => map_books.set(item.bookId, item.rating));
 
-	const productList = PRODUCT.map(item => ({...item, rating:map_books.get(item.bookId), exist:item.bookId === itemId.get(item.bookId), basketExist:item.bookId === basketMap.get(item.bookId)}));
+  const productList = PRODUCT.map(item => {
+    return {
+      ...item,
+      rating:map_books.get(item.bookId),
+      exist:item.bookId === itemId.get(item.bookId),
+      basketExist:item.bookId === basketMap.get(item.bookId)
+    }
+  })
 
   const removeItems = () => {
     const container_product = document.querySelectorAll('.container_product__book');
@@ -69,24 +76,23 @@ export const searchBooks = async() => {
         const findSome = getDate.find(element => element.bookId === item.bookId);
 
         const deleteWish = async() => {
-          btn.innerText = 'add to wish'
-          spinner.style.display = 'none'
-          item.exist = false
+          spinner.style.display = 'none';
+          item.exist = false;
           await deleteUserWishlist(findSome.id);
         }
 
         const addWish = async() => {
-          spinner.style.display = 'block'
+          spinner.style.display = 'block';
           item.exist = true;
 
           await userWishlist (item, authId)
             .then(()=> {
               btn.innerText = 'delete';
-              spinner.style.display = 'none'
+              spinner.style.display = 'none';
             } );
         }
 
-        (!findSome) ? addWish() : ModalDelete.setDate(deleteWish, TEXT.deleteWish)
+        (!findSome) ? addWish() : ModalDelete.setDate(deleteWish, TEXT.deleteWish);
 
       } else  Confirmation.showWindow();
     };
@@ -109,7 +115,7 @@ export const searchBooks = async() => {
     })
   }
 
-  const filter_items = (text) => {
+  const filter_items = text => {
 
     const searching_books = productList.filter(({category}) => category === text);
 
@@ -153,7 +159,7 @@ export const searchBooks = async() => {
   find.onclick = event => {
    let text = event.target.textContent;
 
-   categoryBooks(text)
+   categoryBooks(text);
   }
 
   modal_window.append(Confirmation.confirmation(PATH, TEXT));
@@ -162,7 +168,7 @@ export const searchBooks = async() => {
 
   Footer.getFooter(wrapper_search);
 
-  modal_delete.append(ModalDelete.getModalDelete())
+  modal_delete.append(ModalDelete.getModalDelete());
 
   render(productList);
 }

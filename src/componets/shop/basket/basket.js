@@ -19,7 +19,7 @@ export const basketPage =  async () => {
 	const countFullPrice =(element) => {
 		const books = getProduct();
 		const total  = Object.values(books).reduce((acc, item) => acc += item.cost * item.count, 0);
-	
+
 		element.innerText = `${total.toFixed(2)} $`;
 	}
 
@@ -60,14 +60,14 @@ export const basketPage =  async () => {
 		const btn_update = document.createElement('button');
 
 		td_fullPrice.setAttribute('colspan', 7);
-		td_fullPrice.style.textAlign = 'right'; 
+		td_fullPrice.style.textAlign = 'right';
 		total_p.innerText = 'TOTAL PRICE :';
 		containerPrice.className = 'full-total';
 		total_p.className = 'full-total__text';
 		full_total.className = 'full-total__prise';
 		btn_update.className = 'container_btn__btn-update-cart';
 		wrapper_btn.className = 'container_btn';
-		btn_update.innerText = 'UPDATE'
+		btn_update.innerText = 'UPDATE';
 
 		product_book.append(table);
 
@@ -75,11 +75,11 @@ export const basketPage =  async () => {
 
 		Massage.setMassage(wrapper, TEXT.upDateCart);
 
-		product.forEach((item, i) => {
-		
-			table.append( 
+		product.forEach(item => {
+
+			table.append(
 				new ShoppingCart(
-					item, 
+					item,
 					setValueLocla,
 					remove,
 					full_total,
@@ -98,27 +98,26 @@ export const basketPage =  async () => {
 
 		btn_update.onclick = () => {
 			const books =	getProduct();
-			(getUser1().authId && getToken()) ? 
-				basketUser(books).then(() => Massage.getElement()) : 
+
+			(getUser1().authId && getToken()) ?
+				basketUser(books).then(() => Massage.getElement()) :
 				Confirmation.showWindow();
 		}
 
 		countFullPrice(renderProduct, full_total);
 	}
 
-		if (getUser1().authId && getToken()) {
+	if (getUser1().authId && getToken()) {
 
-			await getBasketBooks().then(res => {
-					(res === 0 || res === undefined) ? setBooks([]) : setBooks(res);
-					const renderProduct = getProduct();
-					renderShoppingCart(renderProduct);
-			})
-		
-		} else  renderShoppingCart(renderProduct);
+		await getBasketBooks().then(res => {
+			(res === 0 || res === undefined) ? setBooks([]) : setBooks(res);
+			const renderProduct = getProduct();
+			renderShoppingCart(renderProduct);
+		})
 
+	} else  renderShoppingCart(renderProduct);
 
 	modal_deleteWindow.append(ModalDelete.getModalDelete());
-	
-	modal_confirmation.append(Confirmation.confirmation(PATH, TEXT));
 
+	modal_confirmation.append(Confirmation.confirmation(PATH, TEXT));
 }

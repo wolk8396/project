@@ -15,7 +15,7 @@ export class Footer {
           <a class ='link-footer' href="#">Privacy</a>
           <a class ='link-footer' href="#">Cookie Preference</a>
           <a class ='link-footer' href="#">Corporate Information</a>
-        </div> 
+        </div>
       </div>`
      )
   }

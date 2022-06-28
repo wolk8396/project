@@ -161,7 +161,6 @@
 }
 
 @media(max-width:1152px) {
-
   .header {
     width: 1150px;
 
@@ -169,11 +168,10 @@
     &__search {
       width: 1150px;
     }
-  } 
-
+  }
 }
 
-@media(max-width:1090px) {
+@media(max-width: 1090px) {
   .header {
     width: 1090px;
 
@@ -184,7 +182,7 @@
   }
 }
 
-@media(max-width:1030px) {
+@media(max-width: 1030px) {
   .header {
     width: 1030px;
 
@@ -196,9 +194,7 @@
 }
 
 
-
-@media(max-width:1024px) {
-
+@media(max-width: 1024px) {
   .header {
     width: 1022px;
 
@@ -210,7 +206,7 @@
 }
 
 
-@media(max-width:973px) {
+@media(max-width: 973px) {
   .header {
     width: 973px;
 
@@ -221,7 +217,7 @@
   }
 }
 
-@media(max-width:928px) {
+@media(max-width: 928px) {
   .header {
     width: 928px;
 
@@ -233,9 +229,7 @@
 }
 
 
-
-@media(max-width:912px) {
-
+@media(max-width: 912px) {
   .header {
     width: 912px;
 
@@ -246,10 +240,10 @@
   }
 }
 
-@media(max-width:873px) {
+@media(max-width: 873px) {
 
   .header {
-    width:873px;
+    width: 873px;
 
     &__title,
     &__search {
@@ -259,7 +253,6 @@
 }
 
 @media(max-width:850px) {
-  
   .header {
     width:850px;
 
@@ -270,8 +263,7 @@
   }
 }
 
-@media(max-width:820px) {
-  
+@media(max-width: 820px) {
   .header {
     width:825px;
 
@@ -282,19 +274,20 @@
   }
 }
 
-@media(max-width:800px) {
-
+@media(max-width: 800px) {
   .header {
-    width:800px;
+    width: 800px;
 
     &__title,
     &__search {
-      width:800px;
+      width: 800px;
     }
   }
 }
 
-@media(max-width:768px)  {
+
+
+@media(max-width: 768px)  {
   .header {
     width: 768px;
 
@@ -353,10 +346,9 @@
   }
 }
 
-@media(max-width:740px) {
-
+@media(max-width: 740px) {
   .header {
-    width:740px;
+    width: 740px;
 
     &__title,
     &__search {
@@ -365,8 +357,7 @@
   }
 }
 
-@media(max-width:710px) {
-
+@media(max-width: 710px) {
   .header {
     width:710px;
 
@@ -377,10 +368,9 @@
   }
 }
 
-@media(max-width:670px) {
-
+@media(max-width: 670px) {
   .header {
-    width:670px;
+    width: 670px;
 
     &__title,
     &__search {
@@ -389,8 +379,7 @@
   }
 }
 
-@media(max-width:645px) {
-
+@media(max-width: 645px) {
   .header {
     width:645px;
 
@@ -401,8 +390,7 @@
   }
 }
 
-@media(max-width:620px) {
-
+@media(max-width: 620px) {
   .header {
     width:620px;
 
@@ -413,8 +401,7 @@
   }
 }
 
-@media(max-width:600px) {
-
+@media(max-width: 600px) {
   .header {
     width:600px;
 
@@ -425,8 +412,7 @@
   }
 }
 
-@media(max-width:560px) {
-
+@media(max-width: 560px) {
   .header {
     width:560px;
 
@@ -437,8 +423,7 @@
   }
 }
 
-@media(max-width:520px) {
-
+@media(max-width: 520px) {
   .header {
     width:520px;
 
@@ -450,10 +435,9 @@
 
 }
 
-@media(max-width:480px) {
-
+@media(max-width: 480px) {
   .header {
-    width:480px;
+    width: 480px;
 
     &__title,
     &__search {
@@ -500,7 +484,7 @@
 
       .navigation {
         justify-content: space-around;
-        width: 442px;
+        width: 396px;
       
         div {
           margin: auto;
@@ -527,6 +511,7 @@
         }
 
         &__basket {
+          width: 33px;
           height: 30px;
 
           .basket-shop {
@@ -544,12 +529,11 @@
           }
         }
       }
-    }  
+    } 
   }
 }
 
-@media(max-width:414px) {
-
+@media(max-width: 414px) {
   .header {
     width:414px;
 
@@ -560,8 +544,7 @@
   }
 }
 
-@media(max-width:399px) {
-
+@media(max-width: 399px) {
   .header {
     width:399px;
 
@@ -572,8 +555,7 @@
   }
 }
 
-@media(max-width:379px) {
-
+@media(max-width: 379px) {
   .header {
     width:379px;
 
@@ -588,7 +570,7 @@
   }
 }
 
-@media(max-width:360px) {
+@media(max-width: 360px) {
   .header {
     width:360px;
 
@@ -603,7 +585,7 @@
   }
 }
 
-@media(max-width:320px) {
+@media(max-width: 320px) {
   .header {
     width:320px;
 
@@ -617,5 +599,3 @@
     }
   }
 }
-
-

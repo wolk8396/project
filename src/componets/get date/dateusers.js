@@ -1,17 +1,13 @@
 import { getTodos, getLike, getWishList} from "../aip/aip-handlers";
 import { getUser1, getLearnMore} from '../shared/services/local-storage-service'
-
-import { FUNCTION } from "../shared/services/function"; 
-import { PRODUCT } from "../shop/shop-products";
-import { PATH } from "../shared/const";
-
-import { 
-  getUsers, 
-  deleteTodolike, 
-  createTodoLike,  
-  getRating,  
-  createRating, 
-  clearRating, 
+import { FUNCTION } from "../shared/services/function";
+import {
+  getUsers,
+  deleteTodolike,
+  createTodoLike,
+  getRating,
+  createRating,
+  clearRating,
   getBasket,
   createBasket,
   updatBasket
@@ -132,7 +128,7 @@ export  const upDateRating= async(id, number) => {
 
   const removeRating = FUNCTION.removeLink(getRatingBook, authId);
 
-  (FUNCTION.findUserDate(getRatingBook, authId)) ? 
+  (FUNCTION.findUserDate(getRatingBook, authId)) ?
     await  clearRating(removeRating) :
     await createRating(number, id);
 }
@@ -207,6 +203,4 @@ export const getBasketBooks = async() => {
   }, []);
 
   return goods;
-
 }
-

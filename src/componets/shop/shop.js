@@ -20,11 +20,9 @@ export const my = async () => {
 	const books =	getProduct();
 	const ratingBooks = await getAllBookRating();
 
-
-
 	let number = 0;
 	let getElement;
-	
+
 	block_pages.className = 'btn-page';
 
   (books === null) ? setBooks([]) : null;
@@ -57,11 +55,11 @@ export const my = async () => {
 			btn_active(number, btn_page);
 		}
 	}
-  
+
   const btn_active = number_page => {
 		let start = 0, pages = 1;
 		let middle = 0, end = 0;
-	
+
 		start =  number_page * pages;
 		end = start + pages;
 		middle = end - 2;
@@ -80,11 +78,6 @@ export const my = async () => {
 
 		})
 	}
-
-  // const checkLog = () => {
-	// 	(getUser1() && getToken()) ? 
-	// 	null	: setTimeout(() => { Confirmation.showWindow()}, 2000);
-  // }
 
   btn_page.append(block_pages);
 
@@ -115,8 +108,7 @@ export const my = async () => {
 			author.className ='products-container__author';
 			btnMore.className ='products-container__more';
 			cost.className ='products-container__cost';
-			// cart_check.className ='move';
-		
+
 			bookPage.append(block);
 			block.append(container);
 			container_title.append(product);
@@ -125,20 +117,19 @@ export const my = async () => {
 
 			getBlock(block);
 
-			btnMore.innerText = 'Learn More'
+			btnMore.innerText = 'Learn More';
 			product.innerHTML = item.product;
 			photo.src = item.photo;
 			author.innerHTML = item.author;
 			cost.innerHTML = item.cost + '$';
-  
+
 			btnMore.onclick = () => {
 				setLearnMore(item);
 				window.location.href = PATH.inf;
 			}
+
 		});
 	}
-
-  // checkLog();
 
 	btn_active();
 
