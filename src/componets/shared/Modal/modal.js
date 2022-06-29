@@ -1,6 +1,6 @@
 export class Modal {
 
-  static modlaWindow(element, elements, fn_count, basket) {
+  static modalWindow(element, elements, basket) {
 
     const wrapper_modal = document.createElement('div');
     const container = document.createElement('div');
@@ -8,7 +8,6 @@ export class Modal {
     const block_btns =  document.createElement('div');
     const frame = document.createElement('div');
     const about_item = document.createElement('div');
-    const title_block = document.createElement('div');
     const footer_model = document.createElement('div');
     const title_item = document.createElement('p');
     const prise_item = document.createElement('p');

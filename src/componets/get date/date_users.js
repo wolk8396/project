@@ -13,7 +13,6 @@ import {
   updatBasket
         } from "../aip/aip-handlers";
 
-
 export const getDateUsers = async () => {
   const usersDate = await getUsers();
   const result = await getTodos();
@@ -44,7 +43,7 @@ export const getDateUsers = async () => {
   });
 
   Object.entries(count).forEach(item => userLikes.set(item[0], item[1]));
-  
+
   const joinArr = findComment.map(item => {
 
     return {
@@ -70,6 +69,7 @@ export const gteUserLikes = async (id, btn, display) => {
   const linkRemove = FUNCTION.removeLink(getDatelikes, authId);
 
   const findUser = FUNCTION.findUserDate(getDatelikes, authId);
+
   let sum = display.textContent;
 
     const checkStatus = (res) => {
@@ -82,13 +82,13 @@ export const gteUserLikes = async (id, btn, display) => {
       }
     }
 
-    (findUser) ? 
+    (findUser) ?
       await deleteTodolike (linkRemove).then(res =>  checkStatus(res.name)):
       await createTodoLike (id).then(res =>  checkStatus(res.name));
   }
 
 
-export  const findDateuser = async () => {
+export  const findDateUser = async () => {
   const usersDate = await getUsers();
   const {authId} = getUser1();
 
@@ -138,7 +138,7 @@ export const getAllBookRating = async() => {
   const getNumber = new Map();
 
   let play = FUNCTION.createDate(getRatingItem);
-  
+
   const count =  play.reduce((acc, item, i)  => {
 
     acc[item.bookId] = (acc[item.bookId] || 0) + (+item.rating);
@@ -149,7 +149,7 @@ export const getAllBookRating = async() => {
     acc[item.bookId] = (acc[item.bookId] || 0) + 1;
     return acc
   }, {});
-  
+
   Object.entries(countRepeat).forEach(item => {
     getNumber.set(item[0], item[1]);
   })
@@ -164,7 +164,6 @@ export const getAllBookRating = async() => {
   return getDateRating
 }
 
-
 export const basketUser = async(items) => {
   const getBasketUser = await getBasket();
 
@@ -172,23 +171,10 @@ export const basketUser = async(items) => {
 
   const checkStatus = productDate.find(item => item.userid === getUser1().authId);
 
-
-
-  if (!checkStatus) {
-   await createBasket (items)
-    .then(res => {
-      // model_items.style.display = 'block'
-      // spinner.style.display = 'none'
-    })
-  } else {
-    await updatBasket(items, checkStatus.id)
-    .then(res => {
-      // model_items.style.display = 'block'
-      // spinner.style.display = 'none'
-    })
-  }
+  (!checkStatus) ?
+    await createBasket (items):
+    await updatBasket(items, checkStatus.id);
 }
-
 
 export const getBasketBooks = async() => {
   const getBasketUser = await getBasket();

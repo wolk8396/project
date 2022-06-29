@@ -2,7 +2,7 @@ import { createUserAuthRequest,  createUserDataRequest, signInRequest, getUser }
 import { PATH,time} from '../shared/const';
 import { setToken, setUser } from '../shared/services/local-storage-service';
 import { emailValidator, showErrorMessage, hideErrorMessage, errorTagsIds,  password_verification } from '../shared/validators';
-import { Spinner } from '../shared/spiner/spiner';
+import { Spinner } from '../shared/spinner/spinner';
 import moment from 'moment';
 import { Header } from "../shared/header/header";
 import { Footer } from '../shared/footer/footer';
@@ -22,7 +22,7 @@ export const sign_up = () => {
   const userData = {
     firstName: '',
     lastName: '',
-    birt: '',
+    birth: '',
     email: '',
     password_1: '',
     password_2: ''
@@ -77,7 +77,7 @@ export const sign_up = () => {
 	}
 
   birthInput.oninput = () => {
-    userData.birt = birthInput.value;
+    userData.birth = birthInput.value;
     checkFormValid();
     hideErrorMessage('required_hide', errorTagsIds.get('birth'));
   }

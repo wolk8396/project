@@ -19,7 +19,7 @@ module.exports = {
         }),
         new HTMLWebpackPlugin({
             filename: 'shop.html',
-            template: './src/componets/shop/shop.html'
+            template: './src/componets/shop/main_page/shop.html'
         }),
         new HTMLWebpackPlugin({
             filename: 'basket.html',

@@ -1,10 +1,12 @@
 import { Header } from "../../shared/header/header";
 import { usersWhishes } from "./account_componets/account-wishlist/user-wishlist";
-import {getProduct, setBooks, getUser1, setUser} from '../../shared/services/local-storage-service';
+import {getProduct, setBooks, setUser} from '../../shared/services/local-storage-service';
 import { ModalDelete } from "../../shared/Modal_delete/modal-delete";
 import {uploadPhoto, deletePhoto, updateNmeUser} from '../../aip/aip-handlers';
-import {findDateuser} from '../../get date/dateusers';
+import {findDateUser} from '../../get date/date_users';
 import {Footer } from "../../shared/footer/footer";
+import {URL_photo, FILE_TYPE, TEXT} from "../../shared/const";
+import { Massage } from "../../shared/messages/messages";
 import * as moment from 'moment';
 
 export const My_account = async ()  => {
@@ -13,18 +15,19 @@ export const My_account = async ()  => {
   const open_block = document.querySelector('.open-list');
   const svg_el = document.querySelector('.open-list');
   const modal_window = document.querySelector('.modal-window');
-  const fullName = document.querySelector('.fullNeme__user_name');
-  const regestration = document.querySelector('.additional__date_regestration');
-  const birth = document.querySelector('.additional__birth');
+  const fullName = document.querySelector('.fullName__user_name');
+  const registration = document.querySelector('.additional__date_registration');
+  const birthday = document.querySelector('.additional__birth');
   const input_file = document.querySelector('.input_file');
   const remove = document.querySelector('.photo-user__delete');
   const block_inputFile = document.querySelector('.btn-block__form-group');
-  const avater = document.querySelector('.photo-user__avatar');
+  const avatar = document.querySelector('.photo-user__avatar');
   const block_inputs = document.querySelector('.Change-profile');
   const btn_change = document.querySelector('.change-date');
   const btn = document.getElementById('btn');
-  const btn_cancel = document.getElementById('btn-cancel')
+  const btn_cancel = document.getElementById('btn-cancel');
   const block_input = document.querySelectorAll('.profile-fullName');
+  const massage = document.querySelector('.additional');
 
   const name_Map = new Map ([
     ['first-name', value =>  fullNameUser.firstName = value],
@@ -50,9 +53,9 @@ export const My_account = async ()  => {
 
   let isFlag_input = false;
 
-  const userDate = await findDateuser();
+  const userDate = await findDateUser();
 
-  const {birt, date, firstName, lastName, photo, authId, idLink} = userDate;
+  const {birth, date, firstName, lastName, photo, authId, idLink} = userDate;
 
   (getProduct() === null) ? setBooks([]) : null;
 
@@ -76,8 +79,8 @@ export const My_account = async ()  => {
   }
 
   fullName.innerText = `${firstName} ${lastName}`;
-  regestration.innerText = `date of regestration : ${date}`;
-  birth.innerText = `birth: ${moment(birt).format('YYYY-MM-DD')}`;
+  registration.innerText = `date of registration : ${date}`;
+  birthday.innerText = `birth: ${moment(birth).format('YYYY-MM-DD')}`;
 
   const check_fullName = () => {
     if (fullNameUser.firstName === '') {
@@ -99,7 +102,11 @@ export const My_account = async ()  => {
         lastName:lastName
       }
 
-    await updateNmeUser(changeValue).then(res => setUser(changeValue));
+    await updateNmeUser(changeValue)
+      .then(() => {
+        block_inputs.style.display = 'none';
+        setUser(changeValue);
+      })
   }
 
   const run_inputs = () => {
@@ -112,7 +119,6 @@ export const My_account = async ()  => {
         name_Map.get(input.id)(input.value);
         check_fullName();
       }
-
     })
   }
 
@@ -122,38 +128,49 @@ export const My_account = async ()  => {
 
   const checkPhoto = () => {
     if (photo === 'none') {
-      avater.src = '../../../../../picture/avater.png';
+      avatar.src = URL_photo;
       block_inputFile.style.display ='block';
       remove.style.display = 'none';
     } else {
-      avater.src = photo;
+      avatar.src = photo;
       block_inputFile.style.display = "none";
       remove.style.display = 'block';
     }
   }
 
-  const getUrl = async url => avater.src  = url;
+  const getUrl = async url => avatar.src  = url;
 
-  input_file.oninput = async (event) => {
+  const checkTypePhoto =  async (event, imgName) => {
+    const files = event.target.files[0];
+    const {type} = files;
+
+    if (FILE_TYPE.includes(type)) {
+
+      await uploadPhoto(files, imgName, userDate, getUrl).then(() => {
+        block_inputFile.style.display = "none";
+        remove.style.display = 'block';
+      });
+
+    } else {
+      Massage.getElement();
+    }
+  }
+
+  input_file.oninput = async event => {
     const imgName = input_file.value;
 
-    getUrl();
-    await uploadPhoto(event, imgName, userDate, getUrl);
-
-    block_inputFile.style.display = "none";
-    remove.style.display = 'block';
+    checkTypePhoto(event, imgName);
   }
 
   remove.onclick = async () => {
-    const userDate = await findDateuser();
-    console.log(userDate);
+    const userDate = await findDateUser();
 
-    await deletePhoto(userDate.photo, userDate);
-
-    checkPhoto();
-
-    block_inputFile.style.display = 'block';
-    remove.style.display = 'none';
+    await deletePhoto(userDate.photo, userDate)
+      .then(() => {
+        avatar.src = URL_photo
+        block_inputFile.style.display = 'block';
+        remove.style.display = 'none';
+      });
   }
 
   checkPhoto();
@@ -161,6 +178,8 @@ export const My_account = async ()  => {
   header.append(Header.getHeader());
 
   usersWhishes(openFn);
+
+  Massage.setMassage(massage, TEXT.type)
 
   Footer.getFooter(wrapper);
 

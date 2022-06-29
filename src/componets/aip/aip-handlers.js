@@ -99,7 +99,6 @@ export const updateTodoLikes= (idUpdate, id, like) => {
           idComment:id,
           count:like,
           userid:getUser1().authId,
-          // time:moment().format()
           })
       }
     );
@@ -114,15 +113,14 @@ export const deleteTodolike = idUpdate => {
     );
 }
 
-
-export const uploadPhoto = async (event, imgName, userDate, getUrl) => {
+export const uploadPhoto = async (files, imgName, userDate, getUrl) => {
   const storage = getStorage();
   const storageRef = ref(storage, `/${uuidv4()}_${imgName}`);
   console.log(storageRef);
 
   let url =''
  
-  await uploadBytes(storageRef, event.target.files[0]).then(res => console.log(res))
+  await uploadBytes(storageRef, files).then(res => console.log(res))
   await  getDownloadURL(storageRef).then(res => {
     url = res
   });
@@ -138,7 +136,7 @@ export const uploadPhoto = async (event, imgName, userDate, getUrl) => {
       }
     )
     .then(response => response.json())
-    
+
   getUrl(url)
 
 }

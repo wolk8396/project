@@ -71,7 +71,7 @@
 		cost:20.00,
 		count:1
 	},
-	{ 
+	{
 		bookId:"book7",
 		photo:'https://raw.githubusercontent.com/wolk8396/test/main/homework17/1.jpg',
 		product:'Harry Potter and the Philosophers Stone',
@@ -83,7 +83,7 @@
 		cost:7.92,
 		count:1
 	},
-	{ 
+	{
 		bookId:"book8",
 		photo:'https://raw.githubusercontent.com/wolk8396/test/main/homework17/2.jpg',
 		product:'Harry Potter and the Chamber of Secrets',
@@ -95,7 +95,7 @@
 		category:'Harry Potter',
 		count:1
 	},
-	{ 
+	{
 		bookId:"book9",
 		photo:'https://raw.githubusercontent.com/wolk8396/test/main/homework17/3.jpg',
 		product:'Harry Potter and the Prisoner of Azkaban',
@@ -105,9 +105,9 @@
 		author:'J. K. Rowling',
 		category:'Harry Potter',
 		cost:8.99,
-		count:0
+		count:1
 	},
-	{	
+	{
 		bookId:"book11",
 		photo:'https://raw.githubusercontent.com/wolk8396/test/main/homework17/4.jpg',
 		product:'Harry Potter and the Goblet of Fire',
@@ -119,7 +119,7 @@
 		cost:8.99,
 		count:1
 	},
-	{	
+	{
 		bookId:"book12",
 		photo:'https://raw.githubusercontent.com/wolk8396/test/main/homework17/5.jpg',
 		product:'Harry Potter and the Order of the Phoenix',
@@ -131,7 +131,7 @@
 		cost:8.99,
 		count:1
 	},
-	{	
+	{
 		bookId:"book13",
 		photo:'https://raw.githubusercontent.com/wolk8396/test/main/homework17/6.jpg',
 		product:'Harry Potter and the Half-Blood Prince',
@@ -143,7 +143,7 @@
 		cost:8.99,
 		count:1
 	},
-	{	
+	{
 		bookId:"book14",
 		photo:'https://raw.githubusercontent.com/wolk8396/test/main/homework17/7.jpg',
 		product:'Harry Potter and the Deathly Hallows',
@@ -155,7 +155,7 @@
 		cost:8.99,
 		count:1
 	},
-	{	
+	{
 		bookId:"book15",
 		photo:'https://raw.githubusercontent.com/wolk8396/test/main/homework17/9780751565362.jpg',
 		product:'Harry Potter and the Cursed Child ',
@@ -167,7 +167,7 @@
 		cost:8.99,
 		count:1
 	},
-	{	
+	{
 		bookId:"book16",
 		photo:'https://raw.githubusercontent.com/wolk8396/test/main/homework17/js.jpg',
 		product:'Node.js Design Patterns',
@@ -179,7 +179,7 @@
 		cost:37.99,
 		count:1
 	},
-	{	
+	{
 		bookId:"book17",
 		photo:'https://raw.githubusercontent.com/wolk8396/test/main/homework17/js%2019.jpg',
 		product:'You Don t Know JS Yet',
@@ -202,7 +202,7 @@
 		cost:37.99,
 		count:1
 	},
-	{	
+	{
 		bookId:"book19",
 		photo:'https://raw.githubusercontent.com/wolk8396/test/main/homework17/9781118531648.jpg',
 		product:'JavaScript and JQuery',
@@ -551,8 +551,6 @@
 		count:1
 	}
 ];
-
-
 
 export const AUTHOR = [
 	{

@@ -1,19 +1,19 @@
-import {PATH, TEXT} from '../shared/const';
-import {PRODUCT} from './shop-products';
-import {getProduct, setBooks, setLearnMore, setUser, getUser1, getToken} from '../shared/services/local-storage-service';
-import { RATING } from '../shared/rating/rating';
-import {getAllBookRating,} from '../get date/dateusers';
-import {Confirmation} from '../shared/confirmation/confirmation window';
-import { Header} from '../shared/header/header';
-import { FUNCTION } from '../shared/services/function';
-import { Footer } from '../shared/footer/footer';
+import {PATH, TEXT} from '../../shared/const';
+import {PRODUCT} from '../../shared/products_shop/shop-products';
+import {getProduct, setBooks, setLearnMore, setUser, getUser1, getToken} from '../../shared/services/local-storage-service';
+import { RATING } from '../../shared/rating/rating';
+import {getAllBookRating,} from '../../get date/date_users';
+import {Confirmation} from '../../shared/confirmation/confirmation window';
+import { Header} from '../../shared/header/header';
+import { FUNCTION } from '../../shared/services/function';
+import { Footer } from '../../shared/footer/footer';
 
-export const my = async () => {
+export const main_page = async () => {
 	const wrapper_shope = document.querySelector('.wrapper-shop');
   const shop_header = document.querySelector('.header-wrapper');
   const bookPage = document.querySelector('.main-products');
 	const btn_page = document.querySelector('.btn-container');
-	const window_modal = document.querySelector('.modal-window-log')
+	const window_modal = document.querySelector('.modal-window-log');
 	const block_pages = document.createElement('div');
   const getBtns = block_pages.childNodes;
 	const map_books = new Map();
@@ -44,11 +44,11 @@ export const my = async () => {
 		block_pages.append(btn_page);
 
 		btn_page.className = 'btn-number-page';
-		btn_page.innerText = i+1;
-		btn_page.id = i+1;
+		btn_page.innerText = i + 1;
+		btn_page.id = i + 1;
 
 		btn_page.onclick = () => {
-			number = (+ btn_page.textContent -1);
+			number = (+ btn_page.textContent - 1);
 
 			getElement.remove();
 			render();
@@ -93,7 +93,6 @@ export const my = async () => {
 			const container_title = document.createElement('div');
 			const container_rating = document.createElement('div');
 			const product = document.createElement('span');
-			const cart_check = document.createElement('img');
 			const photo = document.createElement('img');
 			const author = document.createElement('p');
 			const btnMore = document.createElement('button');
@@ -101,7 +100,7 @@ export const my = async () => {
 
 			container.className = 'products-container';
 			productsElement.className = 'products-element';
-			container_title.className = 'products-container__product'
+			container_title.className = 'products-container__product';
 			product.className = 'title';
 			container_rating.className = 'products-container__rating-stars';
 			photo.className = 'products-container__photo';

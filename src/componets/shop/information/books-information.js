@@ -1,6 +1,5 @@
-import {getUsersWish, dateRating, upDateRating,  basketUser, getBasketBooks} from '../../get date/dateusers';
+import {getUsersWish, dateRating, upDateRating, basketUser} from '../../get date/date_users';
 import {userWishlist, deleteUserWishlist} from '../../aip/aip-handlers';
-import {AUTHOR} from "../../shop/shop-products"
 import {createTodoComments} from './component/create-todos/create-todos';
 import { Header} from '../../shared/header/header';
 import { PATH, TEXT } from '../../shared/const';
@@ -10,17 +9,17 @@ import { FUNCTION } from '../../shared/services/function';
 import { Confirmation } from '../../shared/confirmation/confirmation window';
 import { Footer } from '../../shared/footer/footer';
 import { ModalDelete } from '../../shared/Modal_delete/modal-delete';
-import { Spinner } from '../../shared/spiner/spiner';
+import { Spinner } from '../../shared/spinner/spinner';
 
 export const information = async () =>  {
-  const wrapper = document.querySelector('.wreaper-learn_more')
+  const wrapper = document.querySelector('.wrapper-learn_more');
   const header = document.querySelector('.header-1');
-  const modal_window = document.querySelector('.modal-window-log')
+  const modal_window = document.querySelector('.modal-window-log');
   const picture = document.querySelector('.picture');
   const title = document.querySelector('.book-title');
   const prise = document.querySelector('.block-btn__cost');
   const author = document.querySelector('.book-author');
-  const recomendation = document.querySelector('.recommendations');
+  const recommendations = document.querySelector('.recommendations');
   const description = document.querySelector('.description');
   const story = document.querySelector('.book-story__about-book');
   const btn_wish = document.querySelector('.btn-wish');
@@ -30,21 +29,19 @@ export const information = async () =>  {
   const click_rating = document.querySelector('.click-stars');
   const number_rating =document.querySelector('.number-rating');
   const wrapper_stars = document.querySelectorAll('.wrapper-active__item');
-  let number_x = document.querySelector('.rating__value');
   const model_items = document.querySelector('.model-items');
-  const spiners = document.querySelector('.spinner-border-sm');
+  const spinners = document.querySelector('.spinner-border-sm');
   const spinner = document.getElementById('cart');
-  const modal_delete = document.querySelector('.modal-delete')
+  const modal_delete = document.querySelector('.modal-delete');
   const status_massage = document.querySelector('.status-query__response');
   const btn_reviews = document.getElementById('btn-reviews');
   const wrapper_reviews = document.querySelector('.wrapper-reviews');
   const btn_more = document.querySelector('.more');
   const des_book = document.querySelector('.des-book__book-story');
-  const teg_p = document.querySelector('.book-story__about-book')
-
   const book = getLearnMore();
   const {bookId} =  getLearnMore();
   const {authId} = getUser1();
+  let number_x = document.querySelector('.rating__value');
 
   let isReviews = false;
   let isMore = false;
@@ -55,18 +52,18 @@ export const information = async () =>  {
     [true, () => {
       status_massage.innerText = TEXT.existent;
       btn_wish.innerHTML = 'delete';
-      spiners.style.display = 'none';
+      spinners.style.display = 'none';
     }],
     [false, () => {
       status_massage.innerText = TEXT.Nonexistent;
       btn_wish.innerHTML = 'ADD TO WISHLIST';
-      spiners.style.display = 'none';
+      spinners.style.display = 'none';
     }]
   ]);
 
   const activeRating = number => {
     if (isNaN(number)) {
-      rating_active.style.width = `${0}%` 
+      rating_active.style.width = `${0}%`;
     } else {
       rating_active.style.width = `${number * 20}%`;
       number_x.innerHTML = number.toFixed(2);
@@ -75,6 +72,7 @@ export const information = async () =>  {
 
   const fn_sendValueRating = (fn, element) => {
     number_rating.innerText = element;
+
     fn(element);
   }
 
@@ -82,11 +80,11 @@ export const information = async () =>  {
     if (!isReviews) {
       isReviews = true;
       wrapper_reviews.style.display = 'block';
-      btn_reviews.innerText = "HIDE REVIEWS"
+      btn_reviews.innerText = "HIDE REVIEWS";
     } else {
       isReviews = false;
       wrapper_reviews.style.display = 'none';
-      btn_reviews.innerText = "SHOW REVIEWS"
+      btn_reviews.innerText = "SHOW REVIEWS";
     }
   }
 
@@ -94,11 +92,11 @@ export const information = async () =>  {
     if (!isMore) {
       isMore = true;
       des_book.style.display = 'block';
-      btn_more.innerText= '...LESS'
+      btn_more.innerText= '...LESS';
     } else {
-      isMore = false
+      isMore = false;
       des_book.style.display = 'none';
-      btn_more.innerText= '...MORE'
+      btn_more.innerText= '...MORE';
     }
   }
 
@@ -133,7 +131,7 @@ export const information = async () =>  {
   prise.innerHTML = book.cost +'$';
   title.innerHTML = book.product;
   author.innerHTML = book.author;
-  recomendation.innerHTML = book.recommendations;
+  recommendations.innerHTML = book.recommendations;
   description.innerHTML = book.description;
   story.innerHTML = book.story;
 
@@ -143,28 +141,21 @@ export const information = async () =>  {
 
   const statusBtn = res => (res) ? btnMap.get(true)() : btnMap.get(false)();
 
-  model_items.append(
-    Modal.modlaWindow(
-      model_items,
-      book,
-      FUNCTION,
-      PATH.basket
-    )
-  );
+  model_items.append(Modal.modalWindow(model_items, book, PATH.basket));
 
   await checkStatus().then(res => statusBtn(res));
 
   const check_conditions  = async() => {
     const status = await checkStatus();
 
-    spiners.style.display = 'block';
+    spinners.style.display = 'block';
 
     if (status) {
       await deleteUserWishlist(status.id)
-        .then(res => btnMap.get(false)());
+        .then(() => btnMap.get(false)());
     } else {
       await userWishlist(book, authId)
-        .then( res =>  btnMap.get(true)());
+        .then(() =>  btnMap.get(true)());
     }
   }
 
@@ -187,13 +178,14 @@ export const information = async () =>  {
     if (!checkUndefined) {
       model_items.style.display = 'block';
       btn_basket.innerText ='IN CART';
+
       FUNCTION.setValue(book, getProduct, setBooks);
     } else window.location.pathname = PATH.basket;
   }
 
   const  exist_registration = async () => {
     const checkUndefined = findItem();
-      spinner.style.display = 'block'
+      spinner.style.display = 'block';
 
     if (!checkUndefined) {
       const set = FUNCTION.setValue(book, getProduct, setBooks);
@@ -214,7 +206,7 @@ export const information = async () =>  {
     (getUser1().authId && getToken()) ? exist_registration() : No_registration();
 
     let number = FUNCTION.countItems();
-    getBtn.innerText = `check out items(${number})`
+    getBtn.innerText = `check out items(${number})`;
 
     Header.countItems(number);
   }
@@ -231,7 +223,7 @@ export const information = async () =>  {
       })
 
       item.addEventListener('mouseleave', () => activeRating(numberRating));
-  
+
       item.onclick = () => fn_sendValueRating(fn_send, item.value);
     })
 

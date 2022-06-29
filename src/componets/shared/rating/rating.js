@@ -1,6 +1,6 @@
 export class RATING {
 
- static activeRating (idRating){
+ static activeRating (idRating) {
     const rating = document.createElement('div');
     const rating_container = document.createElement('div');
     const rating_active = document.createElement('div');
@@ -52,8 +52,8 @@ export class RATING {
     rating_container.append(rating_active, rating_items);
     rating_items.append(item1, item2, item3, item4, item5);
 
-    rating_active.style.width = `${idRating*20}%`
+    rating_active.style.width = `${idRating*20}%`;
 
-    return  rating
+    return  rating;
   }
 }

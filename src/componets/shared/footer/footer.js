@@ -4,7 +4,7 @@ export class Footer {
 
     element.insertAdjacentHTML('beforeend',
       `
-      <div class = 'footer'> 
+      <div class = 'footer'>
         <div class='top'>
           <a  class ='top__link 'href="#">Questions? Contact us.</a>
         </div>

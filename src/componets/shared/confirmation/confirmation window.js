@@ -23,13 +23,11 @@ export class Confirmation {
     text_massage.className = 'massage-text';
 
     cancel.innerText = 'CANCEL';
-
     link_sign_in.innerText = 'SIGN-IN';
     link_sign_up.innerText = 'SIGN-UP';
     text_massage.innerText = text.notifications;
 
     main_window.append(wrapper_confirmation);
-
     wrapper_confirmation.append(block);
     block.append(container_text, container_btns);
     container_text.append(text_massage);
@@ -41,7 +39,7 @@ export class Confirmation {
 
     cancel.onclick = () => main_window.style.display = 'none';
 
-    return main_window
+    return main_window;
   }
 
   static showWindow () {

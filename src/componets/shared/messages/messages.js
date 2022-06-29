@@ -1,7 +1,7 @@
 export class Massage  {
 
   static setMassage(element, text) {
-    element.insertAdjacentHTML('beforeend', 
+    element.insertAdjacentHTML('afterend',
     `<div class = 'wrapper-massage'>
         <div class = 'massage'>
           <p class="text">${text}</p>

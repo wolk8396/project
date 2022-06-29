@@ -1,9 +1,9 @@
-import {PATH} from '../../../componets/shared/const'
+import {PATH, TEXT} from '../../../componets/shared/const'
 import {numbers, getUser1, clearToken, setUser, getToken, setBooks} from '../services/local-storage-service';
-export const COUNTMAP =  new Map ();
 import { Confirmation } from '../confirmation/confirmation window';
 
 export class Header {
+
   static getHeader() {
     const contener_title =document.createElement('div');
     const title = document.createElement('div');
@@ -31,7 +31,6 @@ export class Header {
     const ul_menu = document.createElement('ul');
     const li_1 = document.createElement('li');
     const li_2 = document.createElement('li');
-    const li_3 = document.createElement('li');
     const pathname = window.location.pathname;
 
     let flag = false;
@@ -59,12 +58,7 @@ export class Header {
     container_userAccount.className = 'navigation__account';
     container_search.className = 'header__search__contener-si';
     wrapper_account.className = 'block-menu';
-  
     ul_menu.className = 'menu';
-
-    display_count.innerText = numbers();
-
-    COUNTMAP.set('display',  display_count);
 
     contener_title.append(title, search);
     title.append(title_top);
@@ -75,23 +69,23 @@ export class Header {
     contener_sign.append(query, container_userAccount, container_sign_up, sign_in, basket);
     container_userAccount.append(wrapper_account);
     wrapper_account.append(account_p, ul_menu);
-    ul_menu.append(li_1, li_2, li_3);
+    ul_menu.append(li_1, li_2);
     container_sign_up.append(signUp_text);
     sign_in.append(text_signIp);
     basket.append(basket_shop, display);
     display.append(display_count);
 
-    title_top.innerText = ' A Better Way to Buy Books Online. Every Purchase Supports Local Bookstores!';
+    display_count.innerText = numbers();
+    title_top.innerText = TEXT.title;
     exit.src = '../../../picture/main.svg';
     text_exit.innerText = 'GET BACK TO MAIN';
     sign_img.src ='../../../picture/sign-in.svg';
     basket_shop.src = '../../../picture/basket3-fill.svg';
-    search_svg.src = '../../../picture/search (1).svg'
+    search_svg.src = '../../../picture/search (1).svg';
     signUp_text.innerText = 'SIGN-UP';
     text_signIp.innerText = 'SIGN-IN';
     li_1.innerText = 'My account';
-    li_2.innerText ='My Wishlists';
-    li_3.innerText = 'Log out';
+    li_2.innerText = 'Log out';
     account_p.innerText = 'ACCOUNT';
 
     const openMenuAccount = () => {
@@ -128,7 +122,7 @@ export class Header {
 
     link.onclick = () => window.location.pathname = PATH.shop;
 
-    li_3.onclick = () => {
+    li_2.onclick = () => {
       window.location.pathname = PATH.shop;
 
       setUser([]);

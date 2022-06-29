@@ -132,7 +132,7 @@ export class ListBooks {
         delete_book.innerText = 'add to wish';
         massage.innerText = 'has not been added';
       }]
-    ])
+    ]);
 
     const checkInput = (value, date) => {
       (value <= 0 ) ?
@@ -142,7 +142,7 @@ export class ListBooks {
     const locationMap = new Map([
       [this.#link.account, () => delete_book.innerText = 'DELETE'],
       [this.#link.search, () =>  wishMap.get(this.#element.exist)()],
-    ])
+    ]);
 
     const checkStatus = () => {
       (window.location.pathname === this.#link.account) ?
@@ -152,7 +152,7 @@ export class ListBooks {
     delete_book.onclick = () => {
      this.#fn_add_wish(this.#element, spinner_wish, delete_book, checkStatus);
     }
-   
+
     product_book.onclick = () => {
       window.location.pathname = this.#link.inf;
       this.#setLearnMore(this.#element);

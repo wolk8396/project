@@ -35,9 +35,9 @@ const errorTagsHandlers = new Map([
   ['required_show', id => showErrorTag(id, errorsMessages.get('required'))],
   ['required_hide', id => hideErrorTag(id)],
   ['first-name_show', id => showErrorTag(id, errorsMessages.get('first-name'))],
-  ['first-name_hide', id => hideErrorTag(id)],  
+  ['first-name_hide', id => hideErrorTag(id)],
   ['lastName_show', id => showErrorTag(id, errorsMessages.get('lastName'))],
-  ['lastName_hide', id => hideErrorTag(id)],  
+  ['lastName_hide', id => hideErrorTag(id)],
   ['passwords_show', id => showErrorTag(id, errorsMessages.get('passwords'))],
   ['passwords_hide', id => hideErrorTag(id)]
 ]);
@@ -66,9 +66,8 @@ export const lowerCase = (password,element ) => {
   const result = REGEX.lower_case.test(password);
 
   !result ? element.innerHTML= massage_advance.lowercase : null;
-  
-  return REGEX.lower_case.test(password);
 
+  return REGEX.lower_case.test(password);
 }
 
 const upperCase = (password, element ) => {
@@ -107,7 +106,6 @@ export const password_verification = (password, element, input, fn_setColor, fn_
       element.innerText = massage_advance.completed;
       fn_setColor(input);
     } else fn_remove(input);
-  
 
     (password === '') ?  element.innerHTML = '' : null;
 
@@ -122,4 +120,4 @@ export const password_verification = (password, element, input, fn_setColor, fn_
     SET_MASSAGE.get(passwordStrengthNum)(element);
 
   return  passwordStrengthNum === 4;
-} 
+}

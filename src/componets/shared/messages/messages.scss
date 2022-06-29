@@ -1,0 +1,54 @@
+.wrapper-massage {
+  display: none;
+  position: relative;
+  width: 173px;
+  height: 80px;
+
+  .massage {
+    position: absolute;
+    background-color: #303030;
+    border-radius: 5%;
+    width: 173px;
+    height: 80px;
+    border: 1px solid;
+    left: 21px;
+    bottom: 24px;
+
+    .text {
+      color: white;
+      text-align: center;
+      font-size: 14px;
+      margin-top: 8px;
+      font-weight: bold;
+    }
+  }
+}
+
+@media(max-width: 768px) {
+  .wrapper-massage {
+
+    .massage {
+      width: 136px;
+      height: 80px;
+
+      .text{
+        font-size: 10px;
+      }
+    }
+  }
+}
+
+@media(max-width: 480px) {
+  .wrapper-massage {
+
+    .massage {
+      width: 118px;
+      height: 57px;
+
+      .text{
+        font-size: 9px;
+      }
+    }
+  }
+}
+

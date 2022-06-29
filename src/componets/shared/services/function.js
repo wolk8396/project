@@ -19,18 +19,18 @@ export class FUNCTION {
 
   static setValue (element, fn_get, fn_set) {
     let listProduct = fn_get()
-	
+
 		const addProdcut  = [...listProduct, element];
 
 		fn_set(addProdcut);
 
-   return addProdcut
+   return addProdcut;
   }
 
   static countItems(){
     const countProduct = localStorage.getItem("productsIncCart");
 	  let count = JSON.parse(countProduct);
-  
+
 	return Object.keys(count).length;
   }
 
@@ -38,16 +38,14 @@ export class FUNCTION {
     const pagesCreate = array.reduce((acc, item, i, product) => {
       return !(i % number) ? acc.concat([product.slice(i, i + number)]) : acc
     }, []);
-    
-    return  pagesCreate
+  
+    return  pagesCreate;
   }
 
   static checkUserExist () {
     let flag = false;
     (!getToken() &&  !getUser1().authId) ? flag = true : flag = false;
 
-    return flag
+    return flag;
   }
-  
-
 }

@@ -1,12 +1,12 @@
 import { Header} from '../../shared/header/header'
 import { getToken, getUser1, setBooks, getProduct} from '../../shared/services/local-storage-service'
-import {getBasketBooks, basketUser} from '../../get date/dateusers';
-import { ShoppingCart } from '../../shared/shoping-cart/shoping-cart';
+import {getBasketBooks, basketUser} from '../../get date/date_users';
+import { ShoppingCart } from '../../shared/shopping-cart/shopping-cart';
 import {ModalDelete} from '../../shared/Modal_delete/modal-delete';
 import {PATH, TEXT } from '../../shared/const';
 import { Confirmation } from '../../shared/confirmation/confirmation window';
 import { FUNCTION } from '../../shared/services/function';
-import { Massage } from '../../shared/masseges/masseges';
+import { Massage } from '../../shared/messages/messages';
 
 export const basketPage =  async () => {
 	const header = document.querySelector('.header-basket');
@@ -73,7 +73,7 @@ export const basketPage =  async () => {
 
 		header.append(Header.getHeader());
 
-		Massage.setMassage(wrapper, TEXT.upDateCart);
+		Massage.setMassage(product_book, TEXT.upDateCart);
 
 		product.forEach(item => {
 

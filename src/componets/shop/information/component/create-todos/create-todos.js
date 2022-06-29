@@ -1,9 +1,9 @@
 import { createTodo, deleteTodo, updateTodo, getLike} from "../../../../aip/aip-handlers";
-import {findDateuser} from '../../../../get date/dateusers';
-import {getDateUsers, gteUserLikes} from '../../../../get date/dateusers';
+import {findDateUser} from '../../../../get date/date_users';
+import {getDateUsers, gteUserLikes} from '../../../../get date/date_users';
 import { getUser1, getToken} from "../../../../shared/services/local-storage-service";
 import { time } from "../../../../shared/const";
-import { Spinner } from "../../../../shared/spiner/spiner";
+import { Spinner } from "../../../../shared/spinner/spinner";
 import { Confirmation } from "../../../../shared/confirmation/confirmation window";
 import { CommentUsers } from "../../../../shared/tood-commets/toods";
 import { ModalDelete } from "../../../../shared/Modal_delete/modal-delete";
@@ -18,10 +18,9 @@ export const createTodoComments = async() => {
   const photoUser = document.querySelector('.photo');
   const user_name =document.querySelector('.fullName');
   const time_comment = document.querySelector('.time');
-  const btn_page = document.querySelector('.next-commets');
   const colorBtn = new Map();
-  const user = await findDateuser();
-  const getDatelikes = await getLike()
+  const user = await findDateUser();
+  const getDateLikes = await getLike()
 
   let current_time = time();
 
@@ -37,7 +36,7 @@ export const createTodoComments = async() => {
       photoUser.src = user.photo;
   }
 
-  time_comment.innerText = current_time
+  time_comment.innerText = current_time;
 
   const addDescription = {
     description: '',
@@ -47,7 +46,7 @@ export const createTodoComments = async() => {
     addDescription.description = inputText.value;
   }
 
-  const findCommentUser =  FUNCTION.createDate(getDatelikes)
+  const findCommentUser =  FUNCTION.createDate(getDateLikes)
     .filter(item => item.userid ===getUser1().authId)
     .map(item => item.idComment);
 
@@ -56,7 +55,7 @@ export const createTodoComments = async() => {
   const deleteComment = (id, element) => {
 
     const confirmOperation = async () => {
-      await deleteTodo(id).then(res => {
+      await deleteTodo(id).then(() => {
         element.remove();
       })
     }
@@ -111,11 +110,11 @@ export const createTodoComments = async() => {
       (block === undefined) ? null :block.remove();
 
       await createTodo(addDescription.description, current_time)
-        .then(res => { Spinner.hideSpinner()});
+        .then(() => { Spinner.hideSpinner()});
 
         renderTodo()
     } else Confirmation.showWindow();
   }
 
-  renderTodo()
+  renderTodo();
 }

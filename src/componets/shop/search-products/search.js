@@ -1,13 +1,13 @@
 import {Header} from '../../shared/header/header';
-import { PRODUCT } from '../shop-products';
+import { PRODUCT } from '../../shared/products_shop/shop-products';
 import { ListBooks } from '../../shared/list_product/booksList';
 import {userWishlist, deleteUserWishlist} from '../../aip/aip-handlers'
 import { getUser1, setLearnMore, setBooks , getProduct, getToken} from '../../shared/services/local-storage-service';
 import { PATH, TEXT } from '../../shared/const';
-import {getAllBookRating, getUsersWish, basketUser} from '../../get date/dateusers';
+import {getAllBookRating, getUsersWish, basketUser} from '../../get date/date_users';
 import { RATING } from '../../shared/rating/rating';
 import { FUNCTION } from '../../shared/services/function';
-import { Confirmation } from '../../shared/confirmation/confirmation window'; 
+import { Confirmation } from '../../shared/confirmation/confirmation window';
 import { Footer } from '../../shared/footer/footer';
 import { ModalDelete } from '../../shared/Modal_delete/modal-delete';
 
@@ -19,7 +19,7 @@ export const searchBooks = async() => {
   const modal_delete = document.querySelector('.modal-delete-window');
   const btn_search = document.getElementById('btn-query');
   const wrapper_search = document.querySelector('.wrapper-search');
- 
+
   const ratingBooks = await getAllBookRating();
   const {authId} = getUser1();
   const map_books = new Map();

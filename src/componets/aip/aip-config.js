@@ -7,9 +7,7 @@ export const FIREBASE_CONFIG = {
   appId: "1:1038271197750:web:015fbbf708c6d87684de97",
 }
 
-
 export const AUTH_URL = 
   `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${FIREBASE_CONFIG.apiKey}`;
-
 
 export const DB_URL = 'https://bookstore-67dde-default-rtdb.firebaseio.com/';

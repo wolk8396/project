@@ -1,5 +1,5 @@
 import './style.scss';
-import { my } from './componets/shop/shop';
+import { main_page } from './componets/shop/main_page/shop';
 import { PATH } from './componets/shared/const';
 import {basketPage} from '../src/componets/shop/basket/basket';
 import {information} from '../src/componets/shop/information/books-information';
@@ -11,7 +11,7 @@ import {searchBooks} from '../src/componets/shop/search-products/search';
 
 const routs = new Map([
 	[PATH.home, () =>  window.location.pathname = PATH.shop],
-	[PATH.shop, () => my()],
+	[PATH.shop, () => main_page()],
 	[PATH.basket, () =>  basketPage()],
 	[PATH.inf, () => information()],
 	[PATH.sign_in, () => signInHandler()],

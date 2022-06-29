@@ -1,9 +1,9 @@
 import {setBooks, setLearnMore, getProduct, getUser1, getToken} from "../../../../shared/services/local-storage-service";
 import { PATH, TEXT} from "../../../../shared/const";
-import {getUsersWish, basketUser} from '../../../../get date/dateusers';
+import {getUsersWish, basketUser} from '../../../../get date/date_users';
 import {deleteUserWishlist} from '../../../../aip/aip-handlers';
 import { RATING } from "../../../../shared/rating/rating";
-import {getAllBookRating} from '../../../../get date/dateusers'
+import {getAllBookRating} from '../../../../get date/date_users'
 import { ListBooks } from "../../../../shared/list_product/booksList";
 import { FUNCTION } from "../../../../shared/services/function";
 import { ModalDelete } from "../../../../shared/Modal_delete/modal-delete";
@@ -37,7 +37,8 @@ export const usersWhishes =  async fn_item  => {
 
     const combine_fn = async () => {
       await deleteUserWishlist(element.id);
-        fn_status();
+
+      fn_status();
     }
 
     ModalDelete.setDate(combine_fn, TEXT.deleteWish);
@@ -62,18 +63,18 @@ export const usersWhishes =  async fn_item  => {
 
       block.append(
         new ListBooks(
-          element, 
-          delete_wish, 
-          PATH, 
-          setLearnMore, 
+          element,
+          delete_wish,
+          PATH,
+          setLearnMore,
           RATING.activeRating,
-          getProduct, 
+          getProduct,
           setBooks,
           FUNCTION,
           basket,
           get_fn
         ).getList())
-  
+
     });
 
   fn_item(product);

@@ -33,16 +33,16 @@
           margin: auto;
         }
       }
-  
+
       &__description {
         word-wrap: break-word;
         display: flex;
         flex-direction: column;
         justify-content:normal;
-  
+
         .container-comment {
           position: relative;
-  
+
           &__input_text {
             background-color: #fff;
             width: 813px;
@@ -55,7 +55,6 @@
             position: absolute;
             top: 154px;
           }
-
         }
 
         .block-btns {
@@ -65,7 +64,7 @@
           background-color: black;
           height: 54px;
           align-items: center;
-  
+
           .block {
             display: flex;
             flex-direction: row;
@@ -290,20 +289,17 @@
 
         .block-btns {
           width: 450px;
-
         }
       }
     }
   }
 }
 
-
 @media(max-width: 580px) {
   .todo {
     width: 577px;
   }
 }
-
 
 @media(max-width: 520px) {
   .todo {
@@ -326,7 +322,6 @@
 
         .block-btns {
           width: 373px;
-
         }
       }
     }
@@ -346,7 +341,6 @@
 }
 
 @media(max-width: 414px) {
-
   .todo {
     width: 319px;
 
@@ -381,7 +375,6 @@
     }
   }
 }
-
 
 @media(max-width: 360px) {
   .todo {
