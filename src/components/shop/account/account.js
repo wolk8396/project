@@ -151,9 +151,8 @@ export const My_account = async ()  => {
         remove.style.display = 'block';
       });
 
-    } else {
-      Massage.getElement();
-    }
+    } else Massage.getElement();
+
   }
 
   input_file.oninput = async event => {

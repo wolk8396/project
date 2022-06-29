@@ -235,7 +235,7 @@
             }
           }
 
-          .block-imformation {
+          .block-information {
             width: 288px;
 
             &__product {
@@ -250,7 +250,7 @@
 
              &__author,
              &__cost {
-              color:black; 
+              color:black;
               font-weight: bold;
              }
           }
@@ -384,7 +384,7 @@
 
           &__book {
 
-            .block-imformation {
+            .block-information {
               width: 222px;
             }
           }
@@ -440,7 +440,7 @@
               }
             }
 
-            .block-imformation {
+            .block-information {
               width: 209px;
 
               p {
@@ -654,7 +654,7 @@
           &__book {
             width: 500px;
 
-            .block-imformation {
+            .block-information {
               width: 165px;
             }
           }
@@ -673,7 +673,7 @@
 @media(max-width:600px) {
   .wrapper {
     width: 600px;
-    
+
     .user-wishlist {
       width: 576px;
     }
@@ -732,7 +732,7 @@
               display: none;
             }
 
-            .block-imformation {
+            .block-information {
               width: 143px;
             }
 
@@ -864,7 +864,7 @@
           &__book {
             width: 322px;
 
-            .block-imformation {
+            .block-information {
               width: 129px;
             }
           }
@@ -992,7 +992,7 @@
           &__book {
             width: 271px;
 
-            .block-imformation {
+            .block-information {
               width: 105px;
 
               p {

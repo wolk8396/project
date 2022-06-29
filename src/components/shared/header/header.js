@@ -5,7 +5,7 @@ import { Confirmation } from '../confirmation/confirmation window';
 export class Header {
 
   static getHeader() {
-    const contener_title =document.createElement('div');
+    const container_title =document.createElement('div');
     const title = document.createElement('div');
     const title_top = document.createElement('p');
     const account_p = document.createElement('p');
@@ -14,7 +14,7 @@ export class Header {
     const link = document.createElement('div');
     const exit = document.createElement('img');
     const text_exit = document.createElement('p');
-    const contener_sign = document.createElement('div');
+    const container_sign = document.createElement('div');
     const sign_in = document.createElement('div');
     const sign_img = document.createElement('img');
     const basket = document.createElement('div');
@@ -23,7 +23,6 @@ export class Header {
     const display_count = document.createElement('p');
     const text_signIp = document.createElement('p');
     const container_sign_up = document.createElement('div');
-    const container_search = document.createElement('div');
     const query = document.createElement('div');
     const search_svg = document.createElement('img');
     const signUp_text = document.createElement('p');
@@ -35,14 +34,14 @@ export class Header {
 
     let flag = false;
 
-    contener_title.className = 'header';
+    container_title.className = 'header';
     title.className = 'header__title';
     title_top.className = 'header__title__top';
     search.className ='header__search';
     link.className ='home-link';
     exit.className = 'home-link__home-page';
     text_exit.className = 'home-link__text';
-    contener_sign.className = 'navigation';
+    container_sign.className = 'navigation';
     sign_in.className = 'navigation__sign-in';
     basket.className = 'navigation__basket';
     basket_shop.className = 'basket-shop';
@@ -56,17 +55,16 @@ export class Header {
     container_sign_up.className = 'navigation__sign-up';
     signUp_text.className = 'signup-text';
     container_userAccount.className = 'navigation__account';
-    container_search.className = 'header__search__contener-si';
     wrapper_account.className = 'block-menu';
     ul_menu.className = 'menu';
 
-    contener_title.append(title, search);
+    container_title.append(title, search);
     title.append(title_top);
-    search.append(link, contener_sign);
+    search.append(link, container_sign);
     link.append(exit, text_exit);
     query.append(search_svg);
 
-    contener_sign.append(query, container_userAccount, container_sign_up, sign_in, basket);
+    container_sign.append(query, container_userAccount, container_sign_up, sign_in, basket);
     container_userAccount.append(wrapper_account);
     wrapper_account.append(account_p, ul_menu);
     ul_menu.append(li_1, li_2);
@@ -101,7 +99,7 @@ export class Header {
     (window.location.pathname === PATH.shop) ? text_exit.innerText = 'WELCOME' : null;
 
     (pathname === PATH.sign_in || pathname === PATH.sign_up) ?
-      contener_sign.style.display = 'none' : null;
+      container_sign.style.display = 'none' : null;
 
     const check_Registration = () => {
       (getUser1().authId === undefined && !getToken()) ?
@@ -130,7 +128,7 @@ export class Header {
       setBooks([])
     }
 
-    return contener_title;
+    return container_title;
   }
 
   static getDisplay() {

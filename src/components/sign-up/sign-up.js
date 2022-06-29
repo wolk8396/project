@@ -1,6 +1,6 @@
-import { createUserAuthRequest,  createUserDataRequest, signInRequest, getUser } from '../aip/aip-handlers'
+import { createUserAuthRequest,  createUserDataRequest, signInRequest, getUser, createBasket} from '../aip/aip-handlers'
 import { PATH,time} from '../shared/const';
-import { setToken, setUser } from '../shared/services/local-storage-service';
+import { setToken, setUser, getProduct } from '../shared/services/local-storage-service';
 import { emailValidator, showErrorMessage, hideErrorMessage, errorTagsIds,  password_verification } from '../shared/validators';
 import { Spinner } from '../shared/spinner/spinner';
 import moment from 'moment';
@@ -113,7 +113,7 @@ export const sign_up = () => {
       hideErrorMessage('email_hide', errorTagsIds.get('required_email'));
       showErrorMessage('email_show', errorTagsIds.get('email'));
 		} else {
-      setColor(emailInput)
+      setColor(emailInput);
 			emailInput.classList.remove('invalid-input');
 			hideErrorMessage('email_hide', errorTagsIds.get('email'));
 			hideErrorMessage('email_hide', errorTagsIds.get('required_email'));
@@ -186,7 +186,10 @@ export const sign_up = () => {
       });
 
     if (requestCount === 4) {
+      const getItems = getProduct();
       window.location.href =  PATH.shop;
+
+      await createBasket(getItems);
     }
   }
 

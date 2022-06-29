@@ -21,7 +21,7 @@ export const TEXT = {
     deleteComment: 'Are You are sure ? Do you want to remove your comment',
     upDateCart:'your cart has been update successfully',
     type:'your file is incorrect. Pleas use files .png, .jpeg, .jpg, jpeg',
-    title:'A Better Way to Buy Books Online. Every Purchase Supports Local Bookstores!'
+    title:'A Better Way to Buy Books Online. Every Purchase Supports Local Bookstores!',
 }
 
 export const time = () => moment().format();

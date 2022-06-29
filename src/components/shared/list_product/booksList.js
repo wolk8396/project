@@ -59,17 +59,19 @@ export class ListBooks {
 
     const btn_massages = {
       in:"IN CART",
-      add:"ADD TO CART"
+      add:"ADD TO CART",
+      delete:"delete",
+      add_wish:'add to wish'
     }
 
     container_product.className = 'container_product__book';
     block_photo.className = 'photo-book';
     photo_book.className = 'photo-book__frame';
-    block_inf.className = 'block-imformation';
-    product_book.className = 'block-imformation__product';
-    block_rating.className ='block-imformation__rating';
-    author_book.className = 'block-imformation__author';
-    cost_book.className = 'block-imformation__cost';
+    block_inf.className = 'block-information';
+    product_book.className = 'block-information__product';
+    block_rating.className ='block-information__rating';
+    author_book.className = 'block-information__author';
+    cost_book.className = 'block-information__cost';
     block_btns.className = 'block_btns';
     wrapper_input.className = 'block-quantity';
     add_btn.id = this.#element.bookId;
@@ -94,7 +96,7 @@ export class ListBooks {
     cost_book.innerText = this.#element.cost + '$';
     btn_trash.src = '../../../picture/trash2-fill (1).svg';
     add_btn.innerText = 'ADD TO CARD';
-    input_label.innerText = 'quantity'
+    input_label.innerText = 'quantity';
     delete_book.innerText = 'DELETE';
     btn_plus.innerText = '+';
     btn_minus.innerText = '-';
@@ -124,14 +126,8 @@ export class ListBooks {
     }
 
     const wishMap = new Map([
-      [true, () => {
-        massage.innerText = 'was added to ';
-        delete_book.innerText = 'DELETE';
-      }],
-      [false, () => {
-        delete_book.innerText = 'add to wish';
-        massage.innerText = 'has not been added';
-      }]
+      [true, () =>  delete_book.innerText = btn_massages.delete],
+      [false, () => delete_book.innerText = btn_massages.add_wish]
     ]);
 
     const checkInput = (value, date) => {
@@ -140,7 +136,7 @@ export class ListBooks {
     }
 
     const locationMap = new Map([
-      [this.#link.account, () => delete_book.innerText = 'DELETE'],
+      [this.#link.account, () => delete_book.innerText = btn_massages.delete],
       [this.#link.search, () =>  wishMap.get(this.#element.exist)()],
     ]);
 
@@ -159,8 +155,8 @@ export class ListBooks {
     }
 
     (this.#element.basketExist === true) ?
-      add_btn.innerText = 'IN CART':
-      add_btn.innerText = 'ADD TO CART';
+      add_btn.innerText = btn_massages.in:
+      add_btn.innerText = btn_massages.add;
 
     const check_conditions = (get_Fn) => {
 
@@ -183,7 +179,7 @@ export class ListBooks {
     }
 
     btn_trash.onclick = () => {
-      spinner_cart.display = 'block'
+      spinner_cart.display = 'block';
       this.#fn_remove(removeItem);
     }
 

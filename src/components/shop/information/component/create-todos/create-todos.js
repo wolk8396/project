@@ -20,7 +20,7 @@ export const createTodoComments = async() => {
   const time_comment = document.querySelector('.time');
   const colorBtn = new Map();
   const user = await findDateUser();
-  const getDateLikes = await getLike()
+  const getDateLikes = await getLike();
 
   let current_time = time();
 

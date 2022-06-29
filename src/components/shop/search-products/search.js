@@ -1,7 +1,7 @@
 import {Header} from '../../shared/header/header';
 import { PRODUCT } from '../../shared/products_shop/shop-products';
 import { ListBooks } from '../../shared/list_product/booksList';
-import {userWishlist, deleteUserWishlist} from '../../aip/aip-handlers'
+import {userWishlist, deleteUserWishlist} from '../../aip/aip-handlers';
 import { getUser1, setLearnMore, setBooks , getProduct, getToken} from '../../shared/services/local-storage-service';
 import { PATH, TEXT } from '../../shared/const';
 import {getAllBookRating, getUsersWish, basketUser} from '../../get date/date_users';
@@ -78,7 +78,10 @@ export const searchBooks = async() => {
         const deleteWish = async() => {
           spinner.style.display = 'none';
           item.exist = false;
-          await deleteUserWishlist(findSome.id);
+          await deleteUserWishlist(findSome.id)
+            .then(() => {
+              btn.innerText = 'add to wish';
+            });
         }
 
         const addWish = async() => {
@@ -89,7 +92,7 @@ export const searchBooks = async() => {
             .then(()=> {
               btn.innerText = 'delete';
               spinner.style.display = 'none';
-            } );
+            });
         }
 
         (!findSome) ? addWish() : ModalDelete.setDate(deleteWish, TEXT.deleteWish);

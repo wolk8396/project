@@ -3,7 +3,7 @@ import {userWishlist, deleteUserWishlist} from '../../aip/aip-handlers';
 import {createTodoComments} from './component/create-todos/create-todos';
 import { Header} from '../../shared/header/header';
 import { PATH, TEXT } from '../../shared/const';
-import {getUser1, getLearnMore,  setBooks, getProduct, getToken} from '../../shared/services/local-storage-service'
+import {getUser1, getLearnMore,  setBooks, getProduct, getToken} from '../../shared/services/local-storage-service';
 import { Modal } from '../../shared/Modal/modal';
 import { FUNCTION } from '../../shared/services/function';
 import { Confirmation } from '../../shared/confirmation/confirmation window';
@@ -26,6 +26,7 @@ export const information = async () =>  {
   const btn_basket = document.querySelector('.block-btn__btn-add');
   const rating_active = document.querySelector('.rating-active');
   const click_rating = document.querySelector('.click-stars');
+  const wrapper_chose = document.querySelector('.wrapper-chose');
   const number_rating =document.querySelector('.number-rating');
   const wrapper_stars = document.querySelectorAll('.wrapper-active__item');
   const model_items = document.querySelector('.model-items');
@@ -202,7 +203,7 @@ export const information = async () =>  {
   btn_basket.onclick = () => {
     const getBtn = document.querySelector('.btn-danger');
 
-    (getUser1().authId && getToken()) ? exist_registration() : No_registration();
+    (getUser1() && getToken()) ? exist_registration() : No_registration();
 
     let number = FUNCTION.countItems();
     getBtn.innerText = `check out items(${number})`;
@@ -233,8 +234,8 @@ export const information = async () =>  {
 
   btn_more.onclick = () => isMoreBtn();
 
-  (getToken() && getToken()) ? rating_activate() :
-    click_rating.style.display = 'block';
+  (getUser1() && getToken()) ? rating_activate() :
+    wrapper_chose.style.display = 'none';
 
   checkConditionsBasket();
 

@@ -72,20 +72,20 @@ export const signInHandler = () => {
     await signInRequest({email, password})
       .then(({ user: { accessToken, uid} }) => {
         setToken(accessToken);
-        userId = uid; 
-        requestCounter++; 
+        userId = uid;
+        requestCounter++;
       })
       .catch(err => {
         massage_error.innerText = 'email or password is incorrect'
       });
-  
+
       await getUsers()
 				.then(response => {
 					const users =
 						Object.keys(response)
 								.map(userId => ({ ...response[userId], userId }));
 					const user = users.find(user => user.authId === userId);
-          requestCounter++; 
+          requestCounter++;
           (user) ? setUser(user) : null;
 				});
 
@@ -93,7 +93,7 @@ export const signInHandler = () => {
       await getBasketBooks().then(res => {
       (res === 0 || res === undefined) ? setBooks([]) : setBooks(res);
       })
-      window.location.href = PATH.shop; 
+      window.location.href = PATH.shop;
     }
   }
 

@@ -1,5 +1,5 @@
-import { Header} from '../../shared/header/header'
-import { getToken, getUser1, setBooks, getProduct} from '../../shared/services/local-storage-service'
+import { Header} from '../../shared/header/header';
+import { getToken, getUser1, setBooks, getProduct} from '../../shared/services/local-storage-service';
 import {getBasketBooks, basketUser} from '../../get date/date_users';
 import { ShoppingCart } from '../../shared/shopping-cart/shopping-cart';
 import {ModalDelete} from '../../shared/Modal_delete/modal-delete';
@@ -23,7 +23,7 @@ export const basketPage =  async () => {
 		element.innerText = `${total.toFixed(2)} $`;
 	}
 
-	const setValueLocla = (id, operation, p) => {
+	const setValueLocal = (id, operation, p) => {
 		const getBooks =  getProduct();
 		p.innerText = operation;
 
@@ -80,7 +80,7 @@ export const basketPage =  async () => {
 			table.append(
 				new ShoppingCart(
 					item,
-					setValueLocla,
+					setValueLocal,
 					remove,
 					full_total,
 					countFullPrice,

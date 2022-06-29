@@ -3,7 +3,7 @@
 	display: flex;
 	flex-direction: column;
 	justify-content:normal;
-	width: 1286px;
+	width: 1366px;
 	height: 1700px;
   font-family: sans-serif;
   background-color: black;
@@ -15,7 +15,7 @@
 	}
 
 	.main-products {
-		width: 1244px;
+		width: 1300px;
 
 		&__list_books {
 			display: grid;
@@ -134,9 +134,50 @@
 	}
 
 	.footer-after {
-		width: 1286px;
+		width: 1366px;
     height: 15px;
 		background-color: #303030;
+	}
+}
+
+@media(max-width: 1346px) {
+	.wrapper-shop {
+		width: 1346px;
+
+		.btn-container,
+		.footer-after {
+			width: 1346px;
+		}
+	}
+}
+
+@media(max-width: 1280px) {
+	.wrapper-shop {
+		width: 1280px;
+
+		.main-products {
+			width: 1280px;
+		}
+
+		.btn-container,
+		.footer-after {
+			width: 1280px;
+		}
+	}
+}
+
+@media(max-width: 1220px) {
+	.wrapper-shop {
+		width: 1220px;
+
+		.main-products {
+			width: 1220px;
+		}
+
+		.btn-container,
+		.footer-after {
+			width: 1220px;
+		}
 	}
 }
 
@@ -151,6 +192,25 @@
 		.btn-container,
 		.footer-after {
 			width: 1152px;
+		}
+	}
+}
+
+@media(max-width: 1115px) {
+	.wrapper-shop {
+		width: 1115px;
+
+		.main-products {
+			width: 1113px;
+
+			&__list_books {
+				width: 1113px;
+			}
+		}
+
+		.btn-container,
+		.footer-after {
+			width: 1115px;
 		}
 	}
 }

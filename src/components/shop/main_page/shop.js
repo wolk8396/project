@@ -15,7 +15,7 @@ export const main_page = async () => {
 	const btn_page = document.querySelector('.btn-container');
 	const window_modal = document.querySelector('.modal-window-log');
 	const block_pages = document.createElement('div');
-  const getBtns = block_pages.childNodes;
+  const getBtn = block_pages.childNodes;
 	const map_books = new Map();
 	const books =	getProduct();
 	const ratingBooks = await getAllBookRating();
@@ -64,7 +64,7 @@ export const main_page = async () => {
 		end = start + pages;
 		middle = end - 2;
 
-		getBtns.forEach((btn, i) => {
+		getBtn.forEach((btn, i) => {
 
 			(i !== start) ? btn.style.backgroundColor = '#7a747499' :
 				btn.style.backgroundColor = 'red';
@@ -73,7 +73,7 @@ export const main_page = async () => {
 				btn.classList.add('active');
 			} else {
 				btn.classList.remove('active');
-				getBtns[getBtns.length-1].classList.add('active');
+				getBtn[getBtn.length-1].classList.add('active');
 			}
 
 		})
@@ -84,7 +84,7 @@ export const main_page = async () => {
 	const render = () => {
 		const block = document.createElement('div');
 
-		getBtns[0].style.backgroundColor = 'red';
+		getBtn[0].style.backgroundColor = 'red';
 		block.className ='main-products__list_books';
 
 		pagesCreate[number].forEach((item, i) => {

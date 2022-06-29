@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
-  width: 1286px;
+  width: 1366px;
   height: 280px;
   background-color: black;
   margin-top: 4px;
@@ -44,10 +44,35 @@
   }
 }
 
+@media(max-width: 1346px) {
+  .footer {
+    width: 1346px;
+  }
+}
+
+@media(max-width: 1280px) {
+  .footer {
+    width: 1280px;
+  }
+}
+
+@media(max-width: 1220px) {
+  .footer {
+    width: 1220px;
+  }
+}
+
 @media(max-width: 1152px) {
 
   .footer {
     width: 1152px;
+  }
+}
+
+@media(max-width: 1115px) {
+
+  .footer {
+    width: 1115px;
   }
 }
 

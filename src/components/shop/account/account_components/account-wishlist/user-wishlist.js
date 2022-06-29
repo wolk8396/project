@@ -3,7 +3,7 @@ import { PATH, TEXT} from "../../../../shared/const";
 import {getUsersWish, basketUser} from '../../../../get date/date_users';
 import {deleteUserWishlist} from '../../../../aip/aip-handlers';
 import { RATING } from "../../../../shared/rating/rating";
-import {getAllBookRating} from '../../../../get date/date_users'
+import {getAllBookRating} from '../../../../get date/date_users';
 import { ListBooks } from "../../../../shared/list_product/booksList";
 import { FUNCTION } from "../../../../shared/services/function";
 import { ModalDelete } from "../../../../shared/Modal_delete/modal-delete";
@@ -14,14 +14,14 @@ export const usersWhishes =  async fn_item  => {
   const userWishes_date = await getUsersWish();
   const ratingBooks = await getAllBookRating();
   const booksP = getProduct();
-  const getBtns = new Map ();
+  const getId = new Map ();
   const map_books = new Map();
 
   block.className = 'container_product';
 
   product.append(block);
 
-  booksP.forEach(({bookId}) => getBtns.set(bookId, bookId));
+  booksP.forEach(({bookId}) => getId.set(bookId, bookId));
 
   ratingBooks.forEach(item => map_books.set(item.bookId, item.rating));
 
@@ -29,7 +29,7 @@ export const usersWhishes =  async fn_item  => {
 		return {
 			...item,
 			rating:map_books.get(item.bookId),
-      basketExist:item.bookId === getBtns.get(item.bookId)
+      basketExist:item.bookId === getId.get(item.bookId)
 		}
 	})
 

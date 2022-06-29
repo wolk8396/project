@@ -1,5 +1,5 @@
 .header {
-  width: 1286px;
+  width: 1366px;
   height: 100px;
   display: flex;
   flex-direction: column;
@@ -7,7 +7,7 @@
   background-color: #303030;
 
   &__title {
-    width: 1286px;
+    width: 1366px;
     height: 50px;
     background-color: red;
 
@@ -20,7 +20,7 @@
   }
 
   &__search {
-    width: 1286px;
+    width: 1366px;
     height: 52px;
     border-top: 1px solid black;
     display: flex;
@@ -37,6 +37,8 @@
         cursor: pointer;
         height: 28px;
         margin-top: auto;
+        margin-top: auto;
+        margin-left: 40px;
       }
 
       &__text {
@@ -146,6 +148,42 @@
   }
 }
 
+
+
+@media(max-width: 1346px) {
+  .header {
+    width: 1346px;
+
+    &__title,
+    &__search {
+      width: 1346px;
+    }
+  }
+}
+
+@media(max-width: 1280px) {
+  .header {
+    width: 1280px;
+
+    &__title,
+    &__search {
+      width: 1280px;
+    }
+  }
+}
+
+@media(max-width: 1220px) {
+  .header {
+    width: 1220px;
+
+    &__title,
+    &__search {
+      width: 1220px;
+    }
+  }
+}
+
+
 @media(max-width: 1152px) {
   .header {
     width: 1150px;
@@ -153,6 +191,18 @@
     &__title,
     &__search {
       width: 1150px;
+    }
+  }
+}
+
+
+@media(max-width: 1115px) {
+  .header {
+    width: 1115px;
+
+    &__title,
+    &__search {
+      width: 1115px;
     }
   }
 }

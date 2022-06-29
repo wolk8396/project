@@ -24,6 +24,11 @@ export const createUserAuthRequest = ({ email, password_1 }) => {
 }
 
 export const createUserDataRequest = user => {
+  const userData = user;
+
+  delete userData.password_1;
+  delete userData.password_2;
+
   return fetch(
       `${DB_URL}/users.json`,
       {
@@ -204,8 +209,8 @@ export const createRating = (number, id) => {
 }
 
 
-export const createBasket = (product) => {
-  console.log(product);
+export const createBasket = product => {
+
   return  fetch(
     `${DB_URL}/basket.json`,
     {

@@ -3,7 +3,7 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	width: 1286px;
+	width: 1366px;
 
 	.header-basket {
 		position: sticky;
@@ -16,15 +16,15 @@
     flex-direction: column;
     justify-content: normal;
     margin-bottom: 28px !important;
-    width: 1070px;
+    width: 1200px;
     border: 1px solid black;
     margin: auto;
     margin-top: 20px;
-	
+
 		table {
 			border-collapse: collapse;
 			border: 1ps solid  #666;
-	
+
 			.full-total {
 				display: flex;
 				justify-content: end;
@@ -37,7 +37,7 @@
 					font-size: 18px;
 					font-weight: bold;
 				}
-	
+
 				&__prise {
 					width: 117px;
 					height: 15px;
@@ -46,7 +46,7 @@
 					font-size: 18px;
 					font-weight: bold;
 				}
-	
+
 				.container_btn {
 					display: inline-block;
 					list-style: none;
@@ -63,9 +63,47 @@
 	}
 }
 
+@media(max-width: 1346px) {
+	.wrapper-basket {
+		width: 1346px;
+	}
+}
+
 @media(max-width: 1152px) {
 	.wrapper-basket {
 		width: 1152px;
+	}
+}
+
+@media(max-width: 1280px) {
+	.wrapper-basket {
+		width: 1280px;
+	}
+}
+
+@media(max-width: 1220px) {
+	.wrapper-basket {
+		width: 1220px;
+
+		.product {
+			width: 1131px;
+		}
+	}
+}
+
+@media(max-width: 1152px) {
+	.wrapper-basket {
+		width: 1152px;
+
+		.product {
+			width: 1080px;
+		}
+	}
+}
+
+@media(max-width: 1115px) {
+	.wrapper-basket {
+		width: 1115px;
 	}
 }
 
