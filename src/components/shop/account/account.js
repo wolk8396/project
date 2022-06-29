@@ -1,5 +1,5 @@
 import { Header } from "../../shared/header/header";
-import { usersWhishes } from "./account_componets/account-wishlist/user-wishlist";
+import { usersWhishes } from "./account_components/account-wishlist/user-wishlist";
 import {getProduct, setBooks, setUser} from '../../shared/services/local-storage-service';
 import { ModalDelete } from "../../shared/Modal_delete/modal-delete";
 import {uploadPhoto, deletePhoto, updateNmeUser} from '../../aip/aip-handlers';

@@ -24,7 +24,6 @@ export const information = async () =>  {
   const story = document.querySelector('.book-story__about-book');
   const btn_wish = document.querySelector('.btn-wish');
   const btn_basket = document.querySelector('.block-btn__btn-add');
-  const des = document.querySelector('.des-book__book-story');
   const rating_active = document.querySelector('.rating-active');
   const click_rating = document.querySelector('.click-stars');
   const number_rating =document.querySelector('.number-rating');

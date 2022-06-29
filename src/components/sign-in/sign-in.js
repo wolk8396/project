@@ -1,6 +1,6 @@
-import { getUsers, signInRequest } from '../../componets/aip/aip-handlers';
+import { getUsers, signInRequest } from '../../components/aip/aip-handlers';
 import { PATH } from '../shared/const';
-import { setToken, setUser, setBooks} from '../../componets/shared/services/local-storage-service';
+import { setToken, setUser, setBooks} from '../../components/shared/services/local-storage-service';
 import {
     emailValidator,
     showErrorMessage,
@@ -9,7 +9,7 @@ import {
 } from '../shared/validators';
 import { Footer } from '../shared/footer/footer';
 import { Header } from '../shared/header/header';
-import { getBasketBooks} from '../get date/date_users'
+import { getBasketBooks} from '../get date/date_users';
 
 export const signInHandler = () => {
   const body = document.getElementsByTagName('body')[0];

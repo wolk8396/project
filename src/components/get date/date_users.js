@@ -1,16 +1,16 @@
 import { getTodos, getLike, getWishList} from "../aip/aip-handlers";
-import { getUser1, getLearnMore} from '../shared/services/local-storage-service'
+import { getUser1, getLearnMore} from '../shared/services/local-storage-service';
 import { FUNCTION } from "../shared/services/function";
 import {
   getUsers,
-  deleteTodolike,
+  deleteTodoLike,
   createTodoLike,
   getRating,
   createRating,
   clearRating,
   getBasket,
   createBasket,
-  updatBasket
+  updateBasket
         } from "../aip/aip-handlers";
 
 export const getDateUsers = async () => {
@@ -19,7 +19,7 @@ export const getDateUsers = async () => {
   const likesDate =  await getLike();
 
   let todos = FUNCTION.createDate(result);
-  let getDatelikes = FUNCTION.createDate(likesDate);
+  let getDateLikes = FUNCTION.createDate(likesDate);
 
   const {bookId} = getLearnMore();
   const userMap = new Map();
@@ -29,7 +29,7 @@ export const getDateUsers = async () => {
 
   const users = Object.keys(usersDate).map(user => ({...usersDate[user], idLink:user}));
 
-  const  countId = getDatelikes.map(item => item.idComment);
+  const  countId = getDateLikes.map(item => item.idComment);
 
   const count =  countId.reduce((acc, idComment, i)  => {
     acc[idComment] = (acc[idComment] || 0) + 1;
@@ -63,12 +63,12 @@ export const getDateUsers = async () => {
 export const gteUserLikes = async (id, btn, display) => {
   const likesDate = await getLike();
   const {authId} = getUser1();
- 
-  let getDatelikes = FUNCTION.createDate(likesDate).filter(item => item.idComment === id);
 
-  const linkRemove = FUNCTION.removeLink(getDatelikes, authId);
+  let getDateLikes = FUNCTION.createDate(likesDate).filter(item => item.idComment === id);
 
-  const findUser = FUNCTION.findUserDate(getDatelikes, authId);
+  const linkRemove = FUNCTION.removeLink(getDateLikes, authId);
+
+  const findUser = FUNCTION.findUserDate(getDateLikes, authId);
 
   let sum = display.textContent;
 
@@ -83,10 +83,9 @@ export const gteUserLikes = async (id, btn, display) => {
     }
 
     (findUser) ?
-      await deleteTodolike (linkRemove).then(res =>  checkStatus(res.name)):
+      await deleteTodoLike (linkRemove).then(res =>  checkStatus(res.name)):
       await createTodoLike (id).then(res =>  checkStatus(res.name));
-  }
-
+}
 
 export  const findDateUser = async () => {
   const usersDate = await getUsers();
@@ -161,7 +160,7 @@ export const getAllBookRating = async() => {
     }
   });
 
-  return getDateRating
+  return getDateRating;
 }
 
 export const basketUser = async(items) => {
@@ -173,7 +172,7 @@ export const basketUser = async(items) => {
 
   (!checkStatus) ?
     await createBasket (items):
-    await updatBasket(items, checkStatus.id);
+    await updateBasket(items, checkStatus.id);
 }
 
 export const getBasketBooks = async() => {

@@ -1,8 +1,8 @@
 import {initializeApp} from 'firebase/app';
-import { 
-    getAuth, 
-    createUserWithEmailAndPassword, 
-    signInWithEmailAndPassword 
+import {
+    getAuth,
+    createUserWithEmailAndPassword,
+    signInWithEmailAndPassword
 } from 'firebase/auth';
 
 import { getStorage, ref, uploadBytes,  getDownloadURL,  getMetadata, deleteObject} from "firebase/storage";
@@ -104,7 +104,7 @@ export const updateTodoLikes= (idUpdate, id, like) => {
     );
 }
 
-export const deleteTodolike = idUpdate => {
+export const deleteTodoLike = idUpdate => {
  return fetch(
     `${DB_URL}/likes/${idUpdate}.json`,
       {
@@ -116,10 +116,8 @@ export const deleteTodolike = idUpdate => {
 export const uploadPhoto = async (files, imgName, userDate, getUrl) => {
   const storage = getStorage();
   const storageRef = ref(storage, `/${uuidv4()}_${imgName}`);
-  console.log(storageRef);
+  let url ='';
 
-  let url =''
- 
   await uploadBytes(storageRef, files).then(res => console.log(res))
   await  getDownloadURL(storageRef).then(res => {
     url = res
@@ -190,7 +188,6 @@ export const deleteUserWishlist = id => {
     )
 }
 
-
 export const createRating = (number, id) => {
   return  fetch(
     `${DB_URL}/rating.json`,
@@ -222,7 +219,7 @@ export const createBasket = (product) => {
     .then(response => response.json())
 }
 
-export const updatBasket= (product, id) => {
+export const updateBasket= (product, id) => {
   return fetch(
      `${DB_URL}/basket/${id}.json`,
        {
@@ -266,15 +263,12 @@ export const getUser = id => fetch(`${DB_URL}/users/${id}.json`).then(response =
 
 export const getTodos = () => fetch(`${DB_URL}/todos.json`).then(res => res.json());
 
-export const getLike = () => fetch(`${DB_URL}/likes.json`).then(res => res.json()); 
+export const getLike = () => fetch(`${DB_URL}/likes.json`).then(res => res.json());
 
-export const getPhoto = () => fetch(`${DB_URL}/photo-users.json`).then(res => res.json()); 
+export const getPhoto = () => fetch(`${DB_URL}/photo-users.json`).then(res => res.json());
 
 export const getWishList = () => fetch(`${DB_URL}/users-wishlist.json`).then(res => res.json());
 
 export const getRating = () => fetch(`${DB_URL}/rating.json`).then(res => res.json());
 
 export const getBasket = () => fetch(`${DB_URL}/basket/.json`).then(res => res.json());
-
-
-

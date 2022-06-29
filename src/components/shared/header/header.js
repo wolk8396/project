@@ -1,4 +1,4 @@
-import {PATH, TEXT} from '../../../componets/shared/const'
+import {PATH, TEXT} from '../const'
 import {numbers, getUser1, clearToken, setUser, getToken, setBooks} from '../services/local-storage-service';
 import { Confirmation } from '../confirmation/confirmation window';
 

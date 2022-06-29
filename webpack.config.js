@@ -15,31 +15,31 @@ module.exports = {
         }),
         new HTMLWebpackPlugin({
             filename: 'sign-in.html',
-            template: './src/componets/sign-in/sign-in.html'
+            template: './src/components/sign-in/sign-in.html'
         }),
         new HTMLWebpackPlugin({
             filename: 'shop.html',
-            template: './src/componets/shop/main_page/shop.html'
+            template: './src/components/shop/main_page/shop.html'
         }),
         new HTMLWebpackPlugin({
             filename: 'basket.html',
-            template: './src/componets/shop/basket/basket.html'
+            template: './src/components/shop/basket/basket.html'
         }),
         new HTMLWebpackPlugin({
             filename: 'books-information.html',
-            template: './src/componets/shop/information/books-information.html'
+            template: './src/components/shop/information/books-information.html'
         }),
         new HTMLWebpackPlugin({
             filename: 'sign-up.html',
-            template: './src/componets/sign-up/sign-up.html'
+            template: './src/components/sign-up/sign-up.html'
         }),
         new HTMLWebpackPlugin({
             filename: 'account.html',
-            template: './src/componets/shop/account/account.html'
+            template: './src/components/shop/account/account.html'
         }),
         new HTMLWebpackPlugin({
             filename: 'search.html',
-            template: './src/componets/shop/search-products/search.html'
+            template: './src/components/shop/search-products/search.html'
         })
     ],
     module: {
