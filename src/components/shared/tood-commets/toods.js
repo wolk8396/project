@@ -66,7 +66,8 @@ export class CommentUsers {
     time_comment.innerText = this.#element.time;
     fullName.innerText = `${this.#element.firstName} ${this.#element.lastName}`;
     textarea.innerText = this.#element.description;
-    sign_like.src = '../../../../../picture/hand-thumbs-up.svg';
+
+    sign_like.setAttribute('src',  '../../../picture/hand-thumbs-up.png');
     time_comment.innerText =this.#element.time;
     time_local.innerText = this.#time;
     time_local.style.display = 'none';
@@ -86,7 +87,7 @@ export class CommentUsers {
     textarea.setAttribute('disabled', true);
 
     (this.#element.photo === 'none') ?
-      avater.src = '../../../../../picture/avater.png' :
+      avater.setAttribute('src',  '../../../picture/avater.png'):
       avater.src = this.#element.photo;
 
     if (this.#element.idUsers === this.#getUser().authId) {

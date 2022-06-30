@@ -94,7 +94,7 @@ export class ListBooks {
     author_book.innerText = this.#element.author;
     product_book.innerText = this.#element.product;
     cost_book.innerText = this.#element.cost + '$';
-    btn_trash.src = '../../../picture/trash2-fill (1).svg';
+    btn_trash.setAttribute('src',  '../../../picture/trash2-fill (1).png');
     add_btn.innerText = 'ADD TO CARD';
     input_label.innerText = 'quantity';
     delete_book.innerText = 'DELETE';

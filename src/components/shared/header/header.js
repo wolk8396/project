@@ -75,11 +75,11 @@ export class Header {
 
     display_count.innerText = numbers();
     title_top.innerText = TEXT.title;
-    exit.setAttribute('src',  '../../../picture/main.svg');
+    exit.setAttribute('src',  '../../../picture/main.png');
     text_exit.innerText = 'GET BACK TO MAIN';
-    sign_img.setAttribute('src',  '../../../picture/search (1).svg')
-    basket_shop.src = '../../../picture/basket3-fill.svg';
-    search_svg.src = '../../../picture/search (1).svg';
+    sign_img.src = '../../../picture/search.png';
+    basket_shop.src = '../../../picture/basket3-fill.png';
+    search_svg.src = '../../../picture/icons8-search-64.png';
     signUp_text.innerText = 'SIGN-UP';
     text_signIp.innerText = 'SIGN-IN';
     li_1.innerText = 'My account';

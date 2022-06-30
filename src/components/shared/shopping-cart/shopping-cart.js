@@ -69,7 +69,7 @@ export class ShoppingCart {
     td_price.append(price);
     tr.append(td_price);
 
-    but_btnDelete.src = '../../../picture/trash2-fill (1).svg';
+    but_btnDelete.src = '../../../picture/trash2-fill (1).png';
     img.src = this.#element.photo;
     h4.innerText = this.#element.product;
     p_count.innerText = this.#element.count;
