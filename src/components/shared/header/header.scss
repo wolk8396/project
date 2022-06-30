@@ -503,7 +503,7 @@
         display: flex;
         margin: auto;
         justify-content: normal;
-        width: 118px;
+        width: 96px;
 
         &__home-page {
           width: 18px;
@@ -535,11 +535,11 @@
         }
 
         &__sign-up {
-          width: 78px;
+          width: 54px;
         }
 
         &__sign-in {
-          width: 66px;
+          width: 52px;
         }
 
         &__basket {
@@ -556,7 +556,7 @@
           .display {
             width: 17px;
             height: 17px;
-            top: 0px;
+            top: -7px;
             left: 15px;
           }
         }

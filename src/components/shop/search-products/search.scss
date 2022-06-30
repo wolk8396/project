@@ -417,6 +417,7 @@
           &__frame {
             width: 76px;
             height: 90px;
+            margin-top: 6px;
           }
         }
 
@@ -581,14 +582,15 @@
       width: 448px;
 
       .input-find {
-        &__query {
-          width: 240px;
 
-          .input-query {
-            width: 190px;
+        &__query {
+          width: 227px;
+
+          #input-query {
+            width: 154px;
           }
 
-          .btn-query {
+          #btn-query {
             width: 50px;
           }
         }

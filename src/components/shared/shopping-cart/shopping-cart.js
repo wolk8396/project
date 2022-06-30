@@ -17,7 +17,8 @@ export class ShoppingCart {
     fn_fullPrice,
     fn_modal_window,
     massage,
-    countItems
+    countItems,
+    trash
   ) {
     this.#element = element,
     this.#fn_increase = fn_increase,
@@ -71,7 +72,7 @@ export class ShoppingCart {
     td_price.append(price);
     tr.append(td_price);
 
-    but_btnDelete.str = this.#trash;
+    but_btnDelete.src = this.#trash;
     img.src = this.#element.photo;
     h4.innerText = this.#element.product;
     p_count.innerText = this.#element.count;
