@@ -27,7 +27,7 @@ export const createTodoComments = async() => {
   let current_time = time();
 
   if (user === undefined) {
-    photoUser.setAttribute('src',  '../../../../../picture/avater.png');
+    photoUser.setAttribute('src',  'scr/picture/avater.png');
     user_name.innerText = '-------';
   } else  {
     photoUser.src = user.photo;

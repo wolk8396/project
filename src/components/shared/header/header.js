@@ -75,9 +75,9 @@ export class Header {
 
     display_count.innerText = numbers();
     title_top.innerText = TEXT.title;
-    exit.src = '../../../picture/main.svg';
+    exit.setAttribute('src',  '../../../picture/main.svg');
     text_exit.innerText = 'GET BACK TO MAIN';
-    sign_img.src ='../../../picture/sign-in.svg';
+    sign_img.setAttribute('src',  '../../../picture/search (1).svg')
     basket_shop.src = '../../../picture/basket3-fill.svg';
     search_svg.src = '../../../picture/search (1).svg';
     signUp_text.innerText = 'SIGN-UP';
