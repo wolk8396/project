@@ -1,10 +1,14 @@
 import {PATH, TEXT} from '../const';
 import {numbers, getUser1, clearToken, setUser, getToken, setBooks} from '../services/local-storage-service';
 import { Confirmation } from '../confirmation/confirmation window';
+import search_img from '../../../asset/images/search (1).svg';
+import main from '../../../asset/images/main.svg';
+import cart from '../../../asset/images/basket3-fill.svg';
 
 export class Header {
 
   static getHeader() {
+
     const container_title =document.createElement('div');
     const title = document.createElement('div');
     const title_top = document.createElement('p');
@@ -75,11 +79,11 @@ export class Header {
 
     display_count.innerText = numbers();
     title_top.innerText = TEXT.title;
-    exit.setAttribute('src',  '../../../picture/main.png');
+    exit.src = main;
     text_exit.innerText = 'GET BACK TO MAIN';
     sign_img.src = '../../../picture/search.png';
-    basket_shop.src = '../../../picture/basket3-fill.png';
-    search_svg.src = '../../../picture/icons8-search-64.png';
+    basket_shop.src = cart;
+    search_svg.src = search_img;
     signUp_text.innerText = 'SIGN-UP';
     text_signIp.innerText = 'SIGN-IN';
     li_1.innerText = 'My account';

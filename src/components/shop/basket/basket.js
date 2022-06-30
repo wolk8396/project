@@ -7,6 +7,7 @@ import {PATH, TEXT } from '../../shared/const';
 import { Confirmation } from '../../shared/confirmation/confirmation window';
 import { FUNCTION } from '../../shared/services/function';
 import { Massage } from '../../shared/messages/messages';
+import trash from '../../../asset/images/trash2-fill (1).png'
 
 export const basketPage =  async () => {
 	const header = document.querySelector('.header-basket');
@@ -86,7 +87,8 @@ export const basketPage =  async () => {
 					countFullPrice,
 					ModalDelete,
 					TEXT.deleteCart,
-					countItems
+					countItems,
+          trash
 				).getCart())
 		});
 

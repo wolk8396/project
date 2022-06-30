@@ -26,6 +26,6 @@ export const TEXT = {
 
 export const time = () => moment().format();
 
-export const URL_photo = 'https://firebasestorage.googleapis.com/v0/b/bookstore-67dde.appspot.com/o/author%2Fmarrio.png?alt=media&token=8fa2c9a2-3416-49af-8ce6-672ee9859ab2'
+export const URL_photo = 'https://firebasestorage.googleapis.com/v0/b/bookstore-67dde.appspot.com/o/author%2Fmarrio.png?alt=media&token=8fa2c9a2-3416-49af-8ce6-672ee9859ab2';
 
 export const FILE_TYPE = ['image/png','image/jpg','image/peg','image/jpeg'];

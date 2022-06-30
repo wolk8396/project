@@ -7,6 +7,7 @@ export class ShoppingCart {
   #fn_modal_window;
   #massage;
   #countItems;
+  #trash
 
   constructor (
     element,
@@ -25,7 +26,8 @@ export class ShoppingCart {
     this.#fn_fullPrice = fn_fullPrice,
     this.#fn_modal_window = fn_modal_window,
     this.#massage = massage,
-    this.#countItems = countItems
+    this.#countItems = countItems,
+    this.#trash = trash
   }
 
   getCart() {
@@ -69,7 +71,7 @@ export class ShoppingCart {
     td_price.append(price);
     tr.append(td_price);
 
-    but_btnDelete.src = '../../../picture/trash2-fill (1).png';
+    but_btnDelete.str = this.#trash;
     img.src = this.#element.photo;
     h4.innerText = this.#element.product;
     p_count.innerText = this.#element.count;

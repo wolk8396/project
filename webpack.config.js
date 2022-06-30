@@ -6,7 +6,7 @@ module.exports = {
     entry: ['./src/index.js'],
     output: {
         filename: 'bundle.js',
-        path: path.resolve(__dirname, 'dist')
+        path: path.resolve(__dirname, 'dist'),
     },
     plugins: [
         new HTMLWebpackPlugin({
@@ -39,11 +39,22 @@ module.exports = {
         }),
         new HTMLWebpackPlugin({
             filename: 'search.html',
-            template: './src/components/shop/search-products/search.html'
+            template: './src/components/shop/search-products/search.html',
         })
     ],
     module: {
         rules: [
+            {
+              test: /\.(png|jpg|svg)$/i,
+              use: [
+                {
+                  loader: 'url-loader',
+                  options: {
+                    limit: 8192,
+                  },
+                },
+              ],
+            },
             {
                 test: /\.scss$/,
                 use: ['style-loader', 'css-loader', 'sass-loader']

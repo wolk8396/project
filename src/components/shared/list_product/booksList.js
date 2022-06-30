@@ -9,6 +9,7 @@ export class ListBooks {
   #fn;
   #fn_basket;
   #fn_remove;
+  #trash_img;
 
   constructor (
     element,
@@ -20,6 +21,7 @@ export class ListBooks {
     setItem,
     fn, fn_basket,
     fn_remove,
+    trash_img
   ) {
     this.#element = element,
     this.#fn_add_wish = fn_add_wish,
@@ -30,7 +32,8 @@ export class ListBooks {
     this.#setItem = setItem,
     this.#fn = fn,
     this.#fn_basket = fn_basket,
-    this.#fn_remove = fn_remove
+    this.#fn_remove = fn_remove,
+    this.trash_img = trash_img
   }
 
   getList () {
@@ -94,7 +97,7 @@ export class ListBooks {
     author_book.innerText = this.#element.author;
     product_book.innerText = this.#element.product;
     cost_book.innerText = this.#element.cost + '$';
-    btn_trash.setAttribute('src',  '../../../picture/trash2-fill (1).png');
+    btn_trash.src = this.trash_img;
     add_btn.innerText = 'ADD TO CARD';
     input_label.innerText = 'quantity';
     delete_book.innerText = 'DELETE';

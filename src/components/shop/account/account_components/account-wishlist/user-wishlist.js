@@ -7,6 +7,7 @@ import {getAllBookRating} from '../../../../get date/date_users';
 import { ListBooks } from "../../../../shared/list_product/booksList";
 import { FUNCTION } from "../../../../shared/services/function";
 import { ModalDelete } from "../../../../shared/Modal_delete/modal-delete";
+import trash_img from '../../../../../asset/images/trash2-fill (1).png';
 
 export const usersWhishes =  async fn_item  => {
   const product = document.querySelector('.user-wishlist__product');
@@ -72,7 +73,8 @@ export const usersWhishes =  async fn_item  => {
           setBooks,
           FUNCTION,
           basket,
-          get_fn
+          get_fn,
+          trash_img
         ).getList())
 
     });

@@ -10,6 +10,7 @@ import { FUNCTION } from '../../shared/services/function';
 import { Confirmation } from '../../shared/confirmation/confirmation window';
 import { Footer } from '../../shared/footer/footer';
 import { ModalDelete } from '../../shared/Modal_delete/modal-delete';
+import trash_img from '../../../asset/images/trash2-fill (1).png';
 
 export const searchBooks = async() => {
   const header_search = document.querySelector('.header-search');
@@ -114,6 +115,7 @@ export const searchBooks = async() => {
           FUNCTION,
           basket,
           get_fn,
+          trash_img
         ).getList())
     })
   }

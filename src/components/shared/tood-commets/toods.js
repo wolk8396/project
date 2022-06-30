@@ -6,15 +6,29 @@ export class CommentUsers {
   #time;
   #fn_likes;
   #colorBtn;
+  #like_svg;
+  #URL_photo
 
-  constructor(element, getUser, fn_delete, fn_update, time, fn_likes, colorBtn) {
+  constructor(
+    element,
+     getUser,
+     fn_delete,
+     fn_update,
+     time,
+     fn_likes,
+     colorBtn,
+     like_svg,
+     URL_photo
+  ) {
     this.#element = element,
     this.#getUser = getUser,
     this.#fn_delete = fn_delete,
     this.#fn_update = fn_update,
     this.#time = time,
     this.#fn_likes = fn_likes,
-    this.#colorBtn = colorBtn
+    this.#colorBtn = colorBtn,
+    this.#like_svg = like_svg,
+    this.#URL_photo = URL_photo
   }
 
   getTodo() {
@@ -36,7 +50,7 @@ export class CommentUsers {
     const container_display = document.createElement('div');
     const displayLikes = document.createElement('p');
     const sign_like = document.createElement('img');
-    const avater = document.createElement('img');
+    const avatar = document.createElement('img');
     const time_comment = document.createElement('p');
     const time_local= document.createElement('p');
 
@@ -61,13 +75,13 @@ export class CommentUsers {
     container_display.className = 'btn btn btn-danger__wrapper-btns';
     sign_like.className = "bi-hand-thumbs-up";
     displayLikes.className = 'number';
-    avater.className ='user-photo';
+    avatar.className ='user-photo';
 
     time_comment.innerText = this.#element.time;
     fullName.innerText = `${this.#element.firstName} ${this.#element.lastName}`;
     textarea.innerText = this.#element.description;
 
-    sign_like.setAttribute('src',  '../../../picture/hand-thumbs-up.png');
+    sign_like.src = this.#like_svg;
     time_comment.innerText =this.#element.time;
     time_local.innerText = this.#time;
     time_local.style.display = 'none';
@@ -76,7 +90,7 @@ export class CommentUsers {
     btn_update.innerText ='RENEW COMMENT';
     btn_sendUpdate.innerText = 'SEND COMMENT';
 
-    wrapperFullName.append(avater, fullName, time_comment);
+    wrapperFullName.append(avatar, fullName, time_comment);
     block_likes.append(btn_likes);
     btn_likes.append(sign_like, displayLikes);
     wrapper_description.append(container_textarea, block_btn_likes);
@@ -87,8 +101,8 @@ export class CommentUsers {
     textarea.setAttribute('disabled', true);
 
     (this.#element.photo === 'none') ?
-      avater.setAttribute('src',  '../../../picture/avater.png'):
-      avater.src = this.#element.photo;
+      avatar.src = this.#URL_photo:
+      avatar.src = this.#element.photo;
 
     if (this.#element.idUsers === this.#getUser().authId) {
       btns_container.append(btn_remove_comment, btn_update, btn_sendUpdate);

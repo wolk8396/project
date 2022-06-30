@@ -8,6 +8,10 @@ import {Footer } from "../../shared/footer/footer";
 import {URL_photo, FILE_TYPE, TEXT} from "../../shared/const";
 import { Massage } from "../../shared/messages/messages";
 import * as moment from 'moment';
+import plus from '../../../asset/images/plus-square-fill.svg';
+import minus from '../../../asset/images/dash-square-fill.svg';
+import pen from '../../../asset/images/pen-fill.svg';
+import x_circle from '../../../asset/images/x-circle.svg'
 
 export const My_account = async ()  => {
   const header = document.querySelector('.header-account');
@@ -28,6 +32,10 @@ export const My_account = async ()  => {
   const btn_cancel = document.getElementById('btn-cancel');
   const block_input = document.querySelectorAll('.profile-fullName');
   const massage = document.querySelector('.additional');
+  const change_date = document.querySelector('.change-date');
+
+  change_date.src = pen;
+  remove.src = x_circle;
 
   const name_Map = new Map ([
     ['first-name', value =>  fullNameUser.firstName = value],
@@ -63,17 +71,17 @@ export const My_account = async ()  => {
     let flag = false;
 
     element.style.display = 'none';
-    svg_el.src="../../../picture/plus-square-fill.svg";
+    svg_el.src = plus;
 
     open_block.onclick = () =>  {
       if (flag === false ) {
         flag = true;
         element.style.display = 'block';
-        svg_el.src="../../../picture/dash-square-fill.svg";
+        svg_el.src = minus;
       } else {
         flag = false;
         element.style.display = 'none';
-        svg_el.src="../../../picture/plus-square-fill.svg";
+        svg_el.src = plus;
       }
     }
   }

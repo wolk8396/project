@@ -2,14 +2,15 @@ import { createTodo, deleteTodo, updateTodo, getLike} from "../../../../aip/aip-
 import {findDateUser} from '../../../../get date/date_users';
 import {getDateUsers, gteUserLikes} from '../../../../get date/date_users';
 import { getUser1, getToken} from "../../../../shared/services/local-storage-service";
-import { time } from "../../../../shared/const";
+import { time} from "../../../../shared/const";
 import { Spinner } from "../../../../shared/spinner/spinner";
 import { Confirmation } from "../../../../shared/confirmation/confirmation window";
 import { CommentUsers } from "../../../../shared/tood-commets/toods";
 import { ModalDelete } from "../../../../shared/Modal_delete/modal-delete";
-import { TEXT } from "../../../../shared/const";
+import { TEXT, URL_photo} from "../../../../shared/const";
 import { FUNCTION } from "../../../../shared/services/function";
 import * as moment from 'moment';
+import like_svg from '../../../../../asset/images/hand-thumbs-up.svg';
 
 export const createTodoComments = async() => {
   const block_comments = document.querySelector('.get-comments');
@@ -22,19 +23,17 @@ export const createTodoComments = async() => {
   const user = await findDateUser();
   const getDateLikes = await getLike();
 
-  console.log('hello');
-
   let current_time = time();
 
   if (user === undefined) {
-    photoUser.setAttribute('src',  'scr/picture/avater.png');
+    photoUser.src = URL_photo
     user_name.innerText = '-------';
   } else  {
     photoUser.src = user.photo;
     user_name.innerText = `${user.firstName} ${user.lastName}`;
 
     (user.photo === 'none') ?
-      photoUser.setAttribute('src',  '../../../../../picture/avater.png') :
+      photoUser.src = URL_photo :
       photoUser.src = user.photo;
   }
 
@@ -94,7 +93,9 @@ export const createTodoComments = async() => {
           upDateComment,
           current_time,
           getLikes,
-          colorBtn
+          colorBtn,
+          like_svg,
+          URL_photo
         ).getTodo())
     });
 
