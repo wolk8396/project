@@ -3,12 +3,18 @@
   flex-direction: column;
   justify-content:normal;
   background-color: whitesmoke;
-  width: 1286px;
+  width: 1366px;
   height: 100%;
+
+
+  .header-1 {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
 
   .main {
     display: flex;
-    height: 100%;
     width: 1115px;
     flex-wrap: nowrap;
     margin: 0 auto;
@@ -259,7 +265,7 @@
 
   .panel-reviews {
     display: flex;
-    width: 1283px;
+    width: 1366px;
     border: 1px solid;
     height: 45px;
     background-color:black;
@@ -337,6 +343,37 @@
   }
 }
 
+@media(max-width: 1346px) {
+  .wrapper-learn_more {
+    width: 1346px;
+
+    .panel-reviews {
+      width: 1346px;
+    }
+
+  }
+}
+
+@media(max-width: 1280px) {
+  .wrapper-learn_more {
+    width: 1280px;
+
+    .panel-reviews {
+      width: 1280px;
+    }
+  }
+}
+
+@media(max-width: 1220px) {
+  .wrapper-learn_more {
+    width: 1220px;
+
+    .panel-reviews {
+      width: 1220px;
+    }
+  }
+}
+
 @media(max-width: 1156px) {
   .wrapper-learn_more {
     width: 1156px;
@@ -351,6 +388,20 @@
 
     .panel-reviews {
       width: 1149px;
+    }
+  }
+}
+
+@media(max-width: 1115px) {
+  .wrapper-learn_more {
+    width: 1115px;
+
+    .main {
+      width: 1119px;
+    }
+
+    .panel-reviews {
+      width: 1115px;
     }
   }
 }
@@ -653,7 +704,7 @@
 
         &__leave {
           width: 504px;
-  
+
           &__users {
             width: 184px;
             height: 219px;
@@ -791,7 +842,6 @@
 }
 
 @media(max-width: 592px) {
-
   .wrapper-learn_more {
 
     .wrapper-reviews {
@@ -970,7 +1020,7 @@
         }
       }
     }
-  } 
+  }
 }
 
 @media(max-width: 480px) {

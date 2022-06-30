@@ -2,7 +2,7 @@
   display: flex;
 	flex-direction: column;
 	justify-content:normal;
-  width: 1286px;
+  width: 1366px;
   height: 1340px;
   background-color: white;
 
@@ -316,9 +316,39 @@
   }
 }
 
+@media(max-width: 1346px) {
+  .wrapper {
+		width: 1346px;
+	}
+}
+
 @media(max-width: 1152px) {
 	.wrapper {
 		width: 1152px;
+	}
+}
+
+@media(max-width: 1280px) {
+  .wrapper {
+		width: 1280px;
+	}
+}
+
+@media(max-width: 1220px) {
+  .wrapper {
+		width: 1220px;
+	}
+}
+
+@media(max-width: 1152px) {
+  .wrapper {
+		width: 1152px;
+	}
+}
+
+@media(max-width: 1115px) {
+  .wrapper {
+		width: 1115px;
 	}
 }
 
@@ -408,7 +438,7 @@
 
 @media(max-width:912px) {
   .wrapper {
-		width: 912px; 
+		width: 912px;
 
     .main-account {
       width: 656px;
@@ -616,7 +646,7 @@
 @media(max-width:670px) {
 
   .wrapper {
-    width: 670px; 
+    width: 670px;
 
     .user-wishlist {
       width: 590px;
@@ -1015,7 +1045,6 @@
                 height: 21px;
                 font-size: 9px;
               }
-
             }
 
             .block_btns {

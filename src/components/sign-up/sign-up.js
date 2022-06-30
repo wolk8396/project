@@ -1,5 +1,5 @@
 import { createUserAuthRequest,  createUserDataRequest, signInRequest, getUser, createBasket} from '../aip/aip-handlers'
-import { PATH,time} from '../shared/const';
+import { PATH, time} from '../shared/const';
 import { setToken, setUser, getProduct } from '../shared/services/local-storage-service';
 import { emailValidator, showErrorMessage, hideErrorMessage, errorTagsIds,  password_verification } from '../shared/validators';
 import { Spinner } from '../shared/spinner/spinner';

@@ -96,7 +96,7 @@ export class Header {
       }
     }
 
-    (window.location.pathname === PATH.shop) ? text_exit.innerText = 'WELCOME' : null;
+    (window.location.pathname === PATH.shop) ? text_exit.innerText = '' : null;
 
     (pathname === PATH.sign_in || pathname === PATH.sign_up) ?
       container_sign.style.display = 'none' : null;

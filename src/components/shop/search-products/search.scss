@@ -1,15 +1,21 @@
 .wrapper-search {
-  width: 1286px;
+  width: 1366px;
   display: flex;
   flex-direction: column;
   justify-content: normal;
   background-color: #fff;
 
+  .header-search {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+
   .search-block {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 1286px;
+    width: 1366px;
     height: 99px;
     border-bottom: 1px solid #dbdbdb;
 
@@ -131,7 +137,7 @@
 
          &__author,
          &__cost {
-          color:black; 
+          color:black;
           font-weight: bold;
          }
       }
@@ -204,6 +210,36 @@
   }
 }
 
+@media(max-width: 1346px) {
+  .wrapper-search {
+    width: 1346px;
+
+    .search-block {
+      width: 1346px;
+    }
+  }
+}
+
+@media(max-width: 1280px) {
+  .wrapper-search {
+    width: 1280px;
+
+    .search-block {
+      width: 1280px;
+    }
+  }
+}
+
+@media(max-width: 1220px) {
+  .wrapper-search {
+    width: 1220px;
+
+    .search-block {
+      width: 1220px;
+    }
+  }
+}
+
 @media(max-width: 1152px) {
   .wrapper-search  {
     width: 1150px;
@@ -221,6 +257,16 @@
           width: 230px;
         }
       }
+    }
+  }
+}
+
+@media(max-width: 1115px) {
+  .wrapper-search {
+    width: 1115px;
+
+    .search-block {
+      width: 1115px;
     }
   }
 }
