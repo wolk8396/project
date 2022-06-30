@@ -22,17 +22,19 @@ export const createTodoComments = async() => {
   const user = await findDateUser();
   const getDateLikes = await getLike();
 
+  console.log('hello');
+
   let current_time = time();
 
   if (user === undefined) {
-    photoUser.src = '../../../../../picture/avater.png';
+    photoUser.setAttribute('src',  '../../../../../picture/avater.png');
     user_name.innerText = '-------';
   } else  {
     photoUser.src = user.photo;
     user_name.innerText = `${user.firstName} ${user.lastName}`;
 
     (user.photo === 'none') ?
-      photoUser.src = '../../../../../picture/avater.png' :
+      photoUser.setAttribute('src',  '../../../../../picture/avater.png') :
       photoUser.src = user.photo;
   }
 
