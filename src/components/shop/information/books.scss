@@ -1,10 +1,10 @@
 .wrapper-learn_more {
   display: flex;
   flex-direction: column;
-  justify-content:normal;
+  justify-content: normal;
   background-color: whitesmoke;
   width: 1366px;
-  height: 100%;
+  height: 900px;
 
 
   .header-1 {
@@ -37,7 +37,6 @@
       &__block {
         display: flex;
         flex-wrap: nowrap;
-        height: 100%;
         width: 1115px;
         display: flex;
         flex-direction: row;
@@ -439,7 +438,6 @@
     .panel-reviews {
       width: 1030px;
     }
-
   }
 }
 
@@ -644,7 +642,6 @@
     }
   }
 }
-
 
 @media(max-width: 800px) {
   .wrapper-learn_more {
@@ -1226,6 +1223,13 @@
 
       &__block {
         width: 320px;
+
+        .block-description {
+
+          .des-book {
+            width: 258px;
+          }
+        }
       }
     }
 

@@ -11,7 +11,7 @@ import {
   getBasket,
   createBasket,
   updateBasket
-        } from "../aip/aip-handlers";
+} from "../aip/aip-handlers";
 
 export const getDateUsers = async () => {
   const usersDate = await getUsers();

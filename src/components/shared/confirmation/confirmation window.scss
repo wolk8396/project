@@ -1,4 +1,4 @@
-.main-window{
+.main-window {
   background-color: rgba(0, 0, 0, var(--bg-opacity));
   --bg-opacity: 0.75;
   position: fixed;
@@ -85,21 +85,21 @@
       .block-window {
         width: 225px;
         height: 215px;
-  
+
         &__container-text {
           height: 94px;
           width: 206px;
-  
+
           .massage-text{
             left: 29px;
             top: 49px;
             font-size: 16px;
           }
         }
-  
+
         .blocks-btns {
           width: 228px;
-  
+
           &__link_sign_in,
           &__link_sign_up,
           &__cancel {
@@ -110,7 +110,7 @@
         }
       }
     }
-  } 
+  }
 }
 
 @media(max-width: 448px) {
@@ -121,21 +121,21 @@
       .block-window {
         width: 159px;
         height: 188px;
-  
+
         &__container-text {
           height: 64px;
           width: 155px;
-  
+
           .massage-text{
             left: 14px;
             top: 26px;
             font-size: 12px;
           }
         }
-  
+
         .blocks-btns {
           width: 167px;
-  
+
           &__link_sign_in,
           &__link_sign_up,
           &__cancel {

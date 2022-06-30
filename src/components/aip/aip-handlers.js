@@ -123,7 +123,7 @@ export const uploadPhoto = async (files, imgName, userDate, getUrl) => {
   const storageRef = ref(storage, `/${uuidv4()}_${imgName}`);
   let url ='';
 
-  await uploadBytes(storageRef, files).then(res => console.log(res))
+  await uploadBytes(storageRef, files)
   await  getDownloadURL(storageRef).then(res => {
     url = res
   });
@@ -149,11 +149,7 @@ export const deletePhoto = async (photo, userDate) => {
 
   const desertRef = ref(storage, photo);
 
-  await deleteObject(desertRef).then(() => {
-
-  }).catch((error) => {
-    console.log('Uh-oh, an error occurred!');
-  });
+  await deleteObject(desertRef);
 
   await fetch(
     `${DB_URL}/users/${userDate.id}.json`,
@@ -248,7 +244,6 @@ export const clearRating = id => {
 }
 
 export const updateNmeUser = userDate => {
-  console.log(userDate.id);
   return fetch(
     `${DB_URL}/users/${userDate.id}.json`,
       {

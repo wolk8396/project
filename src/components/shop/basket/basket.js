@@ -42,7 +42,7 @@ export const basketPage =  async () => {
 
 	const remove = id => {
 		const books = getProduct();
-		const product = books.filter((item, index) => item.bookId !== id);
+		const product = books.filter(({bookId}) => bookId !== id);
 
 		(getUser1() && getToken()) ? basketUser(product) : null;
 

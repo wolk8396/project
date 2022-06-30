@@ -1,7 +1,7 @@
 export class Spinner {
 
   static showSpinner() {
-    const body = document.getElementsByTagName('body')[0];
+    const body = document.querySelector('.wrapper-learn_more');
 
     body.insertAdjacentHTML(
         'afterbegin',

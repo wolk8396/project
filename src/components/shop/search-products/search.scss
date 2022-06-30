@@ -56,15 +56,15 @@
       height: 32px;
 
       &__all-books{
-        width:87px;
+        width: 87px;
       }
 
       &__potter {
-        width:106px;
+        width: 106px;
       }
 
       &__science {
-        width:127px;
+        width: 127px;
       }
 
       &__novels {
@@ -83,7 +83,7 @@
 
     .category p {
       font-weight: bold;
-      color:#382110;
+      color: #382110;
       cursor: pointer;
     }
 
@@ -137,7 +137,7 @@
 
          &__author,
          &__cost {
-          color:black;
+          color: black;
           font-weight: bold;
          }
       }
@@ -301,7 +301,7 @@
   }
 }
 
-@media(max-width:973px) {
+@media(max-width: 973px) {
   .wrapper-search  {
     width: 973px;
 
@@ -311,7 +311,7 @@
   }
 }
 
-@media(max-width:928px) {
+@media(max-width: 928px) {
   .wrapper-search  {
     width: 928px;
 
@@ -331,7 +331,7 @@
   }
 }
 
-@media(max-width:873px) {
+@media(max-width: 873px) {
   .wrapper-search  {
     width: 873px;
 
@@ -361,7 +361,7 @@
   }
 }
 
-@media(max-width:800px) {
+@media(max-width: 800px) {
   .wrapper-search  {
     width: 800px;
 
@@ -415,8 +415,8 @@
           height: 138px;
 
           &__frame {
-            width:76px;
-            height:90px;
+            width: 76px;
+            height: 90px;
           }
         }
 

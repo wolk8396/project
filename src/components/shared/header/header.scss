@@ -79,19 +79,21 @@
           .menu {
             position: absolute;
             display: none;
-            width: 150px;
-            height: 90px;
-            top: 31px;
-            right:-102px;
-            background-color: whitesmoke;
+            width: 102px;
+            height: 73px;
+            top: 36px;
+            right: -77px;
+            background-color: white;
             z-index: 1000;
            }
 
            li {
              cursor: pointer;
+             color: #303030;;
            }
            li:hover {
             text-decoration: underline;
+            color: red;
           }
         }
       }
@@ -226,7 +228,6 @@
   }
 }
 
-
 @media(max-width: 1024px) {
   .header {
     width: 1022px;
@@ -237,7 +238,6 @@
     }
   }
 }
-
 
 @media(max-width: 973px) {
   .header {

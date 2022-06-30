@@ -178,7 +178,7 @@ export const My_account = async ()  => {
 
   usersWhishes(openFn);
 
-  Massage.setMassage(massage, TEXT.type)
+  Massage.setMassage(massage, TEXT.type);
 
   Footer.getFooter(wrapper);
 
