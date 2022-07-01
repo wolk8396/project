@@ -10,6 +10,7 @@ import { Confirmation } from '../../shared/confirmation/confirmation window';
 import { Footer } from '../../shared/footer/footer';
 import { ModalDelete } from '../../shared/Modal_delete/modal-delete';
 import { Spinner } from '../../shared/spinner/spinner';
+import plus from '../../../asset/images/plus-square-fill.svg'
 
 export const information = async () =>  {
   const wrapper = document.querySelector('.wrapper-learn_more');
@@ -113,7 +114,7 @@ export const information = async () =>  {
   const fn_send = number => {
 
     click_rating.onclick  = async() => {
-      number_rating.innerText = 0;
+      number_rating.innerText = '';
 
       await upDateRating(bookId, number);
 

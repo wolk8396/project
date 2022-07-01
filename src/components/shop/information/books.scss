@@ -2,10 +2,9 @@
   display: flex;
   flex-direction: column;
   justify-content: normal;
-  background-color: whitesmoke;
+  background-color: white;
   width: 1366px;
   height: 900px;
-
 
   .header-1 {
     position: sticky;
@@ -41,7 +40,7 @@
         display: flex;
         flex-direction: row;
         justify-content:normal;
-        background-color: whitesmoke;
+        background-color: white;
 
        .block-left {
           display: flex;
@@ -60,14 +59,12 @@
               display: flex;
               justify-content: space-around;
               flex-direction: row;
-              width: 116px;
+              width: 41px;
               margin: 0 auto;
 
               .number-rating {
-                width: 50%;
-                height: 100%;
+                margin-left: 2px;
                 color: green;
-                position: relative;
               }
 
               .click-stars {
@@ -321,9 +318,10 @@
           width: 881px;
           height: 250px;
 
-          .form-control{
+          .form-control {
             height: 180px;
             border: none;
+            background-color: whitesmoke;
           }
 
           &__add_comment {
@@ -1181,6 +1179,13 @@
 
     .panel-reviews {
       width: 379px;
+    }
+
+    .wrapper-reviews {
+
+      .comments {
+        width: 360px;
+      }
     }
   }
 }

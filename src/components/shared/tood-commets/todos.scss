@@ -44,7 +44,7 @@
           position: relative;
 
           &__input_text {
-            background-color: #fff;
+            background-color: whitesmoke;
             width: 813px;
             height: 166px;
             border: none;
@@ -61,7 +61,6 @@
           display:flex;
           flex-direction: row;
           justify-content: space-between;
-          background-color: black;
           height: 54px;
           align-items: center;
 
@@ -92,6 +91,7 @@
               background-color: red;
               border-color: red;
             }
+
             &__time-comment {
               color: #fff;
             }
@@ -99,7 +99,7 @@
 
           .time {
             display: none;
-            color: white;
+            color: black;
             font-weight: bold;
             margin-top: 11px;
           }

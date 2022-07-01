@@ -40,13 +40,6 @@
         margin-top: auto;
         margin-left: 40px;
       }
-
-      &__text {
-        font-weight: bold;
-        color: white;
-        margin-left: 9px;
-        margin-top: auto;
-      }
     }
 
     .navigation {
@@ -83,7 +76,7 @@
             height: 73px;
             top: 36px;
             right: -77px;
-            background-color: white;
+            background-color: #d6d3d3;
             z-index: 1000;
            }
 
@@ -339,10 +332,6 @@
         &__home-page {
           width: 32px;
         }
-
-        &__text {
-          font-size: 10px;
-        }
       }
 
       .navigation {
@@ -507,10 +496,6 @@
 
         &__home-page {
           width: 18px;
-        }
-
-        &__text {
-          display: none;
         }
       }
 

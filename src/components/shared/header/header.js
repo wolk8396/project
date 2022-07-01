@@ -17,10 +17,8 @@ export class Header {
     const wrapper_account = document.createElement('div');
     const link = document.createElement('div');
     const exit = document.createElement('img');
-    const text_exit = document.createElement('p');
     const container_sign = document.createElement('div');
     const sign_in = document.createElement('div');
-    const sign_img = document.createElement('img');
     const basket = document.createElement('div');
     const basket_shop = document.createElement('img');
     const display = document.createElement('div');
@@ -44,7 +42,6 @@ export class Header {
     search.className ='header__search';
     link.className ='home-link';
     exit.className = 'home-link__home-page';
-    text_exit.className = 'home-link__text';
     container_sign.className = 'navigation';
     sign_in.className = 'navigation__sign-in';
     basket.className = 'navigation__basket';
@@ -54,7 +51,6 @@ export class Header {
     display_count.className = 'display__count';
     query.className = 'navigation__search-books';
     text_signIp.className = 'text-sign_in';
-    sign_img.className = 'sign-in';
     search_svg.className = 'search_btn';
     container_sign_up.className = 'navigation__sign-up';
     signUp_text.className = 'signup-text';
@@ -65,7 +61,7 @@ export class Header {
     container_title.append(title, search);
     title.append(title_top);
     search.append(link, container_sign);
-    link.append(exit, text_exit);
+    link.append(exit);
     query.append(search_svg);
 
     container_sign.append(query, container_userAccount, container_sign_up, sign_in, basket);
@@ -80,8 +76,6 @@ export class Header {
     display_count.innerText = numbers();
     title_top.innerText = TEXT.title;
     exit.src = main;
-    text_exit.innerText = 'GET BACK TO MAIN';
-    sign_img.src = '../../../picture/search.png';
     basket_shop.src = cart;
     search_svg.src = search_img;
     signUp_text.innerText = 'SIGN-UP';
@@ -99,8 +93,6 @@ export class Header {
         ul_menu.style.display = 'none';
       }
     }
-
-    (window.location.pathname === PATH.shop) ? text_exit.innerText = '' : null;
 
     (pathname === PATH.sign_in || pathname === PATH.sign_up) ?
       container_sign.style.display = 'none' : null;
